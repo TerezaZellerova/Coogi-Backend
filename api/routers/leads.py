@@ -462,14 +462,7 @@ async def analyze_companies(request: CompanyAnalysisRequest):
     """Comprehensive company analysis with skip reporting and job data"""
     try:
         job_scraper = get_job_scraper()
-        
-        # Import here to avoid circular dependency
-        from utils.company_analyzer import CompanyAnalyzer
-        import os
-        analyzer = CompanyAnalyzer(rapidapi_key=os.getenv("RAPIDAPI_KEY", ""))
-        
-        # Clear previous analysis
-        analyzer.clear_skip_history()
+        contact_finder = get_contact_finder()
         
         # Parse query and search for jobs
         search_params = job_scraper.parse_query(request.query)
@@ -478,16 +471,57 @@ async def analyze_companies(request: CompanyAnalysisRequest):
         if not jobs:
             raise HTTPException(status_code=404, detail="No jobs found matching criteria")
         
-        # Simplified analysis for migration
+        # Perform basic company analysis using existing contact finder
         target_companies = []
         skipped_companies = []
+        
+        for job in jobs[:request.max_companies]:
+            company = job.get('company', '')
+            if not company:
+                continue
+                
+            try:
+                # Use existing contact finder to check for TA team
+                result = contact_finder.find_contacts(
+                    company=company,
+                    linkedin_identifier=company.lower().replace(" ", "-"),
+                    role_hint=job.get('title', ''),
+                    keywords=job_scraper.extract_keywords(job.get('description', '')),
+                    company_website=None
+                )
+                
+                contacts, has_ta_team, employee_roles, company_found = result
+                
+                if has_ta_team:
+                    skipped_companies.append({
+                        "company": company,
+                        "reason": "Has internal TA team",
+                        "job_title": job.get('title', ''),
+                        "contacts_found": len(contacts)
+                    })
+                else:
+                    target_companies.append({
+                        "company": company,
+                        "job_title": job.get('title', ''),
+                        "job_url": job.get('url', ''),
+                        "job_source": job.get('job_source', job.get('site', 'unknown')),
+                        "contacts_found": len(contacts),
+                        "top_contacts": contacts[:3],
+                        "employee_roles": employee_roles,
+                        "company_found": company_found,
+                        "recommendation": "TARGET - No internal TA team"
+                    })
+                    
+            except Exception as e:
+                logger.warning(f"Error analyzing company {company}: {e}")
+                continue
         
         summary = {
             "total_companies_analyzed": len(jobs),
             "target_companies_found": len(target_companies),
             "companies_skipped": len(skipped_companies),
-            "skip_reasons": {},
-            "success_rate": 100.0
+            "skip_reasons": {"has_ta_team": len(skipped_companies)},
+            "success_rate": (len(target_companies) / max(len(jobs), 1)) * 100
         }
         
         return CompanyAnalysisResponse(
