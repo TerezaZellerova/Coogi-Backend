@@ -219,8 +219,35 @@ class JobScraper:
                 verbose=verbose
             )
             
-            logger.info(f"✅ Your JobSpy API returned {len(city_jobs)} jobs for {search_location}")
-            return city_jobs[:max_results]
+            logger.info(f"✅ JobSpy returned {len(city_jobs)} jobs for {search_location}")
+            
+            # Enhance with RapidAPI LinkedIn jobs if available
+            linkedin_jobs = []
+            if self.rapidapi_key and "linkedin" in [s.lower() for s in site_name]:
+                try:
+                    linkedin_jobs = self.scrape_linkedin_jobs_rapidapi(
+                        search_term=search_term,
+                        location=search_location,
+                        limit=min(20, results_wanted // 2)  # Get some additional LinkedIn jobs
+                    )
+                    logger.info(f"🔗 RapidAPI added {len(linkedin_jobs)} LinkedIn jobs")
+                except Exception as e:
+                    logger.warning(f"❌ RapidAPI LinkedIn scraping failed: {e}")
+            
+            # Combine and deduplicate jobs
+            all_jobs = city_jobs + linkedin_jobs
+            
+            # Simple deduplication based on title and company
+            seen_jobs = set()
+            unique_jobs = []
+            for job in all_jobs:
+                key = f"{job.get('title', '').lower()}_{job.get('company', '').lower()}"
+                if key not in seen_jobs:
+                    seen_jobs.add(key)
+                    unique_jobs.append(job)
+            
+            logger.info(f"✅ Combined results: {len(unique_jobs)} unique jobs ({len(city_jobs)} JobSpy + {len(linkedin_jobs)} RapidAPI)")
+            return unique_jobs[:max_results]
             
         except Exception as e:
             logger.error(f"Error searching in {search_location}: {e}")
@@ -277,13 +304,15 @@ class JobScraper:
                     # Clean and format the jobs data
                     formatted_jobs = []
                     for job in jobs_list:
+                        site = job.get('site', 'unknown')
                         formatted_job = {
                             "id": job.get('id', f"job_{hash(str(job))}"),
                             "title": job.get('title', 'Unknown Title'),
                             "company": job.get('company', 'Unknown Company'),
                             "location": job.get('location', location),
                             "description": job.get('description', ''),
-                            "site": job.get('site', 'unknown'),
+                            "site": site,
+                            "job_source": f"{site.title()} (JobSpy)",  # Add job source
                             "url": job.get('job_url', ''),
                             "date_posted": str(job.get('date_posted', '')),
                             "salary": job.get('salary_source', ''),
@@ -426,4 +455,97 @@ class JobScraper:
         # Mock implementation - in real implementation this would use NLP
         # For now, return some common keywords
         common_keywords = ["python", "developer", "software", "engineering", "programming"]
-        return common_keywords 
+        return common_keywords
+    
+    def scrape_linkedin_jobs_rapidapi(self, search_term: str, location: str = "", limit: int = 20) -> List[Dict[str, Any]]:
+        """
+        Scrape LinkedIn jobs using RapidAPI for enhanced job data
+        """
+        logger.info(f"🔗 Scraping LinkedIn jobs via RapidAPI: {search_term} in {location}")
+        
+        if not self.rapidapi_key:
+            logger.warning("❌ No RapidAPI key found, skipping LinkedIn RapidAPI scraping")
+            return []
+            
+        try:
+            # Use company-based search if we can extract company names
+            companies_to_search = []
+            
+            # If we have a specific location, try to find major tech companies in that area
+            if location and any(city in location.lower() for city in ['san francisco', 'san jose', 'palo alto', 'mountain view']):
+                companies_to_search = ['google', 'apple', 'meta', 'salesforce', 'uber', 'airbnb']
+            elif 'seattle' in location.lower():
+                companies_to_search = ['microsoft', 'amazon', 'boeing']
+            elif 'new york' in location.lower():
+                companies_to_search = ['goldman-sachs', 'jpmorgan-chase', 'citigroup', 'morgan-stanley']
+            else:
+                # Default to major tech companies for broader search
+                companies_to_search = ['microsoft', 'google', 'amazon', 'apple', 'meta']
+            
+            all_linkedin_jobs = []
+            
+            for company in companies_to_search[:3]:  # Limit to 3 companies to avoid rate limits
+                try:
+                    url = "https://fresh-linkedin-scraper-api.p.rapidapi.com/api/v1/company/jobs"
+                    headers = {
+                        "X-RapidAPI-Key": self.rapidapi_key,
+                        "X-RapidAPI-Host": "fresh-linkedin-scraper-api.p.rapidapi.com"
+                    }
+                    
+                    params = {
+                        "company": company,
+                        "limit": min(limit // len(companies_to_search), 10)  # Distribute limit across companies
+                    }
+                    
+                    logger.info(f"📡 Fetching LinkedIn jobs from {company}...")
+                    response = requests.get(url, headers=headers, params=params, timeout=15)
+                    
+                    if response.status_code == 200:
+                        data = response.json()
+                        if data.get("success") and data.get("data"):
+                            linkedin_jobs = data["data"]
+                            
+                            # Filter jobs based on search term
+                            filtered_jobs = []
+                            for job in linkedin_jobs:
+                                title = job.get("title", "").lower()
+                                if any(term.lower() in title for term in search_term.split()):
+                                    # Convert to standard format
+                                    standardized_job = {
+                                        "title": job.get("title", ""),
+                                        "company": job.get("company", {}).get("name", company.title()),
+                                        "location": job.get("location", location),
+                                        "description": job.get("description", ""),
+                                        "url": job.get("url", ""),
+                                        "date_posted": job.get("listed_at", ""),
+                                        "job_type": "fulltime",  # Default
+                                        "salary": None,
+                                        "benefits": None,
+                                        "site": "linkedin",
+                                        "job_source": "LinkedIn (RapidAPI)",
+                                        "company_logo": job.get("company", {}).get("logo", [{}])[0].get("url", ""),
+                                        "is_easy_apply": job.get("is_easy_apply", False),
+                                        "company_verified": job.get("company", {}).get("verified", False)
+                                    }
+                                    filtered_jobs.append(standardized_job)
+                            
+                            all_linkedin_jobs.extend(filtered_jobs)
+                            logger.info(f"✅ Found {len(filtered_jobs)} matching LinkedIn jobs from {company}")
+                        else:
+                            logger.warning(f"❌ No job data returned from {company}")
+                    else:
+                        logger.warning(f"❌ RapidAPI request failed for {company}: {response.status_code}")
+                        
+                    # Rate limiting - be respectful to the API
+                    time.sleep(1)
+                    
+                except Exception as e:
+                    logger.error(f"❌ Error scraping LinkedIn jobs from {company}: {e}")
+                    continue
+            
+            logger.info(f"🔗 RapidAPI LinkedIn scraping completed: {len(all_linkedin_jobs)} jobs found")
+            return all_linkedin_jobs
+            
+        except Exception as e:
+            logger.error(f"❌ LinkedIn RapidAPI scraping failed: {e}")
+            return []
