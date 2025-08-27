@@ -74,14 +74,14 @@ async def search_jobs(request: JobSearchRequest):
                     hours_old=search_params.get('hours_old', 720),
                     job_type=search_params.get('job_type', ''),
                     is_remote=search_params.get('is_remote', False),
-                    site_name=search_params.get('site_name', ["indeed", "linkedin", "zip_recruiter", "google", "glassdoor"]),
+                    site_name=search_params.get('site_name', ["linkedin", "indeed", "zip_recruiter", "google", "glassdoor"]),
                     results_wanted=search_params.get('results_wanted', 50),  # Reduced for faster processing
                     offset=search_params.get('offset', 0),
                     distance=search_params.get('distance', 25),
                     easy_apply=search_params.get('easy_apply', False),
                     country_indeed=search_params.get('country_indeed', 'us'),
                     google_search_term=search_params.get('google_search_term', ''),
-                    linkedin_fetch_description=search_params.get('linkedin_fetch_description', False),
+                    linkedin_fetch_description=search_params.get('linkedin_fetch_description', True),
                     verbose=search_params.get('verbose', False)
                 )
                 
