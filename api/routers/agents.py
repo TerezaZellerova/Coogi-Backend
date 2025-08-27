@@ -2,7 +2,8 @@ from fastapi import APIRouter, HTTPException, Depends
 from datetime import datetime
 import logging
 
-from ..dependencies import get_current_user, get_memory_manager
+from ..dependencies import get_current_user, get_memory_manager, get_job_scraper, get_contact_finder
+from ..models import JobSearchRequest, JobSearchResponse, Agent
 
 logger = logging.getLogger(__name__)
 
@@ -342,3 +343,163 @@ async def update_agent(agent_id: str, updates: dict, current_user: dict = Depend
     except Exception as e:
         logger.error(f"Error updating agent {agent_id}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/agents/create-fast")
+async def create_agent_fast(request: JobSearchRequest, current_user: dict = Depends(get_current_user)):
+    """Create an agent with immediate results using progressive enhancement"""
+    try:
+        job_scraper = get_job_scraper()
+        memory_manager = get_memory_manager()
+        
+        # Generate unique agent ID
+        agent_id = f"agent_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        
+        logger.info(f"🚀 Creating fast agent: {agent_id} for query: {request.query}")
+        
+        # Phase 1: Get basic job data quickly with timeout protection
+        try:
+            import asyncio
+            
+            # Use asyncio.wait_for to enforce timeout
+            basic_jobs = await asyncio.wait_for(
+                job_scraper.search_jobs_basic(
+                    query=request.query,
+                    limit=10,  # Limit for speed
+                    hours_old=request.hours_old
+                ),
+                timeout=20.0  # 20 second timeout
+            )
+            
+            logger.info(f"✅ Found {len(basic_jobs)} jobs for agent {agent_id}")
+            
+        except asyncio.TimeoutError:
+            logger.warning(f"⏰ Job search timeout for agent {agent_id}, using demo data")
+            # Fall back to demo data for immediate response
+            basic_jobs = job_scraper._get_demo_jobs(request.query, 5)
+            
+        except Exception as e:
+            logger.error(f"❌ Job search error for agent {agent_id}: {e}")
+            # Fall back to demo data for immediate response
+            basic_jobs = job_scraper._get_demo_jobs(request.query, 5)
+        
+        # Create agent record immediately
+        agent_data = {
+            "id": agent_id,
+            "query": request.query,
+            "status": "processing",
+            "created_at": datetime.now().isoformat(),
+            "total_jobs_found": len(basic_jobs),
+            "total_emails_found": 0,  # Will be updated later
+            "hours_old": request.hours_old,
+            "custom_tags": request.custom_tags,
+            "batch_id": agent_id,
+            "processing_phase": "basic_complete"
+        }
+        
+        # Store agent data
+        memory_manager.store_agent_data(agent_id, agent_data)
+        
+        # Format response
+        companies_analyzed = []
+        for job in basic_jobs[:5]:  # Return first 5 for immediate display
+            companies_analyzed.append({
+                "company": job.get("company", "Unknown"),
+                "job_title": job.get("title", "Unknown"),
+                "job_url": job.get("job_url", ""),
+                "job_source": job.get("site", "JobSpy"),
+                "has_ta_team": False,  # Will be analyzed later
+                "contacts_found": 0,   # Will be found later
+                "top_contacts": [],
+                "hunter_emails": [],
+                "recommendation": "Analysis in progress...",
+                "processing_status": "basic_scan_complete"
+            })
+        
+        response = JobSearchResponse(
+            companies_analyzed=companies_analyzed,
+            jobs_found=len(basic_jobs),
+            total_processed=len(basic_jobs),
+            search_query=request.query,
+            timestamp=datetime.now().isoformat(),
+            leads_added=0
+        )
+        
+        # Start background enhancement (don't wait for it)
+        import asyncio
+        asyncio.create_task(enhance_agent_data_background(agent_id, request, basic_jobs))
+        
+        logger.info(f"🎉 Agent {agent_id} created successfully with {len(basic_jobs)} jobs")
+        
+        return {
+            "agent": agent_data,
+            "results": response,
+            "message": "Agent created! Enhancement in progress..."
+        }
+        
+    except Exception as e:
+        logger.error(f"Error creating fast agent: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to create agent: {str(e)}")
+
+async def enhance_agent_data_background(agent_id: str, request: JobSearchRequest, basic_jobs: list):
+    """Background task to enhance agent data with contacts and emails"""
+    try:
+        contact_finder = get_contact_finder()
+        memory_manager = get_memory_manager()
+        
+        enhanced_companies = []
+        total_emails = 0
+        
+        # Process each company for contacts (limit to first 10 for speed)
+        for job in basic_jobs[:10]:
+            try:
+                # Find contacts for this company
+                contacts = await contact_finder.find_contacts_for_company(
+                    company=job.get("company", ""),
+                    job_title=job.get("title", "")
+                )
+                
+                company_data = {
+                    "company": job.get("company", "Unknown"),
+                    "job_title": job.get("title", "Unknown"),
+                    "job_url": job.get("job_url", ""),
+                    "job_source": job.get("site", "JobSpy"),
+                    "has_ta_team": len(contacts.get("ta_contacts", [])) > 0,
+                    "contacts_found": len(contacts.get("all_contacts", [])),
+                    "top_contacts": contacts.get("all_contacts", [])[:3],
+                    "hunter_emails": contacts.get("verified_emails", []),
+                    "recommendation": "Suitable for outreach" if len(contacts.get("all_contacts", [])) > 0 else "Limited contact info"
+                }
+                
+                enhanced_companies.append(company_data)
+                total_emails += len(contacts.get("verified_emails", []))
+                
+            except Exception as contact_error:
+                logger.error(f"Error processing company {job.get('company')}: {contact_error}")
+                continue
+        
+        # Update agent data with enhanced results
+        agent_data = memory_manager.get_agent_data(agent_id)
+        if agent_data:
+            agent_data.update({
+                "status": "completed",
+                "total_emails_found": total_emails,
+                "processing_phase": "enhanced_complete",
+                "enhanced_companies": enhanced_companies,
+                "end_time": datetime.now().isoformat()
+            })
+            memory_manager.store_agent_data(agent_id, agent_data)
+            
+        logger.info(f"✅ Enhanced agent {agent_id} - found {total_emails} emails")
+        
+    except Exception as e:
+        logger.error(f"Background enhancement failed for agent {agent_id}: {e}")
+        # Update agent status to completed even if enhancement fails
+        memory_manager = get_memory_manager()
+        agent_data = memory_manager.get_agent_data(agent_id)
+        if agent_data:
+            agent_data.update({
+                "status": "completed",
+                "processing_phase": "enhancement_failed",
+                "error": str(e)
+            })
+            memory_manager.store_agent_data(agent_id, agent_data)

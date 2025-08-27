@@ -549,3 +549,86 @@ class JobScraper:
         except Exception as e:
             logger.error(f"❌ LinkedIn RapidAPI scraping failed: {e}")
             return []
+        
+    async def search_jobs_basic(self, query: str, limit: int = 10, hours_old: int = 720, exclude_linkedin: bool = False) -> List[Dict[str, Any]]:
+        """
+        Fast basic job search - returns limited results quickly
+        """
+        logger.info(f"🚀 Starting basic job search for: {query} (limit: {limit}, exclude_linkedin: {exclude_linkedin})")
+        
+        try:
+            if not JOBSPY_AVAILABLE:
+                logger.warning("⚠️  JobSpy not available, returning demo data")
+                return self._get_demo_jobs(query, limit)
+            
+            # Parse query to get parameters
+            search_params = self.parse_query(query)
+            
+            # Use only 1-2 sites for speed
+            if exclude_linkedin:
+                site_name = ["indeed", "glassdoor"]  # Exclude LinkedIn
+            else:
+                site_name = ["indeed", "linkedin"]  # Fastest sites
+            
+            # Search in just 1-2 major cities for speed
+            locations = ["New York, NY", "San Francisco, CA"][:2]
+            
+            all_jobs = []
+            
+            for location in locations:
+                if len(all_jobs) >= limit:
+                    break
+                    
+                try:
+                    logger.info(f"🔍 Searching {site_name} in {location}")
+                    
+                    jobs = scrape_jobs(
+                        site_name=site_name,
+                        search_term=search_params.get('search_term', query),
+                        location=location,
+                        results_wanted=min(limit, 20),  # Limit per location
+                        hours_old=hours_old,
+                        country_indeed='USA'
+                    )
+                    
+                    if jobs is not None and not jobs.empty:
+                        jobs_list = jobs.to_dict('records')
+                        logger.info(f"✅ Found {len(jobs_list)} jobs in {location}")
+                        all_jobs.extend(jobs_list[:limit-len(all_jobs)])
+                    
+                except Exception as search_error:
+                    logger.error(f"Error searching {location}: {search_error}")
+                    continue
+            
+            logger.info(f"✅ Basic search complete: {len(all_jobs)} jobs found")
+            return all_jobs[:limit]
+            
+        except Exception as e:
+            logger.error(f"❌ Basic search failed: {e}")
+            return self._get_demo_jobs(query, limit)
+    
+    def _get_demo_jobs(self, query: str, limit: int) -> List[Dict[str, Any]]:
+        """Generate realistic demo job data for fast preview"""
+        demo_companies = [
+            "Google", "Microsoft", "Apple", "Amazon", "Meta", "Netflix", "Tesla", 
+            "Salesforce", "Uber", "Airbnb", "Stripe", "Zoom", "Slack", "Dropbox"
+        ]
+        
+        demo_jobs = []
+        for i in range(min(limit, len(demo_companies))):
+            company = demo_companies[i]
+            demo_jobs.append({
+                "title": f"{query} - {company}",
+                "company": company,
+                "location": "San Francisco, CA" if i % 2 == 0 else "New York, NY",
+                "job_url": f"https://{company.lower()}.com/careers/job-{i+1}",
+                "date_posted": "2024-08-27",
+                "salary_min": 120000 + (i * 10000),
+                "salary_max": 180000 + (i * 15000),
+                "job_type": "Full-time",
+                "site": "Demo",
+                "description": f"Exciting {query} opportunity at {company}. We're looking for talented professionals to join our team.",
+                "is_demo": True
+            })
+        
+        return demo_jobs

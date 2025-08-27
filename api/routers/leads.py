@@ -13,7 +13,7 @@ from ..models import (
     MessageGenerationRequest, MessageGenerationResponse,
     CompanyAnalysisRequest, CompanyAnalysisResponse,
     ContractOpportunityRequest, ContractAnalysisResponse,
-    CompanyJobsRequest, CompanyJobsResponse
+    CompanyJobsRequest, CompanyJobsResponse, Agent
 )
 from ..dependencies import (
     get_current_user, get_job_scraper, get_contact_finder, 
@@ -286,7 +286,31 @@ async def search_jobs(request: JobSearchRequest):
         await log_to_supabase(batch_id, f"📊 Hunter.io Summary: {hunter_attempts} attempts, {hunter_hits} emails found", "info")
         await log_to_supabase(batch_id, f"🎉 Search completed: {len(companies_analyzed)} companies analyzed", "success")
         
+        # Save agent data to memory for persistence
+        agent_data = {
+            "batch_id": batch_id,
+            "query": request.query,
+            "status": "completed",
+            "start_time": datetime.now().isoformat(),
+            "end_time": datetime.now().isoformat(),
+            "total_jobs_found": total_jobs_found,
+            "total_emails_found": sum(len(comp.get('hunter_emails', [])) for comp in companies_analyzed),
+            "hours_old": request.hours_old,
+            "custom_tags": getattr(request, 'custom_tags', None),
+            "processed_cities": 3,  # We processed first 3 cities
+            "processed_companies": len(companies_analyzed),
+            "companies_analyzed": companies_analyzed,
+            "campaigns_created": campaigns_created,
+            "leads_added": leads_added
+        }
+        memory_manager.save_agent_data(batch_id, agent_data)
+        logger.info(f"💾 Agent {batch_id} saved to memory")
+        
         return JobSearchResponse(
+            success=True,
+            batch_id=batch_id,
+            message=f"Job search completed: {len(companies_analyzed)} companies analyzed",
+            estimated_jobs=total_jobs_found,
             companies_analyzed=companies_analyzed,
             jobs_found=total_jobs_found,
             total_processed=processed_count,
@@ -969,3 +993,101 @@ async def find_company_domain(request: dict):
     except Exception as e:
         logger.error(f"❌ Error finding company domain: {str(e)}")
         return {"error": str(e)}
+
+# Add a FAST preview endpoint
+@router.post("/search-jobs-preview", response_model=JobSearchResponse)
+async def search_jobs_preview(request: JobSearchRequest):
+    """FAST preview of job opportunities - shows immediate results while processing in background"""
+    try:
+        job_scraper = get_job_scraper()
+        
+        # Generate batch ID for logging
+        batch_id = f"preview_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        
+        # Parse query
+        search_params = job_scraper.parse_query(request.query)
+        
+        # FAST job search - limit to first 20 jobs for speed
+        search_params['results_wanted'] = 20  # Limit for speed
+        search_params['hours_old'] = request.hours_old
+        
+        await log_to_supabase(batch_id, f"🚀 Starting FAST preview: {request.query}", "info")
+        
+        # Get basic job data quickly
+        jobs_data = await job_scraper.search_jobs_parallel(search_params)
+        
+        if not jobs_data or len(jobs_data) == 0:
+            await log_to_supabase(batch_id, "❌ No jobs found in preview", "warning")
+            return JobSearchResponse(
+                agent=Agent(
+                    id=f"agent_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                    query=request.query,
+                    status="completed",
+                    created_at=datetime.now().isoformat(),
+                    total_jobs_found=0,
+                    total_emails_found=0
+                ),
+                results=JobSearchResponse(
+                    companies_analyzed=[],
+                    jobs_found=0,
+                    total_processed=0,
+                    search_query=request.query,
+                    timestamp=datetime.now().isoformat()
+                )
+            )
+        
+        # Process companies quickly - basic info only
+        companies_analyzed = []
+        
+        for job in jobs_data[:10]:  # Process only first 10 for speed
+            try:
+                company_data = {
+                    "company": job.get('company', 'Unknown Company'),
+                    "job_title": job.get('title', 'Unknown Title'),
+                    "job_url": job.get('job_url', ''),
+                    "job_source": job.get('site', 'Unknown'),
+                    "location": job.get('location', ''),
+                    "has_ta_team": False,  # Default for preview
+                    "contacts_found": 0,   # Will be enriched later
+                    "top_contacts": [],    # Will be enriched later
+                    "emails_generated": [],
+                    "campaign_created": False,
+                    "processing_stage": "preview",
+                    "preview_mode": True
+                }
+                
+                companies_analyzed.append(company_data)
+                
+            except Exception as e:
+                logger.error(f"Error processing company in preview: {e}")
+                continue
+        
+        # Create preview agent
+        agent = Agent(
+            id=f"agent_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            query=request.query,
+            status="processing",  # Still processing in background
+            created_at=datetime.now().isoformat(),
+            total_jobs_found=len(jobs_data),
+            total_emails_found=0,  # Will be updated later
+            preview_mode=True
+        )
+        
+        results = JobSearchResponse(
+            companies_analyzed=companies_analyzed,
+            jobs_found=len(jobs_data),
+            total_processed=len(companies_analyzed),
+            search_query=request.query,
+            timestamp=datetime.now().isoformat()
+        )
+        
+        await log_to_supabase(batch_id, f"✅ FAST preview completed: {len(companies_analyzed)} companies", "info")
+        
+        # TODO: Start background task for full processing
+        # background_tasks.add_task(process_full_analysis, agent.id, request)
+        
+        return JobSearchResponse(agent=agent, results=results)
+        
+    except Exception as e:
+        logger.error(f"Error in preview search: {e}")
+        raise HTTPException(status_code=500, detail=f"Preview search failed: {str(e)}")

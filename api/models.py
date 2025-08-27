@@ -28,6 +28,10 @@ class Lead(BaseModel):
     timestamp: str
 
 class JobSearchResponse(BaseModel):
+    success: bool = True
+    batch_id: Optional[str] = None
+    message: Optional[str] = None
+    estimated_jobs: Optional[int] = None
     companies_analyzed: List[Dict[str, Any]]
     jobs_found: int
     total_processed: int
@@ -166,3 +170,57 @@ class LoginResponse(BaseModel):
     message: str
     token: Optional[str] = None
     user: Optional[Dict[str, Any]] = None
+
+# Agent Models
+class Agent(BaseModel):
+    id: str
+    query: str
+    status: str = "processing"
+    created_at: str
+    total_jobs_found: int = 0
+    total_emails_found: int = 0
+    hours_old: int = 24
+    custom_tags: Optional[List[str]] = None
+    batch_id: Optional[str] = None
+    processed_cities: Optional[int] = 0
+    processed_companies: Optional[int] = 0
+    start_time: Optional[str] = None
+    end_time: Optional[str] = None
+    processing_phase: Optional[str] = None
+
+# Staged Agent Models
+class AgentStage(BaseModel):
+    name: str
+    status: str  # "pending", "running", "completed", "failed"
+    progress: int = 0  # 0-100
+    started_at: Optional[str] = None
+    completed_at: Optional[str] = None
+    error_message: Optional[str] = None
+    results_count: int = 0
+
+class StagedResults(BaseModel):
+    linkedin_jobs: List[Dict[str, Any]] = []
+    other_jobs: List[Dict[str, Any]] = []
+    verified_contacts: List[Dict[str, Any]] = []
+    campaigns: List[Dict[str, Any]] = []
+    total_jobs: int = 0
+    total_contacts: int = 0
+    total_campaigns: int = 0
+
+class ProgressiveAgent(BaseModel):
+    id: str
+    query: str
+    status: str  # "initializing", "linkedin_stage", "enrichment_stage", "completed", "failed"
+    created_at: str
+    updated_at: str
+    total_progress: int = 0  # Overall progress 0-100
+    stages: Dict[str, AgentStage] = {}
+    staged_results: StagedResults = StagedResults()
+    hours_old: int = 24
+    custom_tags: Optional[List[str]] = None
+    final_stats: Optional[Dict[str, Any]] = None
+
+class ProgressiveAgentResponse(BaseModel):
+    agent: ProgressiveAgent
+    message: str
+    next_update_in_seconds: int = 30  # How often frontend should poll for updates

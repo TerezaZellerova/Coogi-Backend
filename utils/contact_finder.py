@@ -641,4 +641,50 @@ Example format:
                 
         except Exception as e:
             logger.error(f"Error finding domain for {company_name}: {e}")
-            return None 
+            return None
+    
+    async def find_contacts_for_company(self, company: str, job_title: str) -> Dict[str, Any]:
+        """
+        Find contacts for a specific company - simplified for fast processing
+        """
+        try:
+            logger.info(f"🔍 Finding contacts for {company} - {job_title}")
+            
+            # Check if company has TA team using OpenAI
+            has_ta_team = self.check_ta_team_with_openai(company)
+            if has_ta_team is None:
+                has_ta_team = False  # Default to False if unknown
+            
+            # Find contacts using existing method
+            contacts, found_ta, verified_emails, success = self.find_contacts(
+                company=company,
+                role_hint=job_title,
+                keywords=["hiring", "talent", "recruiter", "hr"]
+            )
+            
+            # Format response
+            result = {
+                "company": company,
+                "job_title": job_title,
+                "has_ta_team": has_ta_team or found_ta,
+                "all_contacts": contacts[:5],  # Limit to first 5 for speed
+                "ta_contacts": [c for c in contacts if any(keyword in c.get('title', '').lower() for keyword in ['talent', 'recruit', 'hr'])][:3],
+                "verified_emails": verified_emails[:3],  # Limit emails for speed
+                "success": success
+            }
+            
+            logger.info(f"✅ Found {len(contacts)} contacts for {company}")
+            return result
+            
+        except Exception as e:
+            logger.error(f"❌ Error finding contacts for {company}: {e}")
+            return {
+                "company": company,
+                "job_title": job_title,
+                "has_ta_team": False,
+                "all_contacts": [],
+                "ta_contacts": [],
+                "verified_emails": [],
+                "success": False,
+                "error": str(e)
+            }

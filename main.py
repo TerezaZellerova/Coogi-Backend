@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import routers
-from api.routers import agents, campaigns, auth, leads
+from api.routers import agents, campaigns, auth, leads, progressive_agents
 
 # Import shared models for OpenAPI documentation
 from api.models import HealthResponse
@@ -61,6 +61,7 @@ app.include_router(agents.router)
 app.include_router(campaigns.router)
 app.include_router(auth.router)
 app.include_router(leads.router)
+app.include_router(progressive_agents.router)
 
 # Serve HTML templates
 @app.get("/login", response_class=HTMLResponse)
@@ -120,16 +121,7 @@ async def get_test_login():
         </html>
         """, status_code=404)
 
-# Import and include all routers
-from api.routers.auth import router as auth_router
-from api.routers.leads import router as leads_router
-from api.routers.campaigns import router as campaigns_router
-from api.routers.agents import router as agents_router
-
-app.include_router(auth_router)
-app.include_router(leads_router)
-app.include_router(campaigns_router)
-app.include_router(agents_router)
+# Note: Routers already included above, removing duplicates
 
 # Root endpoint
 @app.get("/", response_model=HealthResponse, tags=["root"])
