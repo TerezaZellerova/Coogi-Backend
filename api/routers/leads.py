@@ -63,7 +63,7 @@ async def search_jobs(request: JobSearchRequest):
         total_jobs_found = 0
         
         # Process each city sequentially
-        for city in job_scraper.us_cities[:10]:  # Limit to first 10 cities for testing
+        for city in job_scraper.us_cities[:3]:  # Limit to first 3 cities for faster real processing
             await log_to_supabase(batch_id, f"🏙️ Processing city: {city}", "info")
             
             try:
@@ -75,7 +75,7 @@ async def search_jobs(request: JobSearchRequest):
                     job_type=search_params.get('job_type', ''),
                     is_remote=search_params.get('is_remote', False),
                     site_name=search_params.get('site_name', ["indeed", "linkedin", "zip_recruiter", "google", "glassdoor"]),
-                    results_wanted=search_params.get('results_wanted', 200),
+                    results_wanted=search_params.get('results_wanted', 50),  # Reduced for faster processing
                     offset=search_params.get('offset', 0),
                     distance=search_params.get('distance', 25),
                     easy_apply=search_params.get('easy_apply', False),
