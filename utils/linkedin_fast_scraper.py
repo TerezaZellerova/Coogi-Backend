@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class LinkedInFastScraper:
     def __init__(self):
-        self.rapidapi_key = os.getenv("NEXT_PUBLIC_RAPIDAPI_KEY")
+        self.rapidapi_key = os.getenv("RAPIDAPI_KEY")
         self.rapidapi_host = "fresh-linkedin-scraper-api.p.rapidapi.com"
         
     async def fetch_linkedin_jobs_fast(self, query: str, hours_old: int = 24, max_results: int = 30) -> List[Dict[str, Any]]:
