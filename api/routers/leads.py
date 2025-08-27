@@ -103,6 +103,7 @@ async def search_jobs(request: JobSearchRequest):
                     company = job.get('company', '')
                     job_title = job.get('title', '')
                     job_url = job.get('job_url', '')
+                    job_source = job.get('site', 'unknown')  # Get the site/source (linkedin, indeed, etc.)
                     
                     # Skip if we've already analyzed this company
                     if company in processed_companies:
@@ -238,6 +239,7 @@ async def search_jobs(request: JobSearchRequest):
                             "company": company,
                             "job_title": job_title,
                             "job_url": job_url,
+                            "job_source": job_source,  # Add source information (linkedin, indeed, etc.)
                             "has_ta_team": has_ta_team,
                             "contacts_found": len(contacts),
                             "top_contacts": contacts[:5],
