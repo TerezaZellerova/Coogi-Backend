@@ -40,7 +40,9 @@ app.add_middleware(
         "http://localhost:3000", 
         "http://127.0.0.1:3000",
         "http://localhost:3001",  # Added for alternate port
-        "http://127.0.0.1:3001"
+        "http://127.0.0.1:3001",
+        "https://lucent-croquembouche-0688a7.netlify.app",  # Production frontend
+        "https://*.netlify.app"  # Allow all Netlify domains
     ],  # Frontend URLs
     allow_credentials=True,
     allow_methods=["*"],
