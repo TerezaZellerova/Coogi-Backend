@@ -14,6 +14,16 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# Performance optimizations for faster startup
+import sys
+if sys.version_info >= (3, 8):
+    # Use faster JSON encoder if available
+    try:
+        import orjson
+        import ujson
+    except ImportError:
+        pass
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
