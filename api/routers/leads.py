@@ -21,6 +21,7 @@ from ..dependencies import (
     get_instantly_manager, get_blacklist_manager,
     log_to_supabase
 )
+from utils.clearout_manager import clearout_manager
 
 logger = logging.getLogger(__name__)
 
@@ -879,3 +880,92 @@ async def get_instantly_status():
             "error": str(e),
             "message": "Instantly.ai API connection failed"
         }
+
+# ===== CLEAROUT EMAIL VERIFICATION ENDPOINTS =====
+
+@router.post("/verify-email")
+async def verify_single_email(request: dict):
+    """
+    Verify a single email address using ClearOut API
+    """
+    try:
+        email = request.get("email")
+        if not email:
+            return {"error": "Email address is required"}
+        
+        result = clearout_manager.verify_email(email)
+        return {"success": True, "data": result}
+        
+    except Exception as e:
+        logger.error(f"❌ Error in email verification: {str(e)}")
+        return {"error": str(e)}
+
+@router.post("/verify-emails-bulk")
+async def verify_bulk_emails(request: dict):
+    """
+    Verify multiple emails in bulk using ClearOut API
+    """
+    try:
+        emails = request.get("emails", [])
+        if not emails:
+            return {"error": "Email list is required"}
+        
+        if len(emails) > 1000:
+            return {"error": "Maximum 1000 emails allowed per batch"}
+        
+        result = clearout_manager.bulk_verify_emails(emails)
+        return {"success": True, "data": result}
+        
+    except Exception as e:
+        logger.error(f"❌ Error in bulk email verification: {str(e)}")
+        return {"error": str(e)}
+
+@router.get("/verification-status/{job_id}")
+async def get_verification_status(job_id: str):
+    """
+    Get bulk verification job status and results
+    """
+    try:
+        result = clearout_manager.get_bulk_results(job_id)
+        return {"success": True, "data": result}
+        
+    except Exception as e:
+        logger.error(f"❌ Error getting verification status: {str(e)}")
+        return {"error": str(e)}
+
+@router.get("/clearout-account")
+async def get_clearout_account():
+    """
+    Get ClearOut account information and remaining credits
+    """
+    try:
+        result = clearout_manager.get_account_info()
+        return {"success": True, "data": result}
+        
+    except Exception as e:
+        logger.error(f"❌ Error getting ClearOut account info: {str(e)}")
+        return {"error": str(e)}
+
+@router.post("/find-company-domain")
+async def find_company_domain(request: dict):
+    """
+    Find company website domain using ClearOut API
+    """
+    try:
+        company_name = request.get("company_name")
+        if not company_name:
+            return {"error": "Company name is required"}
+        
+        domain = clearout_manager.find_company_domain(company_name)
+        return {
+            "success": True, 
+            "data": {
+                "company_name": company_name,
+                "domain": domain,
+                "found": domain is not None
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Error finding company domain: {str(e)}")
+        return {"error": str(e)}
