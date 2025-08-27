@@ -689,3 +689,193 @@ async def search_jobs_instant(request: JobSearchRequest):
     except Exception as e:
         logger.error(f"Error in instant job search: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+# ===== INSTANTLY.AI CAMPAIGN MANAGEMENT ENDPOINTS =====
+
+from pydantic import BaseModel
+from typing import Optional, List
+
+class InstantlyCampaignRequest(BaseModel):
+    campaign_name: str
+    leads: List[Dict[str, Any]]
+    description: Optional[str] = ""
+
+class InstantlyLeadRequest(BaseModel):
+    email: str
+    first_name: Optional[str] = ""
+    last_name: Optional[str] = ""
+    company_name: Optional[str] = ""
+    job_title: Optional[str] = ""
+
+@router.post("/instantly/create-campaign")
+async def create_instantly_campaign(request: InstantlyCampaignRequest):
+    """Create a new Instantly.ai campaign with leads"""
+    try:
+        instantly_manager = get_instantly_manager()
+        
+        # Create the campaign
+        campaign_result = instantly_manager.create_recruiting_campaign(
+            leads=request.leads,
+            campaign_name=request.campaign_name,
+            description=request.description
+        )
+        
+        if campaign_result:
+            return {
+                "success": True,
+                "campaign_id": campaign_result,
+                "message": f"Campaign '{request.campaign_name}' created successfully",
+                "leads_added": len(request.leads)
+            }
+        else:
+            raise HTTPException(status_code=400, detail="Failed to create campaign")
+            
+    except Exception as e:
+        logger.error(f"Error creating Instantly campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/instantly/campaigns")
+async def get_instantly_campaigns():
+    """Get all Instantly.ai campaigns"""
+    try:
+        instantly_manager = get_instantly_manager()
+        campaigns = instantly_manager.get_campaigns()
+        
+        return {
+            "success": True,
+            "campaigns": campaigns or [],
+            "total": len(campaigns) if campaigns else 0
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting Instantly campaigns: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/instantly/campaigns/{campaign_id}")
+async def get_instantly_campaign(campaign_id: str):
+    """Get specific Instantly.ai campaign details"""
+    try:
+        instantly_manager = get_instantly_manager()
+        campaign = instantly_manager.get_campaign(campaign_id)
+        
+        if campaign:
+            return {
+                "success": True,
+                "campaign": campaign
+            }
+        else:
+            raise HTTPException(status_code=404, detail="Campaign not found")
+            
+    except Exception as e:
+        logger.error(f"Error getting Instantly campaign {campaign_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/instantly/campaigns/{campaign_id}/activate")
+async def activate_instantly_campaign(campaign_id: str):
+    """Activate an Instantly.ai campaign"""
+    try:
+        instantly_manager = get_instantly_manager()
+        success = instantly_manager.activate_campaign(campaign_id)
+        
+        if success:
+            return {
+                "success": True,
+                "message": f"Campaign {campaign_id} activated successfully"
+            }
+        else:
+            raise HTTPException(status_code=400, detail="Failed to activate campaign")
+            
+    except Exception as e:
+        logger.error(f"Error activating Instantly campaign {campaign_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/instantly/campaigns/{campaign_id}/pause")
+async def pause_instantly_campaign(campaign_id: str):
+    """Pause an Instantly.ai campaign"""
+    try:
+        instantly_manager = get_instantly_manager()
+        success = instantly_manager.pause_campaign(campaign_id)
+        
+        if success:
+            return {
+                "success": True,
+                "message": f"Campaign {campaign_id} paused successfully"
+            }
+        else:
+            raise HTTPException(status_code=400, detail="Failed to pause campaign")
+            
+    except Exception as e:
+        logger.error(f"Error pausing Instantly campaign {campaign_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/instantly/campaigns/{campaign_id}/leads")
+async def get_campaign_leads(campaign_id: str):
+    """Get leads for a specific Instantly.ai campaign"""
+    try:
+        instantly_manager = get_instantly_manager()
+        leads = instantly_manager.get_leads_for_campaign(campaign_id)
+        
+        return {
+            "success": True,
+            "leads": leads,
+            "total": len(leads)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting leads for campaign {campaign_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/instantly/add-leads")
+async def add_leads_to_instantly(request: InstantlyLeadRequest):
+    """Add individual leads to Instantly.ai"""
+    try:
+        instantly_manager = get_instantly_manager()
+        
+        # Convert single lead to list format
+        lead_data = {
+            "email": request.email,
+            "first_name": request.first_name,
+            "last_name": request.last_name,
+            "company_name": request.company_name,
+            "job_title": request.job_title
+        }
+        
+        # Create a simple campaign or add to default list
+        success = instantly_manager.add_lead_to_list(lead_data)
+        
+        if success:
+            return {
+                "success": True,
+                "message": "Lead added successfully to Instantly.ai"
+            }
+        else:
+            raise HTTPException(status_code=400, detail="Failed to add lead")
+            
+    except Exception as e:
+        logger.error(f"Error adding lead to Instantly: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/instantly/status")
+async def get_instantly_status():
+    """Check Instantly.ai API connection and status"""
+    try:
+        instantly_manager = get_instantly_manager()
+        
+        # Test API connection by trying to get campaigns
+        campaigns = instantly_manager.get_campaigns()
+        
+        return {
+            "success": True,
+            "api_connected": True,
+            "total_campaigns": len(campaigns) if campaigns else 0,
+            "message": "Instantly.ai API is working correctly"
+        }
+        
+    except Exception as e:
+        logger.error(f"Error checking Instantly status: {e}")
+        return {
+            "success": False,
+            "api_connected": False,
+            "error": str(e),
+            "message": "Instantly.ai API connection failed"
+        }
