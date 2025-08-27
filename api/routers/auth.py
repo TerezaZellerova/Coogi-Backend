@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import Response
 from datetime import datetime
 import logging
 
@@ -8,6 +9,11 @@ from ..dependencies import TEST_USERS
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/auth", tags=["authentication"])
+
+@router.options("/login")
+async def login_options():
+    """Handle CORS preflight for login"""
+    return Response(status_code=200)
 
 @router.post("/login", response_model=LoginResponse)
 async def login(request: LoginRequest):

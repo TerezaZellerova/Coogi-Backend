@@ -36,14 +36,8 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000", 
-        "http://127.0.0.1:3000",
-        "http://localhost:3001",  # Added for alternate port
-        "http://127.0.0.1:3001",
-        "https://lucent-croquembouche-0688a7.netlify.app"  # Production frontend
-    ],  # Frontend URLs
-    allow_credentials=True,
+    allow_origins=["*"],  # Temporarily allow all origins for debugging
+    allow_credentials=False,  # Must be False when allow_origins is "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
