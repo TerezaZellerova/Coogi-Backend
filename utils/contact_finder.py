@@ -662,6 +662,19 @@ Example format:
                 keywords=["hiring", "talent", "recruiter", "hr"]
             )
             
+            # ALSO get Hunter.io emails for all companies
+            hunter_emails = []
+            try:
+                hunter_emails = self.find_hunter_emails_for_target_company(
+                    company=company,
+                    job_title=job_title
+                )
+                if hunter_emails:
+                    verified_emails.extend(hunter_emails)
+                    logger.info(f"✅ Added {len(hunter_emails)} Hunter.io emails for {company}")
+            except Exception as e:
+                logger.warning(f"⚠️ Hunter.io failed for {company}: {e}")
+            
             # Format response
             result = {
                 "company": company,
@@ -669,8 +682,9 @@ Example format:
                 "has_ta_team": has_ta_team or found_ta,
                 "all_contacts": contacts[:5],  # Limit to first 5 for speed
                 "ta_contacts": [c for c in contacts if any(keyword in c.get('title', '').lower() for keyword in ['talent', 'recruit', 'hr'])][:3],
-                "verified_emails": verified_emails[:3],  # Limit emails for speed
-                "success": success
+                "verified_emails": verified_emails[:10],  # Include Hunter.io emails
+                "hunter_emails": hunter_emails,  # Separate Hunter.io results
+                "success": success or len(hunter_emails) > 0
             }
             
             logger.info(f"✅ Found {len(contacts)} contacts for {company}")
