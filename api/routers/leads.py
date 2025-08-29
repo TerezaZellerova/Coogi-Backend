@@ -186,9 +186,9 @@ async def search_jobs(request: JobSearchRequest):
                         contacts, has_ta_team, employee_roles, company_found = result
                         await log_to_supabase(batch_id, f"📊 Found {len(contacts)} contacts, TA team: {has_ta_team}", "info", company, job_title, job_url, "contact_analysis")
                         
-                        # STEP 4: Hunter.io (if no TA team and company found)
+                        # STEP 4: Hunter.io (for all found companies)
                         hunter_emails = []
-                        if not has_ta_team and company_found:
+                        if company_found:
                             await log_to_supabase(batch_id, f"📡 Attempting Hunter.io lookup for: {company}", "info", company, job_title, job_url, "hunter_lookup")
                             
                             try:
@@ -209,7 +209,7 @@ async def search_jobs(request: JobSearchRequest):
                             except Exception as e:
                                 await log_to_supabase(batch_id, f"❌ Hunter.io error for {company}: {str(e)}", "error", company, job_title, job_url, "hunter_error")
                         else:
-                            await log_to_supabase(batch_id, f"⏭️ Skipping Hunter.io for {company} (has TA team or company not found)", "info", company, job_title, job_url, "hunter_skipped")
+                            await log_to_supabase(batch_id, f"⏭️ Skipping Hunter.io for {company} (company not found)", "info", company, job_title, job_url, "hunter_skipped")
                         
                         # STEP 5: Instantly.ai (if requested and emails found)
                         campaign_id = None
