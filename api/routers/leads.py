@@ -22,6 +22,7 @@ from ..dependencies import (
     log_to_supabase
 )
 from utils.clearout_manager import clearout_manager
+from utils.progressive_agent_db import progressive_agent_db
 
 logger = logging.getLogger(__name__)
 
@@ -1091,3 +1092,74 @@ async def search_jobs_preview(request: JobSearchRequest):
     except Exception as e:
         logger.error(f"Error in preview search: {e}")
         raise HTTPException(status_code=500, detail=f"Preview search failed: {str(e)}")
+
+# Progressive Agent Data Endpoints
+@router.get("/leads/jobs")
+async def get_all_jobs(limit: int = 100):
+    """Get all jobs from progressive agents"""
+    try:
+        jobs = await progressive_agent_db.get_agent_jobs(limit=limit)
+        return {"success": True, "data": jobs, "count": len(jobs)}
+    except Exception as e:
+        logger.error(f"Error getting jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/contacts")
+async def get_all_contacts(limit: int = 100):
+    """Get all contacts from progressive agents"""
+    try:
+        contacts = await progressive_agent_db.get_agent_contacts(limit=limit)
+        return {"success": True, "data": contacts, "count": len(contacts)}
+    except Exception as e:
+        logger.error(f"Error getting contacts: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/campaigns")
+async def get_all_campaigns(limit: int = 100):
+    """Get all campaigns from progressive agents"""
+    try:
+        campaigns = await progressive_agent_db.get_agent_campaigns(limit=limit)
+        return {"success": True, "data": campaigns, "count": len(campaigns)}
+    except Exception as e:
+        logger.error(f"Error getting campaigns: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/dashboard-stats")
+async def get_dashboard_stats():
+    """Get dashboard statistics"""
+    try:
+        stats = await progressive_agent_db.get_dashboard_stats()
+        return {"success": True, "data": stats}
+    except Exception as e:
+        logger.error(f"Error getting dashboard stats: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/agent/{agent_id}/jobs")
+async def get_agent_jobs(agent_id: str, limit: int = 100):
+    """Get jobs for a specific agent"""
+    try:
+        jobs = await progressive_agent_db.get_agent_jobs(agent_id=agent_id, limit=limit)
+        return {"success": True, "data": jobs, "count": len(jobs)}
+    except Exception as e:
+        logger.error(f"Error getting agent jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/agent/{agent_id}/contacts")
+async def get_agent_contacts(agent_id: str, limit: int = 100):
+    """Get contacts for a specific agent"""
+    try:
+        contacts = await progressive_agent_db.get_agent_contacts(agent_id=agent_id, limit=limit)
+        return {"success": True, "data": contacts, "count": len(contacts)}
+    except Exception as e:
+        logger.error(f"Error getting agent contacts: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/agent/{agent_id}/campaigns")
+async def get_agent_campaigns(agent_id: str, limit: int = 100):
+    """Get campaigns for a specific agent"""
+    try:
+        campaigns = await progressive_agent_db.get_agent_campaigns(agent_id=agent_id, limit=limit)
+        return {"success": True, "data": campaigns, "count": len(campaigns)}
+    except Exception as e:
+        logger.error(f"Error getting agent campaigns: {e}")
+        raise HTTPException(status_code=500, detail=str(e))

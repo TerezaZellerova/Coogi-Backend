@@ -7,6 +7,7 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional
 from api.models import ProgressiveAgent, AgentStage, StagedResults, ProgressiveAgentResponse
+from .progressive_agent_db import progressive_agent_db
 
 logger = logging.getLogger(__name__)
 
@@ -63,6 +64,17 @@ class ProgressiveAgentManager:
         )
         
         self.active_agents[agent_id] = agent
+        
+        # Save to database
+        asyncio.create_task(progressive_agent_db.save_agent_metadata(
+            agent_id=agent_id,
+            query=query,
+            status="initializing",
+            hours_old=hours_old,
+            custom_tags=custom_tags or [],
+            total_progress=0
+        ))
+        
         logger.info(f"🚀 Created progressive agent: {agent_id}")
         return agent
     
@@ -103,12 +115,20 @@ class ProgressiveAgentManager:
         
         if result_type == "linkedin_jobs":
             agent.staged_results.linkedin_jobs.extend(results)
+            # Save jobs to database
+            asyncio.create_task(progressive_agent_db.save_jobs(agent_id, results))
         elif result_type == "other_jobs":
             agent.staged_results.other_jobs.extend(results)
+            # Save jobs to database
+            asyncio.create_task(progressive_agent_db.save_jobs(agent_id, results))
         elif result_type == "contacts":
             agent.staged_results.verified_contacts.extend(results)
+            # Save contacts to database
+            asyncio.create_task(progressive_agent_db.save_contacts(agent_id, results))
         elif result_type == "campaigns":
             agent.staged_results.campaigns.extend(results)
+            # Save campaigns to database
+            asyncio.create_task(progressive_agent_db.save_campaigns(agent_id, results))
         
         # Update totals
         agent.staged_results.total_jobs = len(agent.staged_results.linkedin_jobs) + len(agent.staged_results.other_jobs)
@@ -120,6 +140,18 @@ class ProgressiveAgentManager:
             agent.stages[stage_key].results_count = len(results)
         
         agent.updated_at = datetime.now().isoformat()
+        
+        # Update agent metadata in database
+        asyncio.create_task(progressive_agent_db.save_agent_metadata(
+            agent_id=agent_id,
+            query=agent.query,
+            status=agent.status,
+            total_progress=agent.total_progress,
+            total_jobs=agent.staged_results.total_jobs,
+            total_contacts=agent.staged_results.total_contacts,
+            total_campaigns=agent.staged_results.total_campaigns
+        ))
+        
         logger.info(f"➕ Agent {agent_id} - Added {len(results)} {result_type} from {stage_key}")
     
     def _calculate_total_progress(self, agent_id: str):
@@ -168,6 +200,14 @@ class ProgressiveAgentManager:
                     stage.error_message = error_message
                     stage.completed_at = datetime.now().isoformat()
             
+            # Update in database
+            asyncio.create_task(progressive_agent_db.save_agent_metadata(
+                agent_id=agent_id,
+                query=agent.query,
+                status="failed",
+                total_progress=agent.total_progress
+            ))
+            
             logger.error(f"❌ Agent {agent_id} marked as failed: {error_message}")
     
     def finalize_agent(self, agent_id: str, final_stats: Dict):
@@ -178,6 +218,18 @@ class ProgressiveAgentManager:
             agent.status = "completed"
             agent.total_progress = 100
             agent.updated_at = datetime.now().isoformat()
+            
+            # Update in database
+            asyncio.create_task(progressive_agent_db.save_agent_metadata(
+                agent_id=agent_id,
+                query=agent.query,
+                status="completed",
+                total_progress=100,
+                total_jobs=agent.staged_results.total_jobs,
+                total_contacts=agent.staged_results.total_contacts,
+                total_campaigns=agent.staged_results.total_campaigns,
+                completed_at=datetime.now().isoformat()
+            ))
             
             logger.info(f"✅ Agent {agent_id} finalized with stats: {final_stats}")
 
