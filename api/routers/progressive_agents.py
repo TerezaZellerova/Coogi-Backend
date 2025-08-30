@@ -131,8 +131,26 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
             max_results=30
         )
         
-        # Filter to only LinkedIn results (since our bulletproof scraper returns from multiple sources)
-        linkedin_jobs = [job for job in linkedin_jobs if job.get("site", "").lower() == "linkedin"]
+        # Categorize jobs: LinkedIn jobs include direct LinkedIn API results AND JSearch jobs with LinkedIn URLs
+        all_jobs = linkedin_jobs  # This contains all jobs from bulletproof scraper
+        linkedin_jobs = []
+        other_jobs = []
+        
+        for job in all_jobs:
+            job_url = job.get("url", "").lower()
+            job_site = job.get("site", "").lower()
+            
+            # Consider it a LinkedIn job if:
+            # 1. Site is "linkedin" OR
+            # 2. Site is "jsearch" and URL contains "linkedin.com"
+            if (job_site == "linkedin" or 
+                (job_site == "jsearch" and "linkedin.com" in job_url)):
+                linkedin_jobs.append(job)
+            else:
+                other_jobs.append(job)
+        
+        # For this stage, we only want the LinkedIn jobs
+        linkedin_jobs_only = linkedin_jobs
         
         # Update progress
         progressive_agent_manager.update_stage_status(
@@ -141,15 +159,15 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
         
         # Add results
         progressive_agent_manager.add_stage_results(
-            agent_id, "linkedin_fetch", linkedin_jobs, "linkedin_jobs"
+            agent_id, "linkedin_fetch", linkedin_jobs_only, "linkedin_jobs"
         )
         
         # Complete stage
         progressive_agent_manager.update_stage_status(
-            agent_id, "linkedin_fetch", "completed", 100, len(linkedin_jobs)
+            agent_id, "linkedin_fetch", "completed", 100, len(linkedin_jobs_only)
         )
         
-        logger.info(f"✅ LinkedIn stage completed for agent {agent_id} - {len(linkedin_jobs)} jobs")
+        logger.info(f"✅ LinkedIn stage completed for agent {agent_id} - {len(linkedin_jobs_only)} LinkedIn jobs found")
         
     except Exception as e:
         logger.error(f"❌ LinkedIn stage failed for agent {agent_id}: {e}")
@@ -212,8 +230,8 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             agent_id, "other_boards", "running", 25
         )
         
-        # Get jobs from other sources (excluding LinkedIn)
-        other_jobs = await asyncio.wait_for(
+        # Get jobs from other sources and categorize them
+        all_jobs = await asyncio.wait_for(
             job_scraper.search_jobs_bulletproof(
                 query=request.query,
                 hours_old=request.hours_old,
@@ -224,8 +242,23 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             timeout=300.0  # 5 minute timeout
         )
         
-        # Filter out LinkedIn jobs since we already have those
-        other_jobs = [job for job in other_jobs if job.get("site", "").lower() != "linkedin"]
+        # Categorize jobs: separate LinkedIn jobs from other sources
+        linkedin_jobs = []
+        other_jobs = []
+        
+        for job in all_jobs:
+            job_url = job.get("url", "").lower()
+            job_site = job.get("site", "").lower()
+            
+            # LinkedIn jobs: direct LinkedIn API OR JSearch with LinkedIn URLs
+            if (job_site == "linkedin" or 
+                (job_site == "jsearch" and "linkedin.com" in job_url)):
+                linkedin_jobs.append(job)
+            else:
+                other_jobs.append(job)
+        
+        # For this stage, we only want the non-LinkedIn jobs
+        other_jobs_only = other_jobs
         
         # Update progress
         progressive_agent_manager.update_stage_status(
@@ -234,15 +267,15 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
         
         # Add results
         progressive_agent_manager.add_stage_results(
-            agent_id, "other_boards", other_jobs, "other_jobs"
+            agent_id, "other_boards", other_jobs_only, "other_jobs"
         )
         
         # Complete stage
         progressive_agent_manager.update_stage_status(
-            agent_id, "other_boards", "completed", 100, len(other_jobs)
+            agent_id, "other_boards", "completed", 100, len(other_jobs_only)
         )
         
-        logger.info(f"✅ Other boards stage completed for agent {agent_id} - {len(other_jobs)} jobs")
+        logger.info(f"✅ Other boards stage completed for agent {agent_id} - {len(other_jobs_only)} jobs")
         
     except asyncio.TimeoutError:
         logger.warning(f"⏰ Other boards stage timeout for agent {agent_id}")

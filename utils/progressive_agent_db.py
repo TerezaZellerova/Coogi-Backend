@@ -15,11 +15,16 @@ logger = logging.getLogger(__name__)
 
 # Initialize Supabase client
 SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
 
-if SUPABASE_URL and SUPABASE_ANON_KEY:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
-    logger.info("✅ Supabase client initialized for progressive agents")
+# Use service role key for write operations, fallback to anon key
+SUPABASE_KEY = SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY
+
+if SUPABASE_URL and SUPABASE_KEY:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+    key_type = "SERVICE_ROLE" if SUPABASE_SERVICE_ROLE_KEY else "ANON"
+    logger.info(f"✅ Supabase client initialized for progressive agents (using {key_type} key)")
 else:
     supabase = None
     logger.warning("❌ Supabase credentials not found - database persistence disabled")
@@ -63,7 +68,12 @@ class ProgressiveAgentDB:
     
     async def save_jobs(self, agent_id: str, jobs: List[Dict[str, Any]]):
         """Save jobs to database"""
-        if not self.supabase or not jobs:
+        if not self.supabase:
+            logger.warning("No Supabase client - skipping job save")
+            return
+            
+        if not jobs:
+            logger.info(f"No jobs to save for agent {agent_id}")
             return
         
         try:
@@ -92,15 +102,28 @@ class ProgressiveAgentDB:
                 job_records.append(job_record)
             
             # Batch insert jobs
-            self.supabase.table("progressive_agent_jobs").insert(job_records).execute()
-            logger.info(f"💼 Saved {len(job_records)} jobs for agent {agent_id}")
+            logger.info(f"💼 Attempting to save {len(job_records)} jobs for agent {agent_id}")
+            result = self.supabase.table("progressive_agent_jobs").insert(job_records).execute()
+            
+            if result.data:
+                logger.info(f"✅ Successfully saved {len(result.data)} jobs for agent {agent_id}")
+            else:
+                logger.warning(f"⚠️ No data returned after saving jobs for agent {agent_id}")
             
         except Exception as e:
             logger.error(f"❌ Error saving jobs for agent {agent_id}: {e}")
+            logger.error(f"   First job sample: {jobs[0] if jobs else 'No jobs'}")
+            import traceback
+            traceback.print_exc()
     
     async def save_contacts(self, agent_id: str, contacts: List[Dict[str, Any]]):
         """Save contacts to database"""
-        if not self.supabase or not contacts:
+        if not self.supabase:
+            logger.warning("No Supabase client - skipping contact save")
+            return
+            
+        if not contacts:
+            logger.info(f"No contacts to save for agent {agent_id}")
             return
         
         try:
@@ -126,11 +149,19 @@ class ProgressiveAgentDB:
                 contact_records.append(contact_record)
             
             # Batch insert contacts
-            self.supabase.table("progressive_agent_contacts").insert(contact_records).execute()
-            logger.info(f"👥 Saved {len(contact_records)} contacts for agent {agent_id}")
+            logger.info(f"👥 Attempting to save {len(contact_records)} contacts for agent {agent_id}")
+            result = self.supabase.table("progressive_agent_contacts").insert(contact_records).execute()
+            
+            if result.data:
+                logger.info(f"✅ Successfully saved {len(result.data)} contacts for agent {agent_id}")
+            else:
+                logger.warning(f"⚠️ No data returned after saving contacts for agent {agent_id}")
             
         except Exception as e:
             logger.error(f"❌ Error saving contacts for agent {agent_id}: {e}")
+            logger.error(f"   First contact sample: {contacts[0] if contacts else 'No contacts'}")
+            import traceback
+            traceback.print_exc()
     
     async def save_campaigns(self, agent_id: str, campaigns: List[Dict[str, Any]]):
         """Save campaigns to database"""

@@ -589,167 +589,44 @@ async def analyze_contract_opportunities(request: ContractOpportunityRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/leads")
-async def get_leads():
-    """Get all leads - removed auth dependency for demo"""
+async def get_leads(current_user: dict = Depends(get_current_user)):
+    """Get all leads"""
     try:
         import os
         leads = []
         
-        # Try to get leads from progressive agents first
+        # Try to get leads from Supabase if available
         try:
-            # Get leads from progressive agent database
-            agents = progressive_agent_db.get_all_agents()
-            logger.info(f"🔍 Found {len(agents)} progressive agents")
+            from supabase import create_client
+            supabase_url = os.getenv("SUPABASE_URL")
+            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
             
-            for agent in agents:
-                agent_data = agent.get('agent_data', {})
-                staged_results = agent_data.get('staged_results', {})
+            if supabase_url and supabase_key:
+                supabase = create_client(supabase_url, supabase_key)
+                # Get leads from hunter_emails table
+                response = supabase.table("hunter_emails").select("*").limit(100).execute()
+                hunter_emails = response.data or []
                 
-                # Get contacts from progressive agent results
-                verified_contacts = staged_results.get('verified_contacts', [])
-                other_jobs = staged_results.get('other_jobs', [])
-                
-                logger.info(f"📋 Agent {agent_data.get('id', 'unknown')}: {len(verified_contacts)} contacts, {len(other_jobs)} jobs")
-                
-                # Add contacts as leads
-                for contact in verified_contacts:
+                for i, email_data in enumerate(hunter_emails):
                     leads.append({
-                        "id": f"contact_{contact.get('id', len(leads))}",
-                        "email": contact.get("email", ""),
-                        "first_name": contact.get("name", "").split(" ")[0] if contact.get("name") else "",
-                        "last_name": " ".join(contact.get("name", "").split(" ")[1:]) if contact.get("name") and len(contact.get("name", "").split(" ")) > 1 else "",
-                        "company": contact.get("company", ""),
-                        "title": contact.get("title", ""),
-                        "linkedin_url": contact.get("linkedin_url"),
-                        "status": "verified",
-                        "confidence": contact.get("confidence", 0),
-                        "source": contact.get("source", "Progressive Agent"),
-                        "job_title": "Various Positions",
-                        "timestamp": contact.get("found_at", datetime.now().isoformat())
+                        "id": str(email_data.get("id", i)),
+                        "email": email_data.get("email", ""),
+                        "first_name": email_data.get("first_name", ""),
+                        "last_name": email_data.get("last_name", ""),
+                        "company": email_data.get("company", ""),
+                        "title": email_data.get("title", ""),
+                        "linkedin_url": email_data.get("linkedin_url"),
+                        "status": "active",  # Default status
+                        "confidence": email_data.get("confidence"),
+                        "timestamp": email_data.get("timestamp", datetime.now().isoformat())
                     })
-                
-                # Add job opportunities as potential leads
-                for job in other_jobs[:5]:  # Limit to 5 jobs per agent
-                    company = job.get('company', '')
-                    if company:
-                        leads.append({
-                            "id": f"job_{job.get('id', len(leads))}",
-                            "email": f"hr@{company.lower().replace(' ', '')}.com",  # Estimated email
-                            "first_name": "Hiring",
-                            "last_name": "Manager",
-                            "company": company,
-                            "title": "Hiring Manager",
-                            "linkedin_url": None,
-                            "status": "potential",
-                            "confidence": 60,
-                            "source": "Job Board",
-                            "job_title": job.get("title", ""),
-                            "job_url": job.get("url", ""),
-                            "timestamp": job.get("scraped_at", datetime.now().isoformat())
-                        })
-            
         except Exception as e:
-            logger.warning(f"Could not fetch from progressive agents: {e}")
+            logger.warning(f"Could not fetch from Supabase: {e}")
         
-        # If no leads from progressive agents, try Supabase as backup
-        if not leads:
-            try:
-                from supabase import create_client
-                supabase_url = os.getenv("SUPABASE_URL")
-                supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
-                
-                if supabase_url and supabase_key:
-                    supabase = create_client(supabase_url, supabase_key)
-                    # Get leads from hunter_emails table
-                    response = supabase.table("hunter_emails").select("*").limit(100).execute()
-                    hunter_emails = response.data or []
-                    
-                    for i, email_data in enumerate(hunter_emails):
-                        leads.append({
-                            "id": str(email_data.get("id", i)),
-                            "email": email_data.get("email", ""),
-                            "first_name": email_data.get("first_name", ""),
-                            "last_name": email_data.get("last_name", ""),
-                            "company": email_data.get("company", ""),
-                            "title": email_data.get("title", ""),
-                            "linkedin_url": email_data.get("linkedin_url"),
-                            "status": "active",
-                            "confidence": email_data.get("confidence"),
-                            "source": "Hunter.io",
-                            "timestamp": email_data.get("timestamp", datetime.now().isoformat())
-                        })
-            except Exception as e:
-                logger.warning(f"Could not fetch from Supabase: {e}")
-        
-        # If still no leads, generate demo leads
-        if not leads:
-            logger.info("🎭 Generating demo leads for display")
-            demo_leads = [
-                {
-                    "id": "demo_1",
-                    "email": "sarah.johnson@techcorp.com",
-                    "first_name": "Sarah",
-                    "last_name": "Johnson",
-                    "company": "TechCorp Solutions",
-                    "title": "Engineering Manager",
-                    "linkedin_url": "https://linkedin.com/in/sarah-johnson",
-                    "status": "verified",
-                    "confidence": 85,
-                    "source": "Demo Data",
-                    "job_title": "Software Engineer",
-                    "timestamp": datetime.now().isoformat()
-                },
-                {
-                    "id": "demo_2",
-                    "email": "mike.chen@innovate.com",
-                    "first_name": "Mike",
-                    "last_name": "Chen",
-                    "company": "InnovateNow Inc",
-                    "title": "VP Engineering",
-                    "linkedin_url": "https://linkedin.com/in/mike-chen",
-                    "status": "verified",
-                    "confidence": 90,
-                    "source": "Demo Data",
-                    "job_title": "Senior Developer",
-                    "timestamp": datetime.now().isoformat()
-                },
-                {
-                    "id": "demo_3",
-                    "email": "alex.turner@datadriver.com",
-                    "first_name": "Alex",
-                    "last_name": "Turner",
-                    "company": "DataDrive Analytics",
-                    "title": "HR Director",
-                    "linkedin_url": "https://linkedin.com/in/alex-turner",
-                    "status": "verified",
-                    "confidence": 75,
-                    "source": "Demo Data",
-                    "job_title": "Data Analyst",
-                    "timestamp": datetime.now().isoformat()
-                }
-            ]
-            leads.extend(demo_leads)
-        
-        logger.info(f"📊 Returning {len(leads)} leads")
         return leads
-        
     except Exception as e:
         logger.error(f"Error getting leads: {e}")
-        # Return demo leads on error
-        return [
-            {
-                "id": "error_demo_1",
-                "email": "demo@example.com",
-                "first_name": "Demo",
-                "last_name": "Lead",
-                "company": "Example Corp",
-                "title": "Manager",
-                "status": "demo",
-                "confidence": 50,
-                "source": "Error Demo",
-                "timestamp": datetime.now().isoformat()
-            }
-        ]
+        return []
 
 @router.post("/search-jobs-instant", response_model=JobSearchResponse)
 async def search_jobs_instant(request: JobSearchRequest):
@@ -1286,131 +1163,3 @@ async def get_agent_campaigns(agent_id: str, limit: int = 100):
     except Exception as e:
         logger.error(f"Error getting agent campaigns: {e}")
         raise HTTPException(status_code=500, detail=str(e))
-
-@router.get("/leads/with-jobs")
-async def get_leads_with_jobs():
-    """Get all leads with associated job opportunities"""
-    try:
-        leads_with_jobs = []
-        
-        # Get data from progressive agents
-        agents = progressive_agent_db.get_all_agents()
-        logger.info(f"🔍 Processing {len(agents)} progressive agents for leads with jobs")
-        
-        for agent in agents:
-            agent_data = agent.get('agent_data', {})
-            staged_results = agent_data.get('staged_results', {})
-            
-            # Get all data from this agent
-            verified_contacts = staged_results.get('verified_contacts', [])
-            other_jobs = staged_results.get('other_jobs', [])
-            
-            # Create leads with job context
-            for contact in verified_contacts:
-                # Find related jobs for this contact's company
-                related_jobs = [job for job in other_jobs if job.get('company', '').lower() == contact.get('company', '').lower()]
-                
-                lead_with_job = {
-                    "id": f"lead_{contact.get('id', len(leads_with_jobs))}",
-                    "contact": {
-                        "email": contact.get("email", ""),
-                        "name": contact.get("name", ""),
-                        "title": contact.get("title", ""),
-                        "company": contact.get("company", ""),
-                        "linkedin_url": contact.get("linkedin_url"),
-                        "confidence": contact.get("confidence", 0),
-                        "source": contact.get("source", "Progressive Agent"),
-                        "verification_status": contact.get("verification_status", "unknown")
-                    },
-                    "jobs": related_jobs[:3],  # Limit to 3 related jobs
-                    "agent_id": agent_data.get('id'),
-                    "agent_query": agent_data.get('query'),
-                    "found_at": contact.get("found_at", datetime.now().isoformat())
-                }
-                leads_with_jobs.append(lead_with_job)
-            
-            # Also add job opportunities without specific contacts
-            companies_with_contacts = {contact.get('company', '').lower() for contact in verified_contacts}
-            
-            for job in other_jobs:
-                if job.get('company', '').lower() not in companies_with_contacts:
-                    lead_with_job = {
-                        "id": f"opportunity_{job.get('id', len(leads_with_jobs))}",
-                        "contact": {
-                            "email": f"hiring@{job.get('company', '').lower().replace(' ', '')}.com",
-                            "name": "Hiring Manager",
-                            "title": "Hiring Manager",
-                            "company": job.get('company', ''),
-                            "linkedin_url": None,
-                            "confidence": 60,
-                            "source": "Job Opportunity",
-                            "verification_status": "estimated"
-                        },
-                        "jobs": [job],
-                        "agent_id": agent_data.get('id'),
-                        "agent_query": agent_data.get('query'),
-                        "found_at": job.get("scraped_at", datetime.now().isoformat())
-                    }
-                    leads_with_jobs.append(lead_with_job)
-        
-        logger.info(f"📊 Returning {len(leads_with_jobs)} leads with job context")
-        return {
-            "leads": leads_with_jobs,
-            "total": len(leads_with_jobs),
-            "timestamp": datetime.now().isoformat()
-        }
-        
-    except Exception as e:
-        logger.error(f"Error getting leads with jobs: {e}")
-        return {
-            "leads": [],
-            "total": 0,
-            "error": str(e),
-            "timestamp": datetime.now().isoformat()
-        }
-
-@router.get("/leads/stats")
-async def get_leads_stats():
-    """Get lead database statistics"""
-    try:
-        # Get data from progressive agents
-        agents = progressive_agent_db.get_all_agents()
-        
-        total_contacts = 0
-        total_jobs = 0
-        total_campaigns = 0
-        verified_contacts = 0
-        
-        for agent in agents:
-            agent_data = agent.get('agent_data', {})
-            staged_results = agent_data.get('staged_results', {})
-            
-            contacts = staged_results.get('verified_contacts', [])
-            jobs = staged_results.get('other_jobs', [])
-            campaigns = staged_results.get('campaigns', [])
-            
-            total_contacts += len(contacts)
-            total_jobs += len(jobs)
-            total_campaigns += len(campaigns)
-            verified_contacts += len([c for c in contacts if c.get('verification_status') == 'valid'])
-        
-        return {
-            "total_leads": total_contacts + total_jobs,
-            "verified_contacts": verified_contacts,
-            "job_opportunities": total_jobs,
-            "total_campaigns": total_campaigns,
-            "active_agents": len(agents),
-            "timestamp": datetime.now().isoformat()
-        }
-        
-    except Exception as e:
-        logger.error(f"Error getting lead stats: {e}")
-        return {
-            "total_leads": 0,
-            "verified_contacts": 0,
-            "job_opportunities": 0,
-            "total_campaigns": 0,
-            "active_agents": 0,
-            "error": str(e),
-            "timestamp": datetime.now().isoformat()
-        }
