@@ -160,11 +160,14 @@ class AWSSESService:
         subject = f"Re: {job_title} Position at {company}"
         
         # Create HTML version of the email
+        # Convert newlines to <br> tags for HTML
+        message_html = message.replace('\n', '<br>')
+        
         html_body = f"""
         <html>
             <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
                 <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                    {message.replace('\n', '<br>')}
+                    {message_html}
                     
                     <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
                     
