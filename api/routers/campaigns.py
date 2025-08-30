@@ -4,10 +4,14 @@ from typing import Dict, Any
 import logging
 import os
 
-from ..models import InstantlyCampaignRequest, InstantlyCampaignResponse
+from ..models import (
+    InstantlyCampaignRequest, InstantlyCampaignResponse,
+    SESCampaignRequest, SESCampaignResponse, SESEmailRequest,
+    SESBulkEmailRequest, SESTemplateRequest, EmailProviderStats
+)
 from ..dependencies import (
     get_current_user, get_job_scraper, get_contact_finder, 
-    get_instantly_manager
+    get_instantly_manager, get_ses_manager
 )
 
 logger = logging.getLogger(__name__)
@@ -197,4 +201,240 @@ async def create_campaign(
         return campaign
     except Exception as e:
         logger.error(f"Error creating campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# SES Email Endpoints
+@router.post("/ses/send-email")
+async def send_ses_email(
+    request: SESEmailRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Send single email via Amazon SES"""
+    try:
+        ses_manager = get_ses_manager()
+        result = ses_manager.send_email(
+            to_emails=request.to_emails,
+            subject=request.subject,
+            body_html=request.body_html,
+            body_text=request.body_text,
+            from_email=request.from_email,
+            reply_to=request.reply_to
+        )
+        return result
+    except Exception as e:
+        logger.error(f"Error sending SES email: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/ses/send-bulk-email")
+async def send_ses_bulk_email(
+    request: SESBulkEmailRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Send bulk personalized emails via SES templates"""
+    try:
+        ses_manager = get_ses_manager()
+        result = ses_manager.send_bulk_emails(
+            emails_data=request.emails_data,
+            template_name=request.template_name,
+            from_email=request.from_email
+        )
+        return result
+    except Exception as e:
+        logger.error(f"Error sending bulk SES emails: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/ses/create-template")
+async def create_ses_template(
+    request: SESTemplateRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Create email template in SES"""
+    try:
+        ses_manager = get_ses_manager()
+        success = ses_manager.create_email_template(
+            template_name=request.template_name,
+            subject=request.subject,
+            html_template=request.html_template,
+            text_template=request.text_template
+        )
+        return {
+            "success": success,
+            "template_name": request.template_name,
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"Error creating SES template: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/ses/stats")
+async def get_ses_stats(current_user: dict = Depends(get_current_user)):
+    """Get SES account statistics and reputation"""
+    try:
+        ses_manager = get_ses_manager()
+        
+        # Get reputation and quota info
+        reputation_data = ses_manager.check_reputation()
+        stats_data = ses_manager.get_send_statistics()
+        
+        if reputation_data.get("success"):
+            return EmailProviderStats(
+                provider="amazon_ses",
+                daily_quota=reputation_data.get("daily_quota", 0),
+                sent_last_24h=reputation_data.get("sent_last_24h", 0),
+                send_rate=reputation_data.get("send_rate", 0),
+                reputation_score=reputation_data.get("reputation", {}).get("ReputationForLastDelivery", {}).get("Percentage"),
+                timestamp=datetime.now().isoformat()
+            )
+        else:
+            return {"error": "Failed to get SES stats", "timestamp": datetime.now().isoformat()}
+            
+    except Exception as e:
+        logger.error(f"Error getting SES stats: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/ses/create-campaign", response_model=SESCampaignResponse)
+async def create_ses_campaign(
+    request: SESCampaignRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Create SES-powered recruiting campaign with leads"""
+    try:
+        job_scraper = get_job_scraper()
+        contact_finder = get_contact_finder()
+        ses_manager = get_ses_manager()
+        
+        # Parse query and search for jobs
+        search_params = job_scraper.parse_query(request.query)
+        jobs = job_scraper.search_jobs(search_params, max_results=request.max_leads * 3)
+        
+        if not jobs:
+            raise HTTPException(status_code=404, detail="No jobs found matching criteria")
+        
+        leads = []
+        processed_companies = set()
+        
+        # Process jobs to find leads (same logic as Instantly)
+        for job in jobs:
+            if len(leads) >= request.max_leads:
+                break
+                
+            company = job.get('company', '')
+            if company in processed_companies:
+                continue
+                
+            processed_companies.add(company)
+            
+            try:
+                description = job.get('description') or job.get('job_level') or ''
+                result = contact_finder.find_contacts(
+                    company=company,
+                    role_hint=job.get('title', ''),
+                    keywords=job_scraper.extract_keywords(description),
+                    company_website=job.get('company_website')
+                )
+                
+                contacts, has_ta_team, employee_roles, company_found = result
+                
+                # Skip companies with TA teams
+                if has_ta_team:
+                    continue
+                
+                # Create leads from contacts
+                for contact in contacts[:3]:  # Top 3 contacts
+                    email = contact_finder.find_email(contact.get('title', ''), company)
+                    if email:
+                        score = contact_finder.calculate_lead_score(contact, job, has_ta_team)
+                        if score >= request.min_score:
+                            lead = {
+                                "name": contact.get('name', ''),
+                                "title": contact.get('title', ''),
+                                "company": company,
+                                "email": email,
+                                "job_title": job.get('title', ''),
+                                "job_url": job.get('job_url', ''),
+                                "score": score,
+                                "company_website": job.get('company_website', '')
+                            }
+                            leads.append(lead)
+                        
+            except Exception as e:
+                logger.error(f"Error processing {company}: {e}")
+                continue
+        
+        # Create campaign ID and name
+        campaign_id = f"ses_campaign_{int(datetime.now().timestamp())}"
+        campaign_name = request.campaign_name or f"SES_Recruiting_Campaign_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        
+        emails_sent = 0
+        email_failures = 0
+        message_ids = []
+        
+        # Send emails if requested
+        if request.send_immediately and leads:
+            for lead in leads:
+                try:
+                    # Personalize email content
+                    personalized_template = request.email_template.replace(
+                        "{name}", lead.get("name", "")
+                    ).replace(
+                        "{company}", lead.get("company", "")
+                    ).replace(
+                        "{job_title}", lead.get("job_title", "")
+                    ).replace(
+                        "{title}", lead.get("title", "")
+                    )
+                    
+                    # Send via SES
+                    result = ses_manager.send_email(
+                        to_emails=[lead["email"]],
+                        subject=request.subject,
+                        body_html=personalized_template,
+                        body_text=personalized_template,  # Strip HTML for text version
+                        from_email=request.from_email
+                    )
+                    
+                    if result.get("success"):
+                        emails_sent += 1
+                        message_ids.append(result.get("message_id", ""))
+                    else:
+                        email_failures += 1
+                        
+                except Exception as e:
+                    logger.error(f"Failed to send email to {lead['email']}: {e}")
+                    email_failures += 1
+        
+        # Determine status
+        if not leads:
+            status = "no_leads"
+        elif request.send_immediately:
+            status = "sent" if emails_sent > 0 else "send_failed"
+        else:
+            status = "created"
+        
+        return SESCampaignResponse(
+            campaign_id=campaign_id,
+            campaign_name=campaign_name,
+            leads_added=len(leads),
+            total_leads_found=len(leads),
+            emails_sent=emails_sent,
+            email_failures=email_failures,
+            status=status,
+            provider="amazon_ses",
+            message_ids=message_ids,
+            timestamp=datetime.now().isoformat()
+        )
+        
+    except Exception as e:
+        logger.error(f"Error creating SES campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/ses/bounce-complaint")
+async def handle_ses_notification(notification: dict):
+    """Handle SES bounce/complaint notifications (webhook endpoint)"""
+    try:
+        ses_manager = get_ses_manager()
+        result = ses_manager.handle_bounce_complaint(notification)
+        return {"processed": result, "timestamp": datetime.now().isoformat()}
+    except Exception as e:
+        logger.error(f"Error handling SES notification: {e}")
         raise HTTPException(status_code=500, detail=str(e))

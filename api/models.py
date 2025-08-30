@@ -224,3 +224,56 @@ class ProgressiveAgentResponse(BaseModel):
     agent: ProgressiveAgent
     message: str
     next_update_in_seconds: int = 30  # How often frontend should poll for updates
+
+# SES Email Models
+class SESEmailRequest(BaseModel):
+    to_emails: List[str]
+    subject: str
+    body_html: str
+    body_text: str
+    from_email: str
+    reply_to: Optional[str] = None
+
+class SESBulkEmailRequest(BaseModel):
+    emails_data: List[Dict[str, Any]]  # Each dict contains email and template_data
+    template_name: str
+    from_email: str
+
+class SESTemplateRequest(BaseModel):
+    template_name: str
+    subject: str
+    html_template: str
+    text_template: str
+
+class SESCampaignRequest(BaseModel):
+    query: str
+    campaign_name: Optional[str] = None
+    max_leads: int = 20
+    min_score: float = 0.5
+    email_provider: str = "ses"  # "ses", "instantly", "smartlead"
+    from_email: str
+    subject: str
+    email_template: str
+    send_immediately: bool = False
+
+class SESCampaignResponse(BaseModel):
+    campaign_id: Optional[str]
+    campaign_name: str
+    leads_added: int
+    total_leads_found: int
+    emails_sent: int = 0
+    email_failures: int = 0
+    status: str
+    provider: str
+    message_ids: List[str] = []
+    timestamp: str
+
+class EmailProviderStats(BaseModel):
+    provider: str
+    daily_quota: float
+    sent_last_24h: float
+    send_rate: float
+    reputation_score: Optional[float] = None
+    bounce_rate: Optional[float] = None
+    complaint_rate: Optional[float] = None
+    timestamp: str

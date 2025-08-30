@@ -69,6 +69,11 @@ def get_blacklist_manager():
     from utils.blacklist_manager import BlacklistManager
     return BlacklistManager()
 
+def get_ses_manager():
+    """Get SES manager for email delivery"""
+    from utils.ses_manager import SESManager
+    return SESManager()
+
 # Logging function
 async def log_to_supabase(batch_id: str, message: str, level: str = "info", company: str = None, 
                           job_title: str = None, job_url: str = None, processing_stage: str = None):
