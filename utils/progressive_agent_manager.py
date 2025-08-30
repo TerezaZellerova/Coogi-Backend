@@ -5,7 +5,7 @@ import asyncio
 import json
 import logging
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from api.models import ProgressiveAgent, AgentStage, StagedResults, ProgressiveAgentResponse
 from .progressive_agent_db import progressive_agent_db
 
@@ -122,19 +122,19 @@ class ProgressiveAgentManager:
         if result_type == "linkedin_jobs":
             agent.staged_results.linkedin_jobs.extend(results)
             # Save jobs to database
-            asyncio.create_task(progressive_agent_db.save_jobs(agent_id, results))
+            asyncio.create_task(self._save_jobs_safely(agent_id, results))
         elif result_type == "other_jobs":
             agent.staged_results.other_jobs.extend(results)
             # Save jobs to database
-            asyncio.create_task(progressive_agent_db.save_jobs(agent_id, results))
+            asyncio.create_task(self._save_jobs_safely(agent_id, results))
         elif result_type == "contacts":
             agent.staged_results.verified_contacts.extend(results)
             # Save contacts to database
-            asyncio.create_task(progressive_agent_db.save_contacts(agent_id, results))
+            asyncio.create_task(self._save_contacts_safely(agent_id, results))
         elif result_type == "campaigns":
             agent.staged_results.campaigns.extend(results)
             # Save campaigns to database
-            asyncio.create_task(progressive_agent_db.save_campaigns(agent_id, results))
+            asyncio.create_task(self._save_campaigns_safely(agent_id, results))
         
         # Update totals
         agent.staged_results.total_jobs = len(agent.staged_results.linkedin_jobs) + len(agent.staged_results.other_jobs)
@@ -238,6 +238,30 @@ class ProgressiveAgentManager:
             ))
             
             logger.info(f"✅ Agent {agent_id} finalized with stats: {final_stats}")
+    
+    async def _save_jobs_safely(self, agent_id: str, jobs: List[Dict[str, Any]]):
+        """Safely save jobs to database with error handling"""
+        try:
+            await progressive_agent_db.save_jobs(agent_id, jobs)
+            logger.info(f"💼 Saved {len(jobs)} jobs for agent {agent_id}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save jobs for agent {agent_id}: {e}")
+    
+    async def _save_contacts_safely(self, agent_id: str, contacts: List[Dict[str, Any]]):
+        """Safely save contacts to database with error handling"""
+        try:
+            await progressive_agent_db.save_contacts(agent_id, contacts)
+            logger.info(f"👥 Saved {len(contacts)} contacts for agent {agent_id}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save contacts for agent {agent_id}: {e}")
+    
+    async def _save_campaigns_safely(self, agent_id: str, campaigns: List[Dict[str, Any]]):
+        """Safely save campaigns to database with error handling"""
+        try:
+            await progressive_agent_db.save_campaigns(agent_id, campaigns)
+            logger.info(f"📧 Saved {len(campaigns)} campaigns for agent {agent_id}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save campaigns for agent {agent_id}: {e}")
 
 # Global instance
 progressive_agent_manager = ProgressiveAgentManager()
