@@ -74,6 +74,16 @@ def get_ses_manager():
     from utils.ses_manager import SESManager
     return SESManager()
 
+def get_jsearch_manager():
+    """Get JSearch manager for job searching"""
+    from utils.jsearch_manager import JSearchManager
+    return JSearchManager()
+
+def get_smartlead_manager():
+    """Get Smartlead.ai manager for AI-powered email campaigns"""
+    from utils.smartlead_manager import SmartleadManager
+    return SmartleadManager()
+
 # Logging function
 async def log_to_supabase(batch_id: str, message: str, level: str = "info", company: str = None, 
                           job_title: str = None, job_url: str = None, processing_stage: str = None):

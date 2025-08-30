@@ -12,3 +12,4 @@ python-multipart>=0.0.6
 python-jobspy>=1.1.15
 boto3>=1.34.0
 botocore>=1.34.0
+email-validator>=2.1.0

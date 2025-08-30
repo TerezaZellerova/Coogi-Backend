@@ -15,6 +15,9 @@ class JobSearchRequest(BaseModel):
     campaign_name: Optional[str] = None  # Optional: custom campaign name
     min_score: float = 0.5  # Minimum lead score for campaign inclusion
     custom_tags: Optional[List[str]] = None  # Optional: custom tags to add to leads
+    target_type: str = "hiring_managers"  # "hiring_managers" or "job_candidates"
+    company_size: str = "all"  # "small", "medium", "all"
+    location_filter: Optional[str] = None  # Optional location filter
 
 class Lead(BaseModel):
     name: str
@@ -218,6 +221,9 @@ class ProgressiveAgent(BaseModel):
     staged_results: StagedResults = StagedResults()
     hours_old: int = 24
     custom_tags: Optional[List[str]] = None
+    target_type: str = "hiring_managers"  # "hiring_managers" or "job_candidates"
+    company_size: str = "all"  # "small", "medium", "all"
+    location_filter: Optional[str] = None
     final_stats: Optional[Dict[str, Any]] = None
 
 class ProgressiveAgentResponse(BaseModel):
@@ -276,4 +282,71 @@ class EmailProviderStats(BaseModel):
     reputation_score: Optional[float] = None
     bounce_rate: Optional[float] = None
     complaint_rate: Optional[float] = None
+    timestamp: str
+
+# JSearch Models
+class JSearchJobRequest(BaseModel):
+    query: str
+    location: str = "United States"
+    employment_types: str = "FULLTIME"
+    remote_jobs_only: bool = False
+    date_posted: str = "month"
+    num_pages: int = 1
+
+class JSearchJobResponse(BaseModel):
+    success: bool
+    jobs: List[Dict[str, Any]] = []
+    total_found: int = 0
+    query: str
+    location: str
+    timestamp: str
+
+class JSearchSalaryRequest(BaseModel):
+    job_title: str
+    location: str = "United States"
+
+class JSearchSalaryResponse(BaseModel):
+    success: bool
+    salary_estimates: List[Dict[str, Any]] = []
+    job_title: str
+    location: str
+    timestamp: str
+
+# Smartlead Models
+class SmartleadCampaignRequest(BaseModel):
+    name: str
+    leads: List[Dict[str, Any]]
+    email_template: str
+    subject: str
+    from_email: str
+    from_name: str = "Recruiting Team"
+
+class SmartleadAICampaignRequest(BaseModel):
+    name: str
+    leads: List[Dict[str, Any]]
+    template_context: str
+    subject_template: str
+    from_email: str
+    personalization_level: str = "high"
+
+class SmartleadCampaignResponse(BaseModel):
+    success: bool
+    campaign_id: Optional[str] = None
+    campaign_name: str
+    leads_added: int = 0
+    failed_leads: int = 0
+    failed_details: List[Dict[str, Any]] = []
+    ai_personalized: bool = False
+    personalization_level: Optional[str] = None
+    timestamp: str
+
+class SmartleadStatsResponse(BaseModel):
+    success: bool
+    campaign_id: str
+    stats: Dict[str, Any] = {}
+    timestamp: str
+
+class SmartleadAccountResponse(BaseModel):
+    success: bool
+    account: Dict[str, Any] = {}
     timestamp: str

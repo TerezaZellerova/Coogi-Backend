@@ -37,7 +37,7 @@ class ProgressiveAgentManager:
             }
         }
     
-    def create_progressive_agent(self, query: str, hours_old: int = 24, custom_tags: Optional[List[str]] = None) -> ProgressiveAgent:
+    def create_progressive_agent(self, query: str, hours_old: int = 24, custom_tags: Optional[List[str]] = None, target_type: str = "hiring_managers", company_size: str = "all", location_filter: Optional[str] = None) -> ProgressiveAgent:
         """Create a new progressive agent with initial stages"""
         agent_id = f"agent_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
         
@@ -60,7 +60,10 @@ class ProgressiveAgentManager:
             stages=stages,
             staged_results=StagedResults(),
             hours_old=hours_old,
-            custom_tags=custom_tags
+            custom_tags=custom_tags,
+            target_type=target_type,
+            company_size=company_size,
+            location_filter=location_filter
         )
         
         self.active_agents[agent_id] = agent
@@ -72,10 +75,13 @@ class ProgressiveAgentManager:
             status="initializing",
             hours_old=hours_old,
             custom_tags=custom_tags or [],
-            total_progress=0
+            total_progress=0,
+            target_type=target_type,
+            company_size=company_size,
+            location_filter=location_filter
         ))
         
-        logger.info(f"🚀 Created progressive agent: {agent_id}")
+        logger.info(f"🚀 Created progressive agent: {agent_id} (target: {target_type}, size: {company_size})")
         return agent
     
     def update_stage_status(self, agent_id: str, stage_key: str, status: str, progress: int = 0, results_count: int = 0, error_message: Optional[str] = None):

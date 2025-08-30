@@ -7,11 +7,15 @@ import os
 from ..models import (
     InstantlyCampaignRequest, InstantlyCampaignResponse,
     SESCampaignRequest, SESCampaignResponse, SESEmailRequest,
-    SESBulkEmailRequest, SESTemplateRequest, EmailProviderStats
+    SESBulkEmailRequest, SESTemplateRequest, EmailProviderStats,
+    JSearchJobRequest, JSearchJobResponse, JSearchSalaryRequest, JSearchSalaryResponse,
+    SmartleadCampaignRequest, SmartleadAICampaignRequest, SmartleadCampaignResponse, 
+    SmartleadStatsResponse, SmartleadAccountResponse
 )
 from ..dependencies import (
     get_current_user, get_job_scraper, get_contact_finder, 
-    get_instantly_manager, get_ses_manager
+    get_instantly_manager, get_ses_manager, get_jsearch_manager, 
+    get_smartlead_manager
 )
 
 logger = logging.getLogger(__name__)
@@ -437,4 +441,262 @@ async def handle_ses_notification(notification: dict):
         return {"processed": result, "timestamp": datetime.now().isoformat()}
     except Exception as e:
         logger.error(f"Error handling SES notification: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# JSearch Job Search Endpoints
+@router.post("/jsearch/search-jobs", response_model=JSearchJobResponse)
+async def search_jobs_jsearch(
+    request: JSearchJobRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Search for jobs using JSearch RapidAPI"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.search_jobs(
+            query=request.query,
+            location=request.location,
+            employment_types=request.employment_types,
+            remote_jobs_only=request.remote_jobs_only,
+            date_posted=request.date_posted,
+            num_pages=request.num_pages
+        )
+        
+        if result.get("success"):
+            return JSearchJobResponse(**result)
+        else:
+            raise HTTPException(status_code=400, detail=result.get("error", "JSearch request failed"))
+            
+    except Exception as e:
+        logger.error(f"Error searching JSearch jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/jsearch/job-details/{job_id}")
+async def get_jsearch_job_details(
+    job_id: str,
+    current_user: dict = Depends(get_current_user)
+):
+    """Get detailed information about a specific job from JSearch"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.get_job_details(job_id)
+        return result
+    except Exception as e:
+        logger.error(f"Error getting JSearch job details: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/jsearch/salary-estimates", response_model=JSearchSalaryResponse)
+async def get_jsearch_salary_estimates(
+    request: JSearchSalaryRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Get salary estimates for a job title/location using JSearch"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.get_salary_estimates(
+            job_title=request.job_title,
+            location=request.location
+        )
+        
+        if result.get("success"):
+            return JSearchSalaryResponse(**result)
+        else:
+            raise HTTPException(status_code=400, detail=result.get("error", "Salary estimates request failed"))
+            
+    except Exception as e:
+        logger.error(f"Error getting JSearch salary estimates: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/jsearch/trending-jobs")
+async def get_jsearch_trending_jobs(
+    location: str = "United States",
+    current_user: dict = Depends(get_current_user)
+):
+    """Get trending/popular job searches from JSearch"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.search_trending_jobs(location=location)
+        return result
+    except Exception as e:
+        logger.error(f"Error getting JSearch trending jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/jsearch/company/{company_name}")
+async def search_jsearch_company_jobs(
+    company_name: str,
+    location: str = "United States",
+    current_user: dict = Depends(get_current_user)
+):
+    """Search for jobs at a specific company using JSearch"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.search_by_company(
+            company_name=company_name,
+            location=location
+        )
+        return result
+    except Exception as e:
+        logger.error(f"Error searching JSearch company jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/jsearch/status")
+async def get_jsearch_status(current_user: dict = Depends(get_current_user)):
+    """Check JSearch API status and quota"""
+    try:
+        jsearch_manager = get_jsearch_manager()
+        result = jsearch_manager.get_api_status()
+        return result
+    except Exception as e:
+        logger.error(f"Error checking JSearch status: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Smartlead.ai Campaign Endpoints
+@router.post("/smartlead/create-campaign", response_model=SmartleadCampaignResponse)
+async def create_smartlead_campaign(
+    request: SmartleadCampaignRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Create a new Smartlead.ai campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.create_campaign(
+            name=request.name,
+            leads=request.leads,
+            email_template=request.email_template,
+            subject=request.subject,
+            from_email=request.from_email,
+            from_name=request.from_name
+        )
+        
+        if result.get("success"):
+            return SmartleadCampaignResponse(**result)
+        else:
+            raise HTTPException(status_code=400, detail=result.get("error", "Smartlead campaign creation failed"))
+            
+    except Exception as e:
+        logger.error(f"Error creating Smartlead campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/smartlead/create-ai-campaign", response_model=SmartleadCampaignResponse)
+async def create_smartlead_ai_campaign(
+    request: SmartleadAICampaignRequest,
+    current_user: dict = Depends(get_current_user)
+):
+    """Create AI-personalized Smartlead.ai campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.create_ai_personalized_campaign(
+            name=request.name,
+            leads=request.leads,
+            template_context=request.template_context,
+            subject_template=request.subject_template,
+            from_email=request.from_email,
+            personalization_level=request.personalization_level
+        )
+        
+        if result.get("success"):
+            return SmartleadCampaignResponse(**result)
+        else:
+            raise HTTPException(status_code=400, detail=result.get("error", "Smartlead AI campaign creation failed"))
+            
+    except Exception as e:
+        logger.error(f"Error creating Smartlead AI campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/smartlead/campaigns")
+async def get_smartlead_campaigns(current_user: dict = Depends(get_current_user)):
+    """Get all Smartlead.ai campaigns"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.get_campaigns()
+        return result
+    except Exception as e:
+        logger.error(f"Error getting Smartlead campaigns: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/smartlead/campaign/{campaign_id}/stats", response_model=SmartleadStatsResponse)
+async def get_smartlead_campaign_stats(
+    campaign_id: str,
+    current_user: dict = Depends(get_current_user)
+):
+    """Get detailed statistics for a Smartlead campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.get_campaign_stats(campaign_id)
+        
+        if result.get("success"):
+            return SmartleadStatsResponse(**result)
+        else:
+            raise HTTPException(status_code=404, detail=result.get("error", "Campaign not found"))
+            
+    except Exception as e:
+        logger.error(f"Error getting Smartlead campaign stats: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/smartlead/campaign/{campaign_id}/pause")
+async def pause_smartlead_campaign(
+    campaign_id: str,
+    current_user: dict = Depends(get_current_user)
+):
+    """Pause a Smartlead campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.pause_campaign(campaign_id)
+        return result
+    except Exception as e:
+        logger.error(f"Error pausing Smartlead campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/smartlead/campaign/{campaign_id}/resume")
+async def resume_smartlead_campaign(
+    campaign_id: str,
+    current_user: dict = Depends(get_current_user)
+):
+    """Resume a paused Smartlead campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.resume_campaign(campaign_id)
+        return result
+    except Exception as e:
+        logger.error(f"Error resuming Smartlead campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.delete("/smartlead/campaign/{campaign_id}")
+async def delete_smartlead_campaign(
+    campaign_id: str,
+    current_user: dict = Depends(get_current_user)
+):
+    """Delete a Smartlead campaign"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.delete_campaign(campaign_id)
+        return result
+    except Exception as e:
+        logger.error(f"Error deleting Smartlead campaign: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/smartlead/account", response_model=SmartleadAccountResponse)
+async def get_smartlead_account_info(current_user: dict = Depends(get_current_user)):
+    """Get Smartlead account information and limits"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.get_account_info()
+        
+        if result.get("success"):
+            return SmartleadAccountResponse(**result)
+        else:
+            raise HTTPException(status_code=400, detail=result.get("error", "Failed to get account info"))
+            
+    except Exception as e:
+        logger.error(f"Error getting Smartlead account info: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/smartlead/status")
+async def get_smartlead_status(current_user: dict = Depends(get_current_user)):
+    """Test Smartlead API connection and key validity"""
+    try:
+        smartlead_manager = get_smartlead_manager()
+        result = smartlead_manager.test_api_connection()
+        return result
+    except Exception as e:
+        logger.error(f"Error checking Smartlead status: {e}")
         raise HTTPException(status_code=500, detail=str(e))
