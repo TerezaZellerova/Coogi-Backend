@@ -237,7 +237,34 @@ class ProgressiveAgentManager:
                 completed_at=datetime.now().isoformat()
             ))
             
+            # Also save to memory manager for dashboard stats
+            from utils.memory_manager import get_memory_manager
+            memory_manager = get_memory_manager()
+            
+            agent_data = {
+                "batch_id": agent_id,
+                "query": agent.query,
+                "status": "completed",
+                "start_time": agent.created_at,
+                "end_time": agent.updated_at,
+                "total_jobs_found": agent.staged_results.total_jobs,
+                "total_jobs": agent.staged_results.total_jobs,  # Also set this for compatibility
+                "total_emails_found": agent.staged_results.total_contacts,
+                "total_contacts": agent.staged_results.total_contacts,
+                "total_campaigns": agent.staged_results.total_campaigns,
+                "jobs_found": agent.staged_results.total_jobs,  # Alternative field name
+                "final_stats": final_stats,
+                "hours_old": getattr(agent, 'hours_old', 24),
+                "custom_tags": getattr(agent, 'custom_tags', None),
+                "target_type": getattr(agent, 'target_type', 'hiring_managers'),
+                "company_size": getattr(agent, 'company_size', 'all'),
+                "location_filter": getattr(agent, 'location_filter', None)
+            }
+            
+            memory_manager.save_agent_data(agent_id, agent_data)
+            
             logger.info(f"✅ Agent {agent_id} finalized with stats: {final_stats}")
+            logger.info(f"💾 Agent {agent_id} saved to memory manager with {agent.staged_results.total_jobs} jobs")
     
     async def _save_jobs_safely(self, agent_id: str, jobs: List[Dict[str, Any]]):
         """Safely save jobs to database with error handling"""

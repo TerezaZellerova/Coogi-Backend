@@ -63,12 +63,19 @@ async def get_dashboard_stats(current_user: dict = Depends(get_current_user)):
         
         active_agents = len([agent for agent in agent_data if agent.get('status') == 'running'])
         total_runs = len(agent_data)
-        total_jobs = sum(agent.get('total_jobs_found', 0) for agent in agent_data)
+        
+        # Check both possible field names for job counts
+        total_jobs = 0
+        for agent in agent_data:
+            jobs_count = agent.get('total_jobs_found', 0) or agent.get('total_jobs', 0) or agent.get('jobs_found', 0)
+            total_jobs += jobs_count
         
         # Calculate success rate based on completed vs failed
         completed = len([agent for agent in agent_data if agent.get('status') == 'completed'])
         failed = len([agent for agent in agent_data if agent.get('status') == 'failed'])
         success_rate = (completed / (completed + failed)) * 100 if (completed + failed) > 0 else 100
+        
+        logger.info(f"📊 Dashboard stats: {active_agents} active, {total_runs} runs, {total_jobs} jobs")
         
         return {
             "activeAgents": active_agents,
