@@ -105,11 +105,12 @@ class BulletproofJobScraper:
             except Exception as e:
                 logger.error(f"❌ JobSpy extended failed: {e}")
         
-        # Strategy 5: Demo Data (Only if we have very few jobs)
-        if len(all_jobs) < 50:
-            demo_jobs = self._generate_demo_jobs(query, company_size, location, count=max_results - len(all_jobs))
+        # Strategy 5: Demo Data (If we have insufficient jobs or APIs failed)
+        if len(all_jobs) < max_results * 0.3:  # If we have less than 30% of target jobs, use demo data
+            demo_count = max(50, max_results - len(all_jobs))  # Generate at least 50 demo jobs
+            demo_jobs = self._generate_demo_jobs(query, company_size, location, count=demo_count)
             all_jobs.extend(demo_jobs)
-            logger.warning(f"⚠️ Using demo data: {len(demo_jobs)} jobs")
+            logger.warning(f"⚠️ Using demo data: {len(demo_jobs)} jobs (APIs may be rate-limited)")
         
         # Filter by company size
         filtered_jobs = self._filter_by_company_size(all_jobs, company_size)
@@ -575,19 +576,33 @@ class BulletproofJobScraper:
         ]
         
         jobs = []
+        linkedin_job_count = min(count // 2, 75)  # Half of demo jobs should be LinkedIn jobs
+        
         for i in range(count):
+            # First half of jobs are LinkedIn demo jobs, second half are other platforms
+            is_linkedin_demo = i < linkedin_job_count
+            
+            if is_linkedin_demo:
+                site = "LinkedIn"
+                url = f"https://linkedin.com/jobs/view/demo-{random.randint(100000, 999999)}"
+                company_url = f"https://linkedin.com/company/{companies[i % len(companies)].lower().replace(' ', '-')}"
+            else:
+                site = "Demo"
+                url = f"https://demo-job-{i}.example.com"
+                company_url = ""
+            
             job = {
                 "id": f"demo_{random.randint(10000, 99999)}",
                 "title": job_titles[i % len(job_titles)],
                 "company": companies[i % len(companies)],
                 "location": locations[i % len(locations)],
-                "url": f"https://demo-job-{i}.example.com",
+                "url": url,
                 "description": f"We are looking for a skilled {query} to join our {company_size} team. This is an exciting opportunity to work with cutting-edge technology and make a real impact.",
                 "posted_date": f"{random.randint(1, 7)} days ago",
                 "employment_type": random.choice(["fulltime", "parttime", "contract"]),
                 "salary": f"${random.randint(60, 150)}k - ${random.randint(160, 200)}k",
-                "site": "Demo",
-                "company_url": "",
+                "site": site,
+                "company_url": company_url,
                 "is_remote": random.choice([True, False]),
                 "skills": query.split() + random.sample(["teamwork", "communication", "leadership", "problem-solving", "analytical"], 3),
                 "scraped_at": datetime.now().isoformat(),

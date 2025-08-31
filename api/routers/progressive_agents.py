@@ -139,13 +139,20 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
         for job in all_jobs:
             job_url = job.get("url", "").lower()
             job_site = job.get("site", "").lower()
+            is_demo = job.get("is_demo", False)
             
             # Consider it a LinkedIn job if:
             # 1. Site is "linkedin" (from direct API or JSearch with LinkedIn URL detection)
             # 2. Site is "jsearch" and URL contains "linkedin.com" (fallback)
+            # 3. Demo jobs should be treated as LinkedIn jobs for this stage (they contain LinkedIn-style demo data)
             if (job_site == "linkedin" or 
-                (job_site == "jsearch" and "linkedin.com" in job_url)):
+                (job_site == "jsearch" and "linkedin.com" in job_url) or
+                is_demo):  # Demo jobs should be LinkedIn jobs for display
                 linkedin_jobs.append(job)
+                # Mark demo jobs as LinkedIn source for consistency
+                if is_demo:
+                    job["site"] = "LinkedIn (Demo)"
+                    job["url"] = job.get("url", "").replace("demo-job", "linkedin.com/jobs/view/demo")
             else:
                 other_jobs.append(job)
         
@@ -249,15 +256,17 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
         for job in all_jobs:
             job_url = job.get("url", "").lower()
             job_site = job.get("site", "").lower()
+            is_demo = job.get("is_demo", False)
             
-            # LinkedIn jobs: direct LinkedIn API OR JSearch with LinkedIn URLs
+            # LinkedIn jobs: direct LinkedIn API OR JSearch with LinkedIn URLs OR Demo jobs (already processed)
             if (job_site == "linkedin" or 
-                (job_site == "jsearch" and "linkedin.com" in job_url)):
+                (job_site == "jsearch" and "linkedin.com" in job_url) or
+                is_demo):  # Demo jobs should be LinkedIn jobs (already processed in Stage 1)
                 linkedin_jobs.append(job)
             else:
                 other_jobs.append(job)
         
-        # For this stage, we only want the non-LinkedIn jobs
+        # For this stage, we only want the non-LinkedIn jobs (non-demo jobs)
         other_jobs_only = other_jobs
         
         # Update progress

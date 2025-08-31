@@ -7,6 +7,8 @@ import json
 import time
 import httpx
 import asyncio
+import os
+from supabase import create_client
 
 from ..models import (
     JobSearchRequest, JobSearchResponse, RawJobSpyResponse,
@@ -28,6 +30,16 @@ from utils.progressive_agent_manager import progressive_agent_manager
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api", tags=["leads"])
+
+# Initialize Supabase client for direct queries
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY") 
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
+SUPABASE_KEY = SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY
+
+supabase = None
+if SUPABASE_URL and SUPABASE_KEY:
+    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @router.post("/search-jobs", response_model=JobSearchResponse)
 async def search_jobs(request: JobSearchRequest):
@@ -1170,13 +1182,23 @@ async def get_agent_campaigns(agent_id: str, limit: int = 100):
 async def get_linkedin_jobs(limit: int = 100):
     """Get LinkedIn jobs from progressive agents' staged results"""
     try:
-        # Get all completed agents
-        agents = progressive_agent_manager.get_all_agents()
-        completed_agents = [agent for agent in agents if agent.status == "completed"]
+        # Get LinkedIn jobs directly from database
+        from utils.progressive_agent_db import progressive_agent_db
         
         all_linkedin_jobs = []
         
-        for agent in completed_agents:
+        # First check in-memory agents (for recently active ones)
+        agents = progressive_agent_manager.get_all_agents()
+        logger.info(f"🔍 Found {len(agents)} in-memory agents")
+        
+        # Include agents that have completed LinkedIn stage or are fully completed
+        linkedin_ready_agents = [agent for agent in agents if 
+                               agent.stages.linkedin_fetch.status == "completed" or 
+                               agent.status == "completed"]
+        logger.info(f"🔍 Found {len(linkedin_ready_agents)} LinkedIn-ready in-memory agents")
+        
+        for agent in linkedin_ready_agents:
+            logger.info(f"🔍 In-memory Agent {agent.id}: LinkedIn jobs count = {len(agent.staged_results.linkedin_jobs) if agent.staged_results and agent.staged_results.linkedin_jobs else 0}")
             if agent.staged_results and agent.staged_results.linkedin_jobs:
                 for job in agent.staged_results.linkedin_jobs:
                     # Add agent context
@@ -1184,6 +1206,42 @@ async def get_linkedin_jobs(limit: int = 100):
                     job_with_context['agent_id'] = agent.id
                     job_with_context['agent_query'] = agent.query
                     all_linkedin_jobs.append(job_with_context)
+        
+        # Also check database for persisted jobs (for completed agents)
+        if not supabase:
+            logger.warning("No Supabase client - only showing in-memory jobs")
+        else:
+            try:
+                # Get LinkedIn jobs directly from database
+                result = supabase.table("progressive_agent_jobs").select("*").eq("site", "linkedin").order("created_at", desc=True).limit(limit * 2).execute()
+                db_jobs = result.data or []
+                logger.info(f"🔍 Found {len(db_jobs)} LinkedIn jobs in database")
+                
+                for job in db_jobs:
+                    # Add agent context if missing
+                    if 'agent_id' not in job:
+                        job['agent_id'] = job.get('agent_id', 'unknown')
+                    if 'agent_query' not in job:
+                        job['agent_query'] = 'unknown'
+                    all_linkedin_jobs.append(job)
+                    
+            except Exception as db_error:
+                logger.error(f"Error fetching jobs from database: {db_error}")
+        
+        # Remove duplicates based on job_id
+        seen_jobs = set()
+        unique_jobs = []
+        for job in all_linkedin_jobs:
+            job_id = job.get('job_id') or job.get('id')
+            if job_id and job_id not in seen_jobs:
+                seen_jobs.add(job_id)
+                unique_jobs.append(job)
+        
+        # Sort by creation date (newest first) and limit
+        unique_jobs.sort(key=lambda x: x.get('scraped_at') or x.get('created_at', ''), reverse=True)
+        
+        logger.info(f"🎯 Returning {len(unique_jobs[:limit])} unique LinkedIn jobs")
+        return {"success": True, "data": unique_jobs[:limit], "count": len(unique_jobs[:limit])}
         
         # Sort by creation date (newest first) and limit
         all_linkedin_jobs.sort(key=lambda x: x.get('scraped_at', ''), reverse=True)
