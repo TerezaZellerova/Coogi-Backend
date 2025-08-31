@@ -78,7 +78,7 @@ async def search_jobs(request: JobSearchRequest):
         total_jobs_found = 0
         
         # Process each city sequentially
-        for city in job_scraper.us_cities[:10]:  # Increased to 10 cities for better coverage while maintaining performance
+        for city in job_scraper.us_cities:  # Process ALL 50+ cities for maximum coverage
             await log_to_supabase(batch_id, f"🏙️ Processing city: {city}", "info")
             
             try:
@@ -290,10 +290,10 @@ async def search_jobs(request: JobSearchRequest):
                 await log_to_supabase(batch_id, f"❌ Error processing city {city}: {str(e)}", "error")
                 continue
             
-            # Rate limiting: Wait between cities
-            if city != job_scraper.us_cities[:10][-1]:  # Not the last city
-                await log_to_supabase(batch_id, "⏳ Rate limiting: Waiting 30 seconds before next city...", "info")
-                time.sleep(30)
+            # Rate limiting: Wait between cities (shorter wait for efficiency)
+            if city != job_scraper.us_cities[-1]:  # Not the last city
+                await log_to_supabase(batch_id, "⏳ Rate limiting: Waiting 10 seconds before next city...", "info")
+                time.sleep(10)  # Reduced from 30 to 10 seconds for faster processing
         
         # Final summary logging
         logger.info(f"📊 Hunter.io Summary: {hunter_attempts} attempts, {hunter_hits} emails found")
@@ -311,7 +311,7 @@ async def search_jobs(request: JobSearchRequest):
             "total_emails_found": sum(len(comp.get('hunter_emails', [])) for comp in companies_analyzed),
             "hours_old": request.hours_old,
             "custom_tags": getattr(request, 'custom_tags', None),
-            "processed_cities": 10,  # We now process first 10 cities
+            "processed_cities": len(job_scraper.us_cities),  # We now process ALL cities
             "processed_companies": len(companies_analyzed),
             "companies_analyzed": companies_analyzed,
             "campaigns_created": campaigns_created,
