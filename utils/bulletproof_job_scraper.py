@@ -787,24 +787,46 @@ class BulletproofJobScraper:
                         
                         # Standardize the job format
                         for job in site_jobs:
-                            standardized = {
-                                "id": f"jobspy_{random.randint(1000, 9999)}",
-                                "title": job.get("title", ""),
-                                "company": job.get("company", ""),
-                                "location": job.get("location", ""),
-                                "url": job.get("job_url", ""),
-                                "description": job.get("description", "")[:500] if job.get("description") else "",
-                                "posted_date": job.get("date_posted", "").strftime("%Y-%m-%d") if job.get("date_posted") else "",
-                                "employment_type": job.get("job_type", ""),
-                                "salary": None,
-                                "site": site,
-                                "company_url": "",
-                                "is_remote": "remote" in str(job.get("location", "")).lower(),
-                                "skills": [],
-                                "scraped_at": datetime.now().isoformat(),
-                                "is_demo": False
-                            }
-                            all_jobs.append(standardized)
+                            try:
+                                # Safely get values with fallbacks
+                                title = str(job.get("title", "")).strip() if job.get("title") else "Unknown Position"
+                                company = str(job.get("company", "")).strip() if job.get("company") else "Unknown Company"
+                                location = str(job.get("location", "")).strip() if job.get("location") else ""
+                                job_url = str(job.get("job_url", "")).strip() if job.get("job_url") else ""
+                                description = str(job.get("description", "")).strip()[:500] if job.get("description") else ""
+                                
+                                # Handle date formatting safely
+                                posted_date = ""
+                                if job.get("date_posted"):
+                                    try:
+                                        if hasattr(job.get("date_posted"), 'strftime'):
+                                            posted_date = job.get("date_posted").strftime("%Y-%m-%d")
+                                        else:
+                                            posted_date = str(job.get("date_posted"))[:10]  # First 10 chars
+                                    except:
+                                        posted_date = ""
+                                
+                                standardized = {
+                                    "id": f"jobspy_{random.randint(1000, 9999)}",
+                                    "title": title,
+                                    "company": company,
+                                    "location": location,
+                                    "url": job_url,
+                                    "description": description,
+                                    "posted_date": posted_date,
+                                    "employment_type": str(job.get("job_type", "")).strip() if job.get("job_type") else "",
+                                    "salary": None,
+                                    "site": site,
+                                    "company_url": "",
+                                    "is_remote": "remote" in location.lower() if location else False,
+                                    "skills": [],
+                                    "scraped_at": datetime.now().isoformat(),
+                                    "is_demo": False
+                                }
+                                all_jobs.append(standardized)
+                            except Exception as job_error:
+                                logger.warning(f"⚠️ Error processing job from {site}: {job_error}")
+                                continue
                         
                         logger.info(f"✅ {site}: Found {len(site_jobs)} jobs")
                     else:
