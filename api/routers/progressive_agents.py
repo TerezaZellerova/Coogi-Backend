@@ -216,7 +216,7 @@ async def run_background_enrichment(agent_id: str, request: JobSearchRequest):
         progressive_agent_manager.mark_agent_failed(agent_id, str(e))
 
 async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
-    """Fetch jobs from other job boards using bulletproof scraper"""
+    """Fetch jobs from non-LinkedIn job boards using bulletproof scraper"""
     try:
         logger.info(f"🔍 Starting other boards stage for agent {agent_id}")
         
@@ -237,9 +237,9 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             agent_id, "other_boards", "running", 25
         )
         
-        # Get jobs from other sources and categorize them
+        # Get jobs specifically from non-LinkedIn sources
         all_jobs = await asyncio.wait_for(
-            job_scraper.search_jobs_bulletproof(
+            job_scraper.search_other_boards_only(  # Use a dedicated method for non-LinkedIn jobs
                 query=request.query,
                 hours_old=request.hours_old,
                 company_size=agent.company_size,
@@ -249,8 +249,8 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             timeout=300.0  # 5 minute timeout
         )
         
-        # Categorize jobs: separate LinkedIn jobs from other sources
-        linkedin_jobs = []
+        # Since we're using search_other_boards_only(), all jobs should be non-LinkedIn
+        # But let's still filter out any LinkedIn jobs that might slip through
         other_jobs = []
         
         for job in all_jobs:
@@ -258,16 +258,11 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             job_site = job.get("site", "").lower()
             is_demo = job.get("is_demo", False)
             
-            # LinkedIn jobs: direct LinkedIn API OR JSearch with LinkedIn URLs OR Demo jobs (already processed)
-            if (job_site == "linkedin" or 
-                (job_site == "jsearch" and "linkedin.com" in job_url) or
-                is_demo):  # Demo jobs should be LinkedIn jobs (already processed in Stage 1)
-                linkedin_jobs.append(job)
-            else:
+            # Exclude LinkedIn jobs and demo jobs (those belong in LinkedIn stage)
+            if not (job_site == "linkedin" or 
+                   (job_site == "jsearch" and "linkedin.com" in job_url) or
+                   is_demo):
                 other_jobs.append(job)
-        
-        # For this stage, we only want the non-LinkedIn jobs (non-demo jobs)
-        other_jobs_only = other_jobs
         
         # Update progress
         progressive_agent_manager.update_stage_status(
@@ -276,15 +271,15 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
         
         # Add results
         progressive_agent_manager.add_stage_results(
-            agent_id, "other_boards", other_jobs_only, "other_jobs"
+            agent_id, "other_boards", other_jobs, "other_jobs"
         )
         
         # Complete stage
         progressive_agent_manager.update_stage_status(
-            agent_id, "other_boards", "completed", 100, len(other_jobs_only)
+            agent_id, "other_boards", "completed", 100, len(other_jobs)
         )
         
-        logger.info(f"✅ Other boards stage completed for agent {agent_id} - {len(other_jobs_only)} jobs")
+        logger.info(f"✅ Other boards stage completed for agent {agent_id} - {len(other_jobs)} jobs")
         
     except asyncio.TimeoutError:
         logger.warning(f"⏰ Other boards stage timeout for agent {agent_id}")

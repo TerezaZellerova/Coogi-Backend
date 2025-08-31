@@ -1192,9 +1192,19 @@ async def get_linkedin_jobs(limit: int = 100):
         logger.info(f"🔍 Found {len(agents)} in-memory agents")
         
         # Include agents that have completed LinkedIn stage or are fully completed
-        linkedin_ready_agents = [agent for agent in agents if 
-                               agent.stages.linkedin_fetch.status == "completed" or 
-                               agent.status == "completed"]
+        linkedin_ready_agents = []
+        for agent in agents:
+            try:
+                # Check if agent has proper structure and LinkedIn stage is completed
+                if hasattr(agent, 'stages') and hasattr(agent.stages, 'linkedin_fetch'):
+                    if agent.stages.linkedin_fetch.status == "completed" or agent.status == "completed":
+                        linkedin_ready_agents.append(agent)
+                elif agent.status == "completed":
+                    # Fallback for agents without proper stages structure
+                    linkedin_ready_agents.append(agent)
+            except AttributeError:
+                # Skip agents with malformed structure
+                continue
         logger.info(f"🔍 Found {len(linkedin_ready_agents)} LinkedIn-ready in-memory agents")
         
         for agent in linkedin_ready_agents:
