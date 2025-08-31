@@ -141,8 +141,8 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
             job_site = job.get("site", "").lower()
             
             # Consider it a LinkedIn job if:
-            # 1. Site is "linkedin" OR
-            # 2. Site is "jsearch" and URL contains "linkedin.com"
+            # 1. Site is "linkedin" (from direct API or JSearch with LinkedIn URL detection)
+            # 2. Site is "jsearch" and URL contains "linkedin.com" (fallback)
             if (job_site == "linkedin" or 
                 (job_site == "jsearch" and "linkedin.com" in job_url)):
                 linkedin_jobs.append(job)

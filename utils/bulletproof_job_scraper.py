@@ -180,16 +180,17 @@ class BulletproofJobScraper:
         return all_jobs[:limit]
     
     async def _search_jobspy_aggressive(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
-        """AGGRESSIVE JobSpy search across multiple platforms"""
+        """AGGRESSIVE JobSpy search across multiple platforms - LinkedIn prioritized"""
         try:
             from jobspy import scrape_jobs
             
             all_jobs = []
             
-            # Search across multiple job sites
+            # ENHANCED: Search LinkedIn first with dedicated search, then other sites
             job_sites = [
+                ["linkedin"],  # LinkedIn-only search first
                 ["indeed", "glassdoor"],
-                ["zip_recruiter", "linkedin"], 
+                ["zip_recruiter"], 
                 ["monster", "careerbuilder"]
             ]
             
@@ -375,7 +376,21 @@ class BulletproofJobScraper:
         return all_jobs[:limit]
     
     def _normalize_jsearch_job(self, job: Dict) -> Dict[str, Any]:
-        """Normalize JSearch job data"""
+        """Normalize JSearch job data with intelligent site detection"""
+        job_url = job.get("job_apply_link", "").lower()
+        
+        # Intelligent site detection based on URL
+        if "linkedin.com" in job_url:
+            detected_site = "linkedin"
+        elif "indeed.com" in job_url:
+            detected_site = "indeed"
+        elif "glassdoor.com" in job_url:
+            detected_site = "glassdoor"
+        elif "ziprecruiter.com" in job_url:
+            detected_site = "ziprecruiter"
+        else:
+            detected_site = "jsearch"
+            
         return {
             "id": job.get("job_id", f"jsearch_{random.randint(1000, 9999)}"),
             "title": job.get("job_title", "Unknown Title"),
@@ -386,7 +401,7 @@ class BulletproofJobScraper:
             "posted_date": job.get("job_posted_at_datetime_utc", ""),
             "employment_type": job.get("job_employment_type", ""),
             "salary": self._parse_salary(job.get("job_salary", "")),
-            "site": "JSearch",
+            "site": detected_site,
             "company_url": job.get("employer_company_type", ""),
             "is_remote": "remote" in job.get("job_title", "").lower() or "remote" in job.get("job_description", "").lower(),
             "skills": self._extract_skills(job.get("job_description", "")),
@@ -413,7 +428,20 @@ class BulletproofJobScraper:
         }
     
     def _normalize_jobspy_job(self, row) -> Dict[str, Any]:
-        """Normalize JobSpy job data"""
+        """Normalize JobSpy job data with improved site detection"""
+        site = str(row.get("site", "JobSpy")).lower()
+        job_url = str(row.get("job_url", "")).lower()
+        
+        # Enhanced site detection
+        if site == "linkedin" or "linkedin.com" in job_url:
+            detected_site = "linkedin"
+        elif site == "indeed" or "indeed.com" in job_url:
+            detected_site = "indeed"
+        elif site == "glassdoor" or "glassdoor.com" in job_url:
+            detected_site = "glassdoor"
+        else:
+            detected_site = site
+        
         return {
             "id": f"jobspy_{random.randint(1000, 9999)}",
             "title": str(row.get("title", "Unknown Title")),
@@ -424,7 +452,7 @@ class BulletproofJobScraper:
             "posted_date": str(row.get("date_posted", "")),
             "employment_type": str(row.get("job_type", "")),
             "salary": self._parse_salary(str(row.get("salary", ""))),
-            "site": str(row.get("site", "JobSpy")),
+            "site": detected_site,
             "company_url": "",
             "is_remote": "remote" in str(row.get("title", "")).lower(),
             "skills": self._extract_skills(str(row.get("description", ""))),
