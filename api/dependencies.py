@@ -20,6 +20,19 @@ TEST_USERS = {
         "password": "Newyork2024$",
         "name": "Chuck Cole",
         "role": "admin"
+    },
+    "cole@liacgroupllc.com": {
+        "password": "Newyork2024$",
+        "name": "Cole Admin",
+        "role": "super_admin",
+        "permissions": {
+            "unlimited_agents": True,
+            "unlimited_searches": True,
+            "no_subscription_required": True,
+            "access_all_features": True,
+            "bypass_rate_limits": True,
+            "full_admin_access": True
+        }
     }
 }
 
@@ -33,12 +46,68 @@ async def get_current_user(authorization: Optional[str] = Header(None)):
         # Simple token validation for development
         if authorization.startswith("Bearer "):
             token = authorization.replace("Bearer ", "")
-            # In production, validate JWT token here
-            return {"email": "test@coogi.dev", "name": "Test User", "role": "admin"}
+            
+            # Extract email from token (format: test_token_{email_with_underscores})
+            if token.startswith("test_token_"):
+                email_part = token.replace("test_token_", "")
+                email = email_part.replace("_", ".")
+                # Handle @ symbol
+                if "_" in email:
+                    parts = email.split("_")
+                    if len(parts) >= 2:
+                        email = f"{parts[0]}@{'.'.join(parts[1:])}"
+                
+                # Find user in TEST_USERS
+                user_data = None
+                for test_email, data in TEST_USERS.items():
+                    if test_email.replace("@", "_").replace(".", "_") in token:
+                        user_data = data
+                        email = test_email
+                        break
+                
+                if user_data:
+                    user_info = {
+                        "email": email,
+                        "name": user_data["name"],
+                        "role": user_data["role"]
+                    }
+                    
+                    # Add permissions for super_admin
+                    if "permissions" in user_data:
+                        user_info["permissions"] = user_data["permissions"]
+                    
+                    return user_info
+                else:
+                    raise HTTPException(status_code=401, detail="Invalid user token")
+            else:
+                raise HTTPException(status_code=401, detail="Invalid token format")
         else:
             raise HTTPException(status_code=401, detail="Invalid authorization format")
+    except HTTPException:
+        raise
     except Exception as e:
+        logger.error(f"Token validation error: {e}")
         raise HTTPException(status_code=401, detail="Invalid token")
+
+# Helper functions for user permissions
+def is_admin_user(user_info: dict) -> bool:
+    """Check if user has admin or super_admin role"""
+    role = user_info.get("role", "user")
+    return role in ["admin", "super_admin"]
+
+def has_unlimited_access(user_info: dict) -> bool:
+    """Check if user has unlimited access (super_admin with permissions)"""
+    if user_info.get("role") == "super_admin":
+        permissions = user_info.get("permissions", {})
+        return permissions.get("unlimited_agents", False) and permissions.get("no_subscription_required", False)
+    return False
+
+def can_bypass_limitations(user_info: dict) -> bool:
+    """Check if user can bypass rate limits and subscription requirements"""
+    if user_info.get("role") == "super_admin":
+        permissions = user_info.get("permissions", {})
+        return permissions.get("bypass_rate_limits", False) and permissions.get("full_admin_access", False)
+    return False
 
 # Get services instances (REAL implementations - not mocked)
 def get_job_scraper():
