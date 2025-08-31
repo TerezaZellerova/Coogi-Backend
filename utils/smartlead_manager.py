@@ -91,7 +91,7 @@ class SmartleadManager:
             }
             
             logger.info(f"📧 Creating Smartlead campaign: {name}")
-            campaign_result = self._make_request("POST", "/campaigns", campaign_data)
+            campaign_result = self._make_request("POST", "/campaigns/", campaign_data)
             
             if "error" in campaign_result:
                 return {"success": False, "error": campaign_result["error"]}
@@ -160,10 +160,11 @@ class SmartleadManager:
     def get_campaigns(self) -> Dict[str, Any]:
         """Get all Smartlead campaigns"""
         try:
-            result = self._make_request("GET", "/campaigns")
+            result = self._make_request("GET", "/campaigns/")
             
             if "error" not in result:
-                campaigns = result.get("data", [])
+                # SmartLead returns campaigns directly as array, not in a "data" wrapper
+                campaigns = result if isinstance(result, list) else result.get("data", [])
                 
                 # Standardize campaign format
                 standardized_campaigns = []
@@ -288,23 +289,25 @@ class SmartleadManager:
             return {"success": False, "error": str(e)}
     
     def get_account_info(self) -> Dict[str, Any]:
-        """Get Smartlead account information and limits"""
+        """Get Smartlead account information via campaigns endpoint (no direct account endpoint available)"""
         try:
-            result = self._make_request("GET", "/account")
+            # Since SmartLead doesn't have a direct account endpoint, we'll use campaigns to test API access
+            result = self._make_request("GET", "/campaigns/")
             
             if "error" not in result:
-                account = result.get("data", {})
+                # If we can access campaigns, the API key is valid
+                campaigns_count = len(result) if isinstance(result, list) else 0
                 
                 return {
                     "success": True,
                     "account": {
-                        "email": account.get("email"),
-                        "name": account.get("name"),
-                        "plan": account.get("plan"),
-                        "credits_remaining": account.get("credits_remaining"),
-                        "monthly_limit": account.get("monthly_limit"),
-                        "emails_sent_this_month": account.get("emails_sent_this_month"),
-                        "campaigns_count": account.get("campaigns_count", 0)
+                        "email": "API Key Valid",
+                        "name": "SmartLead User",
+                        "plan": "Active",
+                        "credits_remaining": "N/A",
+                        "monthly_limit": "N/A",
+                        "emails_sent_this_month": "N/A",
+                        "campaigns_count": campaigns_count
                     },
                     "timestamp": datetime.now().isoformat()
                 }
