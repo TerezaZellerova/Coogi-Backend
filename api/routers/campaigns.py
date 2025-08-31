@@ -152,15 +152,18 @@ async def get_campaigns(current_user: dict = Depends(get_current_user)):
             if supabase_url and supabase_key:
                 supabase = create_client(supabase_url, supabase_key)
                 # Get campaigns from lead_lists table
-                response = supabase.table("lead_lists").select("*").execute()
+                response = supabase.table("lead_lists").select("*").order("created_at", desc=True).execute()
                 lead_lists = response.data or []
                 
                 for i, lead_list in enumerate(lead_lists):
+                    # Use campaign_name if available, otherwise fall back to query
+                    campaign_name = lead_list.get("campaign_name") or f"Campaign: {lead_list.get('query', 'Unknown')}"
+                    
                     campaigns.append({
                         "id": lead_list.get("batch_id", f"campaign_{i}"),
-                        "name": f"Campaign: {lead_list.get('query', 'Unknown')}",
-                        "status": "active" if lead_list.get("email_count", 0) > 0 else "draft",
-                        "leads_count": lead_list.get("email_count", 0),
+                        "name": campaign_name,
+                        "status": lead_list.get("status", "active") if lead_list.get("email_count", 0) > 0 else "draft",
+                        "leads_count": lead_list.get("lead_count", 0) or lead_list.get("email_count", 0),
                         "open_rate": 0.0,  # Placeholder - would come from email service
                         "reply_rate": 0.0,  # Placeholder - would come from email service
                         "created_at": lead_list.get("created_at", datetime.now().isoformat()),
@@ -187,11 +190,9 @@ async def create_campaign(
         if not campaign_name:
             raise HTTPException(status_code=400, detail="Campaign name is required")
         
-        # For now, just create a simple campaign record
-        # In production, this would integrate with email service
+        # Create a simple campaign record
         campaign_id = f"campaign_{int(datetime.now().timestamp())}"
-        
-        campaign = {
+        campaign_data = {
             "id": campaign_id,
             "name": campaign_name,
             "status": "draft",
@@ -202,7 +203,36 @@ async def create_campaign(
             "batch_id": campaign_id
         }
         
-        return campaign
+        # Try to save to Supabase
+        try:
+            from supabase import create_client
+            supabase_url = os.getenv("SUPABASE_URL")
+            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+            
+            if supabase_url and supabase_key:
+                supabase = create_client(supabase_url, supabase_key)
+                
+                # Create a simplified record in lead_lists for campaign tracking
+                lead_list_record = {
+                    "batch_id": campaign_id,
+                    "query": campaign_name,
+                    "location": "general",
+                    "lead_count": len(lead_ids),
+                    "email_count": 0,  # Will be updated when emails are sent
+                    "created_at": datetime.now().isoformat(),
+                    "company_size": "all",
+                    "campaign_name": campaign_name,
+                    "status": "draft"
+                }
+                
+                result = supabase.table("lead_lists").insert(lead_list_record).execute()
+                logger.info(f"Campaign saved to database: {campaign_id}")
+                
+        except Exception as e:
+            logger.warning(f"Could not save campaign to database: {e}")
+            # Continue anyway - campaign creation doesn't depend on database storage
+        
+        return campaign_data
     except Exception as e:
         logger.error(f"Error creating campaign: {e}")
         raise HTTPException(status_code=500, detail=str(e))
