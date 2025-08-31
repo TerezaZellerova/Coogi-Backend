@@ -29,14 +29,17 @@ def test_smartlead_integration():
     
     try:
         headers = {
-            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
         
-        # Test account info endpoint
+        # SmartLead.ai uses API key as query parameter
+        params = {"api_key": api_key}
+        
+        # Test campaigns endpoint
         response = requests.get(
             "https://server.smartlead.ai/api/v1/campaigns",
             headers=headers,
+            params=params,
             timeout=10
         )
         
