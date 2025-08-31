@@ -10,6 +10,7 @@ from typing import List, Dict, Any, Optional
 from datetime import datetime
 import random
 import json
+from .smartlead_manager import SmartleadManager
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,9 @@ class BulletproofCampaignCreator:
         self.instantly_api_key = os.getenv("INSTANTLY_API_KEY", "")
         self.smartlead_api_key = os.getenv("SMARTLEAD_API_KEY", "")
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
+        
+        # Initialize SmartLead manager
+        self.smartlead_manager = SmartleadManager()
         
         # Campaign services with fallbacks
         self.campaign_services = {
@@ -158,7 +162,16 @@ P.S. This is a confidential search, so your current employer won't be contacted 
             primary_job, contacts, campaign_type, sender_info
         )
         
-        # Strategy 1: Instantly.ai
+        # Strategy 1: SmartLead.ai (Primary - Better features and reliability)
+        try:
+            smartlead_campaign = await self._create_smartlead_campaign(campaign_content, contacts)
+            if smartlead_campaign:
+                logger.info(f"✅ SmartLead.ai campaign created for {company}")
+                return smartlead_campaign
+        except Exception as e:
+            logger.error(f"❌ SmartLead.ai failed for {company}: {e}")
+        
+        # Strategy 2: Instantly.ai (Fallback)
         try:
             instantly_campaign = await self._create_instantly_campaign(campaign_content, contacts)
             if instantly_campaign:
@@ -166,15 +179,6 @@ P.S. This is a confidential search, so your current employer won't be contacted 
                 return instantly_campaign
         except Exception as e:
             logger.error(f"❌ Instantly.ai failed for {company}: {e}")
-        
-        # Strategy 2: SmartLead
-        try:
-            smartlead_campaign = await self._create_smartlead_campaign(campaign_content, contacts)
-            if smartlead_campaign:
-                logger.info(f"✅ SmartLead campaign created for {company}")
-                return smartlead_campaign
-        except Exception as e:
-            logger.error(f"❌ SmartLead failed for {company}: {e}")
         
         # Strategy 3: Internal campaign (fallback)
         internal_campaign = self._create_internal_campaign(campaign_content, contacts)
@@ -333,25 +337,83 @@ P.S. This is a confidential search, so your current employer won't be contacted 
                 return None
     
     async def _create_smartlead_campaign(self, content: Dict, contacts: List[Dict]) -> Optional[Dict]:
-        """Create campaign using SmartLead"""
+        """Create campaign using SmartLead.ai API"""
         if not self.smartlead_api_key:
+            logger.warning("⚠️ SmartLead API key not configured")
             return None
         
-        # SmartLead implementation would go here
-        # For now, return a simulated response
-        return {
-            "id": f"smartlead_{random.randint(1000, 9999)}",
-            "name": content["name"],
-            "description": f"SmartLead campaign for {content['job']['company']}",
-            "status": "active",
-            "service": "smartlead",
-            "contacts": contacts,
-            "subject": content["subject"],
-            "message": content["message"],
-            "lead_count": len(contacts),
-            "created_at": datetime.now().isoformat(),
-            "external_id": f"sl_{random.randint(1000, 9999)}"
-        }
+        try:
+            # Prepare SmartLead-compatible data
+            campaign_name = content["name"]
+            subject = content["subject"]
+            message = content["message"]
+            
+            # Convert contacts to SmartLead format
+            smartlead_leads = []
+            for contact in contacts:
+                lead = {
+                    "email": contact.get("email", ""),
+                    "first_name": contact.get("first_name", contact.get("name", "").split()[0] if contact.get("name") else ""),
+                    "last_name": contact.get("last_name", " ".join(contact.get("name", "").split()[1:]) if contact.get("name") and len(contact.get("name", "").split()) > 1 else ""),
+                    "company": contact.get("company", content["job"].get("company", "")),
+                    "job_title": contact.get("title", ""),
+                    "location": contact.get("location", "")
+                }
+                if lead["email"]:  # Only add contacts with valid emails
+                    smartlead_leads.append(lead)
+            
+            if not smartlead_leads:
+                logger.warning(f"⚠️ No valid email contacts for SmartLead campaign: {campaign_name}")
+                return None
+            
+            # Create campaign using SmartLead manager
+            logger.info(f"🚀 Creating SmartLead.ai campaign: {campaign_name} with {len(smartlead_leads)} leads")
+            
+            result = self.smartlead_manager.create_campaign(
+                name=campaign_name,
+                leads=smartlead_leads,
+                email_template=message,
+                subject=subject,
+                from_email="noreply@coogi.ai",  # Use your verified domain
+                from_name="Coogi Recruiting Team"
+            )
+            
+            if result.get("success"):
+                # Return standardized campaign format
+                return {
+                    "id": f"smartlead_{result.get('campaign_id', random.randint(1000, 9999))}",
+                    "name": campaign_name,
+                    "description": f"SmartLead.ai campaign for {content['job']['company']}",
+                    "status": "active",
+                    "service": "smartlead",
+                    "platform": "SmartLead.ai",
+                    "contacts": contacts,
+                    "subject": subject,
+                    "message": message,
+                    "lead_count": len(smartlead_leads),
+                    "leads_count": len(smartlead_leads),  # Alternative field name
+                    "target_count": len(smartlead_leads),
+                    "sent_count": 0,
+                    "open_count": 0,
+                    "reply_count": 0,
+                    "open_rate": 0,
+                    "reply_rate": 0,
+                    "created_at": datetime.now().isoformat(),
+                    "updated_at": datetime.now().isoformat(),
+                    "external_id": result.get("campaign_id"),
+                    "batch_id": result.get("campaign_id"),
+                    "agent_id": content.get("agent_id", ""),
+                    "type": "outbound",
+                    "job_details": content["job"],
+                    "is_demo": False
+                }
+            else:
+                logger.error(f"❌ SmartLead campaign creation failed: {result.get('error', 'Unknown error')}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"❌ SmartLead campaign creation error: {e}")
+            return None
     
     def _create_internal_campaign(self, content: Dict, contacts: List[Dict]) -> Dict[str, Any]:
         """Create internal campaign as fallback"""
