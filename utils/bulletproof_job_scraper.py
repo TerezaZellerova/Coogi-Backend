@@ -88,14 +88,21 @@ class BulletproofJobScraper:
             except Exception as e:
                 logger.error(f"❌ JobSpy variations failed: {e}")
         
-        # Strategy 3: JSearch API (Only if not rate limited)
+        # Strategy 3: JSearch API AGGRESSIVE (Utilize your paid subscription fully!)
         if len(all_jobs) < max_results * 0.6:  # If we still need more jobs
             try:
-                jsearch_jobs = await self._search_jsearch_conservative(query, location, max_results // 3)
+                jsearch_jobs = await self._search_jsearch_aggressive(query, location, max_results)
                 all_jobs.extend(jsearch_jobs)
-                logger.info(f"✅ JSearch conservative: {len(jsearch_jobs)} jobs found")
+                logger.info(f"✅ JSearch AGGRESSIVE: {len(jsearch_jobs)} jobs found")
             except Exception as e:
-                logger.warning(f"⚠️ JSearch conservative failed (rate limited?): {e}")
+                logger.warning(f"⚠️ JSearch aggressive failed: {e}")
+                # Fallback to conservative if aggressive fails
+                try:
+                    jsearch_jobs = await self._search_jsearch_conservative(query, location, max_results // 3)
+                    all_jobs.extend(jsearch_jobs)
+                    logger.info(f"✅ JSearch conservative (fallback): {len(jsearch_jobs)} jobs found")
+                except Exception as e2:
+                    logger.warning(f"⚠️ JSearch conservative fallback failed: {e2}")
         
         # Strategy 4: Extended JobSpy search with broader terms
         if len(all_jobs) < max_results * 0.7:  # If we still need more jobs
@@ -133,46 +140,60 @@ class BulletproofJobScraper:
                                      max_results: int = 50) -> List[Dict[str, Any]]:
         """
         Search ONLY non-LinkedIn job boards (Indeed, Glassdoor, ZipRecruiter, etc.)
+        AGGRESSIVE approach using your paid RapidAPI subscription
         This method specifically avoids LinkedIn to populate the "Other Jobs" section
         """
-        logger.info(f"🎯 OTHER BOARDS ONLY search: '{query}' | Size: {company_size} | Location: {location} | Target: {max_results} jobs")
+        logger.info(f"🎯 OTHER BOARDS AGGRESSIVE search: '{query}' | Size: {company_size} | Location: {location} | Target: {max_results} jobs")
         
         all_jobs = []
         
-        # Strategy 1: JobSpy with non-LinkedIn sites only
+        # Strategy 1: JSearch API AGGRESSIVE (Your paid subscription - USE IT FULLY!)
         try:
-            non_linkedin_jobs = await self._search_jobspy_non_linkedin(query, location, max_results)
-            all_jobs.extend(non_linkedin_jobs)
-            logger.info(f"✅ JobSpy non-LinkedIn: {len(non_linkedin_jobs)} jobs found")
+            jsearch_jobs = await self._search_jsearch_aggressive(query, location, max_results)
+            # Filter out LinkedIn jobs from JSearch results
+            non_linkedin_jsearch = [job for job in jsearch_jobs 
+                                  if not ("linkedin.com" in job.get("url", "").lower() or 
+                                         job.get("site", "").lower() == "linkedin")]
+            all_jobs.extend(non_linkedin_jsearch)
+            logger.info(f"✅ JSearch AGGRESSIVE (non-LinkedIn): {len(non_linkedin_jsearch)} jobs found")
         except Exception as e:
-            logger.error(f"❌ JobSpy non-LinkedIn failed: {e}")
+            logger.warning(f"⚠️ JSearch aggressive failed: {e}")
         
-        # Strategy 2: JSearch API (which includes many non-LinkedIn sources)
+        # Strategy 2: JobSpy with non-LinkedIn sites only 
         if len(all_jobs) < max_results * 0.7:  # If we need more jobs
             try:
-                jsearch_jobs = await self._search_jsearch_conservative(query, location, max_results // 2)
-                # Filter out LinkedIn jobs from JSearch results
-                non_linkedin_jsearch = [job for job in jsearch_jobs 
-                                      if not ("linkedin.com" in job.get("url", "").lower() or 
-                                             job.get("site", "").lower() == "linkedin")]
-                all_jobs.extend(non_linkedin_jsearch)
-                logger.info(f"✅ JSearch non-LinkedIn: {len(non_linkedin_jsearch)} jobs found")
+                non_linkedin_jobs = await self._search_jobspy_non_linkedin(query, location, max_results)
+                all_jobs.extend(non_linkedin_jobs)
+                logger.info(f"✅ JobSpy non-LinkedIn: {len(non_linkedin_jobs)} jobs found")
             except Exception as e:
-                logger.warning(f"⚠️ JSearch failed (rate limited?): {e}")
+                logger.error(f"❌ JobSpy non-LinkedIn failed: {e}")
         
-        # Strategy 3: Demo jobs fallback (only if we have very few results)
-        if len(all_jobs) < 5:  # Very aggressive fallback
-            demo_jobs = self._generate_demo_jobs(query, max_results // 2, company_size)
-            # Mark half as "other" jobs (Indeed, Glassdoor, etc.)
+        # Strategy 3: JSearch Conservative (fallback)
+        if len(all_jobs) < max_results * 0.5:  # If we still need more
+            try:
+                jsearch_conservative = await self._search_jsearch_conservative(query, location, max_results // 2)
+                # Filter out LinkedIn jobs
+                non_linkedin_conservative = [job for job in jsearch_conservative 
+                                           if not ("linkedin.com" in job.get("url", "").lower() or 
+                                                  job.get("site", "").lower() == "linkedin")]
+                all_jobs.extend(non_linkedin_conservative)
+                logger.info(f"✅ JSearch Conservative (non-LinkedIn): {len(non_linkedin_conservative)} jobs found")
+            except Exception as e:
+                logger.warning(f"⚠️ JSearch conservative failed: {e}")
+
+        # Strategy 4: Generate demo jobs ONLY if we have very few results (less than 10)
+        if len(all_jobs) < 10:  # Emergency fallback only
+            demo_jobs = self._generate_demo_jobs(query, 15, company_size)
+            # Mark as "other" jobs (Indeed, Glassdoor, etc.)
             other_demo_jobs = []
             for i, job in enumerate(demo_jobs):
-                if i % 2 == 1:  # Every other job becomes an "other" job
-                    job["site"] = random.choice(["indeed", "glassdoor", "ziprecruiter", "monster"])
-                    job["url"] = f"https://www.{job['site']}.com/jobs/view/{random.randint(1000000, 9999999)}"
-                    other_demo_jobs.append(job)
+                job["site"] = random.choice(["indeed", "glassdoor", "ziprecruiter", "monster", "careerbuilder"])
+                job["url"] = f"https://www.{job['site']}.com/jobs/view/{random.randint(1000000, 9999999)}"
+                job["is_demo"] = True  # Mark clearly as demo
+                other_demo_jobs.append(job)
             
             all_jobs.extend(other_demo_jobs)
-            logger.warning(f"⚠️ Added {len(other_demo_jobs)} demo 'other' jobs as fallback")
+            logger.warning(f"⚠️ Emergency fallback: Added {len(other_demo_jobs)} demo 'other' jobs")
         
         # Remove duplicates
         unique_jobs = self._remove_duplicates(all_jobs)
@@ -520,41 +541,75 @@ class BulletproofJobScraper:
         }
     
     def _filter_by_company_size(self, jobs: List[Dict], company_size: str) -> List[Dict]:
-        """Filter jobs by company size"""
+        """Filter jobs by company size - PRACTICAL filtering based on user selection"""
         if company_size == "all":
+            logger.info(f"🎯 Company size filter 'all': Returning all {len(jobs)} jobs")
             return jobs
         
         size_config = self.company_size_filters.get(company_size, self.company_size_filters["all"])
         filtered_jobs = []
         
+        # More practical approach - focus on obvious indicators
+        large_company_indicators = [
+            "fortune 500", "multinational", "enterprise", "corporation", "global", 
+            "worldwide", "international", "microsoft", "google", "amazon", "apple", 
+            "meta", "facebook", "netflix", "tesla", "salesforce", "oracle", "ibm",
+            "jpmorgan", "bank of america", "wells fargo", "goldman sachs", "morgan stanley"
+        ]
+        
+        startup_indicators = [
+            "startup", "stealth", "seed", "series a", "series b", "founding", 
+            "early stage", "pre-ipo", "venture backed", "y combinator", "techstars"
+        ]
+        
         for job in jobs:
             company_name = job.get("company", "").lower()
             description = job.get("description", "").lower()
-            combined_text = f"{company_name} {description}"
+            title = job.get("title", "").lower()
+            combined_text = f"{company_name} {description} {title}"
             
-            # Check for size indicators
-            size_match = False
+            include_job = False
             
-            # Look for size keywords
-            for keyword in size_config["keywords"]:
-                if keyword in combined_text:
-                    size_match = True
-                    break
+            if company_size == "small":
+                # Include if startup indicators OR no large company indicators
+                has_startup = any(indicator in combined_text for indicator in startup_indicators)
+                has_large = any(indicator in combined_text for indicator in large_company_indicators)
+                
+                if has_startup or not has_large:
+                    include_job = True
+                    
+            elif company_size == "medium":
+                # Exclude obvious startups and Fortune 500, keep the middle ground
+                has_startup = any(indicator in combined_text for indicator in startup_indicators)
+                has_large = any(indicator in combined_text for indicator in large_company_indicators)
+                
+                if not has_startup and not has_large:
+                    include_job = True
             
-            # Check for exclusions
-            exclude_match = False
-            for exclude_keyword in size_config["exclude_keywords"]:
-                if exclude_keyword in combined_text:
-                    exclude_match = True
-                    break
-            
-            # If no specific indicators, include in medium/all categories
-            if not size_match and not exclude_match:
-                if company_size in ["medium", "all"]:
-                    size_match = True
-            
-            if size_match and not exclude_match:
+            if include_job:
                 filtered_jobs.append(job)
+        
+        # If filtering resulted in very few jobs, be more lenient
+        if len(filtered_jobs) < len(jobs) * 0.3:  # Less than 30% of jobs
+            logger.warning(f"⚠️ Company size filter '{company_size}' too restrictive ({len(filtered_jobs)} jobs), being more lenient")
+            
+            # More lenient filtering - just exclude obvious mismatches
+            filtered_jobs = []
+            for job in jobs:
+                company_name = job.get("company", "").lower()
+                combined_text = f"{company_name} {job.get('description', '').lower()}"
+                
+                if company_size == "small":
+                    # Only exclude obvious large companies
+                    exclude = any(indicator in combined_text for indicator in large_company_indicators[:10])  # Top 10 most obvious
+                    if not exclude:
+                        filtered_jobs.append(job)
+                elif company_size == "medium":
+                    # Include most jobs except very obvious startups/large corps
+                    exclude_startup = any(indicator in combined_text for indicator in startup_indicators[:5])
+                    exclude_large = any(indicator in combined_text for indicator in large_company_indicators[:5])
+                    if not exclude_startup and not exclude_large:
+                        filtered_jobs.append(job)
         
         logger.info(f"🎯 Company size filter '{company_size}': {len(filtered_jobs)}/{len(jobs)} jobs match")
         return filtered_jobs
@@ -696,6 +751,245 @@ class BulletproofJobScraper:
                 found_skills.append(skill)
         
         return found_skills[:10]  # Limit to 10 skills
+
+    async def _search_jobspy_non_linkedin(self, query: str, location: str, max_results: int) -> List[Dict[str, Any]]:
+        """Search using JobSpy for non-LinkedIn sites only (Indeed, Glassdoor, ZipRecruiter)"""
+        try:
+            # Import jobspy here to avoid dependency issues if not installed
+            from jobspy import scrape_jobs
+            
+            # JobSpy sites excluding LinkedIn
+            non_linkedin_sites = [
+                "indeed", 
+                "glassdoor", 
+                "ziprecruiter"
+            ]
+            
+            all_jobs = []
+            
+            for site in non_linkedin_sites:
+                try:
+                    logger.info(f"🔍 Searching {site} for '{query}' in {location}")
+                    
+                    # Use JobSpy to search this specific site
+                    jobs_df = scrape_jobs(
+                        site_name=[site],
+                        search_term=query,
+                        location=location,
+                        results_wanted=max_results // len(non_linkedin_sites),  # Distribute across sites
+                        hours_old=72,  # Last 3 days for freshness
+                        country_indeed='USA' if site == 'indeed' else None
+                    )
+                    
+                    if jobs_df is not None and len(jobs_df) > 0:
+                        # Convert DataFrame to list of dicts
+                        site_jobs = jobs_df.to_dict('records')
+                        
+                        # Standardize the job format
+                        for job in site_jobs:
+                            standardized = {
+                                "id": f"jobspy_{random.randint(1000, 9999)}",
+                                "title": job.get("title", ""),
+                                "company": job.get("company", ""),
+                                "location": job.get("location", ""),
+                                "url": job.get("job_url", ""),
+                                "description": job.get("description", "")[:500] if job.get("description") else "",
+                                "posted_date": job.get("date_posted", "").strftime("%Y-%m-%d") if job.get("date_posted") else "",
+                                "employment_type": job.get("job_type", ""),
+                                "salary": None,
+                                "site": site,
+                                "company_url": "",
+                                "is_remote": "remote" in str(job.get("location", "")).lower(),
+                                "skills": [],
+                                "scraped_at": datetime.now().isoformat(),
+                                "is_demo": False
+                            }
+                            all_jobs.append(standardized)
+                        
+                        logger.info(f"✅ {site}: Found {len(site_jobs)} jobs")
+                    else:
+                        logger.warning(f"⚠️ {site}: No jobs found")
+                        
+                except Exception as site_error:
+                    logger.warning(f"⚠️ {site} search failed: {site_error}")
+                    continue
+            
+            logger.info(f"🎯 JobSpy non-LinkedIn total: {len(all_jobs)} jobs")
+            return all_jobs
+            
+        except ImportError:
+            logger.warning("⚠️ JobSpy not installed, skipping JobSpy search")
+            return []
+        except Exception as e:
+            logger.error(f"❌ JobSpy non-LinkedIn search failed: {e}")
+            return []
+
+    async def _search_jsearch_conservative(self, query: str, location: str, max_results: int) -> List[Dict[str, Any]]:
+        """Conservative JSearch API search focusing on non-LinkedIn results"""
+        import httpx
+        
+        try:
+            logger.info(f"🔍 JSearch API search: '{query}' in {location}")
+            
+            url = "https://jsearch.p.rapidapi.com/search"
+            
+            params = {
+                "query": f"{query} in {location}",
+                "page": "1",
+                "num_pages": "3",  # Conservative approach
+                "date_posted": "3days",  # Recent jobs
+                "employment_types": "FULLTIME,PARTTIME,CONTRACTOR",
+                "job_requirements": "no_degree,under_3_years_experience,more_than_3_years_experience"
+            }
+            
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
+            }
+            
+            all_jobs = []
+            
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                response = await client.get(url, headers=headers, params=params)
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    jobs = data.get("data", [])
+                    
+                    logger.info(f"✅ JSearch API: {len(jobs)} jobs received")
+                    
+                    for job in jobs:
+                        # Skip if explicitly LinkedIn
+                        job_url = job.get("job_apply_link", "").lower()
+                        if "linkedin.com" in job_url:
+                            continue
+                            
+                        standardized = {
+                            "id": f"jsearch_{random.randint(1000, 9999)}",
+                            "title": job.get("job_title", ""),
+                            "company": job.get("employer_name", ""),
+                            "location": f"{job.get('job_city', '')}, {job.get('job_state', '')}".strip(", "),
+                            "url": job.get("job_apply_link", ""),
+                            "description": job.get("job_description", "")[:500] if job.get("job_description") else "",
+                            "posted_date": job.get("job_posted_at_date", ""),
+                            "employment_type": job.get("job_employment_type", ""),
+                            "salary": job.get("job_salary", ""),
+                            "site": "jsearch",
+                            "company_url": job.get("employer_website", ""),
+                            "is_remote": job.get("job_is_remote", False),
+                            "skills": [],
+                            "scraped_at": datetime.now().isoformat(),
+                            "is_demo": False
+                        }
+                        all_jobs.append(standardized)
+                
+                elif response.status_code == 429:
+                    logger.warning("⚠️ JSearch API rate limited")
+                else:
+                    logger.error(f"❌ JSearch API error: {response.status_code}")
+            
+            logger.info(f"🎯 JSearch conservative: {len(all_jobs)} non-LinkedIn jobs")
+            return all_jobs
+            
+        except Exception as e:
+            logger.error(f"❌ JSearch conservative search failed: {e}")
+            return []
+
+    async def _search_jsearch_aggressive(self, query: str, location: str, max_results: int) -> List[Dict[str, Any]]:
+        """AGGRESSIVE JSearch API search - utilizing your paid subscription fully"""
+        import httpx
+        
+        try:
+            logger.info(f"🚀 JSearch AGGRESSIVE search: '{query}' in {location} (target: {max_results})")
+            
+            url = "https://jsearch.p.rapidapi.com/search"
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
+            }
+            
+            all_jobs = []
+            
+            # Multiple search strategies to maximize results
+            search_strategies = [
+                {
+                    "query": f"{query} in {location}",
+                    "date_posted": "today",
+                    "num_pages": "5",
+                    "employment_types": "FULLTIME,PARTTIME,CONTRACTOR"
+                },
+                {
+                    "query": f"{query} {location}",
+                    "date_posted": "3days", 
+                    "num_pages": "8",
+                    "employment_types": "FULLTIME,CONTRACTOR"
+                },
+                {
+                    "query": f"{query}",
+                    "location": location,
+                    "date_posted": "week",
+                    "num_pages": "10",
+                    "employment_types": "FULLTIME"
+                }
+            ]
+            
+            async with httpx.AsyncClient(timeout=45.0) as client:
+                for i, strategy in enumerate(search_strategies):
+                    try:
+                        logger.info(f"🔍 Strategy {i+1}: {strategy['date_posted']} posts, {strategy['num_pages']} pages")
+                        
+                        response = await client.get(url, headers=headers, params=strategy)
+                        
+                        if response.status_code == 200:
+                            data = response.json()
+                            jobs = data.get("data", [])
+                            
+                            strategy_jobs = []
+                            for job in jobs:
+                                standardized = {
+                                    "id": f"jsearch_agg_{random.randint(1000, 9999)}",
+                                    "title": job.get("job_title", ""),
+                                    "company": job.get("employer_name", ""),
+                                    "location": f"{job.get('job_city', '')}, {job.get('job_state', '')}".strip(", "),
+                                    "url": job.get("job_apply_link", ""),
+                                    "description": job.get("job_description", "")[:500] if job.get("job_description") else "",
+                                    "posted_date": job.get("job_posted_at_date", ""),
+                                    "employment_type": job.get("job_employment_type", ""),
+                                    "salary": job.get("job_salary", ""),
+                                    "site": "jsearch",
+                                    "company_url": job.get("employer_website", ""),
+                                    "is_remote": job.get("job_is_remote", False),
+                                    "skills": [],
+                                    "scraped_at": datetime.now().isoformat(),
+                                    "is_demo": False
+                                }
+                                strategy_jobs.append(standardized)
+                            
+                            all_jobs.extend(strategy_jobs)
+                            logger.info(f"✅ Strategy {i+1}: {len(strategy_jobs)} jobs")
+                            
+                            # Small delay between requests to be respectful
+                            await asyncio.sleep(0.5)
+                            
+                        elif response.status_code == 429:
+                            logger.warning(f"⚠️ Rate limited on strategy {i+1}")
+                            break
+                        else:
+                            logger.warning(f"⚠️ Strategy {i+1} failed: {response.status_code}")
+                    
+                    except Exception as strategy_error:
+                        logger.warning(f"⚠️ Strategy {i+1} error: {strategy_error}")
+                        continue
+            
+            # Remove duplicates
+            unique_jobs = self._remove_duplicates(all_jobs)
+            logger.info(f"🎯 JSearch AGGRESSIVE: {len(unique_jobs)} unique jobs from {len(all_jobs)} total")
+            
+            return unique_jobs[:max_results]
+            
+        except Exception as e:
+            logger.error(f"❌ JSearch aggressive search failed: {e}")
+            return []
 
 # Global instance
 bulletproof_job_scraper = BulletproofJobScraper()
