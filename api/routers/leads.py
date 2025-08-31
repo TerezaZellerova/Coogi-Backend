@@ -1263,25 +1263,87 @@ async def get_linkedin_jobs(limit: int = 100):
 async def get_other_jobs(limit: int = 100):
     """Get non-LinkedIn jobs from progressive agents' staged results"""
     try:
-        # Get all completed agents
-        agents = progressive_agent_manager.get_all_agents()
-        completed_agents = [agent for agent in agents if agent.status == "completed"]
-        
+        # Get other jobs directly from database - this is more reliable than in-memory agents
         all_other_jobs = []
         
-        for agent in completed_agents:
-            if agent.staged_results and agent.staged_results.other_jobs:
-                for job in agent.staged_results.other_jobs:
-                    # Add agent context
-                    job_with_context = dict(job)
-                    job_with_context['agent_id'] = agent.id
-                    job_with_context['agent_query'] = agent.query
-                    all_other_jobs.append(job_with_context)
+        # Get non-LinkedIn jobs directly from database (most reliable approach)
+        if supabase:
+            try:
+                # Get non-LinkedIn jobs directly from database  
+                result = supabase.table("progressive_agent_jobs").select("*").neq("site", "linkedin").order("created_at", desc=True).limit(limit).execute()
+                db_jobs = result.data or []
+                logger.info(f"🔍 Found {len(db_jobs)} non-LinkedIn jobs in database")
+                
+                for job in db_jobs:
+                    # Ensure job has proper structure
+                    if 'agent_id' not in job:
+                        job['agent_id'] = job.get('agent_id', 'unknown')
+                    if 'agent_query' not in job:
+                        job['agent_query'] = 'unknown'
+                    all_other_jobs.append(job)
+                    
+            except Exception as db_error:
+                logger.error(f"Error fetching non-LinkedIn jobs from database: {db_error}")
+        
+        # Also check in-memory agents as fallback (for newly created agents)
+        try:
+            agents = progressive_agent_manager.get_all_agents()
+            logger.info(f"🔍 Found {len(agents)} in-memory agents")
+            
+            for agent in agents:
+                try:
+                    # Handle both object-style and dict-style agents
+                    # Include agents that have completed other_boards stage or are fully completed
+                    agent_ready = False
+                    if hasattr(agent, 'stages') and hasattr(agent.stages, 'other_boards'):
+                        if agent.stages.other_boards.status == "completed":
+                            agent_ready = True
+                    elif hasattr(agent, 'status') and agent.status == "completed":
+                        agent_ready = True
+                    elif isinstance(agent, dict):
+                        stages = agent.get('stages', {})
+                        if isinstance(stages, dict):
+                            other_boards = stages.get('other_boards', {})
+                            if isinstance(other_boards, dict) and other_boards.get('status') == 'completed':
+                                agent_ready = True
+                    
+                    if agent_ready:
+                        if hasattr(agent, 'staged_results') and agent.staged_results:
+                            other_jobs = getattr(agent.staged_results, 'other_jobs', [])
+                        elif isinstance(agent, dict) and 'staged_results' in agent:
+                            other_jobs = agent['staged_results'].get('other_jobs', [])
+                        else:
+                            continue
+                        
+                        if other_jobs:
+                            for job in other_jobs:
+                                # Add agent context
+                                job_with_context = dict(job)
+                                job_with_context['agent_id'] = getattr(agent, 'id', agent.get('id', 'unknown'))
+                                job_with_context['agent_query'] = getattr(agent, 'query', agent.get('query', 'unknown'))
+                                all_other_jobs.append(job_with_context)
+                                
+                except Exception as agent_error:
+                    logger.warning(f"Error processing agent: {agent_error}")
+                    continue
+                    
+        except Exception as memory_error:
+            logger.warning(f"Error accessing in-memory agents: {memory_error}")
+        
+        # Remove duplicates based on job_id
+        seen_jobs = set()
+        unique_jobs = []
+        for job in all_other_jobs:
+            job_id = job.get('job_id') or job.get('id')
+            if job_id and job_id not in seen_jobs:
+                seen_jobs.add(job_id)
+                unique_jobs.append(job)
         
         # Sort by creation date (newest first) and limit
-        all_other_jobs.sort(key=lambda x: x.get('scraped_at', ''), reverse=True)
+        unique_jobs.sort(key=lambda x: x.get('scraped_at') or x.get('created_at', ''), reverse=True)
         
-        return {"success": True, "data": all_other_jobs[:limit], "count": len(all_other_jobs[:limit])}
+        logger.info(f"🎯 Returning {len(unique_jobs[:limit])} unique other jobs")
+        return {"success": True, "data": unique_jobs[:limit], "count": len(unique_jobs[:limit])}
     except Exception as e:
         logger.error(f"Error getting other jobs: {e}")
         raise HTTPException(status_code=500, detail=str(e))
