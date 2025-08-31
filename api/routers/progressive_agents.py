@@ -185,27 +185,46 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
 async def run_background_enrichment(agent_id: str, request: JobSearchRequest):
     """Run background enrichment stages"""
     try:
+        logger.info(f"🔄 Starting background enrichment for agent {agent_id}")
+        
         # Wait for LinkedIn stage to complete or timeout
-        await asyncio.sleep(10)  # Give LinkedIn stage a head start
+        await asyncio.sleep(5)  # Reduced wait time
         
-        # Stage 2: Other job boards (non-critical - don't fail agent if this fails)
+        # Stage 2: Other job boards (with proper error handling)
         try:
+            logger.info(f"🔍 Starting other boards stage for agent {agent_id}")
             await run_other_boards_stage(agent_id, request)
+            logger.info(f"✅ Other boards stage completed for agent {agent_id}")
         except Exception as e:
-            logger.warning(f"⚠️ Other boards stage failed for agent {agent_id}, but continuing: {e}")
+            logger.error(f"❌ Other boards stage failed for agent {agent_id}: {e}")
+            # Mark stage as failed but continue
+            progressive_agent_manager.update_stage_status(
+                agent_id, "other_boards", "failed", 0, 0, str(e)
+            )
         
-        # Stage 3: Contact enrichment (non-critical - don't fail agent if this fails)
+        # Stage 3: Contact enrichment (with proper error handling)
         try:
+            logger.info(f"👥 Starting contact enrichment for agent {agent_id}")
             await run_contact_enrichment_stage(agent_id)
+            logger.info(f"✅ Contact enrichment completed for agent {agent_id}")
         except Exception as e:
-            logger.warning(f"⚠️ Contact enrichment stage failed for agent {agent_id}, but continuing: {e}")
+            logger.error(f"❌ Contact enrichment failed for agent {agent_id}: {e}")
+            # Mark stage as failed but continue
+            progressive_agent_manager.update_stage_status(
+                agent_id, "contact_enrichment", "failed", 0, 0, str(e)
+            )
         
-        # Stage 4: Campaign creation (non-critical - don't fail agent if this fails)
-        if request.create_campaigns:
-            try:
-                await run_campaign_creation_stage(agent_id, request)
-            except Exception as e:
-                logger.warning(f"⚠️ Campaign creation stage failed for agent {agent_id}, but continuing: {e}")
+        # Stage 4: Campaign creation (with proper error handling)
+        try:
+            logger.info(f"📧 Starting campaign creation for agent {agent_id}")
+            await run_campaign_creation_stage(agent_id, request)
+            logger.info(f"✅ Campaign creation completed for agent {agent_id}")
+        except Exception as e:
+            logger.error(f"❌ Campaign creation failed for agent {agent_id}: {e}")
+            # Mark stage as failed but continue
+            progressive_agent_manager.update_stage_status(
+                agent_id, "campaign_creation", "failed", 0, 0, str(e)
+            )
         
         # Finalize agent - always finalize if we have any results
         agent = progressive_agent_manager.get_agent(agent_id)
@@ -262,16 +281,16 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             agent_id, "other_boards", "running", 25
         )
         
-        # Get jobs specifically from non-LinkedIn sources
+        # Get jobs specifically from non-LinkedIn sources with shorter timeout
         all_jobs = await asyncio.wait_for(
             job_scraper.search_other_boards_only(  # Use a dedicated method for non-LinkedIn jobs
                 query=request.query,
                 hours_old=request.hours_old,
                 company_size=agent.company_size,
                 location=agent.location_filter or "United States",
-                max_results=150  # Increased to get more job coverage
+                max_results=100  # Reduced for faster processing
             ),
-            timeout=300.0  # 5 minute timeout
+            timeout=180.0  # Reduced timeout to 3 minutes
         )
         
         # Since we're using search_other_boards_only(), all jobs should be non-LinkedIn
@@ -316,6 +335,7 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
         progressive_agent_manager.update_stage_status(
             agent_id, "other_boards", "failed", 0, 0, str(e)
         )
+        raise  # Re-raise to be caught by background enrichment
 
 async def run_contact_enrichment_stage(agent_id: str):
     """Run contact discovery and verification using bulletproof contact finder"""
@@ -328,7 +348,7 @@ async def run_contact_enrichment_stage(agent_id: str):
         
         agent = progressive_agent_manager.get_agent(agent_id)
         if not agent:
-            return
+            raise Exception("Agent not found")
         
         # Initialize bulletproof contact finder
         contact_finder = BulletproofContactFinder()
@@ -338,9 +358,16 @@ async def run_contact_enrichment_stage(agent_id: str):
         all_jobs = agent.staged_results.linkedin_jobs + agent.staged_results.other_jobs
         total_jobs = len(all_jobs)
         
-        # Limit to 20 companies for speed, but ensure we process the best ones
+        if total_jobs == 0:
+            logger.warning(f"⚠️ No jobs found for contact enrichment for agent {agent_id}")
+            progressive_agent_manager.update_stage_status(
+                agent_id, "contact_enrichment", "completed", 100, 0
+            )
+            return
+        
+        # Limit to 15 companies for speed, but ensure we process the best ones
         companies_to_process = []
-        for job in all_jobs[:20]:
+        for job in all_jobs[:15]:  # Reduced from 20 to 15 for faster processing
             company = job.get("company", "").strip()
             if company and company not in [c.get("company") for c in companies_to_process]:
                 companies_to_process.append({
@@ -350,83 +377,47 @@ async def run_contact_enrichment_stage(agent_id: str):
                     "location": job.get("location", "")
                 })
         
-        logger.info(f"Processing {len(companies_to_process)} unique companies for contacts")
+        logger.info(f"📊 Processing {len(companies_to_process)} companies for contacts")
         
-        for i, company_info in enumerate(companies_to_process):
-            try:
-                # Update progress
-                progress = int((i / len(companies_to_process)) * 80)  # Reserve 20% for final processing
-                progressive_agent_manager.update_stage_status(
-                    agent_id, "contact_enrichment", "running", progress
-                )
-                
-                # Find contacts for this company based on target type
-                if agent.target_type == "hiring_managers":
-                    target_roles = [
-                        "Talent Acquisition Manager", "HR Manager", "Recruiter", 
-                        "Head of Talent", "Recruiting Manager", "Head of People",
-                        "Director of Talent", "VP of Talent", "Chief People Officer"
-                    ]
-                else:  # job_candidates
-                    # Extract relevant roles from job title
-                    job_title = company_info["job_title"].lower()
-                    if "engineer" in job_title or "developer" in job_title or "software" in job_title:
-                        target_roles = ["Software Engineer", "Senior Engineer", "Developer", "Tech Lead", "Engineering Manager"]
-                    elif "marketing" in job_title:
-                        target_roles = ["Marketing Manager", "Digital Marketing", "Product Marketing", "Growth Marketing"]
-                    elif "sales" in job_title:
-                        target_roles = ["Sales Manager", "Account Executive", "Business Development", "Sales Director"]
-                    else:
-                        target_roles = ["Manager", "Director", "Specialist", "Lead", "Senior"]
-                
-                contacts = await contact_finder.find_contacts_bulletproof(
-                    companies=[company_info["company"]],
-                    target_roles=target_roles,
-                    max_contacts_per_company=3
-                )
-                
-                if contacts:
-                    # Enrich contacts with job context
-                    for contact in contacts:
-                        contact["source_job"] = company_info["job_title"]
-                        contact["company"] = company_info["company"]
-                        contact["job_url"] = company_info["job_url"]
-                        contact["target_type"] = agent.target_type
-                    
-                    all_contacts.extend(contacts)
-                    logger.info(f"Found {len(contacts)} contacts for {company_info['company']}")
-                
-            except Exception as contact_error:
-                logger.error(f"Error finding contacts for {company_info['company']}: {contact_error}")
-                continue
-        
-        # Final processing - deduplication and scoring
+        # Update progress
         progressive_agent_manager.update_stage_status(
-            agent_id, "contact_enrichment", "running", 90
+            agent_id, "contact_enrichment", "running", 25
         )
         
-        # Remove duplicates based on email
-        seen_emails = set()
-        unique_contacts = []
-        for contact in all_contacts:
-            email = contact.get("email", "").lower()
-            if email and email not in seen_emails:
-                seen_emails.add(email)
-                unique_contacts.append(contact)
+        # Process companies with timeout
+        try:
+            contacts = await asyncio.wait_for(
+                contact_finder.find_contacts_bulletproof(companies_to_process),
+                timeout=300.0  # 5 minute timeout
+            )
+            all_contacts.extend(contacts)
+        except asyncio.TimeoutError:
+            logger.warning(f"⏰ Contact enrichment timeout for agent {agent_id}")
+            # Continue with empty contacts rather than failing
         
-        logger.info(f"Deduplicated to {len(unique_contacts)} unique contacts")
+        # Update progress
+        progressive_agent_manager.update_stage_status(
+            agent_id, "contact_enrichment", "running", 75
+        )
         
         # Add results
         progressive_agent_manager.add_stage_results(
-            agent_id, "contact_enrichment", unique_contacts, "contacts"
+            agent_id, "contact_enrichment", all_contacts, "verified_contacts"
         )
         
         # Complete stage
         progressive_agent_manager.update_stage_status(
-            agent_id, "contact_enrichment", "completed", 100, len(unique_contacts)
+            agent_id, "contact_enrichment", "completed", 100, len(all_contacts)
         )
         
-        logger.info(f"✅ Contact enrichment completed for agent {agent_id} - {len(unique_contacts)} contacts")
+        logger.info(f"✅ Contact enrichment completed for agent {agent_id} - {len(all_contacts)} contacts")
+        
+    except Exception as e:
+        logger.error(f"❌ Contact enrichment failed for agent {agent_id}: {e}")
+        progressive_agent_manager.update_stage_status(
+            agent_id, "contact_enrichment", "failed", 0, 0, str(e)
+        )
+        raise  # Re-raise to be caught by background enrichment
         
     except Exception as e:
         logger.error(f"❌ Contact enrichment failed for agent {agent_id}: {e}")
