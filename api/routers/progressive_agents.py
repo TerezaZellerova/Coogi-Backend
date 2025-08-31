@@ -397,7 +397,7 @@ async def run_contact_enrichment_stage(agent_id: str):
         
         # Add results
         progressive_agent_manager.add_stage_results(
-            agent_id, "contact_enrichment", all_contacts, "verified_contacts"
+            agent_id, "contact_enrichment", all_contacts, "contacts"
         )
         
         # Complete stage
