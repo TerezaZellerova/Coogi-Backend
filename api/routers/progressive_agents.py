@@ -144,16 +144,11 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
             # Consider it a LinkedIn job if:
             # 1. Site is "linkedin" (from direct API or JSearch with LinkedIn URL detection)
             # 2. Site is "jsearch" and URL contains "linkedin.com" (fallback)
-            # 3. Demo jobs should be treated as LinkedIn jobs for this stage (they contain LinkedIn-style demo data)
+            # Note: Demo jobs are excluded from production data
             if (job_site == "linkedin" or 
-                (job_site == "jsearch" and "linkedin.com" in job_url) or
-                is_demo):  # Demo jobs should be LinkedIn jobs for display
+                (job_site == "jsearch" and "linkedin.com" in job_url)) and not is_demo:
                 linkedin_jobs.append(job)
-                # Mark demo jobs as LinkedIn source for consistency
-                if is_demo:
-                    job["site"] = "LinkedIn (Demo)"
-                    job["url"] = job.get("url", "").replace("demo-job", "linkedin.com/jobs/view/demo")
-            else:
+            elif not is_demo:  # Only include non-demo jobs in other_jobs
                 other_jobs.append(job)
         
         # For this stage, we only want the LinkedIn jobs
@@ -302,10 +297,10 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
             job_site = job.get("site", "").lower()
             is_demo = job.get("is_demo", False)
             
-            # Exclude LinkedIn jobs and demo jobs (those belong in LinkedIn stage)
+            # Exclude LinkedIn jobs and demo jobs (those belong in LinkedIn stage or should be filtered out)
             if not (job_site == "linkedin" or 
                    (job_site == "jsearch" and "linkedin.com" in job_url) or
-                   is_demo):
+                   is_demo):  # Exclude demo jobs from production
                 other_jobs.append(job)
         
         # Update progress

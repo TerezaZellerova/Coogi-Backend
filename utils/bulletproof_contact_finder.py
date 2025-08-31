@@ -80,10 +80,8 @@ class BulletproofContactFinder:
                 
             except Exception as e:
                 logger.error(f"❌ Failed to find contacts for {company}: {e}")
-                
-                # Add demo contact as fallback
-                demo_contact = self._generate_demo_contact(company)
-                all_contacts.append(demo_contact)
+                # Skip adding demo contacts in production - only use real data
+                continue
         
         # Verify and clean contacts
         verified_contacts = await self._verify_contacts_bulk(all_contacts)
@@ -129,11 +127,9 @@ class BulletproofContactFinder:
             except Exception as e:
                 logger.error(f"❌ RapidAPI failed for {company}: {e}")
         
-        # Strategy 4: Generate realistic contacts if needed
+        # Strategy 4: Return empty list if no real contacts found (no demo data in production)
         if len(contacts) == 0:
-            demo_contacts = self._generate_realistic_contacts(company, domain, min(3, max_contacts))
-            contacts.extend(demo_contacts)
-            logger.warning(f"⚠️ Generated {len(demo_contacts)} demo contacts for {company}")
+            logger.warning(f"⚠️ No real contacts found for {company}")
         
         return contacts[:max_contacts]
     

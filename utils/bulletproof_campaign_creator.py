@@ -368,7 +368,7 @@ P.S. This is a confidential search, so your current employer won't be contacted 
             "created_at": datetime.now().isoformat(),
             "job_details": content["job"],
             "sender_info": content["sender_info"],
-            "is_demo": True
+            "is_demo": False  # This is real campaign data, not demo
         }
     
     def _create_fallback_campaign(self, company: str, jobs: List[Dict], contacts: List[Dict], campaign_type: str) -> Dict[str, Any]:
@@ -386,7 +386,7 @@ P.S. This is a confidential search, so your current employer won't be contacted 
             "message": "Professional outreach message (generated via fallback)",
             "lead_count": len(contacts),
             "created_at": datetime.now().isoformat(),
-            "is_demo": True
+            "is_demo": False  # This is real campaign data, not demo
         }
     
     def _group_contacts_by_company(self, contacts: List[Dict], jobs: List[Dict]) -> Dict[str, Dict]:
