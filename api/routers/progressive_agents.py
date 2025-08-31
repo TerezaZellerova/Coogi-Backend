@@ -188,17 +188,26 @@ async def run_background_enrichment(agent_id: str, request: JobSearchRequest):
         # Wait for LinkedIn stage to complete or timeout
         await asyncio.sleep(10)  # Give LinkedIn stage a head start
         
-        # Stage 2: Other job boards
-        await run_other_boards_stage(agent_id, request)
+        # Stage 2: Other job boards (non-critical - don't fail agent if this fails)
+        try:
+            await run_other_boards_stage(agent_id, request)
+        except Exception as e:
+            logger.warning(f"⚠️ Other boards stage failed for agent {agent_id}, but continuing: {e}")
         
-        # Stage 3: Contact enrichment
-        await run_contact_enrichment_stage(agent_id)
+        # Stage 3: Contact enrichment (non-critical - don't fail agent if this fails)
+        try:
+            await run_contact_enrichment_stage(agent_id)
+        except Exception as e:
+            logger.warning(f"⚠️ Contact enrichment stage failed for agent {agent_id}, but continuing: {e}")
         
-        # Stage 4: Campaign creation
+        # Stage 4: Campaign creation (non-critical - don't fail agent if this fails)
         if request.create_campaigns:
-            await run_campaign_creation_stage(agent_id, request)
+            try:
+                await run_campaign_creation_stage(agent_id, request)
+            except Exception as e:
+                logger.warning(f"⚠️ Campaign creation stage failed for agent {agent_id}, but continuing: {e}")
         
-        # Finalize agent
+        # Finalize agent - always finalize if we have any results
         agent = progressive_agent_manager.get_agent(agent_id)
         if agent:
             final_stats = {
@@ -212,8 +221,24 @@ async def run_background_enrichment(agent_id: str, request: JobSearchRequest):
         logger.info(f"✅ Background enrichment completed for agent {agent_id}")
         
     except Exception as e:
-        logger.error(f"❌ Background enrichment failed for agent {agent_id}: {e}")
-        progressive_agent_manager.mark_agent_failed(agent_id, str(e))
+        logger.error(f"❌ Critical background enrichment error for agent {agent_id}: {e}")
+        # Only mark as failed if we don't have any results at all
+        agent = progressive_agent_manager.get_agent(agent_id)
+        if agent and (agent.staged_results.total_jobs > 0 or agent.staged_results.total_contacts > 0):
+            # We have some results, so finalize as completed instead of failed
+            final_stats = {
+                "total_jobs": agent.staged_results.total_jobs,
+                "total_contacts": agent.staged_results.total_contacts,
+                "total_campaigns": agent.staged_results.total_campaigns,
+                "completion_time": datetime.now().isoformat(),
+                "partial_completion": True,
+                "error_message": str(e)
+            }
+            progressive_agent_manager.finalize_agent(agent_id, final_stats)
+            logger.info(f"✅ Agent {agent_id} completed with partial results despite error")
+        else:
+            # No results found, mark as truly failed
+            progressive_agent_manager.mark_agent_failed(agent_id, str(e))
 
 async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
     """Fetch jobs from non-LinkedIn job boards using bulletproof scraper"""

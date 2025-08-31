@@ -113,12 +113,8 @@ class BulletproofJobScraper:
             except Exception as e:
                 logger.error(f"❌ JobSpy extended failed: {e}")
         
-        # Strategy 5: Demo Data (If we have insufficient jobs or APIs failed)
-        if len(all_jobs) < max_results * 0.3:  # If we have less than 30% of target jobs, use demo data
-            demo_count = max(50, max_results - len(all_jobs))  # Generate at least 50 demo jobs
-            demo_jobs = self._generate_demo_jobs(query, company_size, location, count=demo_count)
-            all_jobs.extend(demo_jobs)
-            logger.warning(f"⚠️ Using demo data: {len(demo_jobs)} jobs (APIs may be rate-limited)")
+        # Strategy 5: No demo data - only use real API results
+        logger.info(f"🎯 Using only real API results: {len(all_jobs)} jobs found from APIs")
         
         # Filter by company size
         filtered_jobs = self._filter_by_company_size(all_jobs, company_size)
@@ -181,19 +177,8 @@ class BulletproofJobScraper:
             except Exception as e:
                 logger.warning(f"⚠️ JSearch conservative failed: {e}")
 
-        # Strategy 4: Generate demo jobs ONLY if we have very few results (less than 10)
-        if len(all_jobs) < 10:  # Emergency fallback only
-            demo_jobs = self._generate_demo_jobs(query, 15, company_size)
-            # Mark as "other" jobs (Indeed, Glassdoor, etc.)
-            other_demo_jobs = []
-            for i, job in enumerate(demo_jobs):
-                job["site"] = random.choice(["indeed", "glassdoor", "ziprecruiter", "monster", "careerbuilder"])
-                job["url"] = f"https://www.{job['site']}.com/jobs/view/{random.randint(1000000, 9999999)}"
-                job["is_demo"] = True  # Mark clearly as demo
-                other_demo_jobs.append(job)
-            
-            all_jobs.extend(other_demo_jobs)
-            logger.warning(f"⚠️ Emergency fallback: Added {len(other_demo_jobs)} demo 'other' jobs")
+        # Strategy 4: No emergency fallback - only use real API results
+        logger.info(f"🎯 Using only real API results: {len(all_jobs)} other jobs found")
         
         # Remove duplicates
         unique_jobs = self._remove_duplicates(all_jobs)

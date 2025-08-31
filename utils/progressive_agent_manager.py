@@ -173,16 +173,39 @@ class ProgressiveAgentManager:
         
         agent.total_progress = int(total_progress)
         
-        # Update overall status
+        # Update overall status with improved logic
         if agent.total_progress == 100:
             agent.status = "completed"
-        elif any(stage.status == "failed" for stage in agent.stages.values()):
-            agent.status = "failed"
-        elif any(stage.status == "running" for stage in agent.stages.values()):
-            if agent.stages["linkedin_fetch"].status in ["completed", "failed"]:
-                agent.status = "enrichment_stage"
+        else:
+            # Check if critical stages failed
+            critical_stages = ["linkedin_fetch"]  # Only LinkedIn stage is truly critical
+            critical_failed = all(
+                agent.stages[stage].status == "failed" 
+                for stage in critical_stages 
+                if stage in agent.stages
+            )
+            
+            # Check if we have enough data to consider it successful
+            total_jobs = sum(stage.results_count for stage in agent.stages.values() if stage.results_count)
+            
+            if critical_failed and total_jobs == 0:
+                # Only mark as failed if critical stages failed AND we have no results
+                agent.status = "failed"
+            elif total_jobs > 0:
+                # We have some results, consider it successful even if some stages are incomplete
+                if agent.total_progress >= 80:  # If we're 80% done and have results, call it completed
+                    agent.status = "completed"
+                    agent.total_progress = 100
+                else:
+                    agent.status = "enrichment_stage"
+            elif any(stage.status == "running" for stage in agent.stages.values()):
+                if agent.stages["linkedin_fetch"].status in ["completed", "failed"]:
+                    agent.status = "enrichment_stage"
+                else:
+                    agent.status = "linkedin_stage"
             else:
-                agent.status = "linkedin_stage"
+                # Default to enrichment stage if stages are done but not failed
+                agent.status = "enrichment_stage"
     
     def get_agent(self, agent_id: str) -> Optional[ProgressiveAgent]:
         """Get an agent by ID"""
