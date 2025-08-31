@@ -1,0 +1,38 @@
+[
+  {
+    "test_case": {
+      "query": "software engineer",
+      "company_size": "medium",
+      "location": "San Francisco",
+      "target_jobs": 150
+    },
+    "jobs_found": 125,
+    "target_met": true,
+    "duration_seconds": 57.362937,
+    "job_sites": {
+      "indeed": 75,
+      "linkedin": 50
+    },
+    "linkedin_jobs": 50,
+    "demo_jobs": 0,
+    "success_rate": 83.33333333333334
+  },
+  {
+    "test_case": {
+      "query": "product manager",
+      "company_size": "all",
+      "location": "New York",
+      "target_jobs": 200
+    },
+    "jobs_found": 183,
+    "target_met": true,
+    "duration_seconds": 60.327658,
+    "job_sites": {
+      "indeed": 101,
+      "linkedin": 82
+    },
+    "linkedin_jobs": 82,
+    "demo_jobs": 0,
+    "success_rate": 91.5
+  }
+]

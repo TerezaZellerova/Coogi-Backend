@@ -61,42 +61,53 @@ class BulletproofJobScraper:
                                     hours_old: int = 24,
                                     company_size: str = "all",
                                     location: str = "United States",
-                                    max_results: int = 100) -> List[Dict[str, Any]]:
+                                    max_results: int = 500) -> List[Dict[str, Any]]:
         """
         BULLETPROOF job search with multiple fallbacks and company size filtering
+        ENHANCED: Prioritizes JobSpy (which is working) over APIs with rate limits
         """
-        logger.info(f"🚀 BULLETPROOF job search: '{query}' | Size: {company_size} | Location: {location}")
+        logger.info(f"🚀 BULLETPROOF job search: '{query}' | Size: {company_size} | Location: {location} | Target: {max_results} jobs")
         
         all_jobs = []
         
-        # Strategy 1: JSearch API (Primary)
+        # Strategy 1: JobSpy Multi-platform (PRIMARY - This works reliably!)
         try:
-            jsearch_jobs = await self._search_jsearch(query, location, max_results // 2)
-            all_jobs.extend(jsearch_jobs)
-            logger.info(f"✅ JSearch: {len(jsearch_jobs)} jobs found")
+            jobspy_jobs = await self._search_jobspy_aggressive(query, location, max_results)
+            all_jobs.extend(jobspy_jobs)
+            logger.info(f"✅ JobSpy aggressive: {len(jobspy_jobs)} jobs found")
         except Exception as e:
-            logger.error(f"❌ JSearch failed: {e}")
+            logger.error(f"❌ JobSpy aggressive failed: {e}")
         
-        # Strategy 2: LinkedIn API (Secondary)
-        try:
-            linkedin_jobs = await self._search_linkedin_api(query, location, max_results // 2)
-            all_jobs.extend(linkedin_jobs)
-            logger.info(f"✅ LinkedIn API: {len(linkedin_jobs)} jobs found")
-        except Exception as e:
-            logger.error(f"❌ LinkedIn API failed: {e}")
-        
-        # Strategy 3: JobSpy Fallback (Tertiary)
-        if len(all_jobs) < 10:
+        # Strategy 2: JobSpy with query variations (SECONDARY)
+        if len(all_jobs) < max_results * 0.8:  # If we have less than 80% of target
             try:
-                jobspy_jobs = await self._search_jobspy_fallback(query, location, max_results)
-                all_jobs.extend(jobspy_jobs)
-                logger.info(f"✅ JobSpy fallback: {len(jobspy_jobs)} jobs found")
+                variation_jobs = await self._search_jobspy_variations(query, location, max_results // 2)
+                all_jobs.extend(variation_jobs)
+                logger.info(f"✅ JobSpy variations: {len(variation_jobs)} jobs found")
             except Exception as e:
-                logger.error(f"❌ JobSpy fallback failed: {e}")
+                logger.error(f"❌ JobSpy variations failed: {e}")
         
-        # Strategy 4: Demo Data (Last Resort)
-        if len(all_jobs) < 5:
-            demo_jobs = self._generate_demo_jobs(query, company_size, location)
+        # Strategy 3: JSearch API (Only if not rate limited)
+        if len(all_jobs) < max_results * 0.6:  # If we still need more jobs
+            try:
+                jsearch_jobs = await self._search_jsearch_conservative(query, location, max_results // 3)
+                all_jobs.extend(jsearch_jobs)
+                logger.info(f"✅ JSearch conservative: {len(jsearch_jobs)} jobs found")
+            except Exception as e:
+                logger.warning(f"⚠️ JSearch conservative failed (rate limited?): {e}")
+        
+        # Strategy 4: Extended JobSpy search with broader terms
+        if len(all_jobs) < max_results * 0.7:  # If we still need more jobs
+            try:
+                extended_jobs = await self._search_jobspy_extended(query, location, max_results // 3)
+                all_jobs.extend(extended_jobs)
+                logger.info(f"✅ JobSpy extended: {len(extended_jobs)} jobs found")
+            except Exception as e:
+                logger.error(f"❌ JobSpy extended failed: {e}")
+        
+        # Strategy 5: Demo Data (Only if we have very few jobs)
+        if len(all_jobs) < 50:
+            demo_jobs = self._generate_demo_jobs(query, company_size, location, count=max_results - len(all_jobs))
             all_jobs.extend(demo_jobs)
             logger.warning(f"⚠️ Using demo data: {len(demo_jobs)} jobs")
         
@@ -112,35 +123,148 @@ class BulletproofJobScraper:
         logger.info(f"🎯 FINAL RESULT: {len(sorted_jobs)} jobs after filtering and deduplication")
         return sorted_jobs[:max_results]
     
-    async def _search_jsearch(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
-        """Search using JSearch API"""
+    async def _search_jsearch_aggressive(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
+        """AGGRESSIVE JSearch API search - multiple pages and broader date range"""
         import httpx
         
-        params = {
-            "query": query,
-            "page": "1",
-            "num_pages": "3",
-            "date_posted": "today" if limit < 50 else "week",
-        }
+        all_jobs = []
         
-        if location and location.lower() != "united states":
-            params["location"] = location
+        # Search with multiple configurations for maximum coverage
+        search_configs = [
+            {"date_posted": "today", "num_pages": "5"},       # Today, 5 pages
+            {"date_posted": "3days", "num_pages": "8"},       # Last 3 days, 8 pages
+            {"date_posted": "week", "num_pages": "15"},       # Last week, 15 pages
+            {"date_posted": "month", "num_pages": "12"},      # Last month, 12 pages  
+            {"date_posted": "all", "num_pages": "10"},        # All time, 10 pages
+        ]
         
-        async with httpx.AsyncClient(timeout=30) as client:
-            response = await client.get(
-                self.job_apis["jsearch"]["url"],
-                headers=self.job_apis["jsearch"]["headers"],
-                params=params
-            )
-            
-            if response.status_code == 200:
-                data = response.json()
-                jobs = data.get("data", [])
+        for config in search_configs:
+            try:
+                params = {
+                    "query": query,
+                    "page": "1", 
+                    "num_pages": config["num_pages"],
+                    "date_posted": config["date_posted"],
+                    "employment_types": "FULLTIME;PARTTIME;CONTRACTOR;INTERN",  # Include all types
+                    "job_requirements": "under_3_years_experience;more_than_3_years_experience;no_experience",  # All experience levels
+                }
                 
-                return [self._normalize_jsearch_job(job) for job in jobs[:limit]]
-            else:
-                logger.error(f"JSearch API error: {response.status_code}")
-                return []
+                if location and location.lower() != "united states":
+                    params["location"] = location
+                
+                async with httpx.AsyncClient(timeout=60) as client:  # Increased timeout
+                    response = await client.get(
+                        self.job_apis["jsearch"]["url"],
+                        headers=self.job_apis["jsearch"]["headers"],
+                        params=params
+                    )
+                    
+                    if response.status_code == 200:
+                        data = response.json()
+                        jobs = data.get("data", [])
+                        normalized_jobs = [self._normalize_jsearch_job(job) for job in jobs]
+                        all_jobs.extend(normalized_jobs)
+                        logger.info(f"📈 JSearch config {config['date_posted']}: {len(normalized_jobs)} jobs")
+                        
+                        # Small delay to avoid rate limiting
+                        await asyncio.sleep(0.5)
+                        
+                    else:
+                        logger.warning(f"JSearch API error for {config}: {response.status_code}")
+                        
+            except Exception as e:
+                logger.error(f"JSearch config {config} failed: {e}")
+                continue
+        
+        logger.info(f"📊 Total JSearch jobs collected: {len(all_jobs)}")
+        return all_jobs[:limit]
+    
+    async def _search_jobspy_aggressive(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
+        """AGGRESSIVE JobSpy search across multiple platforms"""
+        try:
+            from jobspy import scrape_jobs
+            
+            all_jobs = []
+            
+            # Search across multiple job sites
+            job_sites = [
+                ["indeed", "glassdoor"],
+                ["zip_recruiter", "linkedin"], 
+                ["monster", "careerbuilder"]
+            ]
+            
+            for sites in job_sites:
+                try:
+                    jobs_df = await asyncio.to_thread(
+                        scrape_jobs,
+                        site_name=sites,
+                        search_term=query,
+                        location=location,
+                        results_wanted=limit // len(job_sites) + 50,  # Get more per site
+                        hours_old=168,  # 1 week
+                        country_indeed="us"
+                    )
+                    
+                    if jobs_df is not None and not jobs_df.empty:
+                        site_jobs = [self._normalize_jobspy_job(row) for _, row in jobs_df.iterrows()]
+                        all_jobs.extend(site_jobs)
+                        logger.info(f"📊 JobSpy {sites}: {len(site_jobs)} jobs")
+                        
+                except Exception as e:
+                    logger.warning(f"JobSpy sites {sites} failed: {e}")
+                    continue
+            
+            return all_jobs[:limit]
+            
+        except Exception as e:
+            logger.error(f"JobSpy aggressive error: {e}")
+            return []
+    
+    async def _search_query_variations(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
+        """Search with query variations to find more jobs"""
+        variations = []
+        
+        # Generate query variations based on the original query
+        base_query = query.lower().strip()
+        
+        if "manager" in base_query:
+            variations = [
+                base_query.replace("manager", "supervisor"),
+                base_query.replace("manager", "lead"),
+                base_query.replace("manager", "director"),
+                f"{base_query} OR supervisor OR lead",
+            ]
+        elif "developer" in base_query:
+            variations = [
+                base_query.replace("developer", "engineer"),
+                base_query.replace("developer", "programmer"),
+                f"{base_query} OR engineer OR programmer",
+            ]
+        elif "analyst" in base_query:
+            variations = [
+                base_query.replace("analyst", "specialist"),
+                f"{base_query} OR specialist OR consultant",
+            ]
+        else:
+            # Generic variations
+            variations = [
+                f"{base_query} specialist",
+                f"{base_query} coordinator", 
+                f"{base_query} associate",
+                f"senior {base_query}",
+                f"junior {base_query}",
+            ]
+        
+        all_jobs = []
+        for variation in variations[:4]:  # Increased to 4 variations
+            try:
+                jobs = await self._search_jsearch_aggressive(variation, location, limit // len(variations))
+                all_jobs.extend(jobs)
+                logger.info(f"🔄 Variation '{variation}': {len(jobs)} jobs")
+            except Exception as e:
+                logger.warning(f"Variation '{variation}' failed: {e}")
+        
+        return all_jobs
     
     async def _search_linkedin_api(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
         """Search using LinkedIn Jobs API"""
@@ -192,6 +316,63 @@ class BulletproofJobScraper:
             logger.error(f"JobSpy error: {e}")
         
         return []
+    
+    async def _search_extended_timeframe(self, query: str, location: str, limit: int) -> List[Dict[str, Any]]:
+        """Search with extended timeframes and remote options to find more jobs"""
+        import httpx
+        
+        all_jobs = []
+        
+        # Extended search configurations
+        extended_configs = [
+            {"query": f"{query} remote", "date_posted": "month"},
+            {"query": f"remote {query}", "date_posted": "month"},
+            {"query": f"{query} work from home", "date_posted": "month"},
+            {"query": f"{query} hybrid", "date_posted": "month"},
+            {"query": f"{query} contract", "date_posted": "month"},
+            {"query": f"{query} freelance", "date_posted": "month"},
+        ]
+        
+        for config in extended_configs:
+            try:
+                params = {
+                    "query": config["query"],
+                    "page": "1", 
+                    "num_pages": "8",
+                    "date_posted": config["date_posted"],
+                    "employment_types": "FULLTIME;PARTTIME;CONTRACTOR;INTERN",
+                    "remote_jobs_only": "false",  # Include both remote and non-remote
+                }
+                
+                if location and location.lower() != "united states":
+                    params["location"] = location
+                
+                async with httpx.AsyncClient(timeout=45) as client:
+                    response = await client.get(
+                        self.job_apis["jsearch"]["url"],
+                        headers=self.job_apis["jsearch"]["headers"],
+                        params=params
+                    )
+                    
+                    if response.status_code == 200:
+                        data = response.json()
+                        jobs = data.get("data", [])
+                        normalized_jobs = [self._normalize_jsearch_job(job) for job in jobs]
+                        all_jobs.extend(normalized_jobs)
+                        logger.info(f"🔍 Extended search '{config['query']}': {len(normalized_jobs)} jobs")
+                        
+                        # Small delay to avoid rate limiting
+                        await asyncio.sleep(0.3)
+                        
+                    else:
+                        logger.warning(f"Extended search API error for {config}: {response.status_code}")
+                        
+            except Exception as e:
+                logger.warning(f"Extended search config {config} failed: {e}")
+                continue
+        
+        logger.info(f"🔍 Total extended search jobs: {len(all_jobs)}")
+        return all_jobs[:limit]
     
     def _normalize_jsearch_job(self, job: Dict) -> Dict[str, Any]:
         """Normalize JSearch job data"""
@@ -327,32 +508,60 @@ class BulletproofJobScraper:
         
         return sorted(jobs, key=relevance_score, reverse=True)
     
-    def _generate_demo_jobs(self, query: str, company_size: str, location: str) -> List[Dict]:
+    def _generate_demo_jobs(self, query: str, company_size: str, location: str, count: int = 150) -> List[Dict]:
         """Generate realistic demo jobs when APIs fail"""
         demo_companies = {
-            "small": ["TechStart Inc", "Innovation Labs", "GrowthCorp", "StartupXYZ", "AgileTeam"],
-            "medium": ["MidScale Solutions", "Regional Corp", "GrowthTech", "ExpandCo", "ScaleUp Inc"],
-            "all": ["Global Corp", "Enterprise Solutions", "MegaTech", "Industry Leader", "Fortune Company"]
+            "small": ["TechStart Inc", "Innovation Labs", "GrowthCorp", "StartupXYZ", "AgileTeam", 
+                     "NextGen Solutions", "Pioneer Tech", "Velocity Inc", "Bootstrap Co", "Lean Startup"],
+            "medium": ["MidScale Solutions", "Regional Corp", "GrowthTech", "ExpandCo", "ScaleUp Inc",
+                      "Progress Systems", "Evolution Corp", "Balanced Tech", "Steady Growth", "Regional Leader"],
+            "all": ["Global Corp", "Enterprise Solutions", "MegaTech", "Industry Leader", "Fortune Company",
+                   "International Inc", "Worldwide Systems", "Global Leader", "Enterprise Tech", "Corporate Giant"]
         }
         
         companies = demo_companies.get(company_size, demo_companies["all"])
+        job_titles = [
+            f"Senior {query}",
+            f"Junior {query}",
+            f"{query} Manager",
+            f"Lead {query}",
+            f"{query} Director",
+            f"{query} Specialist",
+            f"{query} Coordinator",
+            f"{query} Associate",
+            f"Principal {query}",
+            f"{query} Consultant"
+        ]
+        
+        locations = [
+            location if location != "United States" else "New York, NY",
+            "San Francisco, CA",
+            "Austin, TX", 
+            "Seattle, WA",
+            "Boston, MA",
+            "Chicago, IL",
+            "Los Angeles, CA",
+            "Denver, CO",
+            "Atlanta, GA",
+            "Remote"
+        ]
         
         jobs = []
-        for i in range(5):
+        for i in range(count):
             job = {
                 "id": f"demo_{random.randint(10000, 99999)}",
-                "title": f"{query.title()} {['Specialist', 'Manager', 'Director', 'Lead', 'Senior'][i]}",
+                "title": job_titles[i % len(job_titles)],
                 "company": companies[i % len(companies)],
-                "location": location if location != "United States" else "New York, NY",
+                "location": locations[i % len(locations)],
                 "url": f"https://demo-job-{i}.example.com",
-                "description": f"We are looking for a skilled {query} to join our {company_size} team...",
-                "posted_date": "1 day ago",
-                "employment_type": "fulltime",
+                "description": f"We are looking for a skilled {query} to join our {company_size} team. This is an exciting opportunity to work with cutting-edge technology and make a real impact.",
+                "posted_date": f"{random.randint(1, 7)} days ago",
+                "employment_type": random.choice(["fulltime", "parttime", "contract"]),
                 "salary": f"${random.randint(60, 150)}k - ${random.randint(160, 200)}k",
                 "site": "Demo",
                 "company_url": "",
                 "is_remote": random.choice([True, False]),
-                "skills": query.split() + ["teamwork", "communication"],
+                "skills": query.split() + random.sample(["teamwork", "communication", "leadership", "problem-solving", "analytical"], 3),
                 "scraped_at": datetime.now().isoformat(),
                 "is_demo": True
             }

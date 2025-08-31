@@ -1,0 +1,77 @@
+[
+  {
+    "test_case": {
+      "query": "software engineer",
+      "company_size": "medium",
+      "location": "San Francisco",
+      "target_jobs": 200
+    },
+    "jobs_found": 85,
+    "target_met": false,
+    "duration_seconds": 72.02002,
+    "job_sites": {
+      "indeed": 68,
+      "linkedin": 17
+    },
+    "linkedin_jobs": 17,
+    "demo_jobs": 0,
+    "recent_jobs": 0,
+    "success_rate": 42.5
+  },
+  {
+    "test_case": {
+      "query": "product manager",
+      "company_size": "all",
+      "location": "New York",
+      "target_jobs": 300
+    },
+    "jobs_found": 130,
+    "target_met": false,
+    "duration_seconds": 69.947107,
+    "job_sites": {
+      "indeed": 84,
+      "linkedin": 46
+    },
+    "linkedin_jobs": 46,
+    "demo_jobs": 0,
+    "recent_jobs": 0,
+    "success_rate": 43.333333333333336
+  },
+  {
+    "test_case": {
+      "query": "data analyst",
+      "company_size": "small",
+      "location": "United States",
+      "target_jobs": 150
+    },
+    "jobs_found": 2,
+    "target_met": false,
+    "duration_seconds": 54.932808,
+    "job_sites": {
+      "indeed": 2
+    },
+    "linkedin_jobs": 0,
+    "demo_jobs": 0,
+    "recent_jobs": 0,
+    "success_rate": 1.3333333333333335
+  },
+  {
+    "test_case": {
+      "query": "marketing manager",
+      "company_size": "medium",
+      "location": "Los Angeles",
+      "target_jobs": 250
+    },
+    "jobs_found": 116,
+    "target_met": false,
+    "duration_seconds": 70.111688,
+    "job_sites": {
+      "indeed": 82,
+      "linkedin": 34
+    },
+    "linkedin_jobs": 34,
+    "demo_jobs": 0,
+    "recent_jobs": 0,
+    "success_rate": 46.400000000000006
+  }
+]
