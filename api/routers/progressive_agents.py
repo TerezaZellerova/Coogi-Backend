@@ -369,13 +369,8 @@ async def run_contact_enrichment_stage(agent_id: str):
         companies_to_process = []
         for job in all_jobs[:15]:  # Reduced from 20 to 15 for faster processing
             company = job.get("company", "").strip()
-            if company and company not in [c.get("company") for c in companies_to_process]:
-                companies_to_process.append({
-                    "company": company,
-                    "job_title": job.get("title", ""),
-                    "job_url": job.get("url", ""),
-                    "location": job.get("location", "")
-                })
+            if company and company not in companies_to_process:
+                companies_to_process.append(company)  # Just append the company name string
         
         logger.info(f"📊 Processing {len(companies_to_process)} companies for contacts")
         
