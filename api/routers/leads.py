@@ -23,6 +23,7 @@ from ..dependencies import (
 )
 from utils.clearout_manager import clearout_manager
 from utils.progressive_agent_db import progressive_agent_db
+from utils.progressive_agent_manager import progressive_agent_manager
 
 logger = logging.getLogger(__name__)
 
@@ -1162,4 +1163,86 @@ async def get_agent_campaigns(agent_id: str, limit: int = 100):
         return {"success": True, "data": campaigns, "count": len(campaigns)}
     except Exception as e:
         logger.error(f"Error getting agent campaigns: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Progressive Agent Data Endpoints from Staged Results (Real Data)
+@router.get("/leads/linkedin-jobs")
+async def get_linkedin_jobs(limit: int = 100):
+    """Get LinkedIn jobs from progressive agents' staged results"""
+    try:
+        # Get all completed agents
+        agents = progressive_agent_manager.get_all_agents()
+        completed_agents = [agent for agent in agents if agent.status == "completed"]
+        
+        all_linkedin_jobs = []
+        
+        for agent in completed_agents:
+            if agent.staged_results and agent.staged_results.linkedin_jobs:
+                for job in agent.staged_results.linkedin_jobs:
+                    # Add agent context
+                    job_with_context = dict(job)
+                    job_with_context['agent_id'] = agent.id
+                    job_with_context['agent_query'] = agent.query
+                    all_linkedin_jobs.append(job_with_context)
+        
+        # Sort by creation date (newest first) and limit
+        all_linkedin_jobs.sort(key=lambda x: x.get('scraped_at', ''), reverse=True)
+        
+        return {"success": True, "data": all_linkedin_jobs[:limit], "count": len(all_linkedin_jobs[:limit])}
+    except Exception as e:
+        logger.error(f"Error getting LinkedIn jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/other-jobs")
+async def get_other_jobs(limit: int = 100):
+    """Get non-LinkedIn jobs from progressive agents' staged results"""
+    try:
+        # Get all completed agents
+        agents = progressive_agent_manager.get_all_agents()
+        completed_agents = [agent for agent in agents if agent.status == "completed"]
+        
+        all_other_jobs = []
+        
+        for agent in completed_agents:
+            if agent.staged_results and agent.staged_results.other_jobs:
+                for job in agent.staged_results.other_jobs:
+                    # Add agent context
+                    job_with_context = dict(job)
+                    job_with_context['agent_id'] = agent.id
+                    job_with_context['agent_query'] = agent.query
+                    all_other_jobs.append(job_with_context)
+        
+        # Sort by creation date (newest first) and limit
+        all_other_jobs.sort(key=lambda x: x.get('scraped_at', ''), reverse=True)
+        
+        return {"success": True, "data": all_other_jobs[:limit], "count": len(all_other_jobs[:limit])}
+    except Exception as e:
+        logger.error(f"Error getting other jobs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/leads/progressive-contacts")
+async def get_progressive_contacts(limit: int = 100):
+    """Get contacts from progressive agents' staged results"""
+    try:
+        # Get all completed agents
+        agents = progressive_agent_manager.get_all_agents()
+        completed_agents = [agent for agent in agents if agent.status == "completed"]
+        
+        all_contacts = []
+        
+        for agent in completed_agents:
+            if agent.staged_results and agent.staged_results.verified_contacts:
+                for contact in agent.staged_results.verified_contacts:
+                    # Add agent context
+                    contact_with_context = dict(contact)
+                    contact_with_context['agent_id'] = agent.id
+                    contact_with_context['agent_query'] = agent.query
+                    all_contacts.append(contact_with_context)
+        
+        # Sort by creation date (newest first) and limit
+        all_contacts.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+        
+        return {"success": True, "data": all_contacts[:limit], "count": len(all_contacts[:limit])}
+    except Exception as e:
+        logger.error(f"Error getting progressive contacts: {e}")
         raise HTTPException(status_code=500, detail=str(e))
