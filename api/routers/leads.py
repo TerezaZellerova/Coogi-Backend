@@ -1182,53 +1182,21 @@ async def get_agent_campaigns(agent_id: str, limit: int = 100):
 async def get_linkedin_jobs(limit: int = 100):
     """Get LinkedIn jobs from progressive agents' staged results"""
     try:
-        # Get LinkedIn jobs directly from database
+        # Get LinkedIn jobs directly from database - this is more reliable than in-memory agents
         from utils.progressive_agent_db import progressive_agent_db
         
         all_linkedin_jobs = []
         
-        # First check in-memory agents (for recently active ones)
-        agents = progressive_agent_manager.get_all_agents()
-        logger.info(f"🔍 Found {len(agents)} in-memory agents")
-        
-        # Include agents that have completed LinkedIn stage or are fully completed
-        linkedin_ready_agents = []
-        for agent in agents:
-            try:
-                # Check if agent has proper structure and LinkedIn stage is completed
-                if hasattr(agent, 'stages') and hasattr(agent.stages, 'linkedin_fetch'):
-                    if agent.stages.linkedin_fetch.status == "completed" or agent.status == "completed":
-                        linkedin_ready_agents.append(agent)
-                elif agent.status == "completed":
-                    # Fallback for agents without proper stages structure
-                    linkedin_ready_agents.append(agent)
-            except AttributeError:
-                # Skip agents with malformed structure
-                continue
-        logger.info(f"🔍 Found {len(linkedin_ready_agents)} LinkedIn-ready in-memory agents")
-        
-        for agent in linkedin_ready_agents:
-            logger.info(f"🔍 In-memory Agent {agent.id}: LinkedIn jobs count = {len(agent.staged_results.linkedin_jobs) if agent.staged_results and agent.staged_results.linkedin_jobs else 0}")
-            if agent.staged_results and agent.staged_results.linkedin_jobs:
-                for job in agent.staged_results.linkedin_jobs:
-                    # Add agent context
-                    job_with_context = dict(job)
-                    job_with_context['agent_id'] = agent.id
-                    job_with_context['agent_query'] = agent.query
-                    all_linkedin_jobs.append(job_with_context)
-        
-        # Also check database for persisted jobs (for completed agents)
-        if not supabase:
-            logger.warning("No Supabase client - only showing in-memory jobs")
-        else:
+        # Get LinkedIn jobs directly from database (most reliable approach)
+        if supabase:
             try:
                 # Get LinkedIn jobs directly from database
-                result = supabase.table("progressive_agent_jobs").select("*").eq("site", "linkedin").order("created_at", desc=True).limit(limit * 2).execute()
+                result = supabase.table("progressive_agent_jobs").select("*").eq("site", "linkedin").order("created_at", desc=True).limit(limit).execute()
                 db_jobs = result.data or []
                 logger.info(f"🔍 Found {len(db_jobs)} LinkedIn jobs in database")
                 
                 for job in db_jobs:
-                    # Add agent context if missing
+                    # Ensure job has proper structure
                     if 'agent_id' not in job:
                         job['agent_id'] = job.get('agent_id', 'unknown')
                     if 'agent_query' not in job:
@@ -1236,7 +1204,37 @@ async def get_linkedin_jobs(limit: int = 100):
                     all_linkedin_jobs.append(job)
                     
             except Exception as db_error:
-                logger.error(f"Error fetching jobs from database: {db_error}")
+                logger.error(f"Error fetching LinkedIn jobs from database: {db_error}")
+        
+        # Also check in-memory agents as fallback (for newly created agents)
+        try:
+            agents = progressive_agent_manager.get_all_agents()
+            logger.info(f"🔍 Found {len(agents)} in-memory agents")
+            
+            for agent in agents:
+                try:
+                    # Handle both object-style and dict-style agents
+                    if hasattr(agent, 'staged_results') and agent.staged_results:
+                        linkedin_jobs = getattr(agent.staged_results, 'linkedin_jobs', [])
+                    elif isinstance(agent, dict) and 'staged_results' in agent:
+                        linkedin_jobs = agent['staged_results'].get('linkedin_jobs', [])
+                    else:
+                        continue
+                    
+                    if linkedin_jobs:
+                        for job in linkedin_jobs:
+                            # Add agent context
+                            job_with_context = dict(job)
+                            job_with_context['agent_id'] = getattr(agent, 'id', agent.get('id', 'unknown'))
+                            job_with_context['agent_query'] = getattr(agent, 'query', agent.get('query', 'unknown'))
+                            all_linkedin_jobs.append(job_with_context)
+                            
+                except Exception as agent_error:
+                    logger.warning(f"Error processing agent: {agent_error}")
+                    continue
+                    
+        except Exception as memory_error:
+            logger.warning(f"Error accessing in-memory agents: {memory_error}")
         
         # Remove duplicates based on job_id
         seen_jobs = set()
