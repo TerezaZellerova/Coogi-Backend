@@ -82,16 +82,11 @@ class SmartleadManager:
         try:
             # Step 1: Create campaign
             campaign_data = {
-                "name": name,
-                "from_email": from_email,
-                "from_name": from_name,
-                "timezone": "America/New_York",
-                "track_opens": True,
-                "track_clicks": True
+                "name": name
             }
             
             logger.info(f"📧 Creating Smartlead campaign: {name}")
-            campaign_result = self._make_request("POST", "/campaigns/", campaign_data)
+            campaign_result = self._make_request("POST", "/campaigns/create", campaign_data)
             
             if "error" in campaign_result:
                 return {"success": False, "error": campaign_result["error"]}
