@@ -40,20 +40,24 @@ class SmartleadManager:
             
             url = f"{self.base_url}{endpoint}"
             headers = {
-                "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json"
             }
+            
+            # SmartLead.ai uses API key as query parameter
+            params = {"api_key": self.api_key}
+            if data and method.upper() == "GET":
+                params.update(data)
             
             self.last_request_time = time.time()
             
             if method.upper() == "GET":
-                response = requests.get(url, headers=headers, params=data, timeout=30)
+                response = requests.get(url, headers=headers, params=params, timeout=30)
             elif method.upper() == "POST":
-                response = requests.post(url, headers=headers, json=data, timeout=30)
+                response = requests.post(url, headers=headers, params=params, json=data, timeout=30)
             elif method.upper() == "PUT":
-                response = requests.put(url, headers=headers, json=data, timeout=30)
+                response = requests.put(url, headers=headers, params=params, json=data, timeout=30)
             elif method.upper() == "DELETE":
-                response = requests.delete(url, headers=headers, timeout=30)
+                response = requests.delete(url, headers=headers, params=params, timeout=30)
             
             if response.status_code in [200, 201]:
                 return response.json()
