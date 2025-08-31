@@ -123,7 +123,7 @@ def test_smartlead_integration():
 
 if __name__ == "__main__":
     # Set the API key for testing
-    os.environ['SMARTLEAD_API_KEY'] = 'de8d1c5e-1bb0-408e-a86e-1d320b721c92_zbkzree'
+    os.environ['SMARTLEAD_API_KEY'] = 'de8d1c5e-1bb0-408e-a86e-1d320b721c92_ld9unaf'
     
     success = test_smartlead_integration()
     sys.exit(0 if success else 1)
