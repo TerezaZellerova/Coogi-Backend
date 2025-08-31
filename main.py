@@ -176,6 +176,7 @@ async def debug_environment():
         "OPENAI_API_KEY": "SET" if os.getenv("OPENAI_API_KEY") else "NOT SET",
         "HUNTER_API_KEY": "SET" if os.getenv("HUNTER_API_KEY") else "NOT SET", 
         "INSTANTLY_API_KEY": "SET" if os.getenv("INSTANTLY_API_KEY") else "NOT SET",
+        "SMARTLEAD_API_KEY": "SET" if os.getenv("SMARTLEAD_API_KEY") else "NOT SET",
         "RAPIDAPI_KEY": "SET" if os.getenv("RAPIDAPI_KEY") else "NOT SET",
         "CLEAROUT_API_KEY": "SET" if os.getenv("CLEAROUT_API_KEY") else "NOT SET",
         "SUPABASE_URL": os.getenv("SUPABASE_URL"),
