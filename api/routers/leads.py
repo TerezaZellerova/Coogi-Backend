@@ -78,7 +78,7 @@ async def search_jobs(request: JobSearchRequest):
         total_jobs_found = 0
         
         # Process each city sequentially
-        for city in job_scraper.us_cities[:3]:  # Limit to first 3 cities for faster real processing
+        for city in job_scraper.us_cities[:10]:  # Increased to 10 cities for better coverage while maintaining performance
             await log_to_supabase(batch_id, f"🏙️ Processing city: {city}", "info")
             
             try:
@@ -90,7 +90,7 @@ async def search_jobs(request: JobSearchRequest):
                     job_type=search_params.get('job_type', ''),
                     is_remote=search_params.get('is_remote', False),
                     site_name=search_params.get('site_name', ["linkedin", "indeed", "zip_recruiter", "google", "glassdoor"]),
-                    results_wanted=search_params.get('results_wanted', 50),  # Reduced for faster processing
+                    results_wanted=search_params.get('results_wanted', 200),  # Increased for better job coverage
                     offset=search_params.get('offset', 0),
                     distance=search_params.get('distance', 25),
                     easy_apply=search_params.get('easy_apply', False),
@@ -311,7 +311,7 @@ async def search_jobs(request: JobSearchRequest):
             "total_emails_found": sum(len(comp.get('hunter_emails', [])) for comp in companies_analyzed),
             "hours_old": request.hours_old,
             "custom_tags": getattr(request, 'custom_tags', None),
-            "processed_cities": 3,  # We processed first 3 cities
+            "processed_cities": 10,  # We now process first 10 cities
             "processed_companies": len(companies_analyzed),
             "companies_analyzed": companies_analyzed,
             "campaigns_created": campaigns_created,

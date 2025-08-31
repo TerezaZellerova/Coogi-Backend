@@ -128,7 +128,7 @@ async def run_linkedin_stage(agent_id: str, query: str, hours_old: int):
             hours_old=hours_old,
             company_size=agent.company_size,
             location=agent.location_filter or "United States",
-            max_results=30
+            max_results=200  # Increased to utilize full API capacity
         )
         
         # Categorize jobs: LinkedIn jobs include direct LinkedIn API results AND JSearch jobs with LinkedIn URLs
@@ -269,7 +269,7 @@ async def run_other_boards_stage(agent_id: str, request: JobSearchRequest):
                 hours_old=request.hours_old,
                 company_size=agent.company_size,
                 location=agent.location_filter or "United States",
-                max_results=50
+                max_results=150  # Increased to get more job coverage
             ),
             timeout=300.0  # 5 minute timeout
         )
