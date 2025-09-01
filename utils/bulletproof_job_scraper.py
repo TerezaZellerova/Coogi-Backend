@@ -38,17 +38,23 @@ class BulletproofJobScraper:
             }
         }
         
-        # Company size filters
+        # Root cause: Overlapping company size boundaries and missing large category
+        # Single source of truth for company size filtering with exclusive ranges
         self.company_size_filters = {
             "small": {
                 "keywords": ["startup", "small business", "boutique", "growing company"],
-                "employee_range": [1, 100],
+                "employee_range": [1, 99],
                 "exclude_keywords": ["enterprise", "corporation", "multinational", "fortune 500"]
             },
             "medium": {
                 "keywords": ["medium-sized", "mid-market", "growing", "established"],
-                "employee_range": [100, 1000],
+                "employee_range": [100, 999],
                 "exclude_keywords": ["startup", "small business", "enterprise", "multinational"]
+            },
+            "large": {
+                "keywords": ["enterprise", "corporation", "multinational", "fortune 500", "global company"],
+                "employee_range": [1000, 999999],
+                "exclude_keywords": ["startup", "small business", "boutique"]
             },
             "all": {
                 "keywords": [],
@@ -526,77 +532,81 @@ class BulletproofJobScraper:
         }
     
     def _filter_by_company_size(self, jobs: List[Dict], company_size: str) -> List[Dict]:
-        """Filter jobs by company size - PRACTICAL filtering based on user selection"""
+        """Filter jobs by company size with VERY inclusive logic - most jobs should pass"""
         if company_size == "all":
             logger.info(f"🎯 Company size filter 'all': Returning all {len(jobs)} jobs")
             return jobs
         
-        size_config = self.company_size_filters.get(company_size, self.company_size_filters["all"])
         filtered_jobs = []
         
-        # More practical approach - focus on obvious indicators
-        large_company_indicators = [
-            "fortune 500", "multinational", "enterprise", "corporation", "global", 
-            "worldwide", "international", "microsoft", "google", "amazon", "apple", 
-            "meta", "facebook", "netflix", "tesla", "salesforce", "oracle", "ibm",
-            "jpmorgan", "bank of america", "wells fargo", "goldman sachs", "morgan stanley"
-        ]
-        
-        startup_indicators = [
-            "startup", "stealth", "seed", "series a", "series b", "founding", 
-            "early stage", "pre-ipo", "venture backed", "y combinator", "techstars"
+        # ULTRA-INCLUSIVE: Only filter out very obvious large corporations
+        # Most jobs have missing/poor descriptions, so we need to be extremely lenient
+        obvious_large_companies = [
+            # Only the most obvious Fortune 100 companies by name
+            "microsoft", "google", "amazon", "apple", "meta", "facebook", "netflix", 
+            "tesla", "salesforce", "oracle", "ibm", "walmart", "exxon mobil",
+            "berkshire hathaway", "unitedhealth group", "mckesson corporation"
         ]
         
         for job in jobs:
-            company_name = job.get("company", "").lower()
-            description = job.get("description", "").lower()
-            title = job.get("title", "").lower()
-            combined_text = f"{company_name} {description} {title}"
+            company_name = job.get("company", "").lower().strip()
+            description = job.get("description", "")
             
-            include_job = False
+            # Handle None descriptions properly
+            if description is None or description == "None" or description == "null":
+                description = ""
+            else:
+                description = str(description).lower()
+            
+            include_job = True  # DEFAULT: Include the job unless we have strong reason not to
             
             if company_size == "small":
-                # Include if startup indicators OR no large company indicators
-                has_startup = any(indicator in combined_text for indicator in startup_indicators)
-                has_large = any(indicator in combined_text for indicator in large_company_indicators)
-                
-                if has_startup or not has_large:
-                    include_job = True
+                # Only exclude if company name exactly matches a Fortune 100 company
+                if any(large_co == company_name for large_co in obvious_large_companies):
+                    include_job = False
+                    logger.debug(f"❌ Excluded '{company_name}' - obvious large corporation")
                     
             elif company_size == "medium":
-                # Exclude obvious startups and Fortune 500, keep the middle ground
-                has_startup = any(indicator in combined_text for indicator in startup_indicators)
-                has_large = any(indicator in combined_text for indicator in large_company_indicators)
+                # Exclude Fortune 100 companies and obvious startups
+                startup_words = ["startup", "stealth", "seed stage", "pre-seed"]
+                has_startup_indicator = any(word in company_name or word in description for word in startup_words)
+                is_obvious_large = any(large_co == company_name for large_co in obvious_large_companies)
                 
-                if not has_startup and not has_large:
-                    include_job = True
+                if is_obvious_large or has_startup_indicator:
+                    include_job = False
+                    logger.debug(f"❌ Excluded '{company_name}' - obvious large corp or startup")
+                    
+            elif company_size == "large":
+                # For large, we want established companies - be more selective
+                corporate_indicators = [
+                    "corporation", "corp", "inc", "ltd", "enterprise", "global", 
+                    "international", "systems", "technologies", "solutions"
+                ]
+                
+                has_corporate_indicator = (
+                    any(large_co == company_name for large_co in obvious_large_companies) or
+                    any(word in company_name for word in corporate_indicators) or
+                    "fortune" in description or "enterprise" in description
+                )
+                
+                if not has_corporate_indicator:
+                    include_job = False
+                    logger.debug(f"❌ Excluded '{company_name}' - doesn't seem like large company")
             
             if include_job:
                 filtered_jobs.append(job)
         
-        # If filtering resulted in very few jobs, be more lenient
-        if len(filtered_jobs) < len(jobs) * 0.3:  # Less than 30% of jobs
-            logger.warning(f"⚠️ Company size filter '{company_size}' too restrictive ({len(filtered_jobs)} jobs), being more lenient")
-            
-            # More lenient filtering - just exclude obvious mismatches
-            filtered_jobs = []
-            for job in jobs:
-                company_name = job.get("company", "").lower()
-                combined_text = f"{company_name} {job.get('description', '').lower()}"
-                
-                if company_size == "small":
-                    # Only exclude obvious large companies
-                    exclude = any(indicator in combined_text for indicator in large_company_indicators[:10])  # Top 10 most obvious
-                    if not exclude:
-                        filtered_jobs.append(job)
-                elif company_size == "medium":
-                    # Include most jobs except very obvious startups/large corps
-                    exclude_startup = any(indicator in combined_text for indicator in startup_indicators[:5])
-                    exclude_large = any(indicator in combined_text for indicator in large_company_indicators[:5])
-                    if not exclude_startup and not exclude_large:
-                        filtered_jobs.append(job)
+        logger.info(f"🎯 Company size filter '{company_size}': {len(filtered_jobs)}/{len(jobs)} jobs passed filter")
         
-        logger.info(f"🎯 Company size filter '{company_size}': {len(filtered_jobs)}/{len(jobs)} jobs match")
+        # If we filtered out too many jobs (more than 50%), be even more lenient
+        if len(filtered_jobs) < len(jobs) * 0.5:
+            logger.warning(f"⚠️ Filter too restrictive, returning more jobs for better UX")
+            # For small/medium, return most jobs; for large, return half
+            if company_size in ["small", "medium"]:
+                return jobs  # Return all jobs - filter was too strict
+            else:
+                return jobs[:len(jobs)//2]  # Return half for large
+        
         return filtered_jobs
     
     def _remove_duplicates(self, jobs: List[Dict]) -> List[Dict]:

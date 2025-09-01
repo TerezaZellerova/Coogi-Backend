@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import routers
-from api.routers import agents, campaigns, auth, leads, progressive_agents, email
+from api.routers import agents, campaigns, auth, leads, progressive_agents, email, quota_management
 
 # Import shared models for OpenAPI documentation
 from api.models import HealthResponse
@@ -63,6 +63,7 @@ app.include_router(auth.router)
 app.include_router(leads.router)
 app.include_router(progressive_agents.router)
 app.include_router(email.router)
+app.include_router(quota_management.router)
 
 # Serve HTML templates
 @app.get("/login", response_class=HTMLResponse)

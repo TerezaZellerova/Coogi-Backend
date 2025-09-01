@@ -16,7 +16,7 @@ class JobSearchRequest(BaseModel):
     min_score: float = 0.5  # Minimum lead score for campaign inclusion
     custom_tags: Optional[List[str]] = None  # Optional: custom tags to add to leads
     target_type: str = "hiring_managers"  # "hiring_managers" or "job_candidates"
-    company_size: str = "all"  # "small", "medium", "all"
+    company_size: str = "all"  # "small", "medium", "large", "all"
     location_filter: Optional[str] = None  # Optional location filter
 
 class Lead(BaseModel):
@@ -222,7 +222,7 @@ class ProgressiveAgent(BaseModel):
     hours_old: int = 24
     custom_tags: Optional[List[str]] = None
     target_type: str = "hiring_managers"  # "hiring_managers" or "job_candidates"
-    company_size: str = "all"  # "small", "medium", "all"
+    company_size: str = "all"  # "small", "medium", "large", "all"
     location_filter: Optional[str] = None
     final_stats: Optional[Dict[str, Any]] = None
 

@@ -4,6 +4,7 @@ import requests
 import json
 from typing import List, Dict, Any, Optional, Tuple
 import time # Added for retry mechanism
+from .hunter_quota_manager import hunter_quota_manager
 
 logger = logging.getLogger(__name__)
 
@@ -156,7 +157,7 @@ class ContactFinder:
             
             employee_roles = []
             if company_info.get("employees"):
-                for employee in company_info["employees"][:10]:  # Limit to first 10 employees
+                for employee in company_info["employees"][:3]:  # REDUCED: Limit to first 3 employees to save quota
                     title = employee.get("title", "")
                     if title:
                         employee_roles.append(title)
@@ -168,7 +169,7 @@ class ContactFinder:
             
             contacts = []
             if company_info.get("employees"):
-                for employee in company_info["employees"][:5]:  # Limit to first 5 employees
+                for employee in company_info["employees"][:2]:  # REDUCED: Limit to first 2 employees to save quota
                     contact = {
                         "name": employee.get("name", ""),
                         "title": employee.get("title", ""),
@@ -193,14 +194,25 @@ class ContactFinder:
             return [], False, [], False
         
     def find_hunter_emails_for_target_company(self, company: str, job_title: str = "", employee_roles: List[str] = None, company_website: Optional[str] = None) -> List[Dict[str, str]]:
-        """Find emails for a target company using Hunter.io"""
+        """Find emails for a target company using Hunter.io with quota management"""
         logger.info(f"🎯 Starting Hunter.io email discovery for {company}")
         
         if not self.hunter_api_key:
             logger.warning("❌ No Hunter.io API key configured")
             return []
         
+        # Check quota before making request
+        if not hunter_quota_manager.can_make_request():
+            logger.warning("⚠️ Hunter.io quota exceeded, skipping email search")
+            return []
+        
         try:
+            # Get optimized limits based on current quota
+            limits = hunter_quota_manager.get_optimized_limits()
+            email_limit = limits["emails_per_domain"]
+            
+            logger.info(f"📊 Using optimized limit: {email_limit} emails per domain")
+            
             # Step 1: Find company domain
             logger.info(f"🌐 Step 1: Finding domain for {company}")
             
@@ -215,8 +227,8 @@ class ContactFinder:
                 else:
                     logger.warning(f"❌ No domain found for {company}")
                     return []
-            
-            # Step 2: Search for emails on the domain
+
+            # Step 2: Search for emails on the domain (QUOTA MANAGED)
             logger.info(f"📧 Step 2: Searching for emails on {domain}")
             
             search_url = "https://api.hunter.io/v2/domain-search"
@@ -224,15 +236,20 @@ class ContactFinder:
                 "domain": domain,
                 "company": company,
                 "type": "personal",  # Only get personal emails, filter out generic ones
-                "limit": 3,  # Limit to 3 emails maximum
+                "limit": email_limit,  # DYNAMIC: Use quota-based limit
                 "api_key": self.hunter_api_key
             }
             
             response = requests.get(search_url, params=params, timeout=15)
             logger.info(f"📧 Hunter.io response status: {response.status_code}")
             
+            # Record the API request for quota tracking
+            request_success = response.status_code == 200
+            contacts_found = 0
+            
             if response.status_code != 200:
                 logger.error(f"❌ Hunter.io API error: {response.status_code}")
+                hunter_quota_manager.record_request(cost=1, success=False, contacts_found=0)
                 return []
             
             data = response.json()
@@ -298,8 +315,12 @@ class ContactFinder:
                     
                     filtered_emails.append(email_info)
                     logger.info(f"✅ Added personal email: {email_data} (name: {full_name}, title: {position}, LinkedIn: {linkedin_url})")
+                    contacts_found += 1
                 else:
                     logger.info(f"❌ Skipped email: {email_data} (confidence: {confidence})")
+            
+            # Record successful request with quota tracking
+            hunter_quota_manager.record_request(cost=1, success=True, contacts_found=contacts_found)
             
             logger.info(f"✅ Step 3 Complete: Processed {len(filtered_emails)} personal emails")
             
@@ -307,6 +328,7 @@ class ContactFinder:
             
         except Exception as e:
             logger.error(f"❌ Hunter.io error for {company}: {e}")
+            hunter_quota_manager.record_request(cost=1, success=False, contacts_found=0)
             return []
     
     def _filter_real_person_emails(self, emails: List[str]) -> List[str]:
@@ -680,7 +702,7 @@ Example format:
                 "company": company,
                 "job_title": job_title,
                 "has_ta_team": has_ta_team or found_ta,
-                "all_contacts": contacts[:5],  # Limit to first 5 for speed
+                "all_contacts": contacts[:3],  # REDUCED: Limit to first 3 for quota efficiency
                 "ta_contacts": [c for c in contacts if any(keyword in c.get('title', '').lower() for keyword in ['talent', 'recruit', 'hr'])][:3],
                 "verified_emails": verified_emails[:10],  # Include Hunter.io emails
                 "hunter_emails": hunter_emails,  # Separate Hunter.io results
