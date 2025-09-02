@@ -534,7 +534,7 @@ class BulletproofJobScraper:
     def _filter_by_company_size(self, jobs: List[Dict], company_size: str) -> List[Dict]:
         """Filter jobs by company size with VERY inclusive logic - most jobs should pass"""
         if company_size == "all":
-            logger.info(f"🎯 Company size filter 'all': Returning all {len(jobs)} jobs")
+            logger.info(f"🎯 Company size filter 'all': Returning all {len(jobs)} jobs (no filtering)")
             return jobs
         
         filtered_jobs = []
