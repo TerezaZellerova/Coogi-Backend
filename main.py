@@ -365,6 +365,7 @@ async def cleanup_lead_database():
         # Tables to clean for fresh lead database
         tables_to_clean = [
             'contacts',
+            'hunter_emails',  # This is where the actual leads are stored
             'job_opportunities', 
             'progressive_agents',
             'production_campaigns',
@@ -417,6 +418,75 @@ async def cleanup_lead_database():
         logger.error(f"Database cleanup failed: {e}")
         raise HTTPException(status_code=500, detail=f"Cleanup failed: {str(e)}")
 
+# Database cleanup endpoint for clearing lead data
+@app.delete("/admin/cleanup-database", tags=["admin"])
+async def cleanup_database():
+    """
+    ADMIN ONLY: Clear all lead database data for fresh demos
+    This will delete all agents, contacts, campaigns, and logs
+    """
+    try:
+        from supabase import create_client
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        
+        if not supabase_url or not supabase_key:
+            raise HTTPException(status_code=500, detail="Database configuration not available")
+        
+        supabase = create_client(supabase_url, supabase_key)
+        
+        # Track what we're cleaning
+        cleanup_stats = {}
+        
+        # Get counts before deletion
+        tables_to_clean = [
+            'contacts',
+            'progressive_agents', 
+            'production_campaigns',
+            'agent_logs',
+            'email_campaigns'
+        ]
+        
+        for table in tables_to_clean:
+            try:
+                # Get count before deletion
+                count_result = supabase.table(table).select('*', count='exact').execute()
+                before_count = count_result.count
+                
+                # Delete all records
+                delete_result = supabase.table(table).delete().neq('id', 0).execute()
+                
+                # Get count after deletion
+                count_after = supabase.table(table).select('*', count='exact').execute()
+                after_count = count_after.count
+                
+                cleanup_stats[table] = {
+                    'before': before_count,
+                    'after': after_count,
+                    'deleted': before_count - after_count
+                }
+                
+                logger.info(f"✅ Cleaned {table}: {before_count} -> {after_count} records")
+                
+            except Exception as table_error:
+                cleanup_stats[table] = {
+                    'error': str(table_error),
+                    'status': 'failed'
+                }
+                logger.error(f"❌ Failed to clean {table}: {table_error}")
+        
+        return {
+            "status": "success",
+            "message": "Database cleanup completed",
+            "timestamp": datetime.now().isoformat(),
+            "cleanup_stats": cleanup_stats,
+            "note": "All lead data has been cleared. New agents will show fresh, real data."
+        }
+        
+    except Exception as e:
+        logger.error(f"Database cleanup failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Cleanup failed: {str(e)}")
+
 @app.get("/admin/database/stats", tags=["admin"])
 async def get_database_stats():
     """Get current database statistics for all tables"""
@@ -433,6 +503,7 @@ async def get_database_stats():
         # Tables to check
         tables_to_check = [
             'contacts',
+            'hunter_emails',  # This is where the actual leads are stored  
             'job_opportunities', 
             'progressive_agents',
             'production_campaigns',
