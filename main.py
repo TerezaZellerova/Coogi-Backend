@@ -549,6 +549,76 @@ async def get_database_stats():
         logger.error(f"Database stats failed: {e}")
         raise HTTPException(status_code=500, detail=f"Stats failed: {str(e)}")
 
+# Database inspection endpoint to see what tables exist
+@app.get("/admin/inspect-database", tags=["admin"])
+async def inspect_database():
+    """
+    ADMIN: Inspect database to see what tables exist and their row counts
+    """
+    try:
+        from supabase import create_client
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        
+        if not supabase_url or not supabase_key:
+            raise HTTPException(status_code=500, detail="Database configuration not available")
+        
+        supabase = create_client(supabase_url, supabase_key)
+        
+        # List of tables to check
+        tables_to_check = [
+            'progressive_agents',
+            'agent_logs', 
+            'contacts',
+            'hunter_emails',
+            'production_campaigns',
+            'email_campaigns',
+            'email_batches',
+            'email_processing_logs',
+            'job_opportunities',
+            'companies',
+            'leads'
+        ]
+        
+        table_info = {}
+        
+        for table in tables_to_check:
+            try:
+                # Try to get count of records
+                count_result = supabase.table(table).select('*', count='exact').execute()
+                table_info[table] = {
+                    'exists': True,
+                    'count': count_result.count,
+                    'status': 'accessible'
+                }
+                
+                # Get sample record if exists
+                if count_result.count > 0:
+                    sample_result = supabase.table(table).select('*').limit(1).execute()
+                    table_info[table]['sample_record'] = sample_result.data[0] if sample_result.data else None
+                    
+            except Exception as table_error:
+                table_info[table] = {
+                    'exists': False,
+                    'error': str(table_error),
+                    'status': 'error'
+                }
+        
+        return {
+            "status": "success",
+            "timestamp": datetime.now().isoformat(),
+            "database_inspection": table_info,
+            "summary": {
+                "existing_tables": [t for t, info in table_info.items() if info.get('exists')],
+                "non_existing_tables": [t for t, info in table_info.items() if not info.get('exists')],
+                "total_records": sum(info.get('count', 0) for info in table_info.values() if info.get('exists'))
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Database inspection failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Inspection failed: {str(e)}")
+
 if __name__ == "__main__":
     import uvicorn
     # Use PORT environment variable for Render compatibility
