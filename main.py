@@ -438,13 +438,13 @@ async def cleanup_database():
         # Track what we're cleaning
         cleanup_stats = {}
         
-        # Get counts before deletion
+        # Get counts before deletion - UPDATED to include the correct tables
         tables_to_clean = [
-            'contacts',
-            'progressive_agents', 
-            'production_campaigns',
-            'agent_logs',
-            'email_campaigns'
+            'jobs',              # The main jobs table (1000+ records)
+            'contacts',          # The main contacts table (517 records)
+            'progressive_agents', # Agent definitions 
+            'agent_logs',        # Tracking logs
+            'production_campaigns' # Campaigns if they exist
         ]
         
         for table in tables_to_clean:
