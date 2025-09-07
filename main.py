@@ -167,8 +167,9 @@ async def health_check():
         "RapidAPI": bool(os.getenv("RAPIDAPI_KEY")),
         "Hunter.io": bool(os.getenv("HUNTER_API_KEY")),
         "Apollo.io": bool(os.getenv("APOLLO_API_KEY")),
-        "AWS_SES": bool(os.getenv("AWS_SES_ACCESS_KEY") and os.getenv("AWS_SES_SECRET_KEY")),
+        "AWS_SES": bool(os.getenv("AWS_ACCESS_KEY_ID") and os.getenv("AWS_SECRET_ACCESS_KEY")),
         "Instantly.ai": bool(os.getenv("INSTANTLY_API_KEY")),
+        "SmartLead.ai": bool(os.getenv("SMARTLEAD_API_KEY")),
         "JobSpy_API": True
     }
     
@@ -191,9 +192,9 @@ async def debug_environment():
         "HUNTER_API_KEY": "SET" if os.getenv("HUNTER_API_KEY") else "NOT SET", 
         "INSTANTLY_API_KEY": "SET" if os.getenv("INSTANTLY_API_KEY") else "NOT SET",
         "APOLLO_API_KEY": "SET" if os.getenv("APOLLO_API_KEY") else "NOT SET",
-        "AWS_SES_ACCESS_KEY": "SET" if os.getenv("AWS_SES_ACCESS_KEY") else "NOT SET",
-        "AWS_SES_SECRET_KEY": "SET" if os.getenv("AWS_SES_SECRET_KEY") else "NOT SET",
-        "AWS_SES_REGION": os.getenv("AWS_SES_REGION", "us-east-1"),
+        "AWS_ACCESS_KEY_ID": "SET" if os.getenv("AWS_ACCESS_KEY_ID") else "NOT SET",
+        "AWS_SECRET_ACCESS_KEY": "SET" if os.getenv("AWS_SECRET_ACCESS_KEY") else "NOT SET",
+        "AWS_REGION": os.getenv("AWS_REGION", "us-east-1"),
         "RAPIDAPI_KEY": "SET" if os.getenv("RAPIDAPI_KEY") else "NOT SET",
         "CLEAROUT_API_KEY": "SET" if os.getenv("CLEAROUT_API_KEY") else "NOT SET",
         "SUPABASE_URL": os.getenv("SUPABASE_URL"),
