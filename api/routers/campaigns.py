@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, Request
+from fastapi.responses import Response
 from datetime import datetime
 from typing import Dict, Any
 import logging
@@ -594,3 +595,38 @@ async def get_jsearch_status(current_user: dict = Depends(get_current_user)):
     except Exception as e:
         logger.error(f"Error checking JSearch status: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/campaigns/trk")
+async def track_email_open(request: Request):
+    """Handle email open tracking pixel"""
+    try:
+        # Get tracking parameters from query string
+        campaign_id = request.query_params.get('c')  # campaign ID
+        email_id = request.query_params.get('e')     # email ID
+        contact_id = request.query_params.get('t')   # contact ID
+        
+        # Log the tracking event
+        if campaign_id:
+            logger.info(f"Email opened - Campaign: {campaign_id}, Email: {email_id}, Contact: {contact_id}")
+            
+            # Here you could update your database with the open tracking info
+            # For now, we'll just log it
+            # Example: update_email_open_tracking(campaign_id, email_id, contact_id)
+        
+        # Return a 1x1 transparent pixel
+        pixel_data = b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x80\x00\x00\xff\xff\xff\x00\x00\x00\x21\xf9\x04\x01\x00\x00\x00\x00\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02\x44\x01\x00\x3b'
+        
+        return Response(
+            content=pixel_data,
+            media_type="image/gif",
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
+        )
+    except Exception as e:
+        logger.error(f"Error in email tracking: {e}")
+        # Return empty pixel even on error
+        pixel_data = b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x80\x00\x00\xff\xff\xff\x00\x00\x00\x21\xf9\x04\x01\x00\x00\x00\x00\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02\x44\x01\x00\x3b'
+        return Response(content=pixel_data, media_type="image/gif")
