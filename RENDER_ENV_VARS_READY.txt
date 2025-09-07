@@ -1,0 +1,28 @@
+# 📋 COPY-PASTE READY ENVIRONMENT VARIABLES FOR RENDER PRO
+# Copy this entire block and paste into Render dashboard Environment Variables section
+
+# ✅ CORE API KEYS (REQUIRED)
+OPENAI_API_KEY=your_openai_api_key_here
+HUNTER_API_KEY=your_hunter_api_key_here
+RAPIDAPI_KEY=your_rapidapi_key_here
+INSTANTLY_API_KEY=your_instantly_api_key_here
+APIFY_API_KEY=your_apify_api_key_here
+CLEAROUT_API_KEY=your_clearout_api_key_here
+
+# ✅ SUPABASE DATABASE (REQUIRED)
+SUPABASE_URL=your_supabase_url_here
+SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+
+# ✅ PRODUCTION CONFIG (REQUIRED)
+PORT=10000
+DEMO_MODE=false
+DEBUG=false
+LOG_LEVEL=info
+
+# 🚀 RENDER DEPLOYMENT INSTRUCTIONS:
+# 1. Build Command: pip install -r requirements.txt
+# 2. Start Command: python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+# 3. Environment: Python 3.13
+# 4. Copy all variables above to Render Environment Variables
+# 5. Deploy and test at: https://your-service.onrender.com/health

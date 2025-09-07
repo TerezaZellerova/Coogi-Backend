@@ -1,0 +1,1560 @@
+{
+  "daily_usage": 258,
+  "monthly_usage": 258,
+  "last_reset_date": "2025-09-06T07:37:27.223384",
+  "requests_today": [
+    {
+      "timestamp": "2025-09-06T07:37:29.604790",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:37:48.628093",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:38:00.103248",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:38:12.112874",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:38:24.799574",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:39:01.674848",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:39:13.635279",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:39:26.041521",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:39:45.766665",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:39:57.447276",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:40:09.238897",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:40:21.909422",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:40:33.966885",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:40:46.255763",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:40:58.073878",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:41:17.389555",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:41:28.662790",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:42:00.815954",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:42:13.873398",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:42:25.559033",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:42:37.184008",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:42:50.290216",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:43:01.429056",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:43:12.944981",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:43:24.643105",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:43:36.576205",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:43:47.749349",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:43:59.103145",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:44:10.194013",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:44:22.157045",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:44:33.776663",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:44:45.333993",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:44:56.639831",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:45:08.086960",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:45:20.028202",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:45:31.496308",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:45:42.856200",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:46:07.801274",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:46:19.347590",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:46:30.481765",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:46:49.176310",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:47:14.713940",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:47:34.719326",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:47:47.888076",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:48:01.900898",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:48:20.892728",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:48:33.524106",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:48:45.986899",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:49:16.544365",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:49:27.822919",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:49:40.604410",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:49:54.046849",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:50:07.462194",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:50:27.678116",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:50:41.558858",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:51:54.590923",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:52:01.240738",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:52:25.505430",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:52:33.586330",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:52:39.297641",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:52:52.329651",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:52:58.059481",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:11.067357",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:16.708435",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:22.232635",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:30.546954",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:42.812149",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:48.129603",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:52.746553",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:53:58.810678",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:54:07.658171",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:10.274786",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:18.145317",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:24.635145",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:30.013395",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:34.735532",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:40.363511",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:45.829233",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:55:55.183105",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:56:07.407625",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T07:56:29.305364",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:56:55.852284",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:57:13.445941",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:57:48.034873",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:58:02.920179",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T07:58:18.695435",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:58:58.304587",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:59:14.280304",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T07:59:43.566022",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:00:06.711020",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:00:24.116892",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:00:39.272898",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:00:57.603336",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:02:04.177442",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:02:19.340961",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:02:48.249722",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:03:03.208291",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:03:19.425840",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:03:34.667536",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:03:51.445192",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T08:04:25.896072",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:06:05.479128",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:06:30.589933",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:06:56.824235",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:07:31.024342",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:07:47.824675",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:08:03.383302",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:08:32.369686",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:08:48.240098",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:09:02.775752",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:09:19.161912",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:09:33.874787",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:09:50.692062",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:10:16.817859",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:10:32.085985",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:10:48.263062",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:11:30.886240",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:11:47.439179",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:12:15.315832",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:13:01.365198",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:13:16.966687",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:13:30.312879",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:13:54.557001",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:14:22.398016",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:14:37.912513",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:14:50.735461",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:15:04.746684",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:15:18.010368",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:15:31.607239",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:15:45.777834",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:16:08.967788",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:16:25.061405",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:16:38.563430",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:16:54.234049",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:17:50.139131",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:19:07.251123",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:19:22.099423",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:19:47.184005",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:20:02.427326",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:20:26.916759",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:21:09.821868",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:21:24.779516",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:21:51.548250",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:22:35.126817",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:22:50.971351",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:23:19.617236",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:23:40.965812",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:24:32.986142",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:24:51.112159",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:25:06.710658",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:25:21.625587",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:25:36.165428",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:25:52.556314",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:26:09.345708",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:26:41.397740",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:26:56.552664",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:27:10.886618",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:27:27.166564",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:28:13.488040",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:28:27.435130",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T08:28:42.330841",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:28:56.663584",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:29:19.605843",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:29:50.966959",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T08:30:04.969843",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:30:19.828949",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T08:30:35.411703",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:19.786256",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:24.434788",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:33.494505",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:43.323136",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:50.489712",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:32:57.331113",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:33:09.856939",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:33:26.263452",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:33:43.378932",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T17:34:00.123719",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T17:34:56.637379",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:35:12.048388",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T17:36:22.456591",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:37:19.254637",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T17:37:36.142871",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:37:53.741282",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T17:38:10.708597",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:38:27.339997",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:39:07.743077",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:39:24.189477",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:39:40.082018",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:40:15.663448",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:40:32.130132",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:51:16.214987",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:52:12.157030",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T17:52:31.484477",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:53:04.641759",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:53:22.197116",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T17:53:54.479898",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:54:21.139059",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:54:36.648943",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:54:54.705440",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:55:32.315786",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:55:47.936703",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:56:25.161121",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:56:51.576995",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:58:43.055194",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T17:59:34.157529",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:00:05.882971",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:00:35.993084",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:00:53.790159",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:01:12.546530",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:01:29.932531",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:01:47.121614",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:02:03.727598",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:02:20.440341",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:02:36.923416",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:02:54.023908",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:03:09.997663",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:03:27.235581",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:03:43.465458",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:03:59.489967",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:04:15.976302",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:04:32.403407",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:04:50.831271",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:05:08.162295",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:05:24.615183",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:05:41.672432",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:05:59.891939",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:06:30.197498",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:06:47.689727",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:07:34.916033",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:07:52.808767",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:08:34.636885",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:08:52.842696",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:09:17.682372",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:09:43.220044",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:10:27.055452",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:10:44.973131",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:11:12.570583",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:11:28.794557",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:12:54.605913",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:13:11.223669",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:14:03.298575",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:14:19.594672",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:14:46.525303",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:15:03.426692",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:15:23.718194",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:16:49.296168",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:17:05.056845",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:17:21.088328",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:17:37.132248",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:17:54.129918",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:18:21.774675",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:18:38.438458",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 1
+    },
+    {
+      "timestamp": "2025-09-06T18:18:54.134348",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:20:20.504659",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:20:47.339680",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    },
+    {
+      "timestamp": "2025-09-06T18:21:16.269513",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:21:43.958101",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 0
+    },
+    {
+      "timestamp": "2025-09-06T18:22:00.249346",
+      "cost": 1,
+      "success": true,
+      "contacts_found": 2
+    }
+  ],
+  "efficiency_stats": {
+    "total_requests": 258,
+    "successful_contacts": 421,
+    "success_rate": 163.1782945736434
+  }
+}

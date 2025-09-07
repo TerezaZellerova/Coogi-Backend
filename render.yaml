@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: coogi-backend
+    env: python
+    buildCommand: "./render-build.sh"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 10000
+      - key: DEMO_MODE
+        value: false
+      - key: ENVIRONMENT
+        value: production
+      - key: OPENAI_API_KEY
+        value: your_openai_api_key_here
+      - key: HUNTER_API_KEY
+        value: your_hunter_api_key_here
+      - key: RAPIDAPI_KEY
+        value: your_rapidapi_key_here
+      - key: INSTANTLY_API_KEY
+        value: your_instantly_api_key_here
+      - key: SUPABASE_URL
+        value: your_supabase_url_here
+      - key: SUPABASE_ANON_KEY
+        value: your_supabase_anon_key_here
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        value: your_supabase_service_role_key_here
+      # AWS SES + S3 Configuration for Email Intelligence
+      - key: AWS_ACCESS_KEY_ID
+        value: your_aws_access_key_here
+      - key: AWS_SECRET_ACCESS_KEY
+        value: your_aws_secret_key_here
+      - key: AWS_DEFAULT_REGION
+        value: us-east-1
+      - key: SES_REGION
+        value: us-east-1
+      - key: S3_BUCKET_NAME
+        value: coogi-email-storage
+      - key: COOGI_DOMAIN
+        value: coogi.com
