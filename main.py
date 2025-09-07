@@ -348,6 +348,136 @@ async def test_http_database():
             "error_type": type(e).__name__
         }
 
+# Database cleanup endpoints for fresh demo data
+@app.delete("/admin/cleanup/leads", tags=["admin"])
+async def cleanup_lead_database():
+    """Clean up all lead database tables for fresh demo runs"""
+    try:
+        from supabase import create_client
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        
+        if not supabase_url or not supabase_key:
+            raise HTTPException(status_code=500, detail="Database not configured")
+        
+        supabase = create_client(supabase_url, supabase_key)
+        
+        # Tables to clean for fresh lead database
+        tables_to_clean = [
+            'contacts',
+            'job_opportunities', 
+            'progressive_agents',
+            'production_campaigns',
+            'agent_logs',
+            'email_campaigns'
+        ]
+        
+        cleanup_results = {}
+        
+        for table in tables_to_clean:
+            try:
+                # Count records before deletion
+                count_before = supabase.table(table).select('id', count='exact').execute()
+                before_count = count_before.count if count_before.count else 0
+                
+                # Delete all records from table
+                delete_result = supabase.table(table).delete().neq('id', '00000000-0000-0000-0000-000000000000').execute()
+                
+                # Count records after deletion
+                count_after = supabase.table(table).select('id', count='exact').execute()
+                after_count = count_after.count if count_after.count else 0
+                
+                cleanup_results[table] = {
+                    "before_count": before_count,
+                    "after_count": after_count,
+                    "deleted": before_count - after_count,
+                    "status": "success"
+                }
+                
+            except Exception as table_error:
+                cleanup_results[table] = {
+                    "status": "error",
+                    "error": str(table_error)
+                }
+        
+        # Clear memory cache as well
+        from utils.memory_manager import MemoryManager
+        memory_manager = MemoryManager()
+        memory_manager.clear_memory()
+        
+        return {
+            "status": "success",
+            "message": "Lead database cleaned successfully",
+            "timestamp": datetime.now().isoformat(),
+            "cleanup_results": cleanup_results,
+            "memory_cleared": True
+        }
+        
+    except Exception as e:
+        logger.error(f"Database cleanup failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Cleanup failed: {str(e)}")
+
+@app.get("/admin/database/stats", tags=["admin"])
+async def get_database_stats():
+    """Get current database statistics for all tables"""
+    try:
+        from supabase import create_client
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        
+        if not supabase_url or not supabase_key:
+            raise HTTPException(status_code=500, detail="Database not configured")
+        
+        supabase = create_client(supabase_url, supabase_key)
+        
+        # Tables to check
+        tables_to_check = [
+            'contacts',
+            'job_opportunities', 
+            'progressive_agents',
+            'production_campaigns',
+            'agent_logs',
+            'email_campaigns'
+        ]
+        
+        stats = {}
+        total_records = 0
+        
+        for table in tables_to_check:
+            try:
+                count_result = supabase.table(table).select('id', count='exact').execute()
+                count = count_result.count if count_result.count else 0
+                total_records += count
+                
+                # Get sample records
+                sample_result = supabase.table(table).select('*').limit(3).execute()
+                sample_data = sample_result.data if sample_result.data else []
+                
+                stats[table] = {
+                    "count": count,
+                    "sample_records": len(sample_data),
+                    "has_data": count > 0
+                }
+                
+            except Exception as table_error:
+                stats[table] = {
+                    "count": 0,
+                    "error": str(table_error),
+                    "has_data": False
+                }
+        
+        return {
+            "status": "success",
+            "timestamp": datetime.now().isoformat(),
+            "total_records": total_records,
+            "table_stats": stats,
+            "database_url": supabase_url
+        }
+        
+    except Exception as e:
+        logger.error(f"Database stats failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Stats failed: {str(e)}")
+
 if __name__ == "__main__":
     import uvicorn
     # Use PORT environment variable for Render compatibility
