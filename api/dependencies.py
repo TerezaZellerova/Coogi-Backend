@@ -33,6 +33,19 @@ TEST_USERS = {
             "bypass_rate_limits": True,
             "full_admin_access": True
         }
+    },
+    "contact@liacgroupllc.com": {
+        "password": "Newyork2024$",
+        "name": "LIAC Group Admin",
+        "role": "super_admin",
+        "permissions": {
+            "unlimited_agents": True,
+            "unlimited_searches": True,
+            "no_subscription_required": True,
+            "access_all_features": True,
+            "bypass_rate_limits": True,
+            "full_admin_access": True
+        }
     }
 }
 
