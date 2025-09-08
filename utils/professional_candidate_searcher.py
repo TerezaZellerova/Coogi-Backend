@@ -126,11 +126,14 @@ class ProfessionalCandidateSearcher:
             
             # Strategy 1: Direct search with email reveal (professional account)
             logger.info(f"🎯 Strategy 1: Searching Apollo.io with email reveal for '{job_title}'")
-            result = self.apollo.search_candidates_with_emails(
+            result = self.apollo.search_candidates(
                 job_title=job_title,
                 location=location,
                 company_size=company_size if company_size != "all" else None,
-                limit=limit
+                limit=limit,
+                require_email=True,
+                unlock_emails=True,
+                hunter_verify=True
             )
             
             candidates = []
@@ -144,11 +147,14 @@ class ProfessionalCandidateSearcher:
                 broader_terms = self._get_broader_search_terms(job_title)
                 
                 for term in broader_terms:
-                    result = self.apollo.search_candidates_with_emails(
+                    result = self.apollo.search_candidates(
                         job_title=term,
                         location=location,
                         company_size=company_size if company_size != "all" else None,
-                        limit=limit//len(broader_terms) if len(broader_terms) > 1 else limit
+                        limit=limit//len(broader_terms) if len(broader_terms) > 1 else limit,
+                        require_email=True,
+                        unlock_emails=True,
+                        hunter_verify=True
                     )
                     
                     if result.get("success") and result.get("candidates"):
@@ -166,11 +172,14 @@ class ProfessionalCandidateSearcher:
                 industry_terms = self._get_industry_keywords(job_title)
                 
                 for term in industry_terms:
-                    result = self.apollo.search_candidates_with_emails(
+                    result = self.apollo.search_candidates(
                         job_title=term,
                         location=location,
                         company_size=company_size if company_size != "all" else None,
-                        limit=limit//len(industry_terms) if len(industry_terms) > 1 else limit
+                        limit=limit//len(industry_terms) if len(industry_terms) > 1 else limit,
+                        require_email=True,
+                        unlock_emails=True,
+                        hunter_verify=True
                     )
                     
                     if result.get("success") and result.get("candidates"):
@@ -296,6 +305,7 @@ class ProfessionalCandidateSearcher:
         # Professional title mappings for better API results
         title_mappings = {
             # Medical/Healthcare professionals
+            "dvm": "Veterinarian",
             "vet doctor": "Veterinarian",
             "veterinarian": "Veterinarian", 
             "vet": "Veterinarian",
