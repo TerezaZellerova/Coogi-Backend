@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import routers
-from api.routers import agents, campaigns, auth, leads, progressive_agents, email, quota_management, production_campaigns, candidates, coogi_email_intelligence, ses_campaigns, live_campaigns
+from api.routers import agents, campaigns, auth, leads, progressive_agents, email, quota_management, production_campaigns, candidates, coogi_email_intelligence, ses_campaigns, live_campaigns, unified_campaigns
 
 # Import shared models for OpenAPI documentation
 from api.models import HealthResponse
@@ -77,6 +77,7 @@ app.include_router(candidates.router)
 app.include_router(coogi_email_intelligence.router)  # Coogi domain email intelligence
 app.include_router(ses_campaigns.router)  # AWS SES campaigns with analytics
 app.include_router(live_campaigns.router)  # Live email campaigns management
+app.include_router(unified_campaigns.router)  # Unified SES-first campaigns (no mock logic)
 
 # Serve HTML templates
 @app.get("/login", response_class=HTMLResponse)
