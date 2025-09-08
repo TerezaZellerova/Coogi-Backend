@@ -117,11 +117,20 @@ async def send_ses_email(request: SESEmailRequest):
         # Send to first recipient (SES send_email supports only one recipient)
         to_email = request.to_emails[0]
         
+        # Prepare HTML body - use provided HTML or convert text to HTML
+        html_body = request.body_html
+        if not html_body and request.body_text:
+            try:
+                html_body = ses_service._text_to_html(request.body_text)
+            except Exception as e:
+                logger.warning(f"Failed to convert text to HTML: {e}")
+                html_body = request.body_text  # Fallback to plain text
+        
         result = ses_service.send_email(
             to_email=to_email,
             subject=request.subject,
             body_text=request.body_text,
-            body_html=request.body_html or ses_service._text_to_html(request.body_text),
+            body_html=html_body,
             from_email=request.from_email,
             reply_to=request.reply_to
         )

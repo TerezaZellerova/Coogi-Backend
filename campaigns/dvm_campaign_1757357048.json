@@ -1,0 +1,1743 @@
+{
+  "id": "dvm_campaign_1757357048",
+  "name": "DVM Search - agent_20250908_224335_745119 - Cumberland, RI",
+  "type": "dvm_outreach",
+  "status": "scheduled",
+  "target_audience": "veterinarians",
+  "locations": [
+    "Cumberland",
+    "RI"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "6356797d9140550001a500de",
+      "name": "Jessy Vandevender",
+      "first_name": "Jessy",
+      "last_name": "Vandevender",
+      "title": "Veterinarian",
+      "company": "HART FOR ANIMALS INC",
+      "domain": "hartforanimals.org",
+      "location": "Cumberland, Maryland",
+      "linkedin_url": "http://www.linkedin.com/in/jessy-vandevender-015060171",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "jessy@hartforanimals.org"
+      ],
+      "phones": [
+        "+13013877729"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "Cumberland",
+      "email": "jessy@hartforanimals.org",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+13013877729",
+      "organization": {
+        "id": "5a9ebd97a6da98d98c6f8fa4",
+        "name": "HART FOR ANIMALS INC",
+        "website_url": "http://www.hartforanimals.org",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/hart-for-animals-inc",
+        "twitter_url": "https://twitter.com/HARTforAnimals",
+        "facebook_url": "https://www.facebook.com/HARTforAnimals",
+        "primary_phone": {
+          "number": "+1 301-387-7729",
+          "source": "Scraped",
+          "sanitized_number": "+13013877729"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 301-387-7729",
+        "linkedin_uid": "15561447",
+        "founded_year": 2003,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66e886457279210001897cd7/picture",
+        "crunchbase_url": null,
+        "primary_domain": "hartforanimals.org",
+        "sic_codes": [
+          "7200"
+        ],
+        "naics_codes": [
+          "81291"
+        ],
+        "sanitized_phone": "+13013877729",
+        "industry": "nonprofit organization management",
+        "estimated_num_employees": 23,
+        "keywords": [
+          "muttworks grooming",
+          "animal rescue transport",
+          "animal adoption",
+          "lowcost spayneuter programs",
+          "animal rescue amp transport",
+          "the bredel veterinary clinic",
+          "animal rescue",
+          "pick of the litter thrift shop",
+          "the bed 39n bark inn for pet guests",
+          "the bed n bark inn for pet guests",
+          "non-profit organizations",
+          "arthroscopic surgery",
+          "animal health care",
+          "community outreach",
+          "pet grooming",
+          "animal rescue grants",
+          "animal rescue fundraising",
+          "low-income pet owner support",
+          "animal rescue volunteer training",
+          "emergency veterinary assistance",
+          "kitten foster program",
+          "animal shelter",
+          "animal rescue impact metrics",
+          "pet hotel",
+          "animal rescue community engagement",
+          "spay/neuter",
+          "foster program",
+          "low-cost surgeries",
+          "animal rescue programs",
+          "animal sheltering",
+          "animal rescue transportation",
+          "animal sheltering and rescue",
+          "senior pet care",
+          "veterinary services",
+          "animal rescue operations",
+          "rescue and adoption",
+          "volunteer opportunities",
+          "veterinary care",
+          "nonprofit organizations",
+          "spay/neuter grant",
+          "animal welfare",
+          "animal shelter certification",
+          "animal shelter management",
+          "community pet services",
+          "animal foster care",
+          "pet boarding",
+          "charitable funds",
+          "adoption",
+          "humane animal center",
+          "non-profit organization",
+          "b2c",
+          "non-profit",
+          "services",
+          "pet care (except veterinary) services",
+          "nonprofit organization management",
+          "veterinary"
+        ],
+        "organization_revenue_printed": "3.1M",
+        "organization_revenue": 3094000.0,
+        "industries": [
+          "nonprofit organization management"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696454303a0000",
+        "industry_tag_hash": {
+          "nonprofit organization management": "5567cd4773696454303a0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "1268 Bumble Bee Road, Accident, Maryland 21520, US",
+        "street_address": "1268 Bumble Bee Rd",
+        "city": "Accident",
+        "state": "Maryland",
+        "postal_code": "21520",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "At HART, we developed a creative way to fund our mission with an innovative model to ensure a long-term legacy for our animals.\n\nSmall charitable organizations are finding it difficult to raise money for day-to-day operations to achieve their mission.  Recognizing that long-term sustainability would require a way to supplement the donations given each year by people like you, Hart's founders developed an innovative model to help fund the important work being done in Western Maryland to rescue, care for, and find adopting homes for pets.\n\nWhen the HART for Animals Center opened in 2014, it was the culmination of over 10 years of effort by many people. Included in the center are a full-service veterinary practice \u2014 the Bredel Vet Clinic, a full-service dog and cat boarding facility \u2014 the Bed \u2018N Bark Inn, and a dog groomer and day spa \u2014 MuttWorks. HART for Animals also runs the Pick of the Litter thrift store which sells items donated by generous donors. The profit from these services is used to help fund the day-to-day operations of HART for Animals along with the generous donations from our donors, both large and small.\n\nThis model helps us to ensure a long-term legacy for the animals in need of rescue and seeking their forever homes through our adoption center. Our ability to thrive in the years ahead still depends heavily on your generosity. Please consider making a donation today.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "3.1M",
+        "annual_revenue": 3094000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Eventbrite",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Google Analytics",
+          "Google Font API",
+          "Google Maps",
+          "Google Tag Manager",
+          "MailChimp SPF",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Remote",
+          "Shutterstock",
+          "Squarespace ECommerce",
+          "Typekit"
+        ],
+        "current_technologies": [
+          {
+            "uid": "eventbrite",
+            "name": "Eventbrite",
+            "category": "Event Management"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mailchimp_spf",
+            "name": "MailChimp SPF",
+            "category": "Other"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "shutterstock",
+            "name": "Shutterstock",
+            "category": "Other"
+          },
+          {
+            "uid": "squarespace_ecommerce",
+            "name": "Squarespace ECommerce",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54a216927468693fda53c50b",
+      "name": "Troy Foland",
+      "first_name": "Troy",
+      "last_name": "Foland",
+      "title": "Veterinarian",
+      "company": "North Branch Animal Hospital",
+      "domain": "surreyvetclinic.com",
+      "location": "Cumberland, Maryland",
+      "linkedin_url": "http://www.linkedin.com/in/troy-foland-45685b46",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "troyfoland@yahoo.com"
+      ],
+      "phones": [
+        "+19893869200"
+      ],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "Cumberland"
+    },
+    {
+      "apollo_id": "54a329277468692e711ede58",
+      "name": "Pamela Lumnah",
+      "first_name": "Pamela",
+      "last_name": "Lumnah",
+      "title": "DVM",
+      "company": "Veterinary Acupuncture & Herbs",
+      "domain": null,
+      "location": "Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/pamela-lumnah-90a81a93",
+      "seniority": "entry",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "pamlumnah@gmail.com"
+      ],
+      "phones": [],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI"
+    },
+    {
+      "apollo_id": "5e736be019b8c80001a3eb5a",
+      "name": "Melissa Cavaretta",
+      "first_name": "Melissa",
+      "last_name": "Cavaretta",
+      "title": "Veterinarian",
+      "company": "Zoo Boise",
+      "domain": "zooboise.org",
+      "location": "Woonsocket, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/melissa-cavaretta-092778158",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "mcavaretta@cityofboise.org"
+      ],
+      "phones": [
+        "+12086087760"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "mcavaretta@cityofboise.org",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12086087760",
+      "organization": {
+        "id": "55920bf67369641912a43800",
+        "name": "Zoo Boise",
+        "website_url": "http://www.zooboise.org",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/zoo-boise",
+        "twitter_url": "https://twitter.com/zooboise",
+        "facebook_url": "https://www.facebook.com/zooboise",
+        "primary_phone": {
+          "number": "+1 208-608-7760",
+          "source": "Owler",
+          "sanitized_number": "+12086087760"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 208-608-7760",
+        "linkedin_uid": "4679008",
+        "founded_year": 1916,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66dfdc37c732480001b584d4/picture",
+        "crunchbase_url": null,
+        "primary_domain": "zooboise.org",
+        "sic_codes": [
+          "7999"
+        ],
+        "naics_codes": [
+          "71213"
+        ],
+        "sanitized_phone": "+12086087760",
+        "industry": "museums & institutions",
+        "estimated_num_employees": 41,
+        "keywords": [
+          "museums, historical sites, & zoos",
+          "wildlife conservation",
+          "conservation grants",
+          "sustainable practices",
+          "field trips",
+          "donations",
+          "conservation fund",
+          "volunteer opportunities",
+          "aza accreditation",
+          "animal exhibits",
+          "community involvement",
+          "conservation funding",
+          "animal encounters",
+          "adopt an animal",
+          "zoo amenities",
+          "interactive programs",
+          "zooteens program",
+          "recreation",
+          "education and training",
+          "recreation and entertainment",
+          "after-hours adult events",
+          "red panda passage",
+          "public education",
+          "animal care",
+          "special events",
+          "private animal experiences",
+          "education",
+          "zoos and aquariums",
+          "name a cockroach",
+          "public engagement",
+          "master plan",
+          "animal habitats",
+          "membership benefits",
+          "visitor experience",
+          "animal experiences",
+          "private giraffe experiences",
+          "reptile and bird exhibits",
+          "conservation",
+          "snooze at the zoo",
+          "b2c",
+          "non-profit",
+          "services",
+          "retail",
+          "zoos and botanical gardens",
+          "museums & institutions",
+          "nonprofit organization management",
+          "zoos & botanical gardens",
+          "entertainment",
+          "active life",
+          "zoos"
+        ],
+        "organization_revenue_printed": "10M",
+        "organization_revenue": 10000000.0,
+        "industries": [
+          "museums & institutions",
+          "hospital & health care"
+        ],
+        "secondary_industries": [
+          "hospital & health care"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e15373696422aa0a0000",
+        "industry_tag_hash": {
+          "museums & institutions": "5567e15373696422aa0a0000",
+          "hospital & health care": "5567cdde73696439812c0000"
+        },
+        "retail_location_count": 1,
+        "raw_address": "355 e julia davis dr, boise, idaho, united states",
+        "street_address": "355 E Julia Davis Dr",
+        "city": "Boise",
+        "state": "Idaho",
+        "postal_code": "83702",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Zoo Boise connects our visitors with animals to inspire and involve our community in the conservation of wildlife worldwide.\n\nZoo Boise is a service of the City of Boise and is supported by the Friends of Zoo Boise, a 501(c)(3) membership organization that supports Zoo Boise in the area of animal acquisition, capital improvement projects, education programs, volunteer opportunities, and special events. The goal of each of these components is to increase public awareness, knowledge, and appreciation of the zoo, wild animals, animal habitats, species conservation, and the environment.\n\nZoo Boise is accredited by the Association of Zoos & Aquariums (AZA). Look for the AZA logo whenever you visit a zoo or aquarium as your assurance that you are supporting a facility dedicated to providing excellent care for animals, a great experience for you, and a better future for all living things.\n\nFriends of Zoo Boise is a 501(c)(3) charitable organization (tax ID #82-6005995). All gifts are tax deductible and qualify for the Idaho State Education Tax Credit.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "10M",
+        "annual_revenue": 10000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Bootstrap Framework",
+          "CloudFlare Hosting",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Google AdWords Conversion",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Tag Manager",
+          "Gravity Forms",
+          "Mobile Friendly",
+          "Vimeo",
+          "WordPress.org",
+          "YouTube",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_adwords_conversion",
+            "name": "Google AdWords Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "gravity_forms",
+            "name": "Gravity Forms",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54ab9bdc7468693007053c00",
+      "name": "Kim Wojick",
+      "first_name": "Kim",
+      "last_name": "Wojick",
+      "title": "Veterinarian",
+      "company": "Veterinarian",
+      "domain": "veterinarian.best",
+      "location": "Providence, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/kim-wojick-62538220",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "kimmmwo@yahoo.com",
+        "kim@veterinarians.org"
+      ],
+      "phones": [],
+      "email_status": "unlocked",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "kim@veterinarians.org",
+      "verified": true,
+      "confidence_score": 0.9,
+      "organization": {
+        "id": "63f5a6886f24d90001463798",
+        "name": "Veterinarian",
+        "website_url": "http://www.veterinarian.best",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/veterinarian",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {},
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": null,
+        "linkedin_uid": "90784941",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63edac0a998f12000100b12d/picture",
+        "crunchbase_url": null,
+        "primary_domain": "veterinarian.best",
+        "industry": "veterinary",
+        "estimated_num_employees": 520,
+        "keywords": [
+          "veterinary services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "26 \u4f4d\u5173\u6ce8\u8005",
+        "street_address": "",
+        "city": null,
+        "state": null,
+        "postal_code": null,
+        "country": null,
+        "owned_by_organization_id": null,
+        "short_description": null,
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Apache",
+          "Cloudflare DNS",
+          "Mobile Friendly",
+          "WordPress.org"
+        ],
+        "current_technologies": [
+          {
+            "uid": "apache",
+            "name": "Apache",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "57dbb4eba6da98686b298518",
+      "name": "Megan Breiding",
+      "first_name": "Megan",
+      "last_name": "Breiding",
+      "title": "Veterinarian",
+      "company": "Acoaxet Veterinary Clinic",
+      "domain": null,
+      "location": "Providence, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/megan-breiding-03b2a1106",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "mbreiding@acoaxetvet.com"
+      ],
+      "phones": [],
+      "email_status": "unlocked",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "mbreiding@acoaxetvet.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "organization": {
+        "id": "559240ff7369643bdd4a9c00",
+        "name": "Acoaxet Veterinary Clinic",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/acoaxet-veterinary-clinic",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {},
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": null,
+        "linkedin_uid": "4344651",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63edac0a998f12000100b12d/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "industry": "veterinary",
+        "estimated_num_employees": 15,
+        "keywords": [
+          "veterinary services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "Westport, Massachusetts",
+        "street_address": "",
+        "city": "Westport",
+        "state": "Massachusetts",
+        "postal_code": null,
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": null,
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [],
+        "current_technologies": [],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "55709384736964661b7a4b00",
+      "name": "Raymond Marandola",
+      "first_name": "Raymond",
+      "last_name": "Marandola",
+      "title": "Veterinarian",
+      "company": "East Greenwich Animal Hospital",
+      "domain": "egvet.net",
+      "location": "North Providence, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/raymond-marandola-69238775",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "rmarandola@osvs.net"
+      ],
+      "phones": [],
+      "email_status": "unlocked",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "rmarandola@osvs.net",
+      "verified": true,
+      "confidence_score": 0.9,
+      "organization": {
+        "id": "672af2568022810001df0769",
+        "name": "East Greenwich Animal Hospital",
+        "website_url": "http://www.egvet.net",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/east-greenwich-animal-hospital",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {},
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": null,
+        "linkedin_uid": "56086130",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63edac0a998f12000100b12d/picture",
+        "crunchbase_url": null,
+        "primary_domain": "egvet.net",
+        "industry": "research",
+        "estimated_num_employees": 1,
+        "keywords": [
+          "research services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "research"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e09f736964160ebb0100",
+        "industry_tag_hash": {
+          "research": "5567e09f736964160ebb0100"
+        },
+        "retail_location_count": 0,
+        "raw_address": "Warwick, Rhode Island",
+        "street_address": "",
+        "city": "Warwick",
+        "state": "Rhode Island",
+        "postal_code": null,
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": null,
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [],
+        "current_technologies": [],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "645bcbaa72af24000182744c",
+      "name": "Jim Cellini",
+      "first_name": "Jim",
+      "last_name": "Cellini",
+      "title": "Veterinarian",
+      "company": "Ocean State Veterinary Specialists",
+      "domain": "osvs.net",
+      "location": "North Kingstown, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/jim-cellini-82904026b",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "jcellini@osvs.net"
+      ],
+      "phones": [
+        "+14018866787"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "jcellini@osvs.net",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14018866787",
+      "organization": {
+        "id": "54a1c4a874686942d3ba780f",
+        "name": "Ocean State Veterinary Specialists",
+        "website_url": "http://www.osvs.net",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/ocean-state-veterinary-specialists",
+        "twitter_url": null,
+        "facebook_url": "https://facebook.com/oceanstateveterinaryspecialists",
+        "primary_phone": {
+          "number": "+1 401-886-6787",
+          "source": "Scraped",
+          "sanitized_number": "+14018866787"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 401-886-6787",
+        "linkedin_uid": "5219559",
+        "founded_year": 2000,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/67384723b1308d000140947b/picture",
+        "crunchbase_url": null,
+        "primary_domain": "osvs.net",
+        "naics_codes": [
+          "54194"
+        ],
+        "sanitized_phone": "+14018866787",
+        "industry": "veterinary",
+        "estimated_num_employees": 180,
+        "keywords": [
+          "internal medicine",
+          "diagnostic imaging",
+          "radiology",
+          "cardiology",
+          "clinical pathology",
+          "oncology",
+          "24 hour emergency care",
+          "surgery",
+          "neurology",
+          "ophthalmology",
+          "emergency room",
+          "critical care",
+          "icu",
+          "exotic animal medicine",
+          "urgent care",
+          "veterinary specialists",
+          "veterinary services",
+          "board-certified specialists",
+          "pain management",
+          "advanced diagnostic imaging",
+          "pet pain relief",
+          "veterinary training",
+          "state-of-the-art veterinary hospital",
+          "client education",
+          "blood bank",
+          "animal blood donor program",
+          "multi-modal pain management",
+          "diagnostic testing",
+          "emergency veterinary care",
+          "specialist team approach",
+          "emergency care",
+          "pet health care",
+          "animal surgery innovations",
+          "evidence-based veterinary medicine",
+          "animal icu",
+          "exotic pet care",
+          "specialty care",
+          "veterinary residency training",
+          "animal wellness",
+          "avian and exotic medicine",
+          "animal critical care",
+          "digital radiology",
+          "animal blood donation",
+          "24/7 pet emergency",
+          "specialty veterinary services",
+          "animal healthcare",
+          "emergency veterinary services",
+          "b2c",
+          "services",
+          "medical",
+          "hospital & health care",
+          "veterinary",
+          "pets",
+          "veterinarians"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary",
+          "hospital & health care"
+        ],
+        "secondary_industries": [
+          "hospital & health care"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000",
+          "hospital & health care": "5567cdde73696439812c0000"
+        },
+        "retail_location_count": 1,
+        "raw_address": "1480 South County Trail, East Greenwich, RI 02818, US",
+        "street_address": "1480 S County Trl",
+        "city": "East Greenwich",
+        "state": "Rhode Island",
+        "postal_code": "02818",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Ocean State Veterinary Specialists (OSVS) is a state-of-the-art facility providing 24-hour emergency care and specialty services for companion animals. The hospital is staffed by experienced emergency clinicians and specialists in Internal Medicine, Surgery, Radiology, Critical Care, Ophthalmology, Oncology, Neurology, Exotic animal medicine, Clinical pathology, and Cardiology.\n\nThe hospital is dedicated to providing the highest level of veterinary care to our patients in an atmosphere of compassion and excellence. OSVS is also an educational center, providing advanced training for veterinarians, veterinary students, and veterinary technicians. Our beautiful facility in Rhode Island services all of Southern New England, including Massachusetts and Connecticut.\n\nOur satellite hospital, Bay State Veterinary Emergency and Specialty Services (BSVESS), is located in Swansea, MA and is also open 24-hours a day for emergency care. The hospital is staffed by internship-trained emergency clinicians who have constant access to the specialists at Ocean State Veterinary Specialists, allowing them the ability to offer the best information and care available. Consultations with board-certified specialists in surgery and internal medicine are available by appointment.\n\nThe hospital is dedicated to providing the highest level of veterinary care to our patients in an atmosphere of compassion and excellence.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Tag Manager",
+          "MailJet",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "WordPress.org"
+        ],
+        "current_technologies": [
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mailjet",
+            "name": "MailJet",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "6627ac1dc5e81d00070258bf",
+      "name": "Montana Campbell",
+      "first_name": "Montana",
+      "last_name": "Campbell",
+      "title": "Veterinarian",
+      "company": "Ocean State Veterinary Specialists",
+      "domain": "osvs.net",
+      "location": "East Greenwich, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/montana-campbell-b1556958",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "mcampbell@osvs.net"
+      ],
+      "phones": [
+        "+14018866787"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "mcampbell@osvs.net",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14018866787",
+      "organization": {
+        "id": "54a1c4a874686942d3ba780f",
+        "name": "Ocean State Veterinary Specialists",
+        "website_url": "http://www.osvs.net",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/ocean-state-veterinary-specialists",
+        "twitter_url": null,
+        "facebook_url": "https://facebook.com/oceanstateveterinaryspecialists",
+        "primary_phone": {
+          "number": "+1 401-886-6787",
+          "source": "Scraped",
+          "sanitized_number": "+14018866787"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 401-886-6787",
+        "linkedin_uid": "5219559",
+        "founded_year": 2000,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/67384723b1308d000140947b/picture",
+        "crunchbase_url": null,
+        "primary_domain": "osvs.net",
+        "naics_codes": [
+          "54194"
+        ],
+        "sanitized_phone": "+14018866787",
+        "industry": "veterinary",
+        "estimated_num_employees": 180,
+        "keywords": [
+          "internal medicine",
+          "diagnostic imaging",
+          "radiology",
+          "cardiology",
+          "clinical pathology",
+          "oncology",
+          "24 hour emergency care",
+          "surgery",
+          "neurology",
+          "ophthalmology",
+          "emergency room",
+          "critical care",
+          "icu",
+          "exotic animal medicine",
+          "urgent care",
+          "veterinary specialists",
+          "veterinary services",
+          "board-certified specialists",
+          "pain management",
+          "advanced diagnostic imaging",
+          "pet pain relief",
+          "veterinary training",
+          "state-of-the-art veterinary hospital",
+          "client education",
+          "blood bank",
+          "animal blood donor program",
+          "multi-modal pain management",
+          "diagnostic testing",
+          "emergency veterinary care",
+          "specialist team approach",
+          "emergency care",
+          "pet health care",
+          "animal surgery innovations",
+          "evidence-based veterinary medicine",
+          "animal icu",
+          "exotic pet care",
+          "specialty care",
+          "veterinary residency training",
+          "animal wellness",
+          "avian and exotic medicine",
+          "animal critical care",
+          "digital radiology",
+          "animal blood donation",
+          "24/7 pet emergency",
+          "specialty veterinary services",
+          "animal healthcare",
+          "emergency veterinary services",
+          "b2c",
+          "services",
+          "medical",
+          "hospital & health care",
+          "veterinary",
+          "pets",
+          "veterinarians"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary",
+          "hospital & health care"
+        ],
+        "secondary_industries": [
+          "hospital & health care"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000",
+          "hospital & health care": "5567cdde73696439812c0000"
+        },
+        "retail_location_count": 1,
+        "raw_address": "1480 South County Trail, East Greenwich, RI 02818, US",
+        "street_address": "1480 S County Trl",
+        "city": "East Greenwich",
+        "state": "Rhode Island",
+        "postal_code": "02818",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Ocean State Veterinary Specialists (OSVS) is a state-of-the-art facility providing 24-hour emergency care and specialty services for companion animals. The hospital is staffed by experienced emergency clinicians and specialists in Internal Medicine, Surgery, Radiology, Critical Care, Ophthalmology, Oncology, Neurology, Exotic animal medicine, Clinical pathology, and Cardiology.\n\nThe hospital is dedicated to providing the highest level of veterinary care to our patients in an atmosphere of compassion and excellence. OSVS is also an educational center, providing advanced training for veterinarians, veterinary students, and veterinary technicians. Our beautiful facility in Rhode Island services all of Southern New England, including Massachusetts and Connecticut.\n\nOur satellite hospital, Bay State Veterinary Emergency and Specialty Services (BSVESS), is located in Swansea, MA and is also open 24-hours a day for emergency care. The hospital is staffed by internship-trained emergency clinicians who have constant access to the specialists at Ocean State Veterinary Specialists, allowing them the ability to offer the best information and care available. Consultations with board-certified specialists in surgery and internal medicine are available by appointment.\n\nThe hospital is dedicated to providing the highest level of veterinary care to our patients in an atmosphere of compassion and excellence.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Tag Manager",
+          "MailJet",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "WordPress.org"
+        ],
+        "current_technologies": [
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mailjet",
+            "name": "MailJet",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "557111757369642451a60000",
+      "name": "Kristen Ralphs",
+      "first_name": "Kristen",
+      "last_name": "Ralphs",
+      "title": "Veterinarian",
+      "company": "Portsmouth Veterinary Clinic",
+      "domain": null,
+      "location": "Portsmouth, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/kristen-ralphs-b7663774",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "kristen.ralphs@portsmouthvetclinic.com"
+      ],
+      "phones": [],
+      "email_status": "unlocked",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "kristen.ralphs@portsmouthvetclinic.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "organization": {
+        "id": "55923ade7369644859a48200",
+        "name": "Portsmouth Veterinary Clinic",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/portsmouth-veterinary-clinic",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {},
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": null,
+        "linkedin_uid": "4662227",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63edac0a998f12000100b12d/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "industry": "veterinary",
+        "estimated_num_employees": 6,
+        "keywords": [
+          "veterinary services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "Portsmouth, Rhode Island",
+        "street_address": "",
+        "city": "Portsmouth",
+        "state": "Rhode Island",
+        "postal_code": null,
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": null,
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [],
+        "current_technologies": [],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54a2288b74686933187fa711",
+      "name": "Jeff Corey",
+      "first_name": "Jeff",
+      "last_name": "Corey",
+      "title": "Veterinarian",
+      "company": "Healing Paws",
+      "domain": "healingpaws.com",
+      "location": "Providence, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/jeff-corey-44a84a14",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "jcoreyri@yahoo.com"
+      ],
+      "phones": [
+        "+14254883061"
+      ],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI"
+    },
+    {
+      "apollo_id": "5b1d4af9a6da9807a6a673a3",
+      "name": "Rick Wood",
+      "first_name": "Rick",
+      "last_name": "Wood",
+      "title": "Veterinarian",
+      "company": "NEWPORT ANIMAL HOSPITAL",
+      "domain": "newportanimalhosp.com",
+      "location": "Newport, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/rick-wood-77a05b32",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "rwood_dvm@yahoo.com",
+        "rwood_fish@yahoo.com"
+      ],
+      "phones": [
+        "+19497068380"
+      ],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "RI"
+    },
+    {
+      "apollo_id": "5f5e6993edae340001c09ad9",
+      "name": "Anne Skiffington",
+      "first_name": "Anne",
+      "last_name": "Skiffington",
+      "title": "Veterinarian",
+      "company": "Ocean State Equine Associates",
+      "domain": "oceanstateequine.com",
+      "location": "Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/anne-marie-skiffington-7403b7142",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "askiffington@oceanstateequine.com"
+      ],
+      "phones": [
+        "+14017666578"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "askiffington@oceanstateequine.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14017666578",
+      "organization": {
+        "id": "56d38801f3e5bb15ef001ab7",
+        "name": "Ocean State Equine Associates",
+        "website_url": "http://www.oceanstateequine.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/ocean-state-equine-associates",
+        "twitter_url": null,
+        "facebook_url": "https://facebook.com/pages/Ocean-State-Equine-Associates/196111483747059",
+        "primary_phone": {
+          "number": "+1 401-766-6578",
+          "source": "Owler",
+          "sanitized_number": "+14017666578"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 401-766-6578",
+        "linkedin_uid": "6839311",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63edac0a998f12000100b12d/picture",
+        "crunchbase_url": null,
+        "primary_domain": "oceanstateequine.com",
+        "sic_codes": [
+          "8060"
+        ],
+        "sanitized_phone": "+14017666578",
+        "industry": "veterinary",
+        "estimated_num_employees": 17,
+        "keywords": [
+          "veterinary services"
+        ],
+        "organization_revenue_printed": "33.6M",
+        "organization_revenue": 33610000.0,
+        "industries": [
+          "veterinary"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "11 Winsor Ave, Scituate, RI 02857, US",
+        "street_address": "11 Winsor Ave",
+        "city": "Scituate",
+        "state": "Rhode Island",
+        "postal_code": "02857",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": null,
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "33.6M",
+        "annual_revenue": 33610000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Amazon AWS",
+          "Basis",
+          "Microsoft Office 365",
+          "Outlook"
+        ],
+        "current_technologies": [
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "basis",
+            "name": "Basis",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "6461461d8a0b3a0001d7241f",
+      "name": "Caroline Bowater",
+      "first_name": "Caroline",
+      "last_name": "Bowater",
+      "title": "Veterinarian",
+      "company": "South Bay Veterinary Clinic",
+      "domain": "southbayveterinaryclinic.com",
+      "location": "Narragansett, Rhode Island",
+      "linkedin_url": "http://www.linkedin.com/in/caroline-bowater-5942b2271",
+      "seniority": "entry",
+      "departments": [
+        "medical_health"
+      ],
+      "functions": [],
+      "emails": [
+        "caroline.bowater@southbayveterinary.com"
+      ],
+      "phones": [
+        "+14017835250"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_location": "RI",
+      "email": "caroline.bowater@southbayveterinary.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14017835250",
+      "organization": {
+        "id": "5592202573696418b7ad8000",
+        "name": "South Bay Veterinary Clinic",
+        "website_url": "http://www.southbayveterinaryclinic.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/south-bay-veterinary-clinic",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 401-783-5250",
+          "source": "Scraped",
+          "sanitized_number": "+14017835250"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 401-783-5250",
+        "linkedin_uid": "4285971",
+        "founded_year": 2006,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/6702735176f30d0001c5c263/picture",
+        "crunchbase_url": null,
+        "primary_domain": "southbayveterinaryclinic.com",
+        "sanitized_phone": "+14017835250",
+        "industry": "veterinary",
+        "estimated_num_employees": 2,
+        "keywords": [
+          "veterinary services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "veterinary"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9673696439d5c10000",
+        "industry_tag_hash": {
+          "veterinary": "5567ce9673696439d5c10000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "966 boston neck road, narragansett, RI 02882, US",
+        "street_address": "966 Boston Neck Rd",
+        "city": "Narragansett",
+        "state": "Rhode Island",
+        "postal_code": "02882-1714",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "South Bay Veterinary Clinic is located in Narragansett RI a beautiful coastal community located approximately 28 miles from Providence RI. Our year round clients come from Narragansett and neighboring towns. In the summer months we welcome seasonal residents and vacationers. SBVC has been owned and operated by Dr. Caroline Bowater since 2006. Our clinic is a full service facility offering wellness and sick visits, digital radiography, in-house diagnostics and surgical procedures. We treat primarily small animal but also care for pocket pets, ferrets, birds and exotics. Dr. Bowater is supported by a competent and caring team of veterinary technicians/assistants. We work together to ensure that our clientele feel comfortable to ask any questions or voice their concerns. Our emphasis is  providing a \"personal touch\"... .each animal that comes in through our door is unique and special and we make every attempt to treat them as such.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Mobile Friendly",
+          "Typekit"
+        ],
+        "current_technologies": [
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 14,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Exciting Veterinary Opportunity in Cumberland, RI",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I'm reaching out because I came across your profile and was impressed by your expertise in veterinary medicine.\n\nWe're currently working with several top-tier veterinary practices in Cumberland, RI that are looking for talented DVMs like yourself. These positions offer:\n\n\u2022 Competitive salary packages ($90K-$150K+ based on experience)\n\u2022 Excellent work-life balance with flexible scheduling\n\u2022 State-of-the-art facilities and equipment\n\u2022 Continuing education support and career growth opportunities\n\u2022 Sign-on bonuses and relocation assistance available\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Veterinary positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about veterinary opportunities in Cumberland, RI. \n\nI understand how busy things can get in veterinary practice, so I'll keep this brief.\n\nOur clients are specifically looking for experienced veterinarians, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific practice types and specializations available\n\u2022 Salary ranges and benefits packages\n\u2022 Locations and practice cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a veterinarian.\n\nWe just had a DVM join one of our client practices in Cumberland, RI, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional development and continuing education\n\u2022 Work-life balance (no more 60-hour weeks!)\n\u2022 Modern equipment and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your veterinary career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great veterinarians who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 24,
+  "scheduled_send_time": "2025-09-09T22:44:08.381453",
+  "created_at": "2025-09-08T22:44:08.381472",
+  "platform": "instantly",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true
+}

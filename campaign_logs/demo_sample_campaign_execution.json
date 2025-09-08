@@ -1,0 +1,10 @@
+{
+  "campaign_id": "demo_sample_campaign",
+  "execution_time": "2025-09-08T21:57:37.134750",
+  "platform": "aws_ses",
+  "success": true,
+  "sent_count": 0,
+  "failed_count": 1,
+  "total_recipients": 1,
+  "results": []
+}

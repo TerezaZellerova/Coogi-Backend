@@ -327,12 +327,16 @@ async def get_ses_stats(current_user: dict = Depends(get_current_user)):
             
             return EmailProviderStats(
                 provider="amazon_ses",
-                daily_quota=status_data.get("daily_quota", 0),
-                sent_last_24h=status_data.get("sent_last_24h", 0),
-                send_rate=status_data.get("send_rate", 0),
+                send_quota=status_data.get("daily_quota", 0),
+                sent_last_24_hours=status_data.get("sent_last_24h", 0),
+                max_send_rate=status_data.get("send_rate", 0),
                 reputation_score=None,  # SES doesn't provide a single reputation score
                 bounce_rate=bounce_rate,
                 complaint_rate=complaint_rate,
+                reputation={
+                    "delivery_delay": False,
+                    "reputation_score": 100 - (bounce_rate or 0) * 10 - (complaint_rate or 0) * 20
+                },
                 timestamp=datetime.now().isoformat()
             )
         else:

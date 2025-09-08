@@ -29,6 +29,32 @@ class AWSSESService:
             logger.error(f"❌ Failed to initialize AWS SES client: {e}")
             self.ses_client = None
     
+    def _text_to_html(self, text: str) -> str:
+        """
+        Convert plain text to basic HTML format
+        
+        Args:
+            text: Plain text content
+            
+        Returns:
+            HTML formatted version of the text
+        """
+        if not text:
+            return ""
+            
+        # Convert newlines to <br> tags and wrap in basic HTML structure
+        html_content = text.replace('\n', '<br>')
+        
+        return f"""
+        <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+                    {html_content}
+                </div>
+            </body>
+        </html>
+        """
+
     def send_email(self, 
                    to_email: str, 
                    subject: str, 
@@ -65,6 +91,15 @@ class AWSSESService:
             # Add HTML body if provided
             if body_html:
                 email_content['Body']['Html'] = {'Data': body_html, 'Charset': 'UTF-8'}
+                logger.info(f"📧 Email includes both text and HTML body")
+            else:
+                logger.info(f"📧 Email includes only text body")
+            
+            # Log content for debugging
+            logger.info(f"📧 Subject: {subject}")
+            logger.info(f"📧 Text body length: {len(body_text)}")
+            if body_html:
+                logger.info(f"📧 HTML body length: {len(body_html)}")
             
             # Send email
             response = self.ses_client.send_email(

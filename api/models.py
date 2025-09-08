@@ -276,12 +276,13 @@ class SESCampaignResponse(BaseModel):
 
 class EmailProviderStats(BaseModel):
     provider: str
-    daily_quota: float
-    sent_last_24h: float
-    send_rate: float
+    send_quota: float  # Changed from daily_quota to match frontend
+    sent_last_24_hours: float  # Changed from sent_last_24h to match frontend
+    max_send_rate: float  # Changed from send_rate to match frontend
     reputation_score: Optional[float] = None
     bounce_rate: Optional[float] = None
     complaint_rate: Optional[float] = None
+    reputation: Optional[Dict[str, Any]] = None  # Added to match frontend expectation
     timestamp: str
 
 # JSearch Models

@@ -60,17 +60,37 @@ class SESManager:
             if not self.ses_client:
                 return {"success": False, "error": "SES client not initialized"}
             
+            # Debug log the inputs
+            logger.info(f"📧 SES Manager sending email:")
+            logger.info(f"   To: {to_emails}")
+            logger.info(f"   Subject: {subject}")
+            logger.info(f"   Body Text Length: {len(body_text) if body_text else 0}")
+            logger.info(f"   Body HTML Length: {len(body_html) if body_html else 0}")
+            
             destination = {
                 'ToAddresses': to_emails
             }
             
             message = {
                 'Subject': {'Data': subject, 'Charset': 'UTF-8'},
-                'Body': {
-                    'Html': {'Data': body_html, 'Charset': 'UTF-8'},
-                    'Text': {'Data': body_text, 'Charset': 'UTF-8'}
-                }
+                'Body': {}
             }
+            
+            # Add text body if provided
+            if body_text:
+                message['Body']['Text'] = {'Data': body_text, 'Charset': 'UTF-8'}
+            
+            # Add HTML body if provided, otherwise convert text to HTML
+            if body_html:
+                message['Body']['Html'] = {'Data': body_html, 'Charset': 'UTF-8'}
+            elif body_text:
+                # Convert text to simple HTML
+                html_content = body_text.replace('\n', '<br>')
+                message['Body']['Html'] = {'Data': f'<html><body>{html_content}</body></html>', 'Charset': 'UTF-8'}
+            
+            # Ensure at least one body type is present
+            if not message['Body']:
+                return {"success": False, "error": "Email must have either text or HTML content"}
             
             kwargs = {
                 'Source': from_email,
@@ -189,18 +209,24 @@ class SESManager:
         """Check SES account quota and status (reputation not directly available in SES API)"""
         try:
             if not self.ses_client:
+                logger.error("❌ SES client not initialized for reputation check")
                 return {"error": "SES client not initialized"}
+            
+            logger.info("🔍 Checking SES quota and status...")
             
             # Get quota information
             quota = self.ses_client.get_send_quota()
+            logger.info(f"📊 SES Quota Response: {quota}")
             
             # Get account sending status
             try:
                 sending_enabled = self.ses_client.get_account_sending_enabled()
-            except ClientError:
+                logger.info(f"📊 SES Account Status: {sending_enabled}")
+            except ClientError as e:
+                logger.warning(f"⚠️ Could not get account sending status: {e}")
                 sending_enabled = {"Enabled": True}  # Default to enabled if not available
             
-            return {
+            result = {
                 "success": True,
                 "daily_quota": quota['Max24HourSend'],
                 "sent_last_24h": quota['SentLast24Hours'],
@@ -209,8 +235,16 @@ class SESManager:
                 "timestamp": datetime.now().isoformat()
             }
             
+            logger.info(f"✅ SES Status Result: {result}")
+            return result
+            
         except ClientError as e:
             logger.error(f"❌ Failed to check SES status: {e}")
+            logger.error(f"❌ Error code: {e.response['Error']['Code']}")
+            logger.error(f"❌ Error message: {e.response['Error']['Message']}")
+            return {"success": False, "error": str(e)}
+        except Exception as e:
+            logger.error(f"❌ Unexpected error checking SES status: {e}")
             return {"success": False, "error": str(e)}
 
     def handle_bounce_complaint(self, notification: Dict[str, Any]) -> bool:
