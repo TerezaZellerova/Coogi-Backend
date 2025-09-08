@@ -1,0 +1,83 @@
+{
+  "id": "dvm_campaign_1757350301",
+  "name": "Test DVM Auto Campaign",
+  "type": "dvm_outreach",
+  "status": "scheduled",
+  "target_audience": "veterinarians",
+  "locations": [
+    "New York, NY"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "54a5f0827468692abfeb42b5",
+      "name": "Ted Weiner",
+      "first_name": "Ted",
+      "last_name": "Weiner",
+      "title": "DVM",
+      "company": "Gotham Animal Clinic",
+      "domain": null,
+      "location": "New York, New York",
+      "linkedin_url": "http://www.linkedin.com/in/ted-weiner-59695914",
+      "seniority": "entry",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "tjweiner@yahoo.com"
+      ],
+      "phones": [],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_location": "New York, NY"
+    }
+  ],
+  "verified_count": 1,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Exciting Veterinary Opportunity in New York, NY",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I'm reaching out because I came across your profile and was impressed by your expertise in veterinary medicine.\n\nWe're currently working with several top-tier veterinary practices in New York, NY that are looking for talented DVMs like yourself. These positions offer:\n\n\u2022 Competitive salary packages ($90K-$150K+ based on experience)\n\u2022 Excellent work-life balance with flexible scheduling\n\u2022 State-of-the-art facilities and equipment\n\u2022 Continuing education support and career growth opportunities\n\u2022 Sign-on bonuses and relocation assistance available\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Veterinary positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about veterinary opportunities in New York, NY. \n\nI understand how busy things can get in veterinary practice, so I'll keep this brief.\n\nOur clients are specifically looking for experienced veterinarians, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific practice types and specializations available\n\u2022 Salary ranges and benefits packages\n\u2022 Locations and practice cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a veterinarian.\n\nWe just had a DVM join one of our client practices in New York, NY, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional development and continuing education\n\u2022 Work-life balance (no more 60-hour weeks!)\n\u2022 Modern equipment and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your veterinary career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great veterinarians who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T21:51:41.047305",
+  "created_at": "2025-09-08T20:51:41.047316",
+  "platform": "instantly",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true
+}

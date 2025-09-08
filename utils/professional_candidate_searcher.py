@@ -672,5 +672,259 @@ class ProfessionalCandidateSearcher:
         except Exception:
             return 0.5
 
+    async def search_dvm_with_auto_campaign(
+        self,
+        locations: List[str],
+        *,
+        per_city_limit: int = 15,
+        require_email: bool = True,
+        require_phone: bool = False,
+        hunter_verify: bool = True,
+        unlock_emails: bool = True,
+        auto_create_campaign: bool = True,
+        campaign_name: Optional[str] = None,
+        send_immediately: bool = False,
+        delay_hours: int = 24,
+    ) -> Dict[str, Any]:
+        """
+        FULL AUTO-CAMPAIGN DVM SEARCH INTEGRATION
+        
+        This method combines:
+        1. Professional DVM candidate search across multiple locations
+        2. Real email/phone unlocking via Apollo.io professional features
+        3. Hunter.io email verification and enhancement
+        4. Automatic campaign creation with pre-built DVM templates
+        5. Campaign scheduling and execution
+        
+        Args:
+            locations: List of cities/states to search (e.g., ["Sebastian, FL", "Cumberland, RI"])
+            per_city_limit: Max candidates per location (default: 15)
+            require_email: Only return candidates with valid emails (default: True)
+            require_phone: Only return candidates with phone numbers (default: False)
+            hunter_verify: Use Hunter.io for email verification (default: True)
+            unlock_emails: Use Apollo.io professional email unlocking (default: True)
+            auto_create_campaign: Automatically create email campaign (default: True)
+            campaign_name: Custom campaign name (auto-generated if None)
+            send_immediately: Send campaign immediately vs schedule (default: False)
+            delay_hours: Hours to delay campaign if not sending immediately (default: 24)
+            
+        Returns:
+            Dict containing search results, campaign creation status, and execution details
+        """
+        try:
+            logger.info(f"🚀 DVM AUTO-CAMPAIGN SEARCH: {locations}")
+            logger.info(f"📧 Campaign settings: auto_create={auto_create_campaign}, immediate={send_immediately}, delay={delay_hours}h")
+            
+            # Step 1: Use Apollo manager's auto-campaign DVM search
+            result = await self.apollo.search_dvm_with_auto_campaign(
+                locations=locations,
+                per_city_limit=per_city_limit,
+                require_email=require_email,
+                require_phone=require_phone,
+                hunter_verify=hunter_verify,
+                unlock_emails=unlock_emails,
+                auto_create_campaign=auto_create_campaign,
+                campaign_name=campaign_name,
+                send_immediately=send_immediately,
+                delay_hours=delay_hours,
+            )
+            
+            # Step 2: Add professional candidate searcher metadata
+            result.update({
+                "searcher_version": "professional_v2",
+                "integration_type": "apollo_hunter_auto_campaign",
+                "searched_locations": locations,
+                "search_timestamp": datetime.now().isoformat(),
+                "professional_features_used": [
+                    "apollo_professional_search",
+                    "email_unlocking",
+                    "hunter_verification" if hunter_verify else None,
+                    "auto_campaign_creation" if auto_create_campaign else None,
+                ],
+            })
+            
+            # Step 3: Log comprehensive results
+            candidates = result.get("candidates", [])
+            total_found = len(candidates)
+            verified_count = result.get("verified_candidates", 0)
+            campaign_created = result.get("campaign_created", False)
+            
+            logger.info(f"✅ DVM AUTO-CAMPAIGN SEARCH COMPLETE:")
+            logger.info(f"   📍 Locations searched: {len(locations)}")
+            logger.info(f"   👥 Total candidates found: {total_found}")
+            logger.info(f"   ✅ Verified candidates: {verified_count}")
+            logger.info(f"   📧 Campaign created: {campaign_created}")
+            
+            if campaign_created:
+                campaign_id = result.get("campaign_id")
+                campaign_name = result.get("campaign_name")
+                send_scheduled = result.get("send_scheduled", True)
+                logger.info(f"   🎯 Campaign ID: {campaign_id}")
+                logger.info(f"   📝 Campaign name: {campaign_name}")
+                logger.info(f"   ⏰ Send status: {'Scheduled' if send_scheduled else 'Sent immediately'}")
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"❌ DVM auto-campaign search failed: {e}")
+            return {
+                "success": False,
+                "error": str(e),
+                "candidates": [],
+                "total_found": 0,
+                "campaign_created": False,
+                "campaign_reason": f"Search failed: {str(e)}",
+                "locations_searched": locations,
+                "search_timestamp": datetime.now().isoformat(),
+            }
+
+    async def search_professional_with_auto_campaign(
+        self,
+        job_title: str,
+        locations: List[str],
+        *,
+        per_city_limit: int = 15,
+        require_email: bool = True,
+        require_phone: bool = False,
+        hunter_verify: bool = True,
+        unlock_emails: bool = True,
+        auto_create_campaign: bool = True,
+        campaign_name: Optional[str] = None,
+        send_immediately: bool = False,
+        delay_hours: int = 24,
+    ) -> Dict[str, Any]:
+        """
+        GENERIC PROFESSIONAL AUTO-CAMPAIGN SEARCH
+        
+        Similar to DVM search but works for any professional role:
+        - Software Engineers
+        - Physicians  
+        - Attorneys
+        - Teachers
+        - etc.
+        
+        Args:
+            job_title: Role to search for (e.g., "Software Engineer", "Physician")
+            locations: List of cities/states to search
+            Other args: Same as search_dvm_with_auto_campaign
+            
+        Returns:
+            Dict with search results and campaign creation status
+        """
+        try:
+            logger.info(f"🚀 PROFESSIONAL AUTO-CAMPAIGN SEARCH: {job_title} in {locations}")
+            
+            # Step 1: Standardize job title (use existing mapping logic)
+            standardized_title = self._standardize_job_title(job_title)
+            logger.info(f"📝 Standardized title: '{job_title}' → '{standardized_title}'")
+            
+            # Step 2: Check if this is a DVM/veterinarian search
+            if standardized_title.lower() in ["dvm", "veterinarian", "vet doctor", "vet"]:
+                logger.info("🐾 Detected DVM search, using specialized DVM auto-campaign")
+                return await self.search_dvm_with_auto_campaign(
+                    locations=locations,
+                    per_city_limit=per_city_limit,
+                    require_email=require_email,
+                    require_phone=require_phone,
+                    hunter_verify=hunter_verify,
+                    unlock_emails=unlock_emails,
+                    auto_create_campaign=auto_create_campaign,
+                    campaign_name=campaign_name or f"{standardized_title} Outreach - {', '.join(locations[:2])}{' +' + str(len(locations)-2) + ' more' if len(locations) > 2 else ''}",
+                    send_immediately=send_immediately,
+                    delay_hours=delay_hours,
+                )
+            
+            # Step 3: For other professions, use generic Apollo search with auto-campaign
+            # Note: This would need the Apollo manager to have a generic version
+            # For now, we'll provide a framework for future expansion
+            
+            logger.info(f"⚠️ Generic auto-campaign for '{standardized_title}' not yet implemented")
+            logger.info("🔄 Falling back to regular professional search")
+            
+            # Fallback to regular search
+            search_result = await self.search_candidates_direct(
+                query=standardized_title,
+                location_filter=", ".join(locations) if len(locations) <= 3 else f"{', '.join(locations[:3])} +{len(locations)-3} more",
+                limit=per_city_limit * len(locations)
+            )
+            
+            return {
+                **search_result,
+                "campaign_created": False,
+                "campaign_reason": f"Auto-campaign not implemented for {standardized_title} (DVM only)",
+                "fallback_search_used": True,
+                "job_title": job_title,
+                "standardized_title": standardized_title,
+                "locations_searched": locations,
+                "search_timestamp": datetime.now().isoformat(),
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Professional auto-campaign search failed: {e}")
+            return {
+                "success": False,
+                "error": str(e),
+                "candidates": [],
+                "total_found": 0,
+                "campaign_created": False,
+                "campaign_reason": f"Search failed: {str(e)}",
+                "job_title": job_title,
+                "locations_searched": locations,
+                "search_timestamp": datetime.now().isoformat(),
+            }
+
+    def _standardize_job_title(self, job_title: str) -> str:
+        """Standardize job title using existing mapping logic"""
+        job_title_lower = job_title.lower().strip()
+        
+        # Use existing title mappings from the class
+        title_mappings = {
+            "dvm": "Veterinarian",
+            "vet doctor": "Veterinarian",
+            "veterinarian": "Veterinarian",
+            "vet": "Veterinarian",
+            "doctor": "Physician",
+            "physician": "Physician",
+            "nurse": "Registered Nurse",
+            "dentist": "Dentist",
+            "pharmacist": "Pharmacist",
+            "therapist": "Physical Therapist",
+            
+            # Legal professionals
+            "lawyer": "Attorney",
+            "attorney": "Attorney",
+            "legal counsel": "Attorney",
+            
+            # Education
+            "teacher": "Teacher",
+            "professor": "Professor",
+            "educator": "Teacher",
+            
+            # Finance
+            "accountant": "Accountant",
+            "cpa": "Certified Public Accountant",
+            "financial advisor": "Financial Advisor",
+            
+            # Tech variations
+            "programmer": "Software Engineer",
+            "coder": "Software Engineer",
+            "developer": "Software Engineer",
+            "data scientist": "Data Scientist",
+            "analyst": "Data Analyst",
+            
+            # Sales/Marketing
+            "salesperson": "Sales Representative",
+            "marketer": "Marketing Manager",
+            "sales rep": "Sales Representative",
+            
+            # Operations
+            "manager": "Manager",
+            "supervisor": "Supervisor",
+            "director": "Director",
+            "executive": "Executive"
+        }
+        
+        return title_mappings.get(job_title_lower, job_title.title())
+
 # Initialize global instance
 professional_candidate_searcher = ProfessionalCandidateSearcher()

@@ -1,0 +1,15 @@
+{
+  "success": false,
+  "error": "'coroutine' object has no attribute 'update'",
+  "candidates": [],
+  "total_found": 0,
+  "campaign_created": false,
+  "campaign_reason": "Search failed: 'coroutine' object has no attribute 'update'",
+  "locations_searched": [
+    "Sebastian, FL",
+    "Cumberland, RI",
+    "Summit, NJ",
+    "West Orange, NJ"
+  ],
+  "search_timestamp": "2025-09-08T20:52:00.129409"
+}

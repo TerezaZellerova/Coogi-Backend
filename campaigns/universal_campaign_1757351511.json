@@ -1,0 +1,1573 @@
+{
+  "id": "universal_campaign_1757351511",
+  "name": "Universal Test - Sales Director",
+  "type": "business_outreach",
+  "status": "scheduled",
+  "target_audience": "Sales Representative professionals",
+  "job_title": "Sales Representative",
+  "role_category": "business",
+  "locations": [
+    "Austin, TX"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "640de1da1fca46000104f539",
+      "name": "Jack Wolf",
+      "first_name": "Jack",
+      "last_name": "Wolf",
+      "title": "Business Development Account Executive",
+      "company": "Spurs Sports & Entertainment",
+      "domain": null,
+      "location": "San Antonio, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/jackwolfspurs",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "jwolf@spurs.com"
+      ],
+      "phones": [
+        "+13103433131"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "jwolf@spurs.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+13103433131",
+      "organization": {
+        "id": "5b12fba8a6da98dcd4b6d1f1",
+        "name": "Spurs Sports & Entertainment",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/spurs-sports-&-entertainment",
+        "twitter_url": "https://twitter.com/nbagleague",
+        "facebook_url": "https://www.facebook.com/nbagleague/",
+        "primary_phone": {
+          "number": "+1 310-343-3131",
+          "source": "Scraped",
+          "sanitized_number": "+13103433131"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 995,
+        "phone": "+1 310-343-3131",
+        "linkedin_uid": "22746",
+        "founded_year": 1973,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b95274ad5553000170e24c/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "sic_codes": [
+          "7941"
+        ],
+        "naics_codes": [
+          "71131"
+        ],
+        "sanitized_phone": "+13103433131",
+        "industry": "sports",
+        "estimated_num_employees": 910,
+        "keywords": [
+          "spectator sports",
+          "sports analytics",
+          "sports technology",
+          "fan loyalty apps",
+          "fan loyalty programs",
+          "5g networks",
+          "live entertainment",
+          "event hosting",
+          "venue management software",
+          "digital content delivery",
+          "fan engagement apps",
+          "sports management",
+          "venue automation",
+          "sports venue connectivity",
+          "wi-fi 6",
+          "sports entertainment",
+          "digital ticket sales",
+          "venue wi-fi",
+          "sports app development",
+          "fan experience",
+          "sports analytics tools",
+          "sports infrastructure",
+          "venue management",
+          "digital fan engagement",
+          "digital marketing for sports",
+          "sports innovation",
+          "digital signage",
+          "charitable initiatives",
+          "sports marketing",
+          "sports leagues",
+          "sports community programs",
+          "event ticketing software",
+          "community engagement",
+          "sports event apps",
+          "sports broadcasting",
+          "soccer team management",
+          "fan engagement technology",
+          "digital platforms",
+          "sports data analytics",
+          "sports broadcasting technology",
+          "interactive displays",
+          "interactive fan experiences",
+          "sports event management",
+          "venue wi-fi infrastructure",
+          "sports industry",
+          "live event streaming",
+          "venue technology",
+          "venue security systems",
+          "sports sponsorship",
+          "sports media platforms",
+          "live streaming technology",
+          "digital ticketing",
+          "mobile apps for sports",
+          "sports event technology",
+          "nba team ownership",
+          "sports venues",
+          "venue operations",
+          "professional sports teams",
+          "sports branding",
+          "b2c",
+          "d2c",
+          "services",
+          "promoters of performing arts, sports, and similar events with facilities",
+          "food and beverage",
+          "event planning",
+          "transportation",
+          "marketing & advertising",
+          "food & beverages",
+          "consumer goods",
+          "consumers",
+          "events services"
+        ],
+        "organization_revenue_printed": "11.3B",
+        "organization_revenue": 11340000000.0,
+        "industries": [
+          "sports"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce227369644eed290000",
+        "industry_tag_hash": {
+          "sports": "5567ce227369644eed290000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "1 ATT Center Parkway, San Antonio, Texas 78219, US",
+        "street_address": "1 AT&T Center Parkway",
+        "city": "San Antonio",
+        "state": "Texas",
+        "postal_code": "78219",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Spurs Sports & Entertainment (SS&E) is a community-focused sports and entertainment company based in San Antonio, Texas. With a dedicated team of over 1,000 employees, SS&E provides live and digital sports experiences. The company owns and manages several professional sports franchises, including the NBA's San Antonio Spurs, the Austin Spurs in the NBA G League, and San Antonio FC in the USL Championship. It also previously managed the San Antonio Rampage in the AHL.\n\nIn addition to team ownership, SS&E operates key venues such as the AT&T Center and Toyota Field, offering event hosting and facility management services. The company is committed to community engagement through its charitable arm, Spurs Give, which supports local initiatives. SS&E targets sports fans in San Antonio and Austin, as well as a global audience through its digital platforms, enhancing fan experiences and engagement. Under the leadership of Chairman and CEO Peter J. Holt, SS&E continues to deliver premier sports and entertainment experiences in South Texas and beyond.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "11.3B",
+        "annual_revenue": 11340000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AT&T DNS",
+          "Amazon AWS",
+          "Bootstrap Framework",
+          "Chartbeat",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Formstack",
+          "Google Analytics",
+          "Google Font API",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Nginx",
+          "Outlook",
+          "Quantcast",
+          "Varnish",
+          "Woo Commerce",
+          "WordPress.org",
+          "YouTube"
+        ],
+        "current_technologies": [
+          {
+            "uid": "at&t_dns",
+            "name": "AT&T DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "chartbeat",
+            "name": "Chartbeat",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "formstack",
+            "name": "Formstack",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "quantcast",
+            "name": "Quantcast",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "woo_commerce",
+            "name": "Woo Commerce",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "5e877a9397593e0001d8f398"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "63de470af8f9b000016da015",
+      "name": "Paul Ramirez",
+      "first_name": "Paul",
+      "last_name": "Ramirez",
+      "title": "Business Development Account Executive",
+      "company": "Shield AI",
+      "domain": "shield.ai",
+      "location": "San Antonio, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/pauldramirez",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "paul.ramirez@shield.ai"
+      ],
+      "phones": [
+        "+16197195740"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "paul.ramirez@shield.ai",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+16197195740",
+      "organization": {
+        "id": "5a9da279a6da98d9a15a297d",
+        "name": "Shield AI",
+        "website_url": "http://www.shield.ai",
+        "blog_url": null,
+        "angellist_url": "http://angel.co/shield-ai",
+        "linkedin_url": "http://www.linkedin.com/company/shield-ai",
+        "twitter_url": "https://twitter.com/shieldaitech?lang=en",
+        "facebook_url": "https://facebook.com/shieldai/",
+        "primary_phone": {
+          "number": "+1 619-719-5740",
+          "source": "Owler",
+          "sanitized_number": "+16197195740"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 619-719-5740",
+        "linkedin_uid": "7952659",
+        "founded_year": 2015,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b58c8388253000017da9fa/picture",
+        "crunchbase_url": null,
+        "primary_domain": "shield.ai",
+        "sic_codes": [
+          "3761"
+        ],
+        "naics_codes": [
+          "33641"
+        ],
+        "sanitized_phone": "+16197195740",
+        "industry": "information technology & services",
+        "estimated_num_employees": 1100,
+        "keywords": [
+          "robotics",
+          "autonomy",
+          "defense",
+          "perception",
+          "artificial intelligence",
+          "ai",
+          "technology",
+          "engineering",
+          "hardware",
+          "software",
+          "drones",
+          "uav",
+          "uas",
+          "machine learning",
+          "national security",
+          "aerial robotics",
+          "information technology",
+          "enterprise software",
+          "deep information technology",
+          "software development",
+          "autonomous multi-robot teaming",
+          "artificial intelligence in defense",
+          "autonomous multi-agent systems",
+          "autonomy in gps-denied environments",
+          "ai for military applications",
+          "autonomy software customization",
+          "ai for complex mission scenarios",
+          "autonomy software",
+          "ai for high-speed uavs",
+          "ai-powered multi-robot systems",
+          "electronic warfare autonomy",
+          "combat ai pilots",
+          "ai for military drones",
+          "unmanned systems",
+          "drone deployment",
+          "autonomy testing",
+          "autonomous combat aircraft",
+          "ai for tactical missions",
+          "autonomous vehicle software",
+          "ai for gps-denied combat",
+          "nova drone",
+          "autonomy behavior planning",
+          "defense innovation",
+          "ai software for military",
+          "autonomous software platform",
+          "ai dogfighting",
+          "autonomous multi-platform deployment",
+          "autonomous combat systems",
+          "ai-driven warfare",
+          "autonomous system design",
+          "ai perception modules",
+          "ai development tools",
+          "multi-robot systems",
+          "combat support",
+          "autonomous drone swarms",
+          "autonomy development",
+          "c2 integration",
+          "autonomous mission execution",
+          "defense technology",
+          "military drones",
+          "autonomous isr",
+          "reconnaissance drones",
+          "ai-powered development",
+          "edge os",
+          "autonomy certification",
+          "autonomous system testing",
+          "ai perception and mapping",
+          "multi-platform autonomy solutions",
+          "ai for real-time battlefield awareness",
+          "ai for tactical decision-making",
+          "mission planning software",
+          "autonomous maritime systems",
+          "ai for multi-domain warfare",
+          "gps-denied environments",
+          "autonomous multi-robot coordination",
+          "autonomous multi-platform integration",
+          "autonomy sdk",
+          "autonomy platform",
+          "ai perception and cognition",
+          "multi-platform deployment",
+          "autonomy software platform",
+          "ai in uavs",
+          "aerospace and defense",
+          "autonomy for defense",
+          "defense ai solutions",
+          "defense contracts",
+          "autonomous jet control",
+          "autonomous system safety",
+          "autonomy software deployment",
+          "unmanned aerial vehicles (uavs)",
+          "autonomy platform scalability",
+          "autonomous swarm systems",
+          "ai for contested environments",
+          "autonomous aircraft",
+          "autonomy rapid deployment",
+          "defense r&d",
+          "mission planning",
+          "autonomy software validation",
+          "autonomous systems",
+          "autonomy platform integration",
+          "multi-agent drone systems",
+          "real-world tested autonomy",
+          "scalable autonomy solutions",
+          "v-bat drone",
+          "low-latency ai",
+          "ai-powered mission planning",
+          "multi-platform autonomy",
+          "ai for electronic attack",
+          "platform-agnostic autonomy",
+          "ai-powered drones",
+          "autonomous multi-vehicle coordination",
+          "military and defense technology",
+          "autonomous system certification",
+          "multi-domain autonomy",
+          "autonomy software architecture",
+          "ai in electronic warfare",
+          "autonomy software engineering",
+          "autonomy testing and evaluation",
+          "autonomy middleware",
+          "autonomous control systems",
+          "autonomy system resilience",
+          "autonomy factory",
+          "u.s. department of defense",
+          "autonomous jet flight",
+          "autonomous software development environment",
+          "autonomous drone control",
+          "combat-tested ai",
+          "autonomy catalog",
+          "multi-ship autonomy",
+          "autonomous uavs",
+          "autonomous system integration",
+          "autonomous mission software",
+          "ai sensor integration",
+          "edge computing for autonomy",
+          "ai pilot",
+          "autonomous system resilience",
+          "real-time ai processing",
+          "military autonomy",
+          "edge autonomy",
+          "ai in defense",
+          "edge os for autonomy",
+          "hivemind ai",
+          "autonomous vehicles and systems",
+          "military surveillance",
+          "multi-platform support",
+          "autonomy software lifecycle",
+          "multi-platform uav autonomy",
+          "b2b",
+          "government",
+          "services",
+          "aerospace product and parts manufacturing",
+          "operational efficiency",
+          "sensors",
+          "mechanical or industrial engineering",
+          "information technology & services",
+          "aviation & aerospace",
+          "enterprises",
+          "computer software"
+        ],
+        "organization_revenue_printed": "100M",
+        "organization_revenue": 100000000.0,
+        "industries": [
+          "information technology & services",
+          "computer software"
+        ],
+        "secondary_industries": [
+          "computer software"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000",
+          "computer software": "5567cd4e7369643b70010000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "600 W Broadway, Ste 600, San Diego, California 92101, US",
+        "street_address": "600 W Broadway",
+        "city": "San Diego",
+        "state": "California",
+        "postal_code": "92101-0901",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Shield AI is an aerospace and defense technology company based in San Diego, California, founded in 2015 by former Navy SEAL Brandon Tseng, his brother Ryan Tseng, and Andrew Reiter. The company specializes in developing advanced artificial intelligence systems for autonomous military aircraft and drones, with a mission to enhance defense capabilities and protect service members and civilians.\n\nThe core innovation of Shield AI is Hivemind, an AI pilot software that allows aircraft to operate autonomously without GPS or human input. This technology is integrated into various platforms, including Nova, the first AI-powered drone deployed by the U.S. military, and V-BAT, a vertical takeoff and landing drone designed for long missions. Shield AI also offers Hivemind Enterprise, which licenses its AI autonomy infrastructure to third-party manufacturers and defense agencies.\n\nShield AI supports U.S. and allied military operations globally, providing solutions for reconnaissance, surveillance, and combat assistance. The company has established a strong market position, serving major U.S. military branches and several international clients, and has raised significant funding to support its growth and innovation in autonomous defense technologies.",
+        "suborganizations": [
+          {
+            "id": "54a1a9af746869586092ed05",
+            "name": "Heron Systems, Inc. (A Shield AI Company)",
+            "website_url": "http://www.heronsystems.com"
+          },
+          {
+            "id": "54a12ad569702d8cfcdb7402",
+            "name": "Sentient Vision Systems",
+            "website_url": "http://www.sentientvision.com"
+          },
+          {
+            "id": "55920ecc736964188a824300",
+            "name": "Martin UAV (a Shield AI Company)",
+            "website_url": "http://www.martinuav.com"
+          }
+        ],
+        "num_suborganizations": 3,
+        "annual_revenue_printed": "100M",
+        "annual_revenue": 100000000.0,
+        "total_funding": 1277549999,
+        "total_funding_printed": "1.3B",
+        "latest_funding_round_date": "2025-03-01T00:00:00.000+00:00",
+        "latest_funding_stage": "Series F",
+        "funding_events": [
+          {
+            "id": "682258e71ec84a00010925d7",
+            "date": "2025-03-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series F",
+            "investors": "L3Harris, Hanwha Aerospace, Andreessen Horowitz, U.S. Innovative Technology, Washington Harbour Partners",
+            "amount": "240M",
+            "currency": "$"
+          },
+          {
+            "id": "654edd5108095e0001ffed6a",
+            "date": "2023-12-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series F",
+            "investors": "Hercules Capital",
+            "amount": "300M",
+            "currency": "$"
+          },
+          {
+            "id": "65cbd119346104000143cc2d",
+            "date": "2023-09-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series F",
+            "investors": "Andreessen Horowitz, Point72 Ventures, Snowpoint Ventures, Riot Ventures, ARK Invest, Disruptive",
+            "amount": "200M",
+            "currency": "$"
+          },
+          {
+            "id": "63e5c749044e2b0001e1b5f1",
+            "date": "2022-12-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series E",
+            "investors": "",
+            "amount": "60M",
+            "currency": "$"
+          },
+          {
+            "id": "62f4e6a786225a0001d9c86e",
+            "date": "2022-06-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series E",
+            "investors": "Riot Ventures, Point72, Andreesen Horowitz, Breyer Capital, SVB Capital",
+            "amount": "165M",
+            "currency": "$"
+          },
+          {
+            "id": "6126fe29cb91c3000182647b",
+            "date": "2021-08-24T00:00:00.000+00:00",
+            "news_url": "https://www.prnewswire.com/news-releases/shield-ai-raises-210-million-series-d-round-301362056.html",
+            "type": "Series D",
+            "investors": "Disruptive, Point72 Ventures, Breyer Capital, Andreessen Horowitz",
+            "amount": "210M",
+            "currency": "$"
+          },
+          {
+            "id": "615e0a1f38bdb80001d41977",
+            "date": "2021-02-01T00:00:00.000+00:00",
+            "news_url": null,
+            "type": "Series C",
+            "investors": "Point72 Ventures",
+            "amount": "90M",
+            "currency": "$"
+          },
+          {
+            "id": "597a73dcf3e5bb618b5dbc46",
+            "date": "2017-04-04T00:00:00.000+00:00",
+            "news_url": "https://www.suasnews.com/2017/04/shield-ai-raises-10-5-million-series-funding-led-andreesen-horowitz/",
+            "type": "Series A",
+            "investors": "Bloomberg Beta, Andreessen Horowitz, Founder Collective, Homebrew",
+            "amount": "10.5M",
+            "currency": "$"
+          },
+          {
+            "id": "59e677afa6da986f1e138fb4",
+            "date": "2016-05-01T00:00:00.000+00:00",
+            "news_url": "https://golden.com/wiki/Shield_AI-W4BGJ5D",
+            "type": "Seed",
+            "investors": "Founder Collective, Bloomberg Beta, Homebrew",
+            "amount": "2M",
+            "currency": "$"
+          }
+        ],
+        "technology_names": [
+          "AI",
+          "Adobe Media Optimizer",
+          "Amazon AWS",
+          "Cedexis Radar",
+          "Google Tag Manager",
+          "Gravity Forms",
+          "Lever",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Nginx",
+          "Pantheon",
+          "Rackspace MailGun",
+          "React",
+          "Remote",
+          "Salesforce",
+          "Varnish",
+          "Vimeo",
+          "WordPress.org",
+          "Zendesk",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "gravity_forms",
+            "name": "Gravity Forms",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "lever",
+            "name": "Lever",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "pantheon",
+            "name": "Pantheon",
+            "category": "CMS"
+          },
+          {
+            "uid": "rackspace_mailgun",
+            "name": "Rackspace MailGun",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "react",
+            "name": "React",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "zendesk",
+            "name": "Zendesk",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66cc7f451bcbda000107ddb6"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5e822b4eac00f50001fa3b8f",
+      "name": "Hazel White",
+      "first_name": "Hazel",
+      "last_name": "White",
+      "title": "Business Development Account Executive",
+      "company": "Aspen Site Rentals",
+      "domain": "aspensiterentals.com",
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/hazel-white-2b3b0419",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "hazel.rawlinson@yahoo.com",
+        "hwhite@aspensiterentals.com"
+      ],
+      "phones": [
+        "+19404332228"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "hwhite@aspensiterentals.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+19404332228",
+      "organization": {
+        "id": "65e005f6d36c0a0001ca6f08",
+        "name": "Aspen Site Rentals",
+        "website_url": "http://www.aspensiterentals.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/aspen-site-rentals",
+        "twitter_url": null,
+        "facebook_url": "https://www.facebook.com/profile.php",
+        "primary_phone": {
+          "number": "+1 940-433-2228",
+          "source": "Scraped",
+          "sanitized_number": "+19404332228"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 940-433-2228",
+        "linkedin_uid": "99125268",
+        "founded_year": 2010,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68a8074c6870dd0001927760/picture",
+        "crunchbase_url": null,
+        "primary_domain": "aspensiterentals.com",
+        "sic_codes": [
+          "7349"
+        ],
+        "naics_codes": [
+          "56299"
+        ],
+        "sanitized_phone": "+19404332228",
+        "industry": "commercial real estate",
+        "estimated_num_employees": 8,
+        "keywords": [
+          "portable toilet",
+          "luxury restroom",
+          "temporary fence",
+          "commercial & industrial equipment rental",
+          "water tanks",
+          "spacious handicap-accessible units",
+          "construction support",
+          "construction site sanitation",
+          "restroom rentals",
+          "water tanks rental",
+          "custom placement support",
+          "mood lighting",
+          "power generators",
+          "mold resistant",
+          "facilities services",
+          "moisture-proof structure",
+          "emergency support",
+          "heated and cooled units",
+          "construction site rentals",
+          "spacious units",
+          "portable toilet service",
+          "luxury portable restrooms",
+          "ada compliant units",
+          "hand-washing stations",
+          "luxury restrooms",
+          "event support",
+          "luxury portable bathroom",
+          "event services",
+          "fencing rental",
+          "multi-station restroom trailers",
+          "air freshener",
+          "event sanitation solutions",
+          "odor control",
+          "portable restrooms",
+          "local service",
+          "luxury restroom trailers",
+          "easy rental process",
+          "scheduled sanitation",
+          "scheduled waste removal",
+          "ada compliant portable toilets",
+          "toilet paper restock",
+          "waste management",
+          "porta-potties",
+          "event sanitation",
+          "odor reduction technology",
+          "quick turnaround rentals",
+          "b2c",
+          "government",
+          "services",
+          "all other waste management services",
+          "cleaning services",
+          "event planning",
+          "commercial real estate",
+          "real estate",
+          "events services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "commercial real estate",
+          "consumer services"
+        ],
+        "secondary_industries": [
+          "consumer services"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e1887369641d68d40100",
+        "industry_tag_hash": {
+          "commercial real estate": "5567e1887369641d68d40100",
+          "consumer services": "5567d1127261697f2b1d0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "270 County Road 4668, Rhome, Texas 76078, US",
+        "street_address": "270 County Road 4668",
+        "city": "Rhome",
+        "state": "Texas",
+        "postal_code": "76078",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Portable Toilets, Dumpster Rental, Temporary Fencing, Luxury Restrooms and Special Events in DFW. Service all of the Grater North Texas region.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Active Campaign",
+          "Amazon AWS",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Outlook",
+          "Typekit",
+          "Vimeo"
+        ],
+        "current_technologies": [
+          {
+            "uid": "active_campaign",
+            "name": "Active Campaign",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5570e54b7369643bb6240400",
+      "name": "Lara Tobola",
+      "first_name": "Lara",
+      "last_name": "Tobola",
+      "title": "Business Development Account Executive",
+      "company": "FRONTLINE ER",
+      "domain": "frontlineer.com",
+      "location": "Pearland, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/laratobola",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "lara@frontlinemed.net"
+      ],
+      "phones": [
+        "+12817663811"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "lara@frontlinemed.net",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12817663811",
+      "organization": {
+        "id": "57c4b62ba6da9836f2abdfbd",
+        "name": "FRONTLINE ER",
+        "website_url": "http://www.frontlineer.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/frontline-er",
+        "twitter_url": "https://twitter.com/frontline_er",
+        "facebook_url": "https://facebook.com/frontlineerdallas",
+        "primary_phone": {
+          "number": "+1 281-766-3811",
+          "source": "Owler",
+          "sanitized_number": "+12817663811"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 281-766-3811",
+        "linkedin_uid": "10553858",
+        "founded_year": 2015,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68a381d1d75b4a0001ca7dc9/picture",
+        "crunchbase_url": null,
+        "primary_domain": "frontlineer.com",
+        "sic_codes": [
+          "8011"
+        ],
+        "naics_codes": [
+          "62191"
+        ],
+        "sanitized_phone": "+12817663811",
+        "industry": "hospital & health care",
+        "estimated_num_employees": 16,
+        "keywords": [
+          "board certified physicians",
+          "in house lab",
+          "pharmacy",
+          "open 24 hours",
+          "7 days a week",
+          "365 days a year",
+          "state of the art equipment",
+          "little or no wait",
+          "all small or large medical concerns",
+          "workers comp",
+          "hospitals & health care",
+          "pediatric emergency",
+          "emergency room",
+          "low-radiation ct",
+          "medical diagnostics",
+          "long-term care center adoption",
+          "medical emergencies",
+          "injury treatment",
+          "on-site laboratory",
+          "urgent care",
+          "24/7 emergency services",
+          "hospital-level care",
+          "nurses trained in emergency medicine",
+          "hospitals and emergency care",
+          "diagnostic testing",
+          "medical billing and charge master",
+          "emergency medical services",
+          "freestanding emergency center",
+          "trauma and pediatric emergency care",
+          "out-of-network billing",
+          "texas emergency regulations",
+          "imaging services",
+          "emergency physicians",
+          "hospital alternative care",
+          "emergency care",
+          "diagnostic imaging services",
+          "advanced medical technology",
+          "trauma treatment",
+          "diagnostic imaging",
+          "easter egg community project",
+          "bedside ultrasound",
+          "workplace injury treatment",
+          "medical staff recruitment",
+          "digital x-ray",
+          "elderly care in long-term facilities",
+          "community outreach",
+          "patient treatment",
+          "b2c",
+          "services",
+          "ambulance services",
+          "hospital & health care",
+          "medical practice"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "hospital & health care"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdde73696439812c0000",
+        "industry_tag_hash": {
+          "hospital & health care": "5567cdde73696439812c0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "7051 FM 1464 RD, Richmond, TX 77407, US",
+        "street_address": "7051 FM 1464 Rd",
+        "city": "Richmond",
+        "state": "Texas",
+        "postal_code": "77407",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "FrontLine ER provides quality, efficient emergency care for all ages, including infants. We feature a state-of-the-art facility with a warm, comfortable environment.\n\nWe treat everything from allergic reactions and broken bones to high fevers and chest pain. In other words, we are prepared to handle any emergency\u2026 without the wait. In most cases, patients are seen by a physician in less than 10 minutes.\n\nFrontLine ER is designed to help patients relax and heal. We are also equipped with an on-site full service diagnostic lab, CT scan, x-ray, and bedside Ultrasound.",
+        "suborganizations": [
+          {
+            "id": "6459e170dbffeb0001758d39",
+            "name": "Frontline ER Dallas",
+            "website_url": "http://www.frontlineerdallas.com"
+          }
+        ],
+        "num_suborganizations": 1,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Amazon AWS",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Google Analytics",
+          "Google Font API",
+          "Google Tag Manager",
+          "MailChimp SPF",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Remote",
+          "Reviews",
+          "WordPress.org",
+          "YouTube",
+          "Zoho Creator",
+          "Zoho One",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mailchimp_spf",
+            "name": "MailChimp SPF",
+            "category": "Other"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "reviews",
+            "name": "Reviews",
+            "category": "Customer Reviews"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "zoho creator",
+            "name": "Zoho Creator",
+            "category": "Other"
+          },
+          {
+            "uid": "zoho one",
+            "name": "Zoho One",
+            "category": "Cloud Services"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54ec036274686943115fb13d",
+      "name": "Kaiyan Chen",
+      "first_name": "Kaiyan",
+      "last_name": "Chen",
+      "title": "Business Development Account Executive",
+      "company": "wilsonbauhaus Interiors",
+      "domain": "wilsonbauhaus.com",
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/kaiyan-chen-274a05b",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "kchen@wilsonbauhaus.com"
+      ],
+      "phones": [
+        "+19724884100"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "kchen@wilsonbauhaus.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+19724884100",
+      "organization": {
+        "id": "654eafc00518f40001b19446",
+        "name": "wilsonbauhaus Interiors",
+        "website_url": "http://www.wilsonbauhaus.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/wislonbauhaus-interiors-group",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 972-488-4100",
+          "source": "Scraped",
+          "sanitized_number": "+19724884100"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 972-488-4100",
+        "linkedin_uid": "1832482",
+        "founded_year": 1994,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68bc00ef6acf7500015a94eb/picture",
+        "crunchbase_url": null,
+        "primary_domain": "wilsonbauhaus.com",
+        "sic_codes": [
+          "7389"
+        ],
+        "naics_codes": [
+          "56172"
+        ],
+        "sanitized_phone": "+19724884100",
+        "industry": "furniture",
+        "estimated_num_employees": 53,
+        "keywords": [
+          "workspace management",
+          "furniture standards",
+          "furniture installation",
+          "project management",
+          "workplace research",
+          "interior construction",
+          "office furniture & fixtures manufacturing",
+          "falkbuilt modular construction",
+          "architectural products",
+          "future-proof spaces",
+          "sustainable materials",
+          "ergonomic design",
+          "furniture solutions",
+          "office furniture manufacturing",
+          "design services",
+          "biophilic design",
+          "architectural services",
+          "custom office solutions",
+          "interior design services",
+          "office renovation",
+          "workspace analytics",
+          "flexible office partitions",
+          "commercial interior design",
+          "inventory management",
+          "interior design innovation",
+          "contamporary design",
+          "architectural walls",
+          "ergonomic furniture",
+          "office interior design",
+          "allsteel dealer",
+          "space planning",
+          "project execution",
+          "workspace reconfiguration",
+          "asset management",
+          "custom furniture",
+          "workspace solutions",
+          "sustainable office practices",
+          "interior architecture",
+          "office environment optimization",
+          "acoustical solutions",
+          "moveable walls",
+          "office furniture logistics",
+          "furniture wholesaling",
+          "collaborative spaces",
+          "folio spatial intelligence",
+          "furniture management",
+          "sustainable office furniture",
+          "digital interior construction",
+          "office furniture",
+          "b2b",
+          "government",
+          "consulting",
+          "services",
+          "janitorial services",
+          "interior design",
+          "customer service",
+          "productivity",
+          "home decor",
+          "architecture & planning",
+          "facilities services"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "furniture"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cede73696440d0040000",
+        "industry_tag_hash": {
+          "furniture": "5567cede73696440d0040000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "1645 N Stemmons Freeway Suite A, Dallas, Texas 75207, US",
+        "street_address": "1645 N Stemmons Fwy",
+        "city": "Dallas",
+        "state": "Texas",
+        "postal_code": "75207",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "wilsonbauhaus Interiors is a full-service furniture management and interior solutions company based in Dallas, Texas. Formed in 2022 from the merger of Wilson Office Interiors and Bauhaus Interiors, the company combines over 50 years of experience and offers a team with 100 years of collective expertise. They specialize in providing tailored solutions for real estate, architectural and design firms, corporate communities, and government agencies.\n\nThe company provides a wide range of services, including strategic planning for workplace environments, project management, furniture installation, and workplace research. They are recognized as the exclusive Allsteel dealer in the Dallas-Fort Worth area and the largest dealer of Allsteel products in the Southeast. wilsonbauhaus focuses on stylish, modern furniture and workspace solutions that enhance functionality and efficiency. They pride themselves on delivering superior products and exceptional service while collaborating closely with clients to achieve their vision for office spaces.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "GoDaddy Hosting",
+          "Google Font API",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Outlook",
+          "Varnish",
+          "Woo Commerce",
+          "WordPress.org",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "godaddy_hosting",
+            "name": "GoDaddy Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "woo_commerce",
+            "name": "Woo Commerce",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66f43896f4a07c0001dba6ef"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 5,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Professional Opportunity in Austin, TX - Sales Representative Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in sales representative.\n\nWe're currently working with several top-tier organizations in Austin, TX that are looking for talented Sales Representative professionals like yourself. These positions offer:\n\n\u2022 Competitive compensation package\n\u2022 Professional development opportunities\n\u2022 Excellent work-life balance\n\u2022 Collaborative team environment\n\u2022 Growth and advancement opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Sales Representative positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Sales Representative opportunities in Austin, TX.\n\nI understand how busy things can get in business, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Sales Representative professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific organization types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and organization cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Sales Representative.\n\nWe just had a Sales Representative join one of our client organizations in Austin, TX, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Sales Representative career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Sales Representative professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:11:51.168889",
+  "created_at": "2025-09-08T21:11:51.168927",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Sales",
+    "Marketing",
+    "Business Development",
+    "Account Management"
+  ],
+  "auto_campaign": true
+}

@@ -1,0 +1,23 @@
+{
+  "campaign_id": "dvm_campaign_1757351798",
+  "execution_time": "2025-09-08T21:17:21.898827",
+  "platform": "aws_ses",
+  "success": true,
+  "sent_count": 2,
+  "failed_count": 0,
+  "total_recipients": 2,
+  "results": [
+    {
+      "recipient": "test.alpha@example.com",
+      "status": "sent",
+      "message_id": "010001992a550bde-70e2a5de-3f12-4fff-a65a-9a60256f634c-000000",
+      "candidate_name": "Test Candidate Alpha"
+    },
+    {
+      "recipient": "test.beta@example.com",
+      "status": "sent",
+      "message_id": "010001992a550dd5-18940999-4fc7-4dcb-9f64-26cc3246b5ce-000000",
+      "candidate_name": "Test Candidate Beta"
+    }
+  ]
+}

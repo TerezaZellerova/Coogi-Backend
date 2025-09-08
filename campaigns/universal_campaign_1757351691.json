@@ -1,0 +1,995 @@
+{
+  "id": "universal_campaign_1757351691",
+  "name": "Universal Test - Marketing Manager",
+  "type": "business_outreach",
+  "status": "scheduled",
+  "target_audience": "Marketing Manager professionals",
+  "job_title": "Marketing Manager",
+  "role_category": "business",
+  "locations": [
+    "Austin, TX"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "54a47a16746869344225994a",
+      "name": "Kamal Heikal",
+      "first_name": "Kamal",
+      "last_name": "Heikal",
+      "title": "Digital Marketing Brand Manager",
+      "company": "Ben E. Keith Foods",
+      "domain": null,
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/kamalheikal",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "kheikal@austin.rr.com",
+        "kgheikal@benekeith.com"
+      ],
+      "phones": [
+        "+18178775700"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "kgheikal@benekeith.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18178775700",
+      "organization": {
+        "id": "57c4f8d6a6da9869ff50668c",
+        "name": "Ben E. Keith Foods",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/benekeithfoods",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 817-877-5700",
+          "source": "Account",
+          "sanitized_number": "+18178775700"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 817-877-5700",
+        "linkedin_uid": "54319",
+        "founded_year": 1906,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68afe86d293d10000107a73f/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "sic_codes": [
+          "5141"
+        ],
+        "naics_codes": [
+          "42441"
+        ],
+        "sanitized_phone": "+18178775700",
+        "industry": "food & beverages",
+        "estimated_num_employees": 1700,
+        "keywords": [
+          "fresh produce",
+          "frozen foods",
+          "frozen meats",
+          "dry grocery products",
+          "fresh meats",
+          "dairy products",
+          "nonfood items",
+          "food service equipment & supplies",
+          "food & beverage services",
+          "long history",
+          "distribution infrastructure",
+          "supply chain",
+          "diverse customer base",
+          "product variety",
+          "beverage distribution",
+          "warehouse management",
+          "distributor",
+          "market presence",
+          "product assortment",
+          "multi-state operation",
+          "food products",
+          "supply chain management",
+          "warehouse facilities",
+          "community support",
+          "modern warehouses",
+          "inventory management",
+          "hospitality industry",
+          "regional focus",
+          "food distribution",
+          "foodservice industry",
+          "technological investment",
+          "non-alcoholic beverages",
+          "premium beer",
+          "customer satisfaction",
+          "philanthropic initiatives",
+          "customer support",
+          "industry leadership",
+          "service excellence",
+          "inventory control",
+          "premium brands",
+          "alcoholic beverages",
+          "long-standing relationships",
+          "advanced technology",
+          "growth and expansion",
+          "non-alcoholic beverage distribution",
+          "customer relationships",
+          "beverages",
+          "warehouse logistics",
+          "distribution centers",
+          "alcoholic beverage distribution",
+          "technology investment",
+          "delivery efficiency",
+          "logistics technology",
+          "foodservice sector",
+          "texas market",
+          "distribution network",
+          "quality assurance",
+          "spirits",
+          "technology upgrades",
+          "industry standards",
+          "wines",
+          "family-owned business",
+          "distribution logistics",
+          "industry leader",
+          "infrastructure",
+          "logistics solutions",
+          "regional distribution",
+          "product quality",
+          "warehouse automation",
+          "product sourcing",
+          "texas distribution",
+          "foodservice",
+          "food and beverage industry",
+          "family-owned",
+          "institutional food supply",
+          "community engagement",
+          "supply chain resilience",
+          "foodservice products",
+          "corporate philanthropy",
+          "craft beer",
+          "philanthropy",
+          "market expansion",
+          "foodservice operators",
+          "brand partnerships",
+          "customer service",
+          "beverage sector",
+          "distribution efficiency",
+          "regional coverage",
+          "b2b",
+          "services",
+          "general line grocery merchant wholesalers",
+          "sustainability",
+          "employee benefits",
+          "food & beverages",
+          "consumer goods",
+          "consumers",
+          "logistics & supply chain",
+          "wine & spirits",
+          "environmental services",
+          "renewables & environment"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "food & beverages"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce1e7369643b806a0000",
+        "industry_tag_hash": {
+          "food & beverages": "5567ce1e7369643b806a0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "7600 Will Rogers Blvd, Fort Worth, TX 76140, US",
+        "street_address": "7600 Will Rogers Boulevard",
+        "city": "Fort Worth",
+        "state": "Texas",
+        "postal_code": "76140",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Ben E. Keith Foods is a prominent American food and beverage distribution company based in Fort Worth, Texas. Founded in 1906, it has evolved from delivering produce by horse and buggy to becoming a major player in the foodservice industry. The company operates primarily through two divisions: the Food Division, which supplies a wide range of products including fresh produce, frozen foods, meats, and dry groceries, and the Beverage Division, known for distributing Anheuser-Busch products and a variety of other beverages.\n\nWith a strong presence in Texas and surrounding regions, Ben E. Keith Foods serves a diverse customer base that includes restaurants, hospitals, schools, and nursing homes. The company is recognized as one of the largest independent beer wholesalers in the U.S. and has expanded its operations through strategic acquisitions and investments in facilities, such as a large warehouse in Missouri City, Texas. Ben E. Keith Foods is committed to quality, service, and supporting its employees and customers, reflecting a legacy of innovation and excellence in the food and beverage distribution sector.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Akamai",
+          "Akamai DNS",
+          "Campaign Monitor",
+          "Mailchimp Mandrill",
+          "Microsoft Office 365",
+          "Outlook",
+          "Remote",
+          "Salesforce",
+          "Sendgrid"
+        ],
+        "current_technologies": [
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_dns",
+            "name": "Akamai DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "campaign_monitor",
+            "name": "Campaign Monitor",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "mailchimp_mandrill",
+            "name": "Mailchimp Mandrill",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "sendgrid",
+            "name": "Sendgrid",
+            "category": "Email Delivery"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5d104bc4f3e5bb15f99c9d7d",
+      "name": "Martin Valdez",
+      "first_name": "Martin",
+      "last_name": "Valdez",
+      "title": "Digital Marketing & Brand Manager",
+      "company": "United General Supply Co., Inc.",
+      "domain": "leighcountry.com",
+      "location": "Houston, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/mfvaldez",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "mfvaldez@hotmail.com",
+        "martin.valdez@ugsco.com"
+      ],
+      "phones": [
+        "+18778753444"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "martin.valdez@ugsco.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18778753444",
+      "organization": {
+        "id": "54a135b469702d2f9fde2e01",
+        "name": "United General Supply Co., Inc.",
+        "website_url": "http://www.leighcountry.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/unitedgeneralsupply",
+        "twitter_url": "https://twitter.com/LeighCountry",
+        "facebook_url": "https://www.facebook.com/leighcountry/",
+        "primary_phone": {
+          "number": "+1 877-875-3444",
+          "source": "Owler",
+          "sanitized_number": "+18778753444"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 877-875-3444",
+        "linkedin_uid": "1432821",
+        "founded_year": 1984,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b547c34673090001e3f9ad/picture",
+        "crunchbase_url": null,
+        "primary_domain": "leighcountry.com",
+        "sic_codes": [
+          "2519"
+        ],
+        "naics_codes": [
+          "33712"
+        ],
+        "sanitized_phone": "+18778753444",
+        "industry": "import & export",
+        "estimated_num_employees": 19,
+        "keywords": [
+          "patio furniture",
+          "outdoor decor",
+          "southern living",
+          "wood furniture",
+          "wholesale import & export",
+          "wind spinners",
+          "stain and oil finishes",
+          "outdoor furniture",
+          "natural wood finish",
+          "outdoor durability",
+          "char-log collection",
+          "weatherproof furniture",
+          "furniture manufacturing",
+          "garden furniture",
+          "fire pits",
+          "rustic furniture",
+          "pest resistant",
+          "outdoor living",
+          "amber-log collection",
+          "milled and cured wood",
+          "charred wood",
+          "outdoor seating",
+          "texas furniture maker",
+          "indoor furniture",
+          "rustic decor",
+          "home decor",
+          "weather-resistant furniture",
+          "wooden furniture",
+          "high-temperature curing",
+          "patio accessories",
+          "indoor use",
+          "rustic home decor",
+          "mold resistant",
+          "handcrafted furniture",
+          "outdoor patio furniture",
+          "wood products",
+          "teak furniture",
+          "uv protection",
+          "custom furniture",
+          "teak-log collection",
+          "wire brushing",
+          "hand-torched wood",
+          "high-temperature kiln drying",
+          "garden decor",
+          "b2b",
+          "b2c",
+          "e-commerce",
+          "d2c",
+          "household and institutional furniture manufacturing",
+          "customer service",
+          "international trade & development",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services",
+          "household & institutional furniture manufacturing",
+          "furniture"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "import & export"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce9d7369645430c50000",
+        "industry_tag_hash": {
+          "import & export": "5567ce9d7369645430c50000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "9320 Harwin Drive, Houston, Texas 77036, US",
+        "street_address": "9320 Harwin Drive",
+        "city": "Houston",
+        "state": "Texas",
+        "postal_code": "77036",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "United General Supply Co., Inc is a family-owned design, import, and distribution company based in Houston, Texas. From peddling hand-tools at flea markets to selling to multi-billion dollar companies 30 years later, our family is a living example that with hard work and the right team, anything is possible.\n\nWe take great pride in not only our unique products, but also in providing great value and service to our customers. We want our values of family and togetherness to be transferred through our products, and through our Leigh Country brand, we want to inspire people to be with the ones they love in a natural setting.\n\nLeigh Country brings an authentic country living experience direct to your home, no matter where you live. For more information on our Leigh Country family, visit www.leighcountry.com, like us on Facebook at facebook.com/leighcountry, follow us on Twitter at twitter.com/LeighCountry and on Instagram at instagram.com/LeighCountry, and pin with us on Pinterest at pinterest.com/leighcountry.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "AddThis",
+          "Amadesa",
+          "Basis",
+          "Bing Ads",
+          "Bootstrap Framework",
+          "Canva",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Gmail",
+          "Google Analytics",
+          "Google Apps",
+          "Google Custom Search",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Tag Manager",
+          "MailChimp SPF",
+          "McAfee",
+          "Mirakl",
+          "Mobile Friendly",
+          "Shopify",
+          "Vimeo"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "addthis",
+            "name": "AddThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "amadesa",
+            "name": "Amadesa",
+            "category": "Personalization"
+          },
+          {
+            "uid": "basis",
+            "name": "Basis",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "bing_ads",
+            "name": "Bing Ads",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "canva",
+            "name": "Canva",
+            "category": "Content Management Platform"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "gmail",
+            "name": "Gmail",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_apps",
+            "name": "Google Apps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_async",
+            "name": "Google Custom Search",
+            "category": "Search Appliances"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mailchimp_spf",
+            "name": "MailChimp SPF",
+            "category": "Other"
+          },
+          {
+            "uid": "mcafee",
+            "name": "McAfee",
+            "category": "Security"
+          },
+          {
+            "uid": "mirakl",
+            "name": "Mirakl",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "shopify",
+            "name": "Shopify",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "610a5f021a56200001286bac",
+      "name": "Andrea Hannegan",
+      "first_name": "Andrea",
+      "last_name": "Hannegan",
+      "title": "Brand & Digital Marketing Manager",
+      "company": "Austin Regional Clinic: ARC",
+      "domain": "austinregionalclinic.com",
+      "location": "Austin, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/ahannegan",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "andrea.schwendeman@gmail.com",
+        "anschwendeman@austinregionalclinic.com"
+      ],
+      "phones": [
+        "+15122724636"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "anschwendeman@austinregionalclinic.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+15122724636",
+      "organization": {
+        "id": "54a1c37974686954751ac10e",
+        "name": "Austin Regional Clinic: ARC",
+        "website_url": "http://www.austinregionalclinic.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/austin-regional-clinic",
+        "twitter_url": "https://twitter.com/austinregional",
+        "facebook_url": "https://www.facebook.com/austinregionalclinic",
+        "primary_phone": {
+          "number": "+1 512-272-4636",
+          "source": "Scraped",
+          "sanitized_number": "+15122724636"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 182457,
+        "phone": "+1 512-272-4636",
+        "linkedin_uid": "311807",
+        "founded_year": 1980,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6ed16a58841000182a386/picture",
+        "crunchbase_url": null,
+        "primary_domain": "austinregionalclinic.com",
+        "sic_codes": [
+          "8011"
+        ],
+        "naics_codes": [
+          "62111"
+        ],
+        "sanitized_phone": "+15122724636",
+        "industry": "medical practice",
+        "estimated_num_employees": 1400,
+        "keywords": [
+          "allergy",
+          "asthma",
+          "audiology",
+          "dermatology",
+          "ear",
+          "nose",
+          "throat",
+          "family medicine",
+          "general surgery",
+          "internal medicine",
+          "ob",
+          "gyn",
+          "pediatrics",
+          "podiatry",
+          "lab",
+          "radiology",
+          "orthopedics",
+          "cardiology",
+          "gastroenterology",
+          "rheumatology",
+          "endocrinology",
+          "neurology",
+          "clinical research",
+          "medical practices",
+          "care coordination",
+          "healthcare access",
+          "clinical services",
+          "primary care",
+          "healthcare awards",
+          "preventive care",
+          "healthcare provider",
+          "patient care",
+          "electronic medical records",
+          "healthcare technology",
+          "community health",
+          "medical professionals",
+          "health services",
+          "medical clinics",
+          "specialty medical services",
+          "telemedicine",
+          "healthcare quality improvement",
+          "health education",
+          "behavioral health",
+          "medical training",
+          "after-hours clinics",
+          "healthcare providers and services",
+          "health screenings",
+          "chronic disease management",
+          "telehealth",
+          "healthcare policies",
+          "same-day appointments",
+          "medical leadership",
+          "multi-lingual staff",
+          "multispecialty healthcare",
+          "connected care",
+          "mychart",
+          "patient-centered care",
+          "medical group",
+          "community outreach",
+          "healthcare innovation",
+          "specialty care",
+          "patient feedback",
+          "evidence-based medicine",
+          "population health",
+          "immunizations",
+          "medical research",
+          "b2c",
+          "services",
+          "offices of physicians",
+          "healthcare services",
+          "urgent care",
+          "surgery",
+          "hospital & health care",
+          "medical",
+          "health care information technology",
+          "health care",
+          "health, wellness & fitness",
+          "diagnostic services",
+          "doctors",
+          "family practice",
+          "health & medical",
+          "laboratory testing",
+          "obstetricians & gynecologists",
+          "pediatricians"
+        ],
+        "organization_revenue_printed": "359.7M",
+        "organization_revenue": 359700000.0,
+        "industries": [
+          "medical practice",
+          "hospital & health care"
+        ],
+        "secondary_industries": [
+          "hospital & health care"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567d0467369645dbc200000",
+        "industry_tag_hash": {
+          "medical practice": "5567d0467369645dbc200000",
+          "hospital & health care": "5567cdde73696439812c0000"
+        },
+        "retail_location_count": 61,
+        "raw_address": "6210 E Highway 290, Austin, Texas 78723, US",
+        "street_address": "6210 East Highway 290",
+        "city": "Austin",
+        "state": "Texas",
+        "postal_code": "78723",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Austin Regional Clinic (ARC) is a physician-owned, multi-specialty healthcare organization based in Central Texas, founded in 1980 by Dr. Norman H. Chenven. Serving around 700,000 patients, ARC operates more than 35 clinics across 15 cities, including Austin. The organization is dedicated to providing coordinated and accessible healthcare, emphasizing personalized care and strong doctor-patient relationships.\n\nARC offers a wide array of healthcare services, including primary care, specialty care across 17 specialties, preventive care, chronic disease management, and urgent care through After Hours Clinics. Patients can access same-day in-person and telemedicine appointments, along with convenient features like 24/7 online scheduling and a patient portal called ARC MyChart. The clinic also utilizes advanced medical technologies, such as the daVinci robotic surgery system, to enhance patient care.\n\nWith a commitment to quality and community-centered care, ARC has established itself as a leader in healthcare delivery in the region, retaining over 90% of its patients by allowing them the freedom to choose their healthcare providers.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "359.7M",
+        "annual_revenue": 359700000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "ASP.NET",
+          "Adobe Media Optimizer",
+          "Amazon SES",
+          "Cedexis Radar",
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "F5 BIG-IP",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Play",
+          "Google Tag Manager",
+          "Marketo",
+          "Mobile Friendly",
+          "Outlook",
+          "Salesforce",
+          "UltiPro",
+          "Vimeo",
+          "VueJS",
+          "YouTube",
+          "iTunes",
+          "jPlayer",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "asp_net",
+            "name": "ASP.NET",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "amazon_ses",
+            "name": "Amazon SES",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "f5_big-ip",
+            "name": "F5 BIG-IP",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_play",
+            "name": "Google Play",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "marketo",
+            "name": "Marketo",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "ultipro",
+            "name": "UltiPro",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "vue_js_library",
+            "name": "VueJS",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "itunes",
+            "name": "iTunes",
+            "category": "Widgets"
+          },
+          {
+            "uid": "jplayer",
+            "name": "jPlayer",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 3,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Professional Opportunity in Austin, TX - Marketing Manager Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in marketing manager.\n\nWe're currently working with several top-tier organizations in Austin, TX that are looking for talented Marketing Manager professionals like yourself. These positions offer:\n\n\u2022 Competitive compensation package\n\u2022 Professional development opportunities\n\u2022 Excellent work-life balance\n\u2022 Collaborative team environment\n\u2022 Growth and advancement opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Marketing Manager positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Marketing Manager opportunities in Austin, TX.\n\nI understand how busy things can get in business, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Marketing Manager professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific organization types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and organization cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Marketing Manager.\n\nWe just had a Marketing Manager join one of our client organizations in Austin, TX, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Marketing Manager career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Marketing Manager professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:14:51.090286",
+  "created_at": "2025-09-08T21:14:51.090332",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Sales",
+    "Marketing",
+    "Business Development",
+    "Account Management"
+  ],
+  "auto_campaign": true
+}

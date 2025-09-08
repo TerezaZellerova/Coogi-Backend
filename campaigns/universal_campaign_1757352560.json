@@ -1,0 +1,2352 @@
+{
+  "id": "universal_campaign_1757352560",
+  "name": "Production Demo: Product Manager - Austin, TX",
+  "type": "operations_outreach",
+  "status": "scheduled",
+  "target_audience": "Manager professionals",
+  "job_title": "Manager",
+  "role_category": "operations",
+  "locations": [
+    "Austin, TX"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "66fbf03933d22b0001e1c86a",
+      "name": "Chris Kidd",
+      "first_name": "Chris",
+      "last_name": "Kidd",
+      "title": "Manager",
+      "company": "StyleCareers",
+      "domain": "stylecareers.com",
+      "location": "Southlake, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/stylecareers",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "chris@stylecareers.com"
+      ],
+      "phones": [
+        "+13144549920"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "chris@stylecareers.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+13144549920",
+      "organization": {
+        "id": "5592291973696418b7f9a000",
+        "name": "StyleCareers",
+        "website_url": "http://www.stylecareers.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/stylecareers-com",
+        "twitter_url": "https://twitter.com/StyleCareers",
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 314-454-9920",
+          "source": "Owler",
+          "sanitized_number": "+13144549920"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 300178,
+        "phone": "+1 314-454-9920",
+        "linkedin_uid": "1044885",
+        "founded_year": 2002,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b936053f42030001d9780f/picture",
+        "crunchbase_url": null,
+        "primary_domain": "stylecareers.com",
+        "sic_codes": [
+          "7389"
+        ],
+        "naics_codes": [
+          "54161"
+        ],
+        "sanitized_phone": "+13144549920",
+        "industry": "apparel & fashion",
+        "estimated_num_employees": 15,
+        "keywords": [
+          "retail apparel & fashion",
+          "fashion industry events",
+          "fashion talent",
+          "fashion-specific recruiting",
+          "fashion industry resources",
+          "industry events",
+          "fashion industry networking",
+          "apparel and fashion",
+          "fashion recruitment",
+          "retail",
+          "fashion industry",
+          "fashion job board",
+          "retail jobs",
+          "industry-specific jobs",
+          "fashion career resources",
+          "retail recruitment",
+          "job listings",
+          "fashion careers",
+          "luxury brand jobs",
+          "fashion portfolio hosting",
+          "luxury retail",
+          "b2b",
+          "e-commerce",
+          "services",
+          "management consulting services",
+          "apparel & fashion",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services"
+        ],
+        "organization_revenue_printed": "10.4M",
+        "organization_revenue": 10415000.0,
+        "industries": [
+          "apparel & fashion"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd82736964540d0b0000",
+        "industry_tag_hash": {
+          "apparel & fashion": "5567cd82736964540d0b0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "4579 Laclede Ave, Saint Louis, Missouri, USA, 63108",
+        "street_address": "4579 Laclede Ave",
+        "city": "St. Louis",
+        "state": "Missouri",
+        "postal_code": "63108-2103",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "StyleCareers is an online platform established in 2001, dedicated to connecting employers with professionals in the fashion industry. It operates as the largest fashion-only job listing site, featuring job opportunities in apparel, footwear, and related sectors. The platform offers a specialized job board that includes freelance positions, internships, and various roles across locations, including New York and remote options.\n\nIn addition to job listings, StyleCareers hosts recruiting events in major fashion hubs like New York and Los Angeles, allowing direct engagement between employers and candidates. Employers can utilize applicant tracking tools and access a resume database to streamline their hiring processes. The platform provides tiered job posting packages, offering different levels of visibility and features to meet diverse recruitment needs. StyleCareers serves a global audience, with a strong focus on the U.S. market, making it a valuable resource for both job seekers and employers in the fashion sector.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "10.4M",
+        "annual_revenue": 10415000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "DoubleClick",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Gmail",
+          "Google Analytics",
+          "Google Apps",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Remote",
+          "Sendgrid",
+          "ShareThis",
+          "Simpli.fi",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "gmail",
+            "name": "Gmail",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_apps",
+            "name": "Google Apps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "sendgrid",
+            "name": "Sendgrid",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "sharethis",
+            "name": "ShareThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "simpli_fi",
+            "name": "Simpli.fi",
+            "category": "Demand Side Platforms"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54a78cef74686965d9626c3f",
+      "name": "Byron Tuck",
+      "first_name": "Byron",
+      "last_name": "Tuck",
+      "title": "Manager",
+      "company": "Samuel Energy Associates, LLC",
+      "domain": "samuelenergyassociates.com",
+      "location": "Midland, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/byron-tuck-13b00bb",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "btuck@samuelenergyassociates.com"
+      ],
+      "phones": [
+        "+14326867023"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "btuck@samuelenergyassociates.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14326867023",
+      "organization": {
+        "id": "5e58e56d52ecec0001c2144b",
+        "name": "Samuel Energy Associates, LLC",
+        "website_url": "http://www.samuelenergyassociates.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/samuel-energy-associates-llc",
+        "twitter_url": "https://twitter.com/samuel_energy/",
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 432-686-7023",
+          "source": "Scraped",
+          "sanitized_number": "+14326867023"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 432-686-7023",
+        "linkedin_uid": "40906873",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/687ab1bfebc4470001fcdd83/picture",
+        "crunchbase_url": null,
+        "primary_domain": "samuelenergyassociates.com",
+        "sic_codes": [
+          "1381"
+        ],
+        "naics_codes": [
+          "21311"
+        ],
+        "sanitized_phone": "+14326867023",
+        "industry": "oil & energy",
+        "estimated_num_employees": 6,
+        "keywords": [
+          "acquisitions & divestitures",
+          "conflict of interest free",
+          "oil exploration data",
+          "upstream oil projects",
+          "upstream asset sales",
+          "oil and gas industry",
+          "oil and gas asset portfolio",
+          "upstream project focus",
+          "exploration data services",
+          "oil and gas property management",
+          "asset marketing",
+          "oil and gas divestiture",
+          "texas oil assets",
+          "energy assets divestiture",
+          "oil and gas asset management",
+          "oil and gas assets new mexico",
+          "oil and gas property marketing",
+          "oil and gas datasets",
+          "exploration dataset showcase",
+          "energy asset transactions",
+          "new mexico oil assets",
+          "oil and gas asset consultancy new mexico",
+          "operated properties",
+          "oil and gas asset consultancy",
+          "secure web data access",
+          "client objectives focus",
+          "oil and gas asset sale process",
+          "oil and gas asset consultancy texas",
+          "energy asset management",
+          "oil and gas property sales",
+          "upstream projects",
+          "secure data access",
+          "non-operated properties",
+          "oil and gas exploration datasets",
+          "virtual data room services",
+          "asset portfolio management",
+          "oil and gas assets texas",
+          "conflict-free energy transactions",
+          "oil and gas extraction",
+          "virtual data room",
+          "energy asset transaction support",
+          "energy asset divestment",
+          "b2b",
+          "consulting",
+          "services",
+          "support activities for mining",
+          "oil and gas",
+          "asset management",
+          "risk management",
+          "portfolio management",
+          "oil & energy"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "oil & energy"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdd97369645624020000",
+        "industry_tag_hash": {
+          "oil & energy": "5567cdd97369645624020000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "6 desta drive, midland, tx, united states",
+        "street_address": "6 Desta Drive",
+        "city": "Midland",
+        "state": "Texas",
+        "postal_code": "79705",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Samuel Energy Associates, LLC is an independent energy marketing and advisory firm based in Midland, Texas, with additional offices in San Antonio and Oklahoma City. The company specializes in the divestiture of energy assets, including operated and non-operated upstream, midstream, and service company projects, primarily within the continental United States.\n\nThe firm offers a comprehensive range of services throughout the divestiture process. This includes identifying opportunities, determining asset values, preparing detailed informational materials, evaluating offers, negotiating terms, and closing transactions. Their experienced team provides customized support tailored to each client's needs, leveraging extensive industry knowledge. Samuel Energy Associates maintains a robust database of potential buyers, allowing them to effectively target buyers based on specific acquisition criteria.\n\nThe company primarily represents sellers and is known for its commitment to honesty, integrity, and professionalism. Their recent projects focus on prolific U.S. basins such as the Permian Basin, Eagle Ford, and San Juan Basin. Samuel Energy Associates is affiliated with Simon Energy Associates, LLC, which markets mineral and royalty projects.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "ASP.NET",
+          "Microsoft-IIS",
+          "Mobile Friendly",
+          "Outlook",
+          "Remote",
+          "Typekit",
+          "YouTube"
+        ],
+        "current_technologies": [
+          {
+            "uid": "asp_net",
+            "name": "ASP.NET",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "microsoft-iis",
+            "name": "Microsoft-IIS",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54abd38474686930073b8f0f",
+      "name": "Robert Dow",
+      "first_name": "Robert",
+      "last_name": "Dow",
+      "title": "Manager",
+      "company": "Remarkable Land, LLC",
+      "domain": "remarkableland.com",
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/robertodow",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "dow@remarkableland.com"
+      ],
+      "phones": [
+        "+18558335263"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "dow@remarkableland.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18558335263",
+      "organization": {
+        "id": "5e57889a108ba90001e8d2fa",
+        "name": "Remarkable Land, LLC",
+        "website_url": "http://www.remarkableland.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/remarkable-land-llc",
+        "twitter_url": "https://twitter.com/remarkableland",
+        "facebook_url": "https://www.facebook.com/Remarkable-Land-LLC-108258147179048/",
+        "primary_phone": {
+          "number": "+1 855-833-5263",
+          "source": "Scraped",
+          "sanitized_number": "+18558335263"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 855-833-5263",
+        "linkedin_uid": "40813328",
+        "founded_year": 2019,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b3311541d1130001b488f9/picture",
+        "crunchbase_url": null,
+        "primary_domain": "remarkableland.com",
+        "sic_codes": [
+          "6552"
+        ],
+        "naics_codes": [
+          "53121"
+        ],
+        "sanitized_phone": "+18558335263",
+        "industry": "real estate",
+        "estimated_num_employees": 2,
+        "keywords": [
+          "remarkable land",
+          "real estate",
+          "owner financing",
+          "raw land",
+          "cheap land",
+          "vacant land",
+          "rural land",
+          "land with private access",
+          "land with no restrictions",
+          "undeveloped land",
+          "land with water access",
+          "land with no hoa",
+          "land with mineral rights",
+          "e-commerce",
+          "investment property",
+          "land in colorado",
+          "land for sale",
+          "off-grid land",
+          "land management",
+          "land for camping",
+          "land with creek frontage",
+          "land sales",
+          "land in hunt county tx",
+          "land with water rights",
+          "land buying",
+          "land in mcintosh county ok",
+          "land in multiple states",
+          "land for hunting and fishing",
+          "recreational land",
+          "land in alamosa county co",
+          "land in oklahoma",
+          "land portfolio",
+          "land for outdoor recreation",
+          "land for hunting",
+          "land with mountain terrain",
+          "land for recreation",
+          "land in van buren county ar",
+          "land with utilities",
+          "rural land sales",
+          "land with private access roads",
+          "land in texas",
+          "land with no building restrictions",
+          "land for farming",
+          "land with alternative utilities",
+          "land selling",
+          "land investment",
+          "off-grid living",
+          "b2c",
+          "d2c",
+          "services",
+          "offices of real estate agents and brokers",
+          "property management",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services",
+          "enterprise software",
+          "enterprises",
+          "computer software",
+          "b2b"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "real estate"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd477369645401010000",
+        "industry_tag_hash": {
+          "real estate": "5567cd477369645401010000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "6115 Owens St, Ste 201, Dallas, Texas 75235, US",
+        "street_address": "6115 Owens St",
+        "city": "Dallas",
+        "state": "Texas",
+        "postal_code": "75235-6727",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Remarkable Land, LLC is a private, land investment company based in Dallas, Texas.  We've been in the natural resources industry for over a decade, and we have bought, sold, or leased interests covering over 245,000 acres located in 13 states and over 120 counties.  We've done business with thousands of owners all across the United States, and we'd be honored to call you a client!",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Active Campaign",
+          "Drip",
+          "Gmail",
+          "Google Apps",
+          "Google Play",
+          "Mobile Friendly",
+          "Remote",
+          "WP Engine",
+          "WordPress.org",
+          "YouTube",
+          "iTunes"
+        ],
+        "current_technologies": [
+          {
+            "uid": "active_campaign",
+            "name": "Active Campaign",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "drip",
+            "name": "Drip",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "gmail",
+            "name": "Gmail",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "google_apps",
+            "name": "Google Apps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_play",
+            "name": "Google Play",
+            "category": "Widgets"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "wp_engine",
+            "name": "WP Engine",
+            "category": "CMS"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "itunes",
+            "name": "iTunes",
+            "category": "Widgets"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "660dab95d101850007cd7480",
+      "name": "Siddhant Saxena",
+      "first_name": "Siddhant",
+      "last_name": "Saxena",
+      "title": "Manager",
+      "company": "HCLTech",
+      "domain": "hcltech.com",
+      "location": "Frisco, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/siddhant-saxena-3b440680",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "siddhant_sa@hcl.com"
+      ],
+      "phones": [
+        "+911204306000"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "siddhant_sa@hcl.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+911204306000",
+      "organization": {
+        "id": "5e58362bd5bd4a00015bc99d",
+        "name": "HCLTech",
+        "website_url": "http://www.hcltech.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/hcltech",
+        "twitter_url": "https://twitter.com/HCLEnterprise",
+        "facebook_url": "https://www.facebook.com/HCLEnterprise",
+        "primary_phone": {
+          "number": "+91 12 0430 6000",
+          "source": "Owler",
+          "sanitized_number": "+911204306000"
+        },
+        "languages": [
+          "English",
+          "German"
+        ],
+        "alexa_ranking": 58706,
+        "phone": "+91 12 0430 6000",
+        "linkedin_uid": "1756",
+        "founded_year": 1999,
+        "publicly_traded_symbol": "HCLTECH",
+        "publicly_traded_exchange": "nse",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6630d2bed930001166cbd/picture",
+        "crunchbase_url": null,
+        "primary_domain": "hcltech.com",
+        "sic_codes": [
+          "7371"
+        ],
+        "naics_codes": [
+          "54151"
+        ],
+        "sanitized_phone": "+911204306000",
+        "industry": "information technology & services",
+        "estimated_num_employees": 223000,
+        "keywords": [
+          "manufacturing",
+          "aerospace",
+          "defense",
+          "financial services",
+          "telecom",
+          "retail",
+          "cpg",
+          "life sciences",
+          "healthcare",
+          "media",
+          "entertainment",
+          "travel",
+          "transportation",
+          "logistics",
+          "automotive",
+          "government",
+          "energy",
+          "utilities",
+          "consumer electronics",
+          "cloud",
+          "digital",
+          "engineering",
+          "ai",
+          "technology & services",
+          "software",
+          "it services & it consulting",
+          "industry verticals",
+          "data and ai",
+          "application services",
+          "public sector",
+          "information technology and services",
+          "ibm software brands acquisition",
+          "software product ecosystems",
+          "iot industrial solutions",
+          "application security testing",
+          "proprietary platforms",
+          "unified service management (usm)",
+          "ai-driven business automation",
+          "software products",
+          "democratizing computing in india",
+          "product engineering",
+          "application security solutions",
+          "enterprise data analytics",
+          "cybersecurity",
+          "software product revenue",
+          "ai in financial services",
+          "endpoint management software",
+          "digital engineering labs",
+          "engineering services",
+          "software brands",
+          "cloud engineering",
+          "application security",
+          "digital transformation in banking",
+          "cybersecurity services",
+          "software development",
+          "technology innovation",
+          "digital solutions",
+          "client solutions",
+          "public sector digital services",
+          "automation tools",
+          "global delivery centers",
+          "enterprise cloud migration",
+          "product platforms",
+          "digital workplace",
+          "remote infrastructure management",
+          "next-generation technologies",
+          "operational technology",
+          "next-gen technologies",
+          "digital design and manufacturing services",
+          "diverse industry clients",
+          "enterprise software",
+          "enterprise cybersecurity platforms",
+          "it services",
+          "innovation labs",
+          "internet of things",
+          "public sector digital transformation",
+          "digital engineering",
+          "software product development",
+          "data analytics",
+          "cloud infrastructure services",
+          "software product platforms",
+          "iot solutions",
+          "ai & generative ai",
+          "indigenous microcomputer",
+          "software product innovation",
+          "internet of things (iot)",
+          "digital enterprise solutions",
+          "telecommunications",
+          "software product lifecycle",
+          "enterprise solutions",
+          "product platform engineering",
+          "consulting services",
+          "ai-powered automation",
+          "cloud-native applications",
+          "next-generation technology",
+          "it consulting",
+          "global presence",
+          "digital transformation",
+          "software platforms",
+          "next-gen engineering",
+          "commercial apps / saas",
+          "cloud migration services",
+          "ai and automation",
+          "asia\u2019s largest digitization contract",
+          "cloud migration",
+          "digital transformation consulting",
+          "marketing services",
+          "global technology leader",
+          "networks",
+          "cloud computing",
+          "enterprise cloud solutions",
+          "software security products",
+          "end-user management",
+          "public sector services",
+          "business process operations",
+          "ai and automation in manufacturing",
+          "digital workplace transformation",
+          "supply chain",
+          "ai solutions",
+          "automation",
+          "cybersecurity solutions",
+          "industry-specific solutions",
+          "ai and genai adoption",
+          "software as a service (saas)",
+          "b2b",
+          "consulting",
+          "services",
+          "artificial intelligence",
+          "customer experience",
+          "sustainability",
+          "innovation",
+          "operational efficiency",
+          "mechanical or industrial engineering",
+          "health care",
+          "health, wellness & fitness",
+          "hospital & health care",
+          "consumers",
+          "hardware",
+          "information technology & services",
+          "enterprises",
+          "computer software",
+          "management consulting",
+          "marketing & advertising",
+          "logistics & supply chain",
+          "environmental services",
+          "renewables & environment"
+        ],
+        "organization_revenue_printed": "13.8B",
+        "organization_revenue": 13830000000.0,
+        "industries": [
+          "information technology & services",
+          "computer software"
+        ],
+        "secondary_industries": [
+          "computer software"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000",
+          "computer software": "5567cd4e7369643b70010000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "Technology Hub, SEZ, Plot No. 3A, Plot No. 3A, Sector 126, Noida, Uttar Pradesh, IN, 201304",
+        "street_address": "",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "postal_code": "201304",
+        "country": "India",
+        "owned_by_organization_id": null,
+        "short_description": "HCLTech, formerly known as HCL Technologies, is a prominent Indian multinational IT services and consulting company founded in 1976. Initially focused on hardware, it developed one of India\u2019s first microcomputers in 1978 and later transitioned to software services in the early 1990s. With over 224,000 employees across 60 countries, HCLTech offers a wide range of technology services and products aimed at digital transformation, engineering, cloud solutions, AI, cybersecurity, and software development.\n\nThe company provides various services, including application development, infrastructure management, and digital transformation consulting. It also specializes in engineering and R&D services, cloud solutions, and business advisory through HCL Business Consulting. HCLTech has expanded its capabilities through strategic acquisitions, including IBM\u2019s software products division, enhancing its offerings in digital experience, automation, and security. Serving diverse industries such as banking, healthcare, and telecommunications, HCLTech focuses on enabling enterprises to innovate and modernize through advanced technology solutions.",
+        "suborganizations": [
+          {
+            "id": "604a869fa4d09d0001cddf6d",
+            "name": "HCL Technologies gbs GmbH",
+            "website_url": "http://www.gbs-it.de"
+          },
+          {
+            "id": "5c252083a3ae61ccadfad813",
+            "name": "VALIS",
+            "website_url": null
+          },
+          {
+            "id": "54a128ec69702db648ae4d01",
+            "name": "HCL Infosystems Ltd.",
+            "website_url": "http://www.hclinfosystems.com"
+          },
+          {
+            "id": "5592062e73696418e9cb2300",
+            "name": "QualityQuest informatics",
+            "website_url": "http://www.questinformatics.com"
+          },
+          {
+            "id": "5a9cd9b1a6da98d93bdc5e0d",
+            "name": "GEOMETRIC EUROPE GMBH",
+            "website_url": "http://www.geometricglobal.com"
+          },
+          {
+            "id": "67d292f9e603510001cf3918",
+            "name": "Sankalp Semiconductor Pvt. Ltd.",
+            "website_url": "http://www.sankalpsemi.com"
+          },
+          {
+            "id": "55ef40baf3e5bb49e40000b6",
+            "name": "HCLTech Confinale Wealth Solutions",
+            "website_url": "http://www.confinale.ch"
+          },
+          {
+            "id": "67388c4c2f9c5a0001110293",
+            "name": "URBAN FULFILLMENT SERVICES LLC",
+            "website_url": "http://www.urban-fulfillment.com"
+          },
+          {
+            "id": "54a135e969702d48e2e3e300",
+            "name": "Strong-Bridge Envision",
+            "website_url": "http://www.strong-bridge-envision.com"
+          },
+          {
+            "id": "654fb94026c6f000018d9d14",
+            "name": "Sankalp Semi conductor Private Limited",
+            "website_url": null
+          },
+          {
+            "id": "6742c2e1975d6e00016852f7",
+            "name": "C3i International Services",
+            "website_url": "http://www.c3isolutions.com"
+          },
+          {
+            "id": "55ebbffbf3e5bb2385002e8f",
+            "name": "ASAP Gruppe",
+            "website_url": "http://www.asap.de"
+          },
+          {
+            "id": "54a1baa6746869547561af0b",
+            "name": "DWS",
+            "website_url": "http://www.dws.com.au"
+          }
+        ],
+        "num_suborganizations": 13,
+        "annual_revenue_printed": "13.8B",
+        "annual_revenue": 13830000000.0,
+        "technology_names": [
+          "Akamai",
+          "Amazon AWS",
+          "Bootstrap Framework",
+          "CloudFlare CDN",
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "Datadog",
+          "DemandBase",
+          "Drupal",
+          "Eloqua",
+          "Gmail",
+          "Google Analytics",
+          "Google Apps",
+          "Google Tag Manager",
+          "Looker",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Nginx",
+          "OneTrust",
+          "Outlook",
+          "Qlik Sense",
+          "React Redux",
+          "Remote",
+          "Route 53",
+          "Salesforce",
+          "Sendgrid",
+          "Sigma",
+          "Sisense",
+          "Taboola Newsroom",
+          "TripleLift",
+          "Uipath",
+          "WP Engine",
+          "WordPress.org",
+          "Yahoo Tag Manager",
+          "YouTube"
+        ],
+        "current_technologies": [
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "cloudflare_cdn",
+            "name": "CloudFlare CDN",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "datadog",
+            "name": "Datadog",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "demandbase",
+            "name": "DemandBase",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "drupal",
+            "name": "Drupal",
+            "category": "CMS"
+          },
+          {
+            "uid": "eloqua",
+            "name": "Eloqua",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "gmail",
+            "name": "Gmail",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_apps",
+            "name": "Google Apps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "looker",
+            "name": "Looker",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "onetrust",
+            "name": "OneTrust",
+            "category": "Widgets"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "qlik sense",
+            "name": "Qlik Sense",
+            "category": "Business Intelligence"
+          },
+          {
+            "uid": "react_redux",
+            "name": "React Redux",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "route_53",
+            "name": "Route 53",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "sendgrid",
+            "name": "Sendgrid",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "sigma",
+            "name": "Sigma",
+            "category": "Business Intelligence"
+          },
+          {
+            "uid": "sisense",
+            "name": "Sisense",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "taboola_newsroom",
+            "name": "Taboola Newsroom",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "triplelift",
+            "name": "TripleLift",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "uipath",
+            "name": "Uipath",
+            "category": "Robotic Process Automation"
+          },
+          {
+            "uid": "wp_engine",
+            "name": "WP Engine",
+            "category": "CMS"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "yahoo_tag_manager",
+            "name": "Yahoo Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66f522afbcd093000111b508"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "57da1211a6da985b5fac2628",
+      "name": "Carlos Sierra",
+      "first_name": "Carlos",
+      "last_name": "Sierra",
+      "title": "Manager",
+      "company": "Hays",
+      "domain": "hays.com",
+      "location": "Houston, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/csierrac",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "carlos.sierra@hays.com.co"
+      ],
+      "phones": [
+        "+442039782520"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "carlos.sierra@hays.com.co",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+442039782520",
+      "organization": {
+        "id": "54a1347f69702d2db47e9c00",
+        "name": "Hays",
+        "website_url": "http://www.hays.com",
+        "blog_url": null,
+        "angellist_url": "http://angel.co/hays-recruitment-1",
+        "linkedin_url": "http://www.linkedin.com/company/hays",
+        "twitter_url": "https://twitter.com/HaysWorldwide",
+        "facebook_url": "https://www.facebook.com/HaysWorldwide/",
+        "primary_phone": {
+          "number": "+44 20 3978 2520",
+          "source": "Owler",
+          "sanitized_number": "+442039782520"
+        },
+        "languages": [
+          "English",
+          "English"
+        ],
+        "alexa_ranking": 82715,
+        "phone": "+44 20 3978 2520",
+        "linkedin_uid": "3486",
+        "founded_year": 1968,
+        "publicly_traded_symbol": "HAS.L",
+        "publicly_traded_exchange": "lse",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68ba6ba990480e00018a7aff/picture",
+        "crunchbase_url": null,
+        "primary_domain": "hays.com",
+        "sic_codes": [
+          "7361"
+        ],
+        "naics_codes": [
+          "56131"
+        ],
+        "sanitized_phone": "+442039782520",
+        "industry": "staffing & recruiting",
+        "estimated_num_employees": 11000,
+        "keywords": [
+          "recruitment",
+          "staffing solutions",
+          "resourcing",
+          "career transition",
+          "recruitment process outsourcing",
+          "onboarding",
+          "contract recruitment",
+          "contracting jobs",
+          "hiring",
+          "recruiting",
+          "workforce management",
+          "office manager",
+          "workforce transformation",
+          "it staffing solutions",
+          "human resources",
+          "staffing and recruitment",
+          "public sector",
+          "corporate responsibility",
+          "climate-focused workforce",
+          "industry recruitment expertise",
+          "talent pipelines",
+          "talent sourcing",
+          "industry talent pools",
+          "industry recruitment",
+          "candidate screening technology",
+          "specialist staffing",
+          "public sector organizations",
+          "client partnership",
+          "talent management",
+          "industry-specific recruitment",
+          "recruitment technology platforms",
+          "data-driven insights",
+          "talent analytics",
+          "candidate engagement tools",
+          "hr solutions",
+          "diversity hiring",
+          "candidate tracking systems",
+          "global network",
+          "labor market",
+          "net zero",
+          "job placement",
+          "managed service provider",
+          "msp programs",
+          "workforce planning",
+          "talent acquisition",
+          "regional labor market expertise",
+          "rpo",
+          "employment agency",
+          "executive search firm",
+          "client services",
+          "talent solutions",
+          "health care",
+          "recruitment strategies",
+          "market knowledge",
+          "workforce analytics",
+          "candidate screening",
+          "sustainability initiatives",
+          "regional recruitment",
+          "talent retention",
+          "regional labor markets",
+          "labor shortage solutions",
+          "staffing",
+          "corporate clients",
+          "msp",
+          "candidate assessment",
+          "digital talent acquisition",
+          "diversity and inclusion",
+          "employment services",
+          "market insights",
+          "regional presence",
+          "job matching",
+          "healthcare staffing",
+          "candidate experience optimization",
+          "engineering staffing",
+          "recruitment technology",
+          "diversity and equity",
+          "inclusion strategies",
+          "staffing agency",
+          "sustainability recruitment",
+          "telecom staffing",
+          "staffing services",
+          "labor solutions",
+          "professional staffing",
+          "industry sectors",
+          "candidate experience",
+          "labor market trends",
+          "life sciences",
+          "long-term talent partnerships",
+          "sector specialization",
+          "sustainability",
+          "contract staffing",
+          "information technology",
+          "candidate placement",
+          "resources sector recruitment",
+          "employment market insights",
+          "finance and banking",
+          "construction and engineering",
+          "public sector staffing",
+          "public sector recruitment",
+          "labor market analysis",
+          "industry expertise",
+          "regional labor insights",
+          "long-term partnerships",
+          "climate action",
+          "online talent sourcing",
+          "life sciences talent",
+          "candidate sourcing",
+          "workforce solutions",
+          "global talent networks",
+          "temporary staffing",
+          "candidate support",
+          "diversity hiring strategies",
+          "workforce reshaping",
+          "employer value proposition",
+          "recruitment data analytics",
+          "candidate database",
+          "net zero recruitment",
+          "recruitment marketing",
+          "executive search",
+          "data-driven recruitment",
+          "global recruitment",
+          "digital recruitment",
+          "retail workforce solutions",
+          "employment market",
+          "candidate engagement",
+          "recruitment analytics",
+          "rpo solutions",
+          "talent shortages",
+          "workforce consulting",
+          "employer branding",
+          "career support",
+          "regional talent sourcing",
+          "finance recruitment",
+          "construction recruitment",
+          "permanent staffing",
+          "net zero targets",
+          "b2b",
+          "government",
+          "consulting",
+          "services",
+          "employment placement agencies and executive search services",
+          "construction",
+          "technology",
+          "property",
+          "manufacturing",
+          "health, wellness & fitness",
+          "hospital & health care",
+          "environmental services",
+          "renewables & environment",
+          "information technology & services",
+          "staffing & recruiting",
+          "mechanical or industrial engineering"
+        ],
+        "organization_revenue_printed": "8.8B",
+        "organization_revenue": 8792344000.0,
+        "industries": [
+          "staffing & recruiting"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e09973696410db020800",
+        "industry_tag_hash": {
+          "staffing & recruiting": "5567e09973696410db020800"
+        },
+        "retail_location_count": 0,
+        "raw_address": "20 Triton Street, London, England NW1 3BF, GB",
+        "street_address": "20 Triton Street",
+        "city": null,
+        "state": "England",
+        "postal_code": "NW1 3BF",
+        "country": "United Kingdom",
+        "owned_by_organization_id": null,
+        "short_description": "Hays plc is a British multinational professional recruitment company based in London, operating in 33 countries worldwide. Founded in 1867, Hays has evolved from its origins in logistics to become a leading firm in recruitment and human resources, particularly after significant acquisitions in the 1980s and 1990s.\n\nThe company specializes in providing permanent, contractual, and temporary staffing solutions across various sectors, including IT, accountancy, human resources, sales, engineering, life sciences, and more. Hays also offers tailored workforce solutions such as executive search, talent management, and consultancy services to address specific hiring needs. With a diverse client base ranging from small businesses to large multinational corporations, Hays effectively supports organizations in reshaping their workforces and addressing talent shortages.",
+        "suborganizations": [
+          {
+            "id": "6689b7d230134d000108bd9e",
+            "name": "Isabelle Facina Consultoria",
+            "website_url": "http://www.hays.com.br"
+          },
+          {
+            "id": "54a2231974686935bec7f00f",
+            "name": "Hays Executive",
+            "website_url": "http://www.hays-executive.com"
+          },
+          {
+            "id": "672f6299cfd91b00010c569a",
+            "name": "\u30d8\u30a4\u30ba\u30fb\u30b9\u30da\u30b7\u30e3\u30ea\u30b9\u30c8\u30fb\u30ea\u30af\u30eb\u30fc\u30c8\u30e1\u30f3\u30c8\u30fb\u30b8\u30e3\u30d1\u30f3\uff08\u682a\uff09",
+            "website_url": "http://www.hays.co.jp"
+          },
+          {
+            "id": "674c5e3f962cfa0001c8dfe6",
+            "name": "Hays Hungary Kft.",
+            "website_url": "http://www.hays.hu"
+          },
+          {
+            "id": "615d6ae0fcb6c30001b8575e",
+            "name": "Dubai Recruitment",
+            "website_url": "http://www.hays.ae"
+          },
+          {
+            "id": "6714c293718f2b0001b7b4f4",
+            "name": "Reclutalento Mexico",
+            "website_url": "http://www.hays.com.mx"
+          },
+          {
+            "id": "54a1348b69702d3a9c384200",
+            "name": "Hays Travel",
+            "website_url": "http://www.haystravel.co.uk"
+          },
+          {
+            "id": "55f40262f3e5bb3be800119e",
+            "name": "Hays France & Luxembourg",
+            "website_url": "http://www.hays.pl"
+          },
+          {
+            "id": "5e56785e1dcc3800015d1a94",
+            "name": "IT Freelancer Magazin",
+            "website_url": "http://www.hays.de"
+          },
+          {
+            "id": "654ecabafc55720001b4f265",
+            "name": "Hays Luxembourg",
+            "website_url": "http://www.hays.lu"
+          },
+          {
+            "id": "66f39c1c719c160001468511",
+            "name": "\u82cf\u5dde\u53cc\u6797\u5851\u80f6\u7535\u5b50\u6709\u9650\u516c\u53f8",
+            "website_url": "http://www.hays-china.cn"
+          },
+          {
+            "id": "6710d11701c19900017bdb48",
+            "name": "Hays Talent Solutions (Schweiz) GmbH",
+            "website_url": "http://www.hays.ch"
+          },
+          {
+            "id": "6720afd1dbfbce0001e59f91",
+            "name": "Hays France & Luxembourg",
+            "website_url": "http://www.hays-careers.com"
+          },
+          {
+            "id": "6734908de4316b0001d2ae37",
+            "name": "Hays B.V.",
+            "website_url": "http://www.hays.nl"
+          },
+          {
+            "id": "618b03ee60989800011745f4",
+            "name": "Hays Talent Solutions and Powering",
+            "website_url": "http://www.haystalentsolutions.com"
+          },
+          {
+            "id": "67271165ed6bc20001845f0d",
+            "name": "F-R-I I Stockholm",
+            "website_url": "http://www.hays.se"
+          },
+          {
+            "id": "6817f739a9b7890001b8614e",
+            "name": "Hays plc",
+            "website_url": "http://www.hays.es"
+          },
+          {
+            "id": "670e08f86e4cc8000152496a",
+            "name": "Hays - Recruitment Agency Dublin",
+            "website_url": "http://www.hays.ie"
+          },
+          {
+            "id": "673ed3dac46a6400013198e7",
+            "name": "works of Hays PLC",
+            "website_url": "http://www.haystechnology.com"
+          },
+          {
+            "id": "56d83e57f3e5bb79fe00348d",
+            "name": "HAYS IT Services",
+            "website_url": "http://www.hays.it"
+          },
+          {
+            "id": "62b448194258f60001afeee7",
+            "name": "Hays Technology Solutions Romania",
+            "website_url": "http://www.hays.ro"
+          }
+        ],
+        "num_suborganizations": 21,
+        "annual_revenue_printed": "8.8B",
+        "annual_revenue": 8792344000.0,
+        "technology_names": [
+          "AT Internet",
+          "AddThis",
+          "Adobe Media Optimizer",
+          "Amadesa",
+          "Amazon AWS",
+          "Bootstrap Framework",
+          "CSC Corporate Domains",
+          "Cedexis Radar",
+          "Citrix NetScaler",
+          "CloudFlare Hosting",
+          "Criteo",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Freshdesk",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Play",
+          "Google Tag Manager",
+          "Hotjar",
+          "Liferay",
+          "Linkedin Login",
+          "Linkedin Marketing Solutions",
+          "Linkedin Widget",
+          "Microsoft Office 365",
+          "Mimecast",
+          "Mobile Friendly",
+          "Optimizely",
+          "React",
+          "Remote",
+          "Ruby On Rails",
+          "Salesforce",
+          "SoundCloud",
+          "Tealium",
+          "Twitter Advertising",
+          "Vimeo",
+          "WordPress.org",
+          "YouTube",
+          "Zendesk",
+          "accessiBe",
+          "iGoDigital",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "at_internet",
+            "name": "AT Internet",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "addthis",
+            "name": "AddThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "amadesa",
+            "name": "Amadesa",
+            "category": "Personalization"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "csc_corporate_domains",
+            "name": "CSC Corporate Domains",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "citrix_netscaler",
+            "name": "Citrix NetScaler",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "criteo",
+            "name": "Criteo",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "freshdesk",
+            "name": "Freshdesk",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_play",
+            "name": "Google Play",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "hotjar",
+            "name": "Hotjar",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "liferay",
+            "name": "Liferay",
+            "category": "CMS"
+          },
+          {
+            "uid": "linkedin_login",
+            "name": "Linkedin Login",
+            "category": "Social Login"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "linkedin_widget",
+            "name": "Linkedin Widget",
+            "category": "Other"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mimecast",
+            "name": "Mimecast",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "optimizely",
+            "name": "Optimizely",
+            "category": "Online Testing Platforms"
+          },
+          {
+            "uid": "react",
+            "name": "React",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "ruby_on_rails",
+            "name": "Ruby On Rails",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "soundcloud",
+            "name": "SoundCloud",
+            "category": "Other"
+          },
+          {
+            "uid": "tealium",
+            "name": "Tealium",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "twitter_advertising",
+            "name": "Twitter Advertising",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "zendesk",
+            "name": "Zendesk",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "accessibe",
+            "name": "accessiBe",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "igodigital",
+            "name": "iGoDigital",
+            "category": "Personalization"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66eace2b9ac315000181a3ab"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "6410d985f7afa30001b43792",
+      "name": "Brianna Menssen",
+      "first_name": "Brianna",
+      "last_name": "Menssen",
+      "title": "Manager",
+      "company": "Mergen | Your Trusted ServiceNow Partner",
+      "domain": "mergenit.com",
+      "location": "Houston, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/brianna-menssen-2b27bb262",
+      "seniority": "manager",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "brianna.menssen@mergenit.co"
+      ],
+      "phones": [
+        "+14694543816"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "brianna.menssen@mergenit.co",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14694543816",
+      "organization": {
+        "id": "57c4a6eda6da98407d519cea",
+        "name": "Mergen | Your Trusted ServiceNow Partner",
+        "website_url": "http://www.mergenit.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/mergen-corp",
+        "twitter_url": "https://twitter.com/it_mergen",
+        "facebook_url": "https://www.facebook.com/mergenIT/",
+        "primary_phone": {
+          "number": "+1 469-454-3816",
+          "source": "Owler",
+          "sanitized_number": "+14694543816"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 469-454-3816",
+        "linkedin_uid": "10512788",
+        "founded_year": 2015,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68bd576bbfa3220001dbd3bf/picture",
+        "crunchbase_url": null,
+        "primary_domain": "mergenit.com",
+        "sic_codes": [
+          "7375"
+        ],
+        "naics_codes": [
+          "54151"
+        ],
+        "sanitized_phone": "+14694543816",
+        "industry": "information technology & services",
+        "estimated_num_employees": 160,
+        "keywords": [
+          "it solutions & services",
+          "consulting",
+          "cloud services",
+          "digital transformation",
+          "industry & platform solutions",
+          "automation",
+          "software development",
+          "servicenow",
+          "salesforce",
+          "business intelligence",
+          "data warehouse",
+          "quality assurance",
+          "testing",
+          "managed services",
+          "resource augmentation",
+          "offshore",
+          "nearshore",
+          "onsite",
+          "onshore",
+          "it support services",
+          "healthcare",
+          "it management",
+          "it resource optimization",
+          "telecommunications",
+          "it service management best practices",
+          "it workflow",
+          "it security",
+          "it process improvement",
+          "workflow apps",
+          "it service automation solutions",
+          "it service management platforms",
+          "it support automation",
+          "it project management software",
+          "retail",
+          "it resource planning",
+          "ai in it",
+          "it incident management",
+          "it workflow automation",
+          "servicenow itsm",
+          "it governance and compliance",
+          "it performance",
+          "it cloud migration",
+          "cloud-native it solutions",
+          "it workflow design and implementation",
+          "itsm tools",
+          "it compliance tools",
+          "it incident and change management",
+          "it service delivery",
+          "servicenow implementation",
+          "it strategy",
+          "it project delivery",
+          "it service management platform customization",
+          "it infrastructure",
+          "itom",
+          "it transformation consulting",
+          "it service management platform",
+          "it service reporting",
+          "it service management consulting",
+          "it service support",
+          "it system integration",
+          "it cloud migration services",
+          "workflow automation tools",
+          "it consulting services",
+          "it service monitoring",
+          "it change management",
+          "business process automation",
+          "it support automation tools",
+          "it asset tracking",
+          "it cost management",
+          "it modernization",
+          "servicenow itom",
+          "it service catalog",
+          "it service management",
+          "it service automation platforms",
+          "it operational excellence",
+          "cloud-native solutions",
+          "it project delivery services",
+          "it service delivery optimization",
+          "it consulting",
+          "it efficiency",
+          "cloud solutions",
+          "cost reduction",
+          "it project management",
+          "it process automation",
+          "it compliance",
+          "enterprise platform",
+          "it service strategy",
+          "it cost optimization",
+          "it process automation tools",
+          "it performance analytics",
+          "manufacturing",
+          "it operational efficiency",
+          "financial services",
+          "workflow automation",
+          "it service design",
+          "it service optimization",
+          "resource optimization",
+          "it automation",
+          "it compliance and governance frameworks",
+          "it service analytics",
+          "information technology and services",
+          "it service management consulting services",
+          "it service desk automation",
+          "it process automation platforms",
+          "it resource allocation",
+          "it asset lifecycle management",
+          "it asset management",
+          "it security and risk management",
+          "it solutions",
+          "it service catalog management",
+          "it transformation",
+          "it infrastructure management",
+          "it operations management",
+          "enterprise workflow solutions",
+          "itsm",
+          "it service delivery models",
+          "it service management solutions",
+          "servicenow itbm",
+          "it service management frameworks",
+          "it service improvement",
+          "it service management software",
+          "itbm",
+          "it system integration services",
+          "it service management process improvement",
+          "ai-powered it automation",
+          "it governance",
+          "it process optimization",
+          "it infrastructure automation",
+          "it service management software solutions",
+          "it service desk",
+          "it infrastructure automation tools",
+          "it resource planning tools",
+          "it service management tools",
+          "it service automation",
+          "it resource management",
+          "it governance frameworks",
+          "it service automation tools",
+          "b2b",
+          "services",
+          "computer systems design and related services",
+          "customer engagement",
+          "professional services",
+          "banking",
+          "insurance",
+          "transportation",
+          "logistics",
+          "telecom",
+          "media",
+          "technology",
+          "oil and gas",
+          "recruiting",
+          "staffing",
+          "operational efficiency",
+          "cloud computing",
+          "enterprise software",
+          "enterprises",
+          "computer software",
+          "information technology & services",
+          "analytics",
+          "health care",
+          "health, wellness & fitness",
+          "hospital & health care",
+          "computer & network security",
+          "management consulting",
+          "mechanical or industrial engineering",
+          "professional training & coaching",
+          "oil & energy"
+        ],
+        "organization_revenue_printed": "8.2M",
+        "organization_revenue": 8200000.0,
+        "industries": [
+          "information technology & services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "MERGEN IT LLC, 1335 Regents Parks Dr, Suite 105, Houston, Texas 77058, US",
+        "street_address": "1335 Regents Park Dr",
+        "city": "Houston",
+        "state": "Texas",
+        "postal_code": "77058-2537",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Mergen IT is a technology services company based in Texas, with a satellite office in Hyderabad, India. Founded in 2016, the company specializes in ServiceNow implementation, software consulting, IT recruiting, and staffing solutions. Mergen IT focuses on helping clients achieve digital transformation by automating business processes and simplifying operations through ServiceNow workflows.\n\nThe company provides end-to-end recruiting and staffing services, ensuring the right IT talent is available to meet client needs. Their expertise includes software implementation and consulting, aimed at enhancing operational efficiency and delivering high ROI on IT initiatives. Mergen IT emphasizes a customer-centric approach, fostering a transparent culture that values respect, innovation, and continuous improvement.\n\nMergen IT serves a diverse range of clients primarily in North America and India, focusing on industries that seek to leverage ServiceNow and IT staffing to improve their business processes and digital capabilities.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "8.2M",
+        "annual_revenue": 8200000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "Amazon AWS",
+          "Android",
+          "Apache",
+          "Basis",
+          "Blue Host",
+          "Bootstrap Framework",
+          "Circle",
+          "Flutter",
+          "Google Tag Manager",
+          "Laravel",
+          "Linkedin Marketing Solutions",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Python",
+          "Rackspace MailGun",
+          "React Native",
+          "Remote",
+          "Scala",
+          "SharePoint",
+          "Snowflake",
+          "Tableau",
+          "Vimeo",
+          "WordPress.org",
+          "Xamarin"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "android",
+            "name": "Android",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "apache",
+            "name": "Apache",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "basis",
+            "name": "Basis",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "blue_host",
+            "name": "Blue Host",
+            "category": "Hosting"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "circle",
+            "name": "Circle",
+            "category": "Financial Software"
+          },
+          {
+            "uid": "flutter",
+            "name": "Flutter",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "laravel",
+            "name": "Laravel",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "python",
+            "name": "Python",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "rackspace_mailgun",
+            "name": "Rackspace MailGun",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "react native",
+            "name": "React Native",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "scala",
+            "name": "Scala",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "sharepoint",
+            "name": "SharePoint",
+            "category": "CMS"
+          },
+          {
+            "uid": "snowflake",
+            "name": "Snowflake",
+            "category": "Data Management Platform"
+          },
+          {
+            "uid": "tableau",
+            "name": "Tableau",
+            "category": "Widgets"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "xamarin",
+            "name": "Xamarin",
+            "category": "Frameworks and Programming Languages"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 6,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Professional Opportunity in Austin, TX - Manager Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in manager.\n\nWe're currently working with several top-tier organizations in Austin, TX that are looking for talented Manager professionals like yourself. These positions offer:\n\n\u2022 Competitive compensation package\n\u2022 Professional development opportunities\n\u2022 Excellent work-life balance\n\u2022 Collaborative team environment\n\u2022 Growth and advancement opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Manager positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Manager opportunities in Austin, TX.\n\nI understand how busy things can get in operations, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Manager professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific organization types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and organization cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Manager.\n\nWe just had a Manager join one of our client organizations in Austin, TX, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Manager career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Manager professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:29:20.569693",
+  "created_at": "2025-09-08T21:29:20.569733",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Management",
+    "Operations",
+    "Corporate",
+    "Administration"
+  ],
+  "auto_campaign": true
+}

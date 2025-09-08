@@ -1,0 +1,1345 @@
+{
+  "id": "universal_campaign_1757352536",
+  "name": "Production Demo: Marketing Director - Summit, NJ",
+  "type": "business_outreach",
+  "status": "scheduled",
+  "target_audience": "Marketing Manager professionals",
+  "job_title": "Marketing Manager",
+  "role_category": "business",
+  "locations": [
+    "Summit, NJ"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "624dac7593832b0001421cb9",
+      "name": "Julie Breidenbach",
+      "first_name": "Julie",
+      "last_name": "Breidenbach",
+      "title": "Digital Marketing Manager",
+      "company": "Full Spectrum Marketing (FSM)",
+      "domain": "fsm.agency",
+      "location": "Akron, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/julie-breidenbach-1829b648",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "jbreidenbach@fsm.agency"
+      ],
+      "phones": [
+        "+12343343302"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "email": "jbreidenbach@fsm.agency",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12343343302",
+      "organization": {
+        "id": "556967ba73696425bcb41e00",
+        "name": "Full Spectrum Marketing (FSM)",
+        "website_url": "http://www.fsm.agency",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/fsm-agency",
+        "twitter_url": "https://twitter.com/FullSpectrumMkt",
+        "facebook_url": "https://www.facebook.com/FullSpectrumMarketingOH",
+        "primary_phone": {
+          "number": "+1 234-334-3302",
+          "source": "Owler",
+          "sanitized_number": "+12343343302"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 234-334-3302",
+        "linkedin_uid": "5205974",
+        "founded_year": 2014,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68a2f1b982d6880001d28d45/picture",
+        "crunchbase_url": null,
+        "primary_domain": "fsm.agency",
+        "sic_codes": [
+          "7311"
+        ],
+        "naics_codes": [
+          "54181"
+        ],
+        "sanitized_phone": "+12343343302",
+        "industry": "marketing & advertising",
+        "estimated_num_employees": 28,
+        "keywords": [
+          "marketing strategy",
+          "website development",
+          "search engine optimization",
+          "google ads",
+          "meta ads",
+          "linkedin ads",
+          "content writing",
+          "email marketing",
+          "social media management",
+          "graphic design",
+          "marketing services",
+          "marketing partnership",
+          "website hosting",
+          "seo optimization",
+          "performance marketing",
+          "creative design",
+          "marketing and advertising",
+          "marketing automation",
+          "client testimonials",
+          "digital marketing agency",
+          "storytelling",
+          "client collaboration",
+          "accessibility compliance",
+          "collaborative brainstorming",
+          "marketing strategy workshops",
+          "social media ads",
+          "email campaigns",
+          "web development and hosting",
+          "ppc",
+          "full spectrum marketing",
+          "divi",
+          "wordpress",
+          "strategy development",
+          "content marketing",
+          "user experience",
+          "digital marketing services",
+          "creative design and branding",
+          "social media marketing",
+          "website analytics",
+          "lead generation",
+          "fortune 500 marketing",
+          "local business marketing",
+          "brand storytelling",
+          "non-profit marketing",
+          "content strategy",
+          "custom website design",
+          "digital advertising",
+          "branding",
+          "content creation",
+          "seo",
+          "ux design",
+          "traditional marketing integration",
+          "brand identity",
+          "b2b",
+          "non-profit",
+          "consulting",
+          "services",
+          "advertising agencies",
+          "marketing & advertising",
+          "web development",
+          "information technology & services",
+          "search marketing",
+          "marketing",
+          "writing & editing",
+          "saas",
+          "computer software",
+          "enterprise software",
+          "enterprises",
+          "ux",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "sales",
+          "nonprofit organization management"
+        ],
+        "organization_revenue_printed": "4.3M",
+        "organization_revenue": 4284000.0,
+        "industries": [
+          "marketing & advertising"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd467369644d39040000",
+        "industry_tag_hash": {
+          "marketing & advertising": "5567cd467369644d39040000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "50 South Main Street, Suite 501, Akron, Oh 44308, US",
+        "street_address": "50 S Main St",
+        "city": "Akron",
+        "state": "Ohio",
+        "postal_code": "44308-1800",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Full Spectrum Marketing (FSM) is a full-service marketing agency located in Akron, Ohio. The agency specializes in strategic, creative, and digital marketing solutions aimed at driving business growth and enhancing brand identities. FSM collaborates with a wide range of clients, from local non-profits to Fortune 500 companies, providing customized marketing services that align with each client's unique goals.\n\nFSM offers a variety of core services, including strategic marketing and advertising, website development and hosting, digital and social media marketing, creative design, and branding. They focus on creating intuitive websites, developing data-driven digital campaigns, and crafting compelling brand identities. Additionally, FSM conducts Quickstorm\u2122 sessions for collaborative brainstorming, ensuring a partnership approach that fosters trust and effective strategies. Their commitment to transparency is reflected in their same-day responses and straightforward billing practices.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "4.3M",
+        "annual_revenue": 4284000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Android",
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "Gmail",
+          "Google Analytics",
+          "Google Apps",
+          "Google Font API",
+          "Google Tag Manager",
+          "Gravity Forms",
+          "Linkedin Marketing Solutions",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Rackspace MailGun",
+          "Remote",
+          "Render",
+          "SendInBlue",
+          "Sendgrid",
+          "Typekit",
+          "WordPress.org",
+          "Zoho Creator",
+          "Zoho One",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "android",
+            "name": "Android",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "gmail",
+            "name": "Gmail",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_apps",
+            "name": "Google Apps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "gravity_forms",
+            "name": "Gravity Forms",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "rackspace_mailgun",
+            "name": "Rackspace MailGun",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "render",
+            "name": "Render",
+            "category": "Other"
+          },
+          {
+            "uid": "sendinblue",
+            "name": "SendInBlue",
+            "category": "Email Marketing"
+          },
+          {
+            "uid": "sendgrid",
+            "name": "Sendgrid",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "zoho creator",
+            "name": "Zoho Creator",
+            "category": "Other"
+          },
+          {
+            "uid": "zoho one",
+            "name": "Zoho One",
+            "category": "Cloud Services"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "54aa8359746869236673a208"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::Marketing",
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "66f7d34b152ddf0001326c36",
+      "name": "Joe Sausaman",
+      "first_name": "Joe",
+      "last_name": "Sausaman",
+      "title": "Digital Marketing Manager",
+      "company": "AmeriWound, LLC",
+      "domain": "ameriwound.com",
+      "location": "Stow, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/joesausaman",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "jsausaman@ameriwound.com"
+      ],
+      "phones": [
+        "+12162739800"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "email": "jsausaman@ameriwound.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12162739800",
+      "organization": {
+        "id": "5f45df2cb90ba70001495b40",
+        "name": "AmeriWound, LLC",
+        "website_url": "http://www.ameriwound.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/ameriwound-llc",
+        "twitter_url": "https://twitter.com/ameriwound",
+        "facebook_url": "https://www.facebook.com/ameriwound",
+        "primary_phone": {
+          "number": "+1 216-273-9800",
+          "source": "Scraped",
+          "sanitized_number": "+12162739800"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 216-273-9800",
+        "linkedin_uid": "1706730",
+        "founded_year": 2011,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6d720fd91d50001ecd8dd/picture",
+        "crunchbase_url": null,
+        "primary_domain": "ameriwound.com",
+        "sic_codes": [
+          "8099"
+        ],
+        "naics_codes": [
+          "62139"
+        ],
+        "sanitized_phone": "+12162739800",
+        "industry": "hospital & health care",
+        "estimated_num_employees": 48,
+        "keywords": [
+          "wound care",
+          "medical practice",
+          "healthcare",
+          "physicians",
+          "nurse practitioners",
+          "physician assistants",
+          "hospitals & health care",
+          "facility wound care improvement",
+          "wound care consultation",
+          "wound care outcomes",
+          "wound care documentation software",
+          "onsite wound care training",
+          "wound management",
+          "wound care certification",
+          "long-term care",
+          "physician-led wound treatment",
+          "wound care collaboration",
+          "wound care in skilled nursing facilities",
+          "wound care in nursing homes",
+          "wound care management",
+          "wound care in-services",
+          "wound care quality assurance programs",
+          "wound care telehealth",
+          "wound healing speed",
+          "wound care clinical standards",
+          "wound care training",
+          "wound care in facilities",
+          "wound healing",
+          "wound care in long-term care facilities",
+          "physician-led care",
+          "wound care documentation",
+          "industry-leading days-to-healing results",
+          "wound care compliance",
+          "long-term care wound management",
+          "wound care quality assurance",
+          "wound care protocols",
+          "wound care seminars",
+          "wound care in assisted living",
+          "wound care in assisted living facilities",
+          "wound care in long-term care",
+          "wound care training programs",
+          "wound healing outcomes",
+          "wound care quality standards",
+          "wound care telehealth consultations",
+          "healthcare services",
+          "wound healing speed improvement",
+          "patient wound healing",
+          "wound care providers",
+          "nurse practitioner wound care",
+          "wound education and training",
+          "wound treatment",
+          "physician assistant wound care",
+          "wound care certification programs",
+          "wound care telehealth services",
+          "wound education & training academy",
+          "wound treatment techniques",
+          "wound care education",
+          "weta certified wound educators",
+          "wound care education webinars",
+          "wound care in-services for staff",
+          "cost-effective wound treatment",
+          "b2b",
+          "consulting",
+          "services",
+          "offices of all other health practitioners",
+          "patient care",
+          "telehealth",
+          "telemedicine",
+          "healthcare technology",
+          "hospital & health care",
+          "health care",
+          "health, wellness & fitness",
+          "long term care",
+          "health care information technology"
+        ],
+        "organization_revenue_printed": "25M",
+        "organization_revenue": 25000000.0,
+        "industries": [
+          "hospital & health care",
+          "medical practice",
+          "health, wellness & fitness"
+        ],
+        "secondary_industries": [
+          "medical practice",
+          "health, wellness & fitness"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdde73696439812c0000",
+        "industry_tag_hash": {
+          "hospital & health care": "5567cdde73696439812c0000",
+          "medical practice": "5567d0467369645dbc200000",
+          "health, wellness & fitness": "5567cddb7369644d250c0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "6150 Parkland Blvd., Suite 225, Mayfield Heights, Ohio 44124, US",
+        "street_address": "6150 Parkland Boulevard",
+        "city": "Mayfield Heights",
+        "state": "Ohio",
+        "postal_code": "44124",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "AmeriWound, LLC is a national leader in providing high-quality wound care services, primarily in long-term care settings across several U.S. states, including California, Ohio, and New York. The company focuses on efficient, physician-directed wound care treatments, utilizing a licensed team of physicians, nurse practitioners, and physician assistants who adhere to the latest clinical protocols for effective healing.\n\nTheir services encompass comprehensive wound assessment, diagnosis, treatment, and monitoring, supported by an accredited wound education program. This program offers ongoing training in advanced wound care techniques, enhancing the skills of their providers and facility staff. AmeriWound's approach aims to achieve rapid healing rates while reducing costs for long-term care facilities, ultimately improving patient outcomes and facility quality metrics.\n\nLed by founder Milton (Mendy) Schachter, AmeriWound employs between 51 and 200 people and generates approximately $14.2 million in revenue. The company is dedicated to delivering specialized wound care management and education, emphasizing clinical excellence and compassionate care.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "25M",
+        "annual_revenue": 25000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Apache",
+          "Bootstrap Framework",
+          "Crelate",
+          "Google Font API",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Nginx",
+          "Woo Commerce",
+          "WordPress.org",
+          "YouTube",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "apache",
+            "name": "Apache",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "crelate",
+            "name": "Crelate",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "woo_commerce",
+            "name": "Woo Commerce",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66f31ad7d9c5c2000140d393"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5e7a020e92abf100012f1de1",
+      "name": "Morgan McLaughlin",
+      "first_name": "Morgan",
+      "last_name": "McLaughlin",
+      "title": "Digital Marketing Manager",
+      "company": "Enbasis Inc.",
+      "domain": "enbasis.com",
+      "location": "Cuyahoga Falls, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/morgan-h-mclaughlin",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "mmclaughlin@enbasis.com"
+      ],
+      "phones": [
+        "+13309069854"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "email": "mmclaughlin@enbasis.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+13309069854",
+      "organization": {
+        "id": "64f5e3541ad0e6008ba50744",
+        "name": "Enbasis Inc.",
+        "website_url": "http://www.enbasis.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/enbasis",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 330-906-9854",
+          "source": "Account",
+          "sanitized_number": "+13309069854"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 330-906-9854",
+        "linkedin_uid": "96345532",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/6717308f29fa58000157c96e/picture",
+        "crunchbase_url": null,
+        "primary_domain": "enbasis.com",
+        "sic_codes": [
+          "7379"
+        ],
+        "naics_codes": [
+          "54133"
+        ],
+        "sanitized_phone": "+13309069854",
+        "industry": "information technology & services",
+        "estimated_num_employees": 13,
+        "keywords": [
+          "product design development",
+          "research",
+          "software development",
+          "tools equipment",
+          "marketing",
+          "technology, information & internet",
+          "creative confidence",
+          "cross-industry solutions",
+          "market impact",
+          "industry-specific products",
+          "healthcare innovation",
+          "education",
+          "out-of-the-box thinking",
+          "market challenges",
+          "technology-driven innovation",
+          "product design",
+          "software solutions",
+          "maintenance, repairs, and operations",
+          "innovative solutions",
+          "product development",
+          "problem-solving",
+          "education technology",
+          "agile development",
+          "aerospace solutions",
+          "customer-focused design",
+          "commerce",
+          "commerce solutions",
+          "maintenance and repairs software",
+          "aerospace",
+          "healthcare",
+          "idea-centered approach",
+          "b2b",
+          "services",
+          "engineering services",
+          "information technology & services",
+          "education management",
+          "e-learning",
+          "internet",
+          "computer software",
+          "aviation & aerospace",
+          "health care",
+          "health, wellness & fitness",
+          "hospital & health care"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "information technology & services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "Akron, OH, US",
+        "street_address": "",
+        "city": "Akron",
+        "state": "Ohio",
+        "postal_code": null,
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Enbasis Inc. is a product development company and incubator located in Akron, Ohio. The company focuses on creating innovative solutions for everyday challenges across various industries, including Aerospace, Healthcare, Maintenance, Repairs, Operations, Commerce, and Education. Their mission is to identify and address the needs of businesses and consumers through practical products, services, and software solutions.\n\nThe company employs agile development and idea-centered design principles in its product design and development efforts. Enbasis aims to make a positive impact in the markets it serves by delivering tailored solutions that meet the specific demands of diverse sectors. Their customer base includes a range of commercial and industrial clients seeking advanced product development and operational support.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Mobile Friendly",
+          "Outlook"
+        ],
+        "current_technologies": [
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "6255170b0914d10001f5e89d",
+      "name": "Angel Marshall",
+      "first_name": "Angel",
+      "last_name": "Marshall",
+      "title": "Digital Marketing Manager",
+      "company": "Andrews Moving & Storage",
+      "domain": "andrewsmoving.com",
+      "location": "Hudson, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/angel-marshall-181a741a",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "amarshall@andrewsmoving.com"
+      ],
+      "phones": [
+        "+18003218680"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "email": "amarshall@andrewsmoving.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18003218680",
+      "organization": {
+        "id": "54a1344969702d31701f4800",
+        "name": "Andrews Moving & Storage",
+        "website_url": "http://www.andrewsmoving.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/andrews-moving-and-storage",
+        "twitter_url": "https://twitter.com/Andrews_Moving",
+        "facebook_url": "https://www.facebook.com/124737030923194",
+        "primary_phone": {
+          "number": "+1 800-321-8680",
+          "source": "Scraped",
+          "sanitized_number": "+18003218680"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 800-321-8680",
+        "linkedin_uid": "2304859",
+        "founded_year": 1908,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68be9cf46f5a4e0001fa0c8f/picture",
+        "crunchbase_url": null,
+        "primary_domain": "andrewsmoving.com",
+        "sic_codes": [
+          "4213"
+        ],
+        "naics_codes": [
+          "48421"
+        ],
+        "sanitized_phone": "+18003218680",
+        "industry": "logistics & supply chain",
+        "estimated_num_employees": 71,
+        "keywords": [
+          "residential moves",
+          "office relocations",
+          "logistics",
+          "high value equipment",
+          "storage",
+          "asset management",
+          "special commodities",
+          "corporate employee relocation",
+          "international moves",
+          "commercial moving",
+          "office moving",
+          "commercial storage",
+          "transportation, logistics, supply chain & storage",
+          "furniture installation",
+          "industrial relocation",
+          "moving and storage services",
+          "asset reallocation",
+          "specialized equipment",
+          "project management",
+          "worldwide delivery",
+          "local moving",
+          "climate-controlled warehouses",
+          "warehouse management",
+          "corporate relocation",
+          "customized move planning",
+          "logistics and supply chain",
+          "real-time tracking",
+          "moving services",
+          "secure storage",
+          "medical equipment delivery",
+          "global relocation",
+          "office move coordination",
+          "long-distance moving",
+          "multi-site project management",
+          "inventory control",
+          "white glove delivery",
+          "storage solutions",
+          "consolidation services",
+          "commercial and industrial relocation",
+          "climate-controlled storage",
+          "high-value asset handling",
+          "professional movers",
+          "short and long-term storage",
+          "unloading and loading",
+          "international moving",
+          "final mile delivery",
+          "fleet of vehicles",
+          "technology installation support",
+          "disassembly and reassembly",
+          "employee relocation",
+          "full-service moving",
+          "customer service excellence",
+          "supply chain logistics",
+          "packaging services",
+          "employee relocation services",
+          "debris removal",
+          "b2b",
+          "b2c",
+          "b2b2c",
+          "e-commerce",
+          "d2c",
+          "non-profit",
+          "government",
+          "consulting",
+          "services",
+          "retail",
+          "used household and office goods moving",
+          "customer service",
+          "inventory management",
+          "logistics & supply chain",
+          "productivity",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services",
+          "nonprofit organization management",
+          "home services",
+          "local services",
+          "movers",
+          "self storage"
+        ],
+        "organization_revenue_printed": "5M",
+        "organization_revenue": 5015000.0,
+        "industries": [
+          "logistics & supply chain",
+          "warehousing"
+        ],
+        "secondary_industries": [
+          "warehousing"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4973696439b9010000",
+        "industry_tag_hash": {
+          "logistics & supply chain": "5567cd4973696439b9010000",
+          "warehousing": "5567e127736964181e700200"
+        },
+        "retail_location_count": 4,
+        "raw_address": "10235 Philipp Parkway, Streetsboro, Ohio 44241, US",
+        "street_address": "10235 Philipp Pkwy",
+        "city": "Streetsboro",
+        "state": "Ohio",
+        "postal_code": "44241",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Andrews is a privately owned company based in Cleveland, Ohio, that provides relocation, logistics, and managed solutions to a variety of worldwide companies and industries. We have asset-based solutions for our residential and commercial customers, as well as managed solutions for international relocation and domestic companies looking to consolidate suppliers in the U.S. We pride ourselves on our capacity to deliver anywhere in the world, while keeping our customer service personalized.\n\nOur vision is to be a leader and an example of service to our customers and our communities that others would want to follow.  We commit to our team members to provide a stable and enjoyable workplace that fosters a culture of service to each other and to our customers. We commit to the principals that produce a culture of service and excellence.  We do this by pledging to do the job right the first time, understanding our customers' perspectives, and improving ourselves.  \n\nAs a founding agent of United Van Lines, the world's largest van line, we have unmatched service capability, which allows us to offer the best of both worlds: local interest and global capacity.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "5M",
+        "annual_revenue": 5015000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "Google Tag Manager",
+          "Mobile Friendly",
+          "Outlook",
+          "Remote",
+          "Vimeo",
+          "Yelp",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "yelp",
+            "name": "Yelp",
+            "category": "Other"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "606b031181ac7d00018f850c",
+      "name": "Kara Winters",
+      "first_name": "Kara",
+      "last_name": "Winters",
+      "title": "Digital Marketing Manager",
+      "company": "Laird Connectivity",
+      "domain": null,
+      "location": "Hudson, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/karawinters1",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "winterskh@gmail.com"
+      ],
+      "phones": [
+        "+18553264757"
+      ],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "verified": true
+    },
+    {
+      "apollo_id": "66fa475a3e71220001e36feb",
+      "name": "Katie Conaway",
+      "first_name": "Katie",
+      "last_name": "Conaway",
+      "title": "Digital Marketing Manager",
+      "company": "Evolve Marketing Team",
+      "domain": "evolvemarketingteam.com",
+      "location": "Hudson, Ohio",
+      "linkedin_url": "http://www.linkedin.com/in/katieconaway",
+      "seniority": "manager",
+      "departments": [
+        "master_marketing"
+      ],
+      "functions": [
+        "marketing"
+      ],
+      "emails": [
+        "katiec@evolvemarketingteam.com"
+      ],
+      "phones": [
+        "+12345711943"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Summit, NJ",
+      "email": "katiec@evolvemarketingteam.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12345711943",
+      "organization": {
+        "id": "54a12ae269702db8784a1202",
+        "name": "Evolve Marketing Team",
+        "website_url": "http://www.evolvemarketingteam.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/evolve-marketing-team",
+        "twitter_url": "https://twitter.com/evolvemrkting",
+        "facebook_url": "https://www.facebook.com/evolvemarketingteam/",
+        "primary_phone": {
+          "number": "+1 234-571-1943",
+          "source": "Scraped",
+          "sanitized_number": "+12345711943"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 234-571-1943",
+        "linkedin_uid": "237737",
+        "founded_year": 2009,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b7217f29319000015ab070/picture",
+        "crunchbase_url": null,
+        "primary_domain": "evolvemarketingteam.com",
+        "sic_codes": [
+          "7375"
+        ],
+        "naics_codes": [
+          "54151"
+        ],
+        "sanitized_phone": "+12345711943",
+        "industry": "marketing & advertising",
+        "estimated_num_employees": 12,
+        "keywords": [
+          "responsive web design",
+          "development",
+          "search engine optimization",
+          "email marketing",
+          "paid search marketing",
+          "social media marketing",
+          "usability testing",
+          "video production",
+          "conversion optimization",
+          "advertising services",
+          "government",
+          "custom website solutions",
+          "website hosting & maintenance",
+          "responsive design",
+          "client-centric approach",
+          "parks and recreation",
+          "web design and development",
+          "branding & graphic design",
+          "content management system (cms)",
+          "keyword research",
+          "conversion rate optimization",
+          "web design",
+          "accessibility in web design",
+          "b2b manufacturing websites",
+          "manufacturing",
+          "project management",
+          "nonprofit",
+          "industrial website development",
+          "custom functionality",
+          "custom web features",
+          "website design & development",
+          "local seo for akron",
+          "content strategy",
+          "nonprofit website design",
+          "ppc advertising",
+          "digital marketing",
+          "mobile-friendly design",
+          "analytics & goals integration",
+          "website development",
+          "security & speed optimization",
+          "social media",
+          "e-commerce website development",
+          "speed optimization",
+          "analytics & reporting",
+          "community organization websites",
+          "ui/ux design",
+          "website redesign strategy",
+          "client collaboration",
+          "ongoing seo",
+          "seo",
+          "content hierarchy & sitemap",
+          "ada compliance",
+          "user experience",
+          "b2b",
+          "b2c",
+          "e-commerce",
+          "non-profit",
+          "services",
+          "computer systems design and related services",
+          "information technology & services",
+          "search marketing",
+          "marketing",
+          "marketing & advertising",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "governments",
+          "web design & development",
+          "design",
+          "mechanical or industrial engineering",
+          "productivity",
+          "nonprofit organization management",
+          "web development",
+          "ux"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "marketing & advertising"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd467369644d39040000",
+        "industry_tag_hash": {
+          "marketing & advertising": "5567cd467369644d39040000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "935 W. Market St., Akron, OH 44313, US",
+        "street_address": "935 West Market Street",
+        "city": "Akron",
+        "state": "Ohio",
+        "postal_code": "44313",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "We are a team of people committed to growth as humans and as a business. The more we learn and progress, the better we're able to serve our clients as a true extension of their marketing team. We live and work by a foundation of core values, a shared desire to make a positive impact on our community, and we take pride in driving growth through a full suite of marketing, web design, and graphic design services.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "Android",
+          "Google Font API",
+          "Google Tag Manager",
+          "Gravity Forms",
+          "Hubspot",
+          "Mobile Friendly",
+          "Outlook",
+          "WP Engine",
+          "WordPress.org",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "android",
+            "name": "Android",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "gravity_forms",
+            "name": "Gravity Forms",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "hubspot",
+            "name": "Hubspot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "wp_engine",
+            "name": "WP Engine",
+            "category": "CMS"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::Marketing",
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 6,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Professional Opportunity in Summit, NJ - Marketing Manager Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in marketing manager.\n\nWe're currently working with several top-tier organizations in Summit, NJ that are looking for talented Marketing Manager professionals like yourself. These positions offer:\n\n\u2022 Competitive compensation package\n\u2022 Professional development opportunities\n\u2022 Excellent work-life balance\n\u2022 Collaborative team environment\n\u2022 Growth and advancement opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Marketing Manager positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Marketing Manager opportunities in Summit, NJ.\n\nI understand how busy things can get in business, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Marketing Manager professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific organization types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and organization cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Marketing Manager.\n\nWe just had a Marketing Manager join one of our client organizations in Summit, NJ, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Marketing Manager career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Marketing Manager professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:28:56.198723",
+  "created_at": "2025-09-08T21:28:56.198754",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Sales",
+    "Marketing",
+    "Business Development",
+    "Account Management"
+  ],
+  "auto_campaign": true
+}

@@ -1,0 +1,752 @@
+{
+  "id": "universal_campaign_1757352036",
+  "name": "Universal Test - Software Engineer",
+  "type": "technology_outreach",
+  "status": "scheduled",
+  "target_audience": "Software Engineer professionals",
+  "job_title": "Software Engineer",
+  "role_category": "technology",
+  "locations": [
+    "Austin, TX"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "615bdbd10df8e10001e4f8be",
+      "name": "Jim Henderson",
+      "first_name": "Jim",
+      "last_name": "Henderson",
+      "title": "Developer/Engineer",
+      "company": "Hewlett Packard Enterprise",
+      "domain": "hpe.com",
+      "location": "Round Rock, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/jim-henderson-2126335",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical",
+        "master_information_technology"
+      ],
+      "functions": [
+        "engineering"
+      ],
+      "emails": [
+        "jimchenderson@gmail.com"
+      ],
+      "phones": [
+        "+16782599860"
+      ],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "verified": true
+    },
+    {
+      "apollo_id": "54ebc2f6746869444c78201f",
+      "name": "Yahia Ansari",
+      "first_name": "Yahia",
+      "last_name": "Ansari",
+      "title": "Developer/Engineer",
+      "company": "H.P. Associates, Inc.",
+      "domain": "hp-associates.com",
+      "location": "McKinney, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/yahia-ansari-26569817",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical",
+        "master_information_technology"
+      ],
+      "functions": [
+        "engineering"
+      ],
+      "emails": [
+        "yahia@hp-associates.com"
+      ],
+      "phones": [
+        "+12126816090"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "yahia@hp-associates.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12126816090",
+      "organization": {
+        "id": "54a1a4ee7468695c827a3904",
+        "name": "H.P. Associates, Inc.",
+        "website_url": "http://www.hp-associates.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/h.p.-associates-inc.",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 212-681-6090",
+          "source": "Account",
+          "sanitized_number": "+12126816090"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 212-681-6090",
+        "linkedin_uid": "360441",
+        "founded_year": 1996,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66d6b84d9a88760001a9e87d/picture",
+        "crunchbase_url": null,
+        "primary_domain": "hp-associates.com",
+        "sanitized_phone": "+12126816090",
+        "industry": "financial services",
+        "estimated_num_employees": 630,
+        "keywords": [
+          "equities & fixed income",
+          "compliance",
+          "latin america",
+          "emerging markets"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "financial services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdd67369643e64020000",
+        "industry_tag_hash": {
+          "financial services": "5567cdd67369643e64020000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "The Lincoln Building, 60 East 42nd Street, Suite 2517, New York, NY 10165, US",
+        "street_address": "60 E 42nd St",
+        "city": "New York",
+        "state": "New York",
+        "postal_code": "10165",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "H.P. Associates, Inc. is a general contracting and full-service restoration company based in California. Founded in 1988, the company specializes in restoring properties affected by fire, water, earthquakes, and other natural disasters. It serves residential, commercial, and industrial clients across several counties, including Los Angeles, Ventura, and San Diego.\n\nThe company offers a wide range of services, including emergency restoration, reconstruction, tenant improvements, and specialized build-outs for restaurants. H.P. Associates also provides assistance with insurance claims, hazardous materials testing, and architectural and engineering plans. With a team of approximately 29 employees, the company has built a diverse customer base, including well-known clients like Costco and Paramount Pictures. H.P. Associates is licensed by the California Contractors State License Board and operates from its corporate offices in Oak Park, along with additional locations in Westlake Village and Redlands.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Nginx",
+          "Outlook"
+        ],
+        "current_technologies": [
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "5f7b8eb911e5fc000108a291"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::Finance",
+        "org_chart_removed": true,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "57da28b1a6da985b79e8b4d8",
+      "name": "Mohammed Amor",
+      "first_name": "Mohammed",
+      "last_name": "Amor",
+      "title": "Dev. Engineer",
+      "company": "Dell Technologies",
+      "domain": "dell.com",
+      "location": "Austin, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/mohammed-amor-1481132",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "engineering"
+      ],
+      "emails": [
+        "a.mohammed@dell.com"
+      ],
+      "phones": [
+        "+15127284737"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "a.mohammed@dell.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+15127284737",
+      "organization": {
+        "id": "54a128ff69702dab37537a01",
+        "name": "Dell Technologies",
+        "website_url": "http://www.dell.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/delltechnologies",
+        "twitter_url": "https://twitter.com/Dell",
+        "facebook_url": "https://facebook.com/Dell/",
+        "primary_phone": {
+          "number": "+1 512-728-4737",
+          "source": "Owler",
+          "sanitized_number": "+15127284737"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 289,
+        "phone": "+1 512-728-4737",
+        "linkedin_uid": "15088102",
+        "founded_year": 2016,
+        "publicly_traded_symbol": "DELL",
+        "publicly_traded_exchange": "nyse",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68ba85485476b200017d7ebc/picture",
+        "crunchbase_url": null,
+        "primary_domain": "dell.com",
+        "sic_codes": [
+          "3571"
+        ],
+        "naics_codes": [
+          "33411"
+        ],
+        "sanitized_phone": "+15127284737",
+        "industry": "computer hardware",
+        "estimated_num_employees": 108000,
+        "keywords": [
+          "digital transformation",
+          "security transformation",
+          "it transformation",
+          "workforce transformation",
+          "ai",
+          "generative ai",
+          "computer hardware manufacturing",
+          "data storage",
+          "ai pcs & devices",
+          "dell data lakehouse for data discovery",
+          "data protection",
+          "dell data lakehouse system software",
+          "it support services",
+          "cloud computing",
+          "data center solutions",
+          "it security",
+          "powerscale storage",
+          "global presence",
+          "it product development",
+          "dell data lakehouse",
+          "enterprise hardware",
+          "dell data lakehouse for data processing",
+          "dell data lakehouse for data analysis",
+          "enterprise data solutions",
+          "dell data lakehouse for data integration",
+          "cybersecurity",
+          "it infrastructure",
+          "virtualization",
+          "business it solutions",
+          "it lifecycle management",
+          "data storage and management",
+          "dell poweredge servers",
+          "dell data lakehouse for ai",
+          "enterprise software",
+          "it consulting services",
+          "virtual desktop infrastructure",
+          "it deployment",
+          "cloud infrastructure",
+          "it deployment services",
+          "technology innovation",
+          "support and maintenance",
+          "support services",
+          "it consulting",
+          "dell data lakehouse architecture",
+          "cloud solutions",
+          "dell data lakehouse professional services",
+          "enterprise networking",
+          "servers and storage",
+          "enterprise networking hardware",
+          "sustainable products",
+          "dell data lakehouse query engine",
+          "information technology and services",
+          "hybrid cloud",
+          "global technology company",
+          "it solutions",
+          "it lifecycle",
+          "it infrastructure management",
+          "customer support",
+          "dell data lakehouse for ai projects",
+          "multicloud solutions",
+          "b2b technology",
+          "it solutions provider",
+          "it hardware",
+          "multicloud",
+          "recycled materials",
+          "multicloud & aas products",
+          "dell data lakehouse deployment",
+          "product innovation",
+          "software solutions",
+          "networking equipment",
+          "high-performance computing",
+          "software publishing",
+          "dell data management ecosystem",
+          "dell data lakehouse for enterprise data",
+          "it support",
+          "managed services",
+          "it services",
+          "dell cybersecurity solutions",
+          "data management",
+          "broad product portfolio",
+          "powerstore data automation",
+          "pcs and laptops",
+          "b2b",
+          "government",
+          "consulting",
+          "services",
+          "computer and peripheral equipment manufacturing",
+          "customer service",
+          "sustainability",
+          "consumer electronics",
+          "automation",
+          "customer experience",
+          "enterprises",
+          "computer software",
+          "information technology & services",
+          "computer & network security",
+          "internet infrastructure",
+          "internet",
+          "management consulting",
+          "computer hardware",
+          "hardware",
+          "environmental services",
+          "renewables & environment",
+          "consumers"
+        ],
+        "organization_revenue_printed": "96.7B",
+        "organization_revenue": 96701000000.0,
+        "industries": [
+          "computer hardware"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e0d47369641233eb0600",
+        "industry_tag_hash": {
+          "computer hardware": "5567e0d47369641233eb0600"
+        },
+        "retail_location_count": 0,
+        "raw_address": "One Dell Way, Round Rock, Texas 78682, US",
+        "street_address": "1 Dell Way",
+        "city": "Round Rock",
+        "state": "Texas",
+        "postal_code": "78682",
+        "country": "United States",
+        "owned_by_organization_id": "686591cd2c8e1300018c960e",
+        "owned_by_organization": {
+          "id": "686591cd2c8e1300018c960e",
+          "name": "Dell Technologies, Inc.",
+          "website_url": "http://www.delltechnologies.com"
+        },
+        "short_description": "Dell Technologies is a global leader in information technology, founded in 1984 and headquartered in Round Rock, Texas. The company specializes in developing, selling, repairing, and supporting a wide range of technology products and services, including personal computers, servers, data storage devices, network switches, software, and computer peripherals.\n\nDell gained prominence with its direct-to-consumer sales model, allowing customers to customize their PCs. This innovative approach helped the company grow rapidly, making it the largest global PC vendor by 2001. Today, Dell offers a diverse portfolio that includes personal computers, enterprise IT solutions, and IT services, with a strong focus on sustainability and circular economy practices. Dell's customer base includes individual consumers, small and medium businesses, large enterprises, and public sector organizations worldwide. The company reported annual revenues of approximately $88.4 billion in 2024 and continues to invest significantly in research and development.",
+        "suborganizations": [
+          {
+            "id": "54a1221669702d8aa13ee802",
+            "name": "Moogsoft",
+            "website_url": "http://www.moogsoft.com"
+          },
+          {
+            "id": "54a13a0d69702d2a1e8d9100",
+            "name": "RNA Networks",
+            "website_url": "http://www.rnanetworks.com"
+          },
+          {
+            "id": "54a11c9669702da4254eb300",
+            "name": "Boomi",
+            "website_url": "http://www.boomi.com"
+          },
+          {
+            "id": "54a1227569702da10fd22003",
+            "name": "AppAssure Software",
+            "website_url": "http://www.appassure.com"
+          },
+          {
+            "id": "5ed32a36a06b6500018b3162",
+            "name": "Dell EMC XtremIO",
+            "website_url": null
+          },
+          {
+            "id": "686950c349d8f600010fdabd",
+            "name": "EMC Technology Services",
+            "website_url": "http://www.emc.com"
+          },
+          {
+            "id": "54a138e669702d24d3682300",
+            "name": "Mashery",
+            "website_url": "http://www.mashery.com"
+          },
+          {
+            "id": "54a1204a69702d8aa1542f02",
+            "name": "Credant Technologies - Now Dell Data Protection",
+            "website_url": "http://www.credant.com"
+          },
+          {
+            "id": "5a9cd83da6da98d977f05d56",
+            "name": "Boomi Data Integration (Rivery)",
+            "website_url": null
+          },
+          {
+            "id": "649be0046012f200a38f042f",
+            "name": "Spotfire",
+            "website_url": "http://www.spotfire.com"
+          },
+          {
+            "id": "5fcb16abbdb5cf000150fb03",
+            "name": "refurbished Laptop desktop",
+            "website_url": "http://www.dellrefurbished.com"
+          },
+          {
+            "id": "54a11aff69702d97c11d0c00",
+            "name": "Dell Cloud Manager (now part of Quest Software)",
+            "website_url": "http://www.enstratius.com"
+          },
+          {
+            "id": "5b6ff614324d4410c34001f7",
+            "name": "KACE",
+            "website_url": "http://www.kace.com"
+          },
+          {
+            "id": "5b13c5b8a6da98dcb895c474",
+            "name": "Cloudify.co",
+            "website_url": "http://www.cloudify.co"
+          }
+        ],
+        "num_suborganizations": 14,
+        "annual_revenue_printed": "96.7B",
+        "annual_revenue": 96701000000.0,
+        "technology_names": [
+          "ASP.NET",
+          "Adobe Marketing Cloud",
+          "Adobe Media Optimizer",
+          "Akamai",
+          "Akamai RUM",
+          "Atlassian Cloud",
+          "Bazaarvoice",
+          "Bootstrap Framework",
+          "Brightcove",
+          "BugHerd",
+          "ClickTale",
+          "Cvent",
+          "DoubleClick",
+          "Emma",
+          "Flashtalking",
+          "GitHub Hosting",
+          "GitLab",
+          "Google Font API",
+          "LivePerson Monitor",
+          "Mobile Friendly",
+          "Multilingual",
+          "Nginx",
+          "Omniture (Adobe)",
+          "PayPal Credit",
+          "Salesforce",
+          "Salesforce Live Agent",
+          "Shopify Plus",
+          "Varnish",
+          "WP Engine",
+          "WordPress.org",
+          "Workday Recruit",
+          "YouTube",
+          "iPerceptions",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "asp_net",
+            "name": "ASP.NET",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_rum",
+            "name": "Akamai RUM",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "atlassian_cloud",
+            "name": "Atlassian Cloud",
+            "category": "CMS"
+          },
+          {
+            "uid": "bazaarvoice",
+            "name": "Bazaarvoice",
+            "category": "Customer Reviews"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "brightcove",
+            "name": "Brightcove",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "bugherd",
+            "name": "BugHerd",
+            "category": "Widgets"
+          },
+          {
+            "uid": "clicktale",
+            "name": "ClickTale",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "cvent",
+            "name": "Cvent",
+            "category": "Event Management"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "emma",
+            "name": "Emma",
+            "category": "Email Marketing"
+          },
+          {
+            "uid": "flashtalking",
+            "name": "Flashtalking",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "github_hosting",
+            "name": "GitHub Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "gitlab",
+            "name": "GitLab",
+            "category": "CMS"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "liveperson_monitor",
+            "name": "LivePerson Monitor",
+            "category": "Chats"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "multilingual",
+            "name": "Multilingual",
+            "category": "Widgets"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "omniture_adobe",
+            "name": "Omniture (Adobe)",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "paypal_credit",
+            "name": "PayPal Credit",
+            "category": "Payments"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "salesforce_live_agent",
+            "name": "Salesforce Live Agent",
+            "category": "Chats"
+          },
+          {
+            "uid": "shopify_plus",
+            "name": "Shopify Plus",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "wp_engine",
+            "name": "WP Engine",
+            "category": "CMS"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "workday_recruit",
+            "name": "Workday Recruit",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "iperceptions",
+            "name": "iPerceptions",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "674d99b00d759c0001048ee8"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5660a00ea6da9812b600860e",
+      "name": "Theo Meuris",
+      "first_name": "Theo",
+      "last_name": "Meuris",
+      "title": "Dev. Eng.",
+      "company": "C",
+      "domain": "criterioncatalysts.com",
+      "location": "Spring, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/theo-meuris-51632852",
+      "seniority": "entry",
+      "departments": [],
+      "functions": [],
+      "emails": [
+        "tmeuris@comcast.net"
+      ],
+      "phones": [],
+      "email_status": "unavailable",
+      "phone_status": "",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "verified": true
+    }
+  ],
+  "verified_count": 4,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Tech Opportunity in Austin, TX - Software Engineer Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in software engineer.\n\nWe're currently working with several top-tier technology companys in Austin, TX that are looking for talented Software Engineer professionals like yourself. These positions offer:\n\n\u2022 Competitive salary with equity opportunities\n\u2022 Latest technology stack and development tools\n\u2022 Remote work flexibility and modern office spaces\n\u2022 Professional development budget for conferences and training\n\u2022 Collaborative team culture with growth opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Software Engineer positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Software Engineer opportunities in Austin, TX.\n\nI understand how busy things can get in technology, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Software Engineer professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific technology company types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and technology company cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Software Engineer.\n\nWe just had a Software Engineer join one of our client technology companys in Austin, TX, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Software Engineer career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Software Engineer professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:20:36.075895",
+  "created_at": "2025-09-08T21:20:36.075934",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Technology",
+    "Software",
+    "Tech Company",
+    "Startup",
+    "SaaS"
+  ],
+  "auto_campaign": true
+}

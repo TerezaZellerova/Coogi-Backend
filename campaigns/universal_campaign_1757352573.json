@@ -1,0 +1,3172 @@
+{
+  "id": "universal_campaign_1757352573",
+  "name": "Production Demo: Data Scientist - Austin, TX",
+  "type": "technology_outreach",
+  "status": "scheduled",
+  "target_audience": "Data Scientist professionals",
+  "job_title": "Data Scientist",
+  "role_category": "technology",
+  "locations": [
+    "Austin, TX"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "606d2e16f526970001cb612f",
+      "name": "Anurag Bihani",
+      "first_name": "Anurag",
+      "last_name": "Bihani",
+      "title": "Data Scientist",
+      "company": "SLB",
+      "domain": "slb.com",
+      "location": "Houston, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/anuragbihani",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "anuragbihani@gmail.com",
+        "abihani@slb.com"
+      ],
+      "phones": [
+        "+17135132000"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "abihani@slb.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+17135132000",
+      "organization": {
+        "id": "5d0a5f51f65125a357b7d39e",
+        "name": "SLB",
+        "website_url": "http://www.slb.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/slbglobal",
+        "twitter_url": "https://twitter.com/cameron_intl",
+        "facebook_url": "https://www.facebook.com/WeAreSLBGlobal",
+        "primary_phone": {
+          "number": "+1 713-513-2000",
+          "source": "Owler",
+          "sanitized_number": "+17135132000"
+        },
+        "languages": [
+          "English",
+          "Chinese"
+        ],
+        "alexa_ranking": 14358,
+        "phone": "+1 713-513-2000",
+        "linkedin_uid": "1468",
+        "founded_year": 1926,
+        "publicly_traded_symbol": "SLB",
+        "publicly_traded_exchange": "nasdaq",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68a3650cfcbe56000175c07d/picture",
+        "crunchbase_url": null,
+        "primary_domain": "slb.com",
+        "sic_codes": [
+          "1381"
+        ],
+        "naics_codes": [
+          "21311"
+        ],
+        "sanitized_phone": "+17135132000",
+        "market_cap": "48.4B",
+        "industry": "information technology & services",
+        "estimated_num_employees": 110000,
+        "keywords": [
+          "artificial lift",
+          "coiled tubing",
+          "completions",
+          "drilling",
+          "formation evaluation",
+          "geophysical services",
+          "perforating",
+          "production & cased hole",
+          "reservoir characterization",
+          "sand control",
+          "software",
+          "stimulation",
+          "subsea",
+          "well testing",
+          "mud logging",
+          "cementing",
+          "digital technologies",
+          "geothermal",
+          "geoenergy",
+          "lithium",
+          "hydrogen",
+          "ccs",
+          "energy technology",
+          "emissions management",
+          "decarbonization",
+          "automation",
+          "artificial intelligence",
+          "enterprise data",
+          "oil & gas",
+          "oilfield services/equipment",
+          "energy",
+          "technology, information & internet",
+          "emissions reduction",
+          "digital solutions",
+          "energy optimization tools",
+          "hydrogen process modeling",
+          "energy transition",
+          "geothermal energy storage",
+          "digital oilfield",
+          "energy data management",
+          "scalable energy systems",
+          "ccus chain development",
+          "energy efficiency tools",
+          "lithium extraction technology",
+          "energy performance software",
+          "hydrogen production technology",
+          "geothermal energy",
+          "energy consulting",
+          "energy software",
+          "oilfield digital twin platforms",
+          "energy management software",
+          "energy storage",
+          "oilfield digital services",
+          "production optimization",
+          "geophysical imaging",
+          "software for energy",
+          "lithium resource reports",
+          "production chemicals",
+          "oilfield digital twin",
+          "offshore drilling automation",
+          "energy storage system modeling",
+          "energy transition analytics",
+          "digital energy twin",
+          "ai in energy",
+          "lithium resources",
+          "geothermal well construction",
+          "energy storage solutions",
+          "ccus project solutions",
+          "oilfield ai tools",
+          "sustainable energy",
+          "geoscience services",
+          "offshore technology",
+          "energy data visualization",
+          "ccus project management",
+          "hydrogen technology",
+          "renewable energy digital tools",
+          "offshore geophysical services",
+          "energy analytics",
+          "hydrogen energy systems",
+          "ccus sequestration modeling",
+          "offshore geophysical imaging",
+          "digital well management",
+          "well construction",
+          "energy analytics software",
+          "well intervention",
+          "digital ccus",
+          "oilfield data analytics",
+          "renewable energy",
+          "energy transition software",
+          "digital drilling",
+          "oil and gas digital",
+          "oilfield equipment manufacturing",
+          "energy data analytics",
+          "wellbore interpretation",
+          "offshore energy solutions",
+          "digital energy infrastructure",
+          "digital oilfield services",
+          "oilfield services",
+          "offshore drilling digital",
+          "digital energy transformation",
+          "renewable energy support",
+          "digital geoscience",
+          "pipeline solutions",
+          "geothermal well testing",
+          "geothermal energy systems",
+          "digital energy solutions",
+          "well integrity",
+          "energy innovation",
+          "ccus",
+          "drilling services",
+          "geothermal reservoir simulation",
+          "ccus monitoring and reporting",
+          "digital reservoir management",
+          "digital energy platforms",
+          "energy system modeling",
+          "energy system digitalization",
+          "energy digitalization",
+          "lithium resource modeling",
+          "geothermal drilling fluids",
+          "oilfield equipment",
+          "oil and gas digital tools",
+          "offshore drilling",
+          "energy industry software",
+          "oilfield automation",
+          "digital twin energy",
+          "digital well integrity",
+          "flow assurance",
+          "geothermal resource modeling",
+          "data analytics",
+          "energy production software",
+          "oil and gas technology",
+          "oilfield data solutions",
+          "offshore drilling equipment",
+          "oil and gas services",
+          "ai in oilfield",
+          "energy software solutions",
+          "oilfield automation software",
+          "oilfield digital platform",
+          "energy decarbonization",
+          "oilfield digital twin software",
+          "drilling automation",
+          "ccus capacity building",
+          "energy data security",
+          "oilfield digital solutions",
+          "geothermal resource assessment",
+          "b2b",
+          "consulting",
+          "services",
+          "support activities for mining",
+          "sustainability",
+          "digital transformation",
+          "operational efficiency",
+          "data management",
+          "risk management",
+          "information technology & services",
+          "oil & energy",
+          "clean energy & technology",
+          "environmental services",
+          "renewables & environment"
+        ],
+        "organization_revenue_printed": "36.1B",
+        "organization_revenue": 36080000000.0,
+        "industries": [
+          "information technology & services",
+          "computer software"
+        ],
+        "secondary_industries": [
+          "computer software"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000",
+          "computer software": "5567cd4e7369643b70010000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "5599 San Felipe St, Houston, Texas 77056, US",
+        "street_address": "5599 San Felipe Street",
+        "city": "Houston",
+        "state": "Texas",
+        "postal_code": "77056",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "SLB, formerly known as Schlumberger, is a leading global oilfield services company founded in France in 1926 and now based in Houston, Texas. As the world's largest offshore drilling contractor by revenue, SLB operates in over 100 countries and serves a diverse range of clients in the oil and gas sector.\n\nThe company specializes in advanced technology and services throughout the hydrocarbon recovery lifecycle, including reservoir characterization, drilling, production, and processing. Key offerings encompass wireline logging, drilling and well completion services, well services, and integrated project management. SLB is also committed to innovation in digital technologies and new energy systems, focusing on clean hydrogen production and geothermal energy to support the energy transition and reduce emissions.\n\nWith a strong emphasis on sustainability and technology leadership, SLB aims to enhance energy access and meet global energy demands while promoting a cleaner and more efficient energy future.",
+        "suborganizations": [
+          {
+            "id": "556dd52f736964124306ab01",
+            "name": "Stimline Digital",
+            "website_url": "http://www.stimline.com"
+          },
+          {
+            "id": "67289f1562f46c0001d5d81f",
+            "name": "Prakla - Seismos",
+            "website_url": "http://www.prakla-seismos.de"
+          },
+          {
+            "id": "556dc1ea736964123dd07e01",
+            "name": "Shores Lift Solutions",
+            "website_url": null
+          },
+          {
+            "id": "5b13762ba6da98dcf026f67e",
+            "name": "Peak Well Systems",
+            "website_url": "http://www.peakwellsystems.com"
+          },
+          {
+            "id": "6049759e71cab20001df0b0c",
+            "name": "ChampionX Artificial Lift",
+            "website_url": null
+          },
+          {
+            "id": "54a135eb69702d48e2fae500",
+            "name": "Gyrodata",
+            "website_url": "http://www.gyrodata.com"
+          },
+          {
+            "id": "54a1b22274686942d329fb08",
+            "name": "SALTEL INDUSTRIES",
+            "website_url": "http://www.saltel-industries.com"
+          },
+          {
+            "id": "5f0d718edc72ee00da3c2792",
+            "name": "ChampionX",
+            "website_url": "http://www.championx.com"
+          },
+          {
+            "id": "64c13aae0a603100a2bd16db",
+            "name": "OneSubsea GmbH",
+            "website_url": null
+          },
+          {
+            "id": "54a11c1569702d84c58c7900",
+            "name": "Novatek Inc",
+            "website_url": "http://www.novatek.com"
+          },
+          {
+            "id": "54a1a78d74686949e7c42305",
+            "name": "GEDCO",
+            "website_url": "http://www.gedco.com"
+          },
+          {
+            "id": "5569cbf173696425b8079900",
+            "name": "OneSubsea",
+            "website_url": "http://www.onesubsea.com"
+          },
+          {
+            "id": "61938c3ca5d5e40001e65021",
+            "name": "Meta Downhole Ltd",
+            "website_url": "http://www.metadownhole.com"
+          },
+          {
+            "id": "67332aed4a542d0001a11a39",
+            "name": "Fluid Inclusion Technologies",
+            "website_url": "http://www.fittulsa.com"
+          },
+          {
+            "id": "54a129f469702d9ebcbcbe01",
+            "name": "GeothermEx Inc.",
+            "website_url": "http://www.geothermex.com"
+          },
+          {
+            "id": "5b13fecea6da98dce93a452c",
+            "name": "Independent Data Services",
+            "website_url": "http://www.idsdatanet.com"
+          },
+          {
+            "id": "66f65d5af593bb02d1e81d76",
+            "name": "Aker Carbon Capture ASA",
+            "website_url": "http://www.akercarboncapture.com"
+          }
+        ],
+        "num_suborganizations": 17,
+        "annual_revenue_printed": "36.1B",
+        "annual_revenue": 36080000000.0,
+        "technology_names": [
+          "Adobe Marketing Cloud",
+          "Amazon SES",
+          "Atlassian Cloud",
+          "Brightcove",
+          "Create React App",
+          "Hubspot",
+          "Microsoft Azure Hosting",
+          "Microsoft Office 365",
+          "Microsoft Power BI",
+          "OneTrust",
+          "Remote",
+          "StatusPage IO",
+          "SuccessFactors (SAP)",
+          "UltraDns"
+        ],
+        "current_technologies": [
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "amazon_ses",
+            "name": "Amazon SES",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "atlassian_cloud",
+            "name": "Atlassian Cloud",
+            "category": "CMS"
+          },
+          {
+            "uid": "brightcove",
+            "name": "Brightcove",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "create_react_app",
+            "name": "Create React App",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "hubspot",
+            "name": "Hubspot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "microsoft",
+            "name": "Microsoft Azure Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "microsoft_power_bi",
+            "name": "Microsoft Power BI",
+            "category": "Widgets"
+          },
+          {
+            "uid": "onetrust",
+            "name": "OneTrust",
+            "category": "Widgets"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "statuspage",
+            "name": "StatusPage IO",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "successfactors_sap",
+            "name": "SuccessFactors (SAP)",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "ultradns",
+            "name": "UltraDns",
+            "category": "Domain Name Services"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66ee99a99b4b840001f79162"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "60df4710d72a66000195848b",
+      "name": "Harsh Jain",
+      "first_name": "Harsh",
+      "last_name": "Jain",
+      "title": "Data Scientist",
+      "company": "Mastercard",
+      "domain": "mastercard.com",
+      "location": "Austin, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/harsh-jain-6b4502169",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "harsh.jain@mastercard.com"
+      ],
+      "phones": [
+        "+19142492000"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "harsh.jain@mastercard.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+19142492000",
+      "organization": {
+        "id": "59bba885a6da985afbe18052",
+        "name": "Mastercard",
+        "website_url": "http://www.mastercard.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/mastercard",
+        "twitter_url": "https://twitter.com/MasterCard",
+        "facebook_url": "https://www.facebook.com/MasterCardUS",
+        "primary_phone": {
+          "number": "+1 914-249-2000",
+          "source": "Owler",
+          "sanitized_number": "+19142492000"
+        },
+        "languages": [
+          "English",
+          "German",
+          "Spanish",
+          "French",
+          "Italian",
+          "Portuguese",
+          "Chinese",
+          "Japanese",
+          "Russian"
+        ],
+        "alexa_ranking": 2623,
+        "phone": "+1 914-249-2000",
+        "linkedin_uid": "3015",
+        "founded_year": 1966,
+        "publicly_traded_symbol": "MA",
+        "publicly_traded_exchange": "nyse",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6b1b5257c5200017e2862/picture",
+        "crunchbase_url": null,
+        "primary_domain": "mastercard.com",
+        "sic_codes": [
+          "7375"
+        ],
+        "naics_codes": [
+          "52232"
+        ],
+        "sanitized_phone": "+19142492000",
+        "industry": "information technology & services",
+        "estimated_num_employees": 36000,
+        "keywords": [
+          "global digital payments",
+          "commerce",
+          "technology",
+          "innovative mobile payment solutions",
+          "processing",
+          "business services",
+          "consumer discretionary",
+          "it services & it consulting",
+          "financial inclusion solutions",
+          "cybersecurity for payments",
+          "real-time payment processing",
+          "consumer payments",
+          "digital payments",
+          "cybersecurity enhancements",
+          "digital payment security",
+          "financial services",
+          "settlement services",
+          "digital payment platforms",
+          "global payment acceptance",
+          "payment technology",
+          "financial technology",
+          "secure transactions",
+          "digital wallets",
+          "contactless payments",
+          "e-commerce payments",
+          "innovative payment flows",
+          "payment risk management",
+          "financial inclusion",
+          "e-commerce",
+          "digital payment methods",
+          "digital payment ecosystems",
+          "card licensing",
+          "consumer payment platforms",
+          "business payments",
+          "payment infrastructure",
+          "global commerce",
+          "payment solutions",
+          "commercial payments",
+          "fintech",
+          "payment processing",
+          "transaction security",
+          "cross-border payments",
+          "transaction authorization",
+          "payment ecosystem",
+          "merchant engagement tools",
+          "card network",
+          "data analytics",
+          "emerging payment technologies",
+          "payment innovation",
+          "data-driven payment security",
+          "mobile wallet technology",
+          "fraud management",
+          "payment network",
+          "mobile payments",
+          "digital payment innovation",
+          "payment network infrastructure",
+          "business expense management",
+          "payment data analytics",
+          "secure digital transactions",
+          "global payment acceptance network",
+          "payment authorization",
+          "artificial intelligence in payments",
+          "banking technology",
+          "risk assessment",
+          "cybersecurity",
+          "global payment network",
+          "b2b",
+          "b2c",
+          "b2b2c",
+          "government",
+          "services",
+          "retail",
+          "financial transactions processing, reserve, and clearinghouse activities",
+          "innovation",
+          "cryptocurrency",
+          "customer experience",
+          "digital assets",
+          "customer service",
+          "information technology & services",
+          "finance technology",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "mobile",
+          "payments"
+        ],
+        "organization_revenue_printed": "29.1B",
+        "organization_revenue": 29069000000.0,
+        "industries": [
+          "information technology & services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "2000 Purchase St, Purchase, NY 10577, US",
+        "street_address": "2000 Purchase Street",
+        "city": "Harrison",
+        "state": "New York",
+        "postal_code": "10577",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Mastercard is a global financial services corporation headquartered in Purchase, New York. Founded in 1966, it has grown to operate in over 210 countries and territories. The company facilitates electronic payments and transactions among consumers, merchants, financial institutions, and governments, aiming to enable a cashless society through secure and convenient payment solutions.\n\nMastercard offers a wide range of products and services, including credit, debit, and prepaid card networks, payment processing, and digital payment solutions like mobile contactless payments. The company also provides cybersecurity services and sustainability tools, such as a carbon footprint calculator. Its diverse customer base includes consumers using Mastercard cards, merchants accepting payments, financial institutions issuing products, and governments utilizing payment solutions for various transactions. With a strong focus on innovation, Mastercard continues to enhance its offerings in fraud detection, mobile payments, and sustainability initiatives.",
+        "suborganizations": [
+          {
+            "id": "55eaa815f3e5bb03e8000f5c",
+            "name": "Ekata, a Mastercard company",
+            "website_url": "http://www.ekata.com"
+          },
+          {
+            "id": "640496f21d4352000145e9e9",
+            "name": "Crypto Coulisses",
+            "website_url": null
+          },
+          {
+            "id": "54a1361469702d333d363701",
+            "name": "Transactis",
+            "website_url": "http://www.transactis.com"
+          },
+          {
+            "id": "54a11b4169702d9d7ee72600",
+            "name": "ElectraCard Services",
+            "website_url": "http://www.electracard.com"
+          },
+          {
+            "id": "5ed20024b5d6b60001bbf0b4",
+            "name": "Mastercard Services",
+            "website_url": "http://www.mastercardservices.com"
+          },
+          {
+            "id": "6277dc479cf6f10001e12c40",
+            "name": "IfOnly",
+            "website_url": "http://www.ifonly.com"
+          },
+          {
+            "id": "664d802cdc60340001a97323",
+            "name": "Synchrony Bank Credit Card Services",
+            "website_url": "http://www.synchronybank.com"
+          },
+          {
+            "id": "672c527addd5e600014faa8e",
+            "name": "Provus Bilisim Hizmetleri",
+            "website_url": "http://www.provus.com.tr"
+          },
+          {
+            "id": "54a1279a69702dab37f89d00",
+            "name": "Brighterion, a Mastercard Company",
+            "website_url": "http://www.brighterion.com"
+          },
+          {
+            "id": "63e54c3d937173000107c983",
+            "name": "Master Your Card",
+            "website_url": "http://www.masteryourcardusa.org"
+          },
+          {
+            "id": "655ae24299780d00019b2f59",
+            "name": "AIIA",
+            "website_url": null
+          },
+          {
+            "id": "676918d0b82d64000108a6ac",
+            "name": "CipherTrace, Inc.",
+            "website_url": "http://www.ciphertrace.com"
+          },
+          {
+            "id": "54a11fd169702d8aa147f401",
+            "name": "Recorded Future",
+            "website_url": "http://www.recordedfuture.com"
+          },
+          {
+            "id": "5d3249c480f93e2a9221b104",
+            "name": "NuData Security, a Mastercard company",
+            "website_url": "http://www.nudatasecurity.com"
+          },
+          {
+            "id": "669ecf01c2ba9b00017ca230",
+            "name": "Aiia, a Mastercard Company",
+            "website_url": "http://www.aiia.eu"
+          },
+          {
+            "id": "5b15577aa6da98711264b65f",
+            "name": "Minna Technologies, a Mastercard company",
+            "website_url": "http://www.minnatechnologies.com"
+          },
+          {
+            "id": "5a9e7b96a6da98d9977c3d6b",
+            "name": "RiskRecon by Mastercard",
+            "website_url": "http://www.riskrecon.com"
+          },
+          {
+            "id": "5a9efce7a6da98d9a8db104c",
+            "name": "Baffin Bay Networks, a Mastercard Company",
+            "website_url": "http://www.baffinbay.com"
+          },
+          {
+            "id": "5d34737f80f93e19809619d6",
+            "name": "Pay by Bank app",
+            "website_url": "http://www.mastercard.co.uk"
+          },
+          {
+            "id": "68984642994b08000182caeb",
+            "name": "Vyze, Inc.",
+            "website_url": "http://www.vyze.com"
+          },
+          {
+            "id": "54a1361f69702d2f9fd24301",
+            "name": "Truaxis, Inc - A MasterCard Company",
+            "website_url": "http://www.truaxis.com"
+          },
+          {
+            "id": "54a1395e69702d24d3e35900",
+            "name": "Ethoca",
+            "website_url": "http://www.ethoca.com"
+          },
+          {
+            "id": "54a1bafe74686942d3b7f70b",
+            "name": "Transfast, a Mastercard Company",
+            "website_url": "http://www.transfast.com"
+          },
+          {
+            "id": "54a1204d69702d97c1096702",
+            "name": "Finicity, a Mastercard Company",
+            "website_url": "http://www.finicity.com"
+          },
+          {
+            "id": "54a1274169702d9313208600",
+            "name": "Applied Predictive Technologies",
+            "website_url": "http://www.predictivetechnologies.com"
+          },
+          {
+            "id": "6181b9a3e47086008c3d7af8",
+            "name": "Vocalink, a Mastercard company",
+            "website_url": "http://www.vocalink.com"
+          },
+          {
+            "id": "61bc5b7725854100f8e486d0",
+            "name": "Mastercard AI Garage",
+            "website_url": "http://www.mastercard.co.in"
+          },
+          {
+            "id": "5f3fa95bb2a1520001f01d22",
+            "name": "Arcus, a Mastercard company",
+            "website_url": "http://www.arcusfi.com"
+          },
+          {
+            "id": "5b84eec2324d44730dd2fcfc",
+            "name": "Ciphertrace, a Mastercard company",
+            "website_url": null
+          },
+          {
+            "id": "54a1204969702d8aa18f2e02",
+            "name": "Dynamic Yield by Mastercard",
+            "website_url": "http://www.dynamicyield.com"
+          },
+          {
+            "id": "640c1ab76b5c8a0001d651d1",
+            "name": "MasterCard Center",
+            "website_url": "http://www.mastercardcenter.org"
+          }
+        ],
+        "num_suborganizations": 31,
+        "annual_revenue_printed": "29.1B",
+        "annual_revenue": 29069000000.0,
+        "technology_names": [
+          "AI",
+          "Adobe Marketing Cloud",
+          "Adobe Media Optimizer",
+          "Adobe TestAndTarget",
+          "Akamai",
+          "Akamai DNS",
+          "Amadesa",
+          "Bootstrap Framework",
+          "Cedexis Radar",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Dropbox",
+          "DynamicYield",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Frontbridge",
+          "FullStory",
+          "Genesys",
+          "Google AdSense",
+          "Google AdWords Conversion",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Play",
+          "Google Plus",
+          "Google Tag Manager",
+          "Intercom",
+          "Janrain",
+          "Linkedin Marketing Solutions",
+          "Linkshare",
+          "Mapbox",
+          "Mobile Friendly",
+          "Multilingual",
+          "New Relic",
+          "OneTrust",
+          "Outlook",
+          "Pardot",
+          "Qualtrics",
+          "React Redux",
+          "Remote",
+          "Salesforce",
+          "Salesforce Live Agent",
+          "Stripe",
+          "TubeMogul",
+          "Vimeo",
+          "Visa Checkout",
+          "Wistia",
+          "Workday",
+          "Workday Recruit",
+          "iTunes",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "adobe_testandtarget",
+            "name": "Adobe TestAndTarget",
+            "category": "Online Testing Platforms"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_dns",
+            "name": "Akamai DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "amadesa",
+            "name": "Amadesa",
+            "category": "Personalization"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "dropbox",
+            "name": "Dropbox",
+            "category": "Cloud Services"
+          },
+          {
+            "uid": "dynamicyield",
+            "name": "DynamicYield",
+            "category": "Online Testing Platforms"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "frontbridge",
+            "name": "Frontbridge",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "fullstory",
+            "name": "FullStory",
+            "category": "Other"
+          },
+          {
+            "uid": "genesys",
+            "name": "Genesys",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_adsense",
+            "name": "Google AdSense",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_adwords_conversion",
+            "name": "Google AdWords Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_play",
+            "name": "Google Play",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_plus_login",
+            "name": "Google Plus",
+            "category": "Social Login"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "intercom",
+            "name": "Intercom",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "janrain",
+            "name": "Janrain",
+            "category": "Social Login"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "linkshare",
+            "name": "Linkshare",
+            "category": "Affiliate Advertising Network"
+          },
+          {
+            "uid": "mapbox",
+            "name": "Mapbox",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "multilingual",
+            "name": "Multilingual",
+            "category": "Widgets"
+          },
+          {
+            "uid": "new_relic",
+            "name": "New Relic",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "onetrust",
+            "name": "OneTrust",
+            "category": "Widgets"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "pardot",
+            "name": "Pardot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "qualtrics_intercept",
+            "name": "Qualtrics",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "react_redux",
+            "name": "React Redux",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "salesforce_live_agent",
+            "name": "Salesforce Live Agent",
+            "category": "Chats"
+          },
+          {
+            "uid": "stripe",
+            "name": "Stripe",
+            "category": "Payments"
+          },
+          {
+            "uid": "tubemogul",
+            "name": "TubeMogul",
+            "category": "Video Advertising Networks"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "visa_checkout",
+            "name": "Visa Checkout",
+            "category": "Payments"
+          },
+          {
+            "uid": "wistia",
+            "name": "Wistia",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "workday",
+            "name": "Workday",
+            "category": "CMS"
+          },
+          {
+            "uid": "workday_recruit",
+            "name": "Workday Recruit",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "itunes",
+            "name": "iTunes",
+            "category": "Widgets"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "6818048d589f0f00019c7456"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5e88b462cbe2280001ea47db",
+      "name": "Shadab Akhtar",
+      "first_name": "Shadab",
+      "last_name": "Akhtar",
+      "title": "Data Scientist",
+      "company": "T-Mobile",
+      "domain": null,
+      "location": "Sachse, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/shadabakhtar089",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "shadab.akhtar@t-mobile.com"
+      ],
+      "phones": [
+        "+18009378997"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "shadab.akhtar@t-mobile.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18009378997",
+      "organization": {
+        "id": "5d09381da3ae61b7f7b73360",
+        "name": "T-Mobile",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/t-mobile",
+        "twitter_url": "https://twitter.com/TMobile",
+        "facebook_url": "https://www.facebook.com/TMobile",
+        "primary_phone": {
+          "number": "+1 800-937-8997",
+          "source": "Owler",
+          "sanitized_number": "+18009378997"
+        },
+        "languages": [
+          "English",
+          "Spanish"
+        ],
+        "alexa_ranking": 1393,
+        "phone": "+1 800-937-8997",
+        "linkedin_uid": "1392",
+        "founded_year": 1994,
+        "publicly_traded_symbol": "TMUS",
+        "publicly_traded_exchange": "nasdaq",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b7199029319000015aa1e0/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "sic_codes": [
+          "3661"
+        ],
+        "naics_codes": [
+          "517"
+        ],
+        "sanitized_phone": "+18009378997",
+        "market_cap": "284.5B",
+        "industry": "telecommunications",
+        "estimated_num_employees": 70000,
+        "keywords": [
+          "iot",
+          "retail",
+          "5g for all",
+          "future of 5g",
+          "business sales",
+          "customer care",
+          "business wireless",
+          "consumer wireless",
+          "technology",
+          "internships",
+          "returnships",
+          "de",
+          "i",
+          "benefits",
+          "perks",
+          "telecommunications equipment",
+          "service plans",
+          "wireless network modernization",
+          "mvno",
+          "5g network",
+          "spectrum spectrum acquisitions",
+          "coverage in small towns",
+          "spectrum acquisition",
+          "wireless connectivity",
+          "network sharing",
+          "customer base",
+          "broadband internet",
+          "coverage expansion",
+          "network investments",
+          "wireless infrastructure",
+          "network capacity expansion",
+          "subsidized services",
+          "5g coverage",
+          "network infrastructure investments",
+          "5g spectrum deployment",
+          "geographic coverage",
+          "device financing",
+          "mvno low-cost brands",
+          "mobile data",
+          "network capacity",
+          "low-cost brands",
+          "coverage map",
+          "wireless network innovation",
+          "5g deployment",
+          "low-cost mobile brands",
+          "telecommunications",
+          "telecommunications equipment manufacturing",
+          "broadband services",
+          "rural coverage",
+          "rural and urban coverage",
+          "wireless carrier",
+          "mobile internet",
+          "network capacity enhancement",
+          "network upgrades",
+          "mobile devices",
+          "rural connectivity solutions",
+          "spectrum spectrum",
+          "broad geographic reach",
+          "mergers and acquisitions",
+          "customer loyalty",
+          "next-generation wireless technology",
+          "5g network leadership",
+          "un-carrier",
+          "wireless spectrum",
+          "disaster response network",
+          "mobile plans",
+          "disruptive wireless plans",
+          "mobile hotspots",
+          "postpaid plans",
+          "mvno brands",
+          "prepaid plans",
+          "cellular coverage",
+          "disruptive plans",
+          "wireless technology",
+          "wireless spectrum management",
+          "deutsche telekom",
+          "mobile device retailing",
+          "5g coverage in rural areas",
+          "internet service providers",
+          "network sharing agreements",
+          "network infrastructure",
+          "telecom services",
+          "wireless network",
+          "low-cost mvnos",
+          "network technology",
+          "subsidized government programs",
+          "network expansion",
+          "wireless services",
+          "consumer wireless plans",
+          "mobile network",
+          "rural broadband expansion",
+          "rural wireless coverage",
+          "wireless telecommunications services",
+          "network coverage",
+          "b2c",
+          "services",
+          "customer service",
+          "digital transformation",
+          "online shopping",
+          "internet",
+          "information technology & services",
+          "mergers & acquisitions",
+          "computer & network security",
+          "e-commerce",
+          "consumer internet",
+          "consumers",
+          "mobile phones",
+          "shopping"
+        ],
+        "organization_revenue_printed": "82.7B",
+        "organization_revenue": 82692000000.0,
+        "industries": [
+          "telecommunications",
+          "internet",
+          "wireless",
+          "information technology & services",
+          "consumer electronics"
+        ],
+        "secondary_industries": [
+          "internet",
+          "wireless",
+          "information technology & services",
+          "consumer electronics"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4c7369644d39080000",
+        "industry_tag_hash": {
+          "telecommunications": "5567cd4c7369644d39080000",
+          "internet": "5567cd4d736964397e020000",
+          "wireless": "5567e3ca736964371b130000",
+          "information technology & services": "5567cd4773696439b10b0000",
+          "consumer electronics": "5567e1947369641ead570000"
+        },
+        "retail_location_count": 1620,
+        "raw_address": "12920 SE 38th St, Bellevue, WA 98006, US",
+        "street_address": "12920 Southeast 38th Street",
+        "city": "Bellevue",
+        "state": "Washington",
+        "postal_code": "98006",
+        "country": "United States",
+        "owned_by_organization_id": "6459faea1ee88500da506662",
+        "owned_by_organization": {
+          "id": "6459faea1ee88500da506662",
+          "name": "Telekom Security",
+          "website_url": "http://www.telekom.de"
+        },
+        "short_description": "T-Mobile US, Inc. is a prominent American wireless communications provider, headquartered in Bellevue, Washington. Originally founded in 1994 as VoiceStream Wireless, the company became T-Mobile USA in 2002 after being acquired by Deutsche Telekom AG. T-Mobile has grown significantly through mergers, including those with MetroPCS in 2013 and Sprint Corporation in 2020, enhancing its customer base and network capabilities.\n\nThe company offers a range of wireless communication services, including voice, messaging, and data services, with a strong emphasis on 5G network deployment. T-Mobile also sells smartphones, including its own T-Mobile Revvl series, and provides mobile and home internet services. It targets a diverse customer base, including individuals, families, and businesses, and partners with other companies to enhance connectivity experiences. T-Mobile continues to focus on expanding its 5G network and improving customer satisfaction in the competitive U.S. wireless market.",
+        "suborganizations": [
+          {
+            "id": "5592133a7369641859a75100",
+            "name": "MetroPCS",
+            "website_url": "http://www.metropcs.com"
+          },
+          {
+            "id": "670cc44197701f0001676c4a",
+            "name": "Simpel Internet",
+            "website_url": null
+          },
+          {
+            "id": "6161bdb0f005e20001751a68",
+            "name": "Plum",
+            "website_url": "http://www.plum.mobi"
+          },
+          {
+            "id": "5e55e6025a0b8800013632c4",
+            "name": "Sprint Reply DE",
+            "website_url": null
+          },
+          {
+            "id": "54a11b7969702d97c1ba4000",
+            "name": "Metronet",
+            "website_url": "http://www.metronet.com"
+          },
+          {
+            "id": "5fda6ace6f9a7700a427b722",
+            "name": "Mint Mobile",
+            "website_url": "http://www.mintmobile.com"
+          },
+          {
+            "id": "57c5079ba6da986a4f4c91fc",
+            "name": "PG Wireless",
+            "website_url": null
+          },
+          {
+            "id": "54a1231469702d77c2d04803",
+            "name": "Vistar Media",
+            "website_url": "http://www.vistarmedia.com"
+          },
+          {
+            "id": "57c4985ca6da983288c781ab",
+            "name": "Blis",
+            "website_url": "http://www.blis.com"
+          },
+          {
+            "id": "5b835a49f874f71db760c7d1",
+            "name": "iMobile LLC",
+            "website_url": null
+          },
+          {
+            "id": "54a11f7d69702da10f9afb01",
+            "name": "PushSpring",
+            "website_url": "http://www.pushspring.com"
+          },
+          {
+            "id": "54a1211569702d8aa1367f02",
+            "name": "Layer3 TV",
+            "website_url": "http://www.layer3tv.com"
+          },
+          {
+            "id": "55e90f1cf3e5bb6efe0001c8",
+            "name": "Ultra Mobile",
+            "website_url": "http://www.ultra.me"
+          },
+          {
+            "id": "5da3a4f6d7ad520001d2d2ad",
+            "name": "Octopus Advertising",
+            "website_url": "http://www.octopusadv.com"
+          },
+          {
+            "id": "6713abd633a884000178c883",
+            "name": "eworld solutions USA, Inc",
+            "website_url": null
+          },
+          {
+            "id": "5b856f3c324d4415092a05b5",
+            "name": "Octopus Interactive (Acquired by T-Mobile)",
+            "website_url": "http://www.playoctopus.com"
+          },
+          {
+            "id": "5fa9296d11b61700bf8e1928",
+            "name": "Metro by T-Mobile",
+            "website_url": "http://www.metrobyt-mobile.com"
+          },
+          {
+            "id": "60aed14e83e69200014b1137",
+            "name": "Simpel",
+            "website_url": "http://www.simpel.nl"
+          }
+        ],
+        "num_suborganizations": 18,
+        "annual_revenue_printed": "82.7B",
+        "annual_revenue": 82692000000.0,
+        "technology_names": [
+          "AWS SDK for JavaScript",
+          "Adobe Marketing Cloud",
+          "Akamai",
+          "Akamai DNS",
+          "Amazon SES",
+          "Atlassian Cloud",
+          "Backbone JS Library",
+          "Brightcove",
+          "Drupal",
+          "GitHub Hosting",
+          "Microsoft Office 365",
+          "MongoDB",
+          "OneTrust",
+          "Outlook",
+          "Pardot",
+          "React Redux",
+          "Remote",
+          "Salesforce",
+          "StatusPage IO",
+          "ThreatMetrix",
+          "VueJS",
+          "Workday",
+          "Zendesk"
+        ],
+        "current_technologies": [
+          {
+            "uid": "aws_sdk_for_javascript",
+            "name": "AWS SDK for JavaScript",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_dns",
+            "name": "Akamai DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "amazon_ses",
+            "name": "Amazon SES",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "atlassian_cloud",
+            "name": "Atlassian Cloud",
+            "category": "CMS"
+          },
+          {
+            "uid": "backbone_js_library",
+            "name": "Backbone JS Library",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "brightcove",
+            "name": "Brightcove",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "drupal",
+            "name": "Drupal",
+            "category": "CMS"
+          },
+          {
+            "uid": "github_hosting",
+            "name": "GitHub Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mongodb",
+            "name": "MongoDB",
+            "category": "Database"
+          },
+          {
+            "uid": "onetrust",
+            "name": "OneTrust",
+            "category": "Widgets"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "pardot",
+            "name": "Pardot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "react_redux",
+            "name": "React Redux",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "statuspage",
+            "name": "StatusPage IO",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "threatmetrix",
+            "name": "ThreatMetrix",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "vue_js_library",
+            "name": "VueJS",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "workday",
+            "name": "Workday",
+            "category": "CMS"
+          },
+          {
+            "uid": "zendesk",
+            "name": "Zendesk",
+            "category": "Support and Feedback"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "66ec2de46f7cb30001d5c7e0"
+        ],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "61ab7a64dfa9520001e7b994",
+      "name": "Pavan Ghantasala",
+      "first_name": "Pavan",
+      "last_name": "Ghantasala",
+      "title": "Data Scientist",
+      "company": "Wells Fargo",
+      "domain": "wellsfargo.com",
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/pavanghantasala",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "pavan.ghantasala@wellsfargo.com"
+      ],
+      "phones": [
+        "+18662493302"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "pavan.ghantasala@wellsfargo.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+18662493302",
+      "organization": {
+        "id": "5d09a098a3ae61763b04abbf",
+        "name": "Wells Fargo",
+        "website_url": "http://www.wellsfargo.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/wellsfargo",
+        "twitter_url": "https://twitter.com/wellsfargo",
+        "facebook_url": "https://facebook.com/wellsfargo",
+        "primary_phone": {
+          "number": "+1 866-249-3302",
+          "source": "Owler",
+          "sanitized_number": "+18662493302"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 294,
+        "phone": "+1 866-249-3302",
+        "linkedin_uid": "1235",
+        "founded_year": 1852,
+        "publicly_traded_symbol": "WFC",
+        "publicly_traded_exchange": "nasdaq",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b8350bf2d41a000146a75e/picture",
+        "crunchbase_url": null,
+        "primary_domain": "wellsfargo.com",
+        "sic_codes": [
+          "6021"
+        ],
+        "naics_codes": [
+          "52211"
+        ],
+        "sanitized_phone": "+18662493302",
+        "market_cap": "252.9B",
+        "industry": "financial services",
+        "estimated_num_employees": 215000,
+        "keywords": [
+          "business banking",
+          "wholesale banking",
+          "mortgage",
+          "consumer finance",
+          "commercial finance",
+          "major banks",
+          "finance",
+          "wealth management",
+          "wealth planning",
+          "wealth management advisory",
+          "banking app",
+          "customer support",
+          "atm network",
+          "wealth planning tools",
+          "corporate banking",
+          "mobile banking app",
+          "digital payments",
+          "digital banking platform",
+          "digital banking",
+          "auto loan financing",
+          "loan origination",
+          "wealth management solutions",
+          "small business loans",
+          "insurance",
+          "personal banking",
+          "brokerage accounts",
+          "credit cards",
+          "mortgage loans",
+          "investment advisory",
+          "banking compliance",
+          "atm services",
+          "banking transaction security",
+          "banking",
+          "loan processing",
+          "mortgage refinancing",
+          "small business banking",
+          "financial literacy resources",
+          "loan pre-approval",
+          "auto loan application",
+          "mobile banking",
+          "bank history",
+          "financial products",
+          "banking customer support",
+          "small business financing",
+          "financial technology",
+          "small business services",
+          "customer account management",
+          "brokerage",
+          "payment transfer services",
+          "loans",
+          "banking customer experience",
+          "mortgage application process",
+          "online banking",
+          "checking accounts",
+          "capital markets",
+          "banking security measures",
+          "business credit solutions",
+          "loan approval process",
+          "personal financial management",
+          "customer service",
+          "customer service support",
+          "payment services",
+          "financial data security",
+          "home equity loans",
+          "banking solutions",
+          "capital markets services",
+          "atm cash withdrawal",
+          "financial advisory",
+          "banking digital transformation",
+          "savings accounts",
+          "retirement planning",
+          "digital banking innovation",
+          "online loan application",
+          "insurance products",
+          "financial services",
+          "banking services",
+          "retirement planning services",
+          "insurance coverage",
+          "auto financing",
+          "bank branches",
+          "financial technology innovation",
+          "mortgages",
+          "banking security features",
+          "digital banking security",
+          "brokerage services",
+          "payment processing",
+          "loan application",
+          "wealth advisory",
+          "online banking platform",
+          "auto loans",
+          "personal loans",
+          "retirement accounts",
+          "home loans",
+          "digital wallet",
+          "financial planning tools",
+          "investment services",
+          "mobile deposit",
+          "investment management",
+          "banking security",
+          "b2c",
+          "services",
+          "retail",
+          "commercial banking",
+          "financial planning",
+          "mobile app",
+          "regulatory compliance",
+          "risk management",
+          "customer engagement",
+          "finance technology",
+          "information technology & services",
+          "payments",
+          "financial consulting",
+          "consulting",
+          "management consulting",
+          "banks & credit unions"
+        ],
+        "organization_revenue_printed": "122.3B",
+        "organization_revenue": 122332000000.0,
+        "industries": [
+          "financial services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdd67369643e64020000",
+        "industry_tag_hash": {
+          "financial services": "5567cdd67369643e64020000"
+        },
+        "retail_location_count": 4889,
+        "raw_address": "420 Montgomery St, San Francisco, California 94103, US",
+        "street_address": "420 Montgomery Street",
+        "city": "San Francisco",
+        "state": "California",
+        "postal_code": "94104",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Wells Fargo is a prominent American financial services company founded in 1852 by Henry Wells and William G. Fargo. Initially established to provide express and banking services during the California Gold Rush, it quickly became a key player in gold transportation and mail delivery in the Western United States. Over the years, Wells Fargo evolved into one of the \"Big Four\" banks in the U.S., offering a wide range of financial services.\n\nThe company provides retail banking services such as checking and savings accounts, mortgages, and personal loans. It also offers commercial banking solutions, investment services, and various insurance products. Wells Fargo serves a diverse clientele, including individual consumers, small businesses, and large corporations, emphasizing customer service and accessibility through a vast network of branches and digital banking platforms. The company is also known for its iconic stagecoach symbol, reflecting its rich history in express delivery and banking.",
+        "suborganizations": [
+          {
+            "id": "631b693fa9c7e800e3988b04",
+            "name": "Martin Wealth Management, Inc.",
+            "website_url": null
+          },
+          {
+            "id": "559210e073696418dfb84a00",
+            "name": "ONLINE REWARDS LIMITED",
+            "website_url": "http://www.mywellsfargorewards.com"
+          },
+          {
+            "id": "559241c67369642529787e00",
+            "name": "Norwest",
+            "website_url": "http://www.norwest.com"
+          },
+          {
+            "id": "673486dc29eeee0001eccc1f",
+            "name": "Wellsfargocapitalfinance",
+            "website_url": "http://www.wellsfargocapitalfinance.com"
+          },
+          {
+            "id": "5d09a097a3ae61763b04abbc",
+            "name": "WellsFargo.com",
+            "website_url": "http://www.firstclearingllc.com"
+          },
+          {
+            "id": "5d32a4f380f93e1770c2f3d8",
+            "name": "Wells Fargo Advisors",
+            "website_url": "http://www.wellsfargoadvisors.com"
+          },
+          {
+            "id": "660ce7308b75ed00071e9b7c",
+            "name": "Wells Funding Group Inc",
+            "website_url": null
+          },
+          {
+            "id": "6736eced48437a0001569c2a",
+            "name": "regional foundation",
+            "website_url": "http://www.regionalfoundation.org"
+          },
+          {
+            "id": "673912cb2a05ac00014151fc",
+            "name": "Wells Fargo Bank International Unlimited Company",
+            "website_url": "http://www.wf.com"
+          },
+          {
+            "id": "54a1f56c746869382536b800",
+            "name": "Eastdil Secured",
+            "website_url": "http://www.eastdilsecured.com"
+          },
+          {
+            "id": "5f490bc97bb79f0001685052",
+            "name": "Wells Fargo Advisors Finet",
+            "website_url": "http://www.wfafinet.com"
+          }
+        ],
+        "num_suborganizations": 11,
+        "annual_revenue_printed": "122.3B",
+        "annual_revenue": 122332000000.0,
+        "technology_names": [
+          "Adobe Marketing Cloud",
+          "Akamai",
+          "Akamai DNS",
+          "Microsoft Office 365",
+          "MongoDB",
+          "React Redux",
+          "Remote",
+          "Salesforce",
+          "The Trade Desk",
+          "TubeMogul",
+          "UltraDns"
+        ],
+        "current_technologies": [
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_dns",
+            "name": "Akamai DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mongodb",
+            "name": "MongoDB",
+            "category": "Database"
+          },
+          {
+            "uid": "react_redux",
+            "name": "React Redux",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "the_trade_desk",
+            "name": "The Trade Desk",
+            "category": "Demand Side Platforms"
+          },
+          {
+            "uid": "tubemogul",
+            "name": "TubeMogul",
+            "category": "Video Advertising Networks"
+          },
+          {
+            "uid": "ultradns",
+            "name": "UltraDns",
+            "category": "Domain Name Services"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::Finance",
+        "org_chart_removed": true,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "613077c26ae75c000138b710",
+      "name": "Saeed Jamalzadeh",
+      "first_name": "Saeed",
+      "last_name": "Jamalzadeh",
+      "title": "Data Scientist",
+      "company": "Bayer",
+      "domain": "bayer.com",
+      "location": "Houston, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/saeedjamalzadeh",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "saeed.jamalzadeh@bayer.com"
+      ],
+      "phones": [
+        "+49214301"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "saeed.jamalzadeh@bayer.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+49214301",
+      "organization": {
+        "id": "5d0964e7a3ae61924d76915c",
+        "name": "Bayer",
+        "website_url": "http://www.bayer.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/bayer",
+        "twitter_url": " https://twitter.com/BayerAndinayCAC",
+        "facebook_url": "https://www.facebook.com/BayerAndinayCAC/",
+        "primary_phone": {
+          "number": "+49 214 301",
+          "source": "Owler",
+          "sanitized_number": "+49214301"
+        },
+        "languages": [
+          "French",
+          "English",
+          "English",
+          "German"
+        ],
+        "alexa_ranking": 56388,
+        "phone": "+49 214 301",
+        "linkedin_uid": "1893",
+        "founded_year": 1863,
+        "publicly_traded_symbol": "BAYN.SW",
+        "publicly_traded_exchange": "six",
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6b7cece5b4f0001b5f4c7/picture",
+        "crunchbase_url": null,
+        "primary_domain": "bayer.com",
+        "sic_codes": [
+          "2834"
+        ],
+        "naics_codes": [
+          "32541"
+        ],
+        "sanitized_phone": "+49214301",
+        "industry": "chemicals",
+        "estimated_num_employees": 97000,
+        "keywords": [
+          "pharmaceuticals",
+          "consumer health",
+          "crop science",
+          "life sciences",
+          "research",
+          "innovation",
+          "sustainability",
+          "health care",
+          "digital farming",
+          "food security",
+          "science for better",
+          "biotechnology",
+          "agriculture",
+          "chemical manufacturing",
+          "sustainable agriculture",
+          "immuno-oncology",
+          "environmental protection",
+          "plant stress tolerance",
+          "over-the-counter products",
+          "fungicides",
+          "sustainable farming",
+          "covalent binding",
+          "herbicides",
+          "crispr",
+          "healthcare access",
+          "insecticides",
+          "plant genetics",
+          "crop monitoring",
+          "plant genome editing",
+          "remote sensing",
+          "global healthcare",
+          "protacs",
+          "pollinator health",
+          "weed management",
+          "plant microbiome",
+          "biological pest control",
+          "biologicals for crop health",
+          "medical innovation",
+          "biotech",
+          "family planning",
+          "precision agriculture",
+          "rna-targeting",
+          "microbial solutions",
+          "nutrition supplements",
+          "climate resilience",
+          "genome editing",
+          "digital tools",
+          "healthcare",
+          "prescription medicines",
+          "digital agriculture",
+          "climate-smart agriculture",
+          "crop protection chemicals",
+          "research and development",
+          "plant health",
+          "vaccines",
+          "cancer treatments",
+          "biological seed treatments",
+          "medical research",
+          "pharmacogenetics",
+          "plant stress management",
+          "biomarkers",
+          "disease management",
+          "plant microbiome enhancement",
+          "pharmacovigilance",
+          "diagnostic imaging",
+          "genetic modification",
+          "plant protection",
+          "personalized medicine",
+          "plant biotechnology",
+          "crop protection",
+          "insect resistance",
+          "biotech seeds",
+          "artificial intelligence",
+          "agricultural solutions",
+          "sustainable crop protection",
+          "plant breeding",
+          "targeted alpha therapy",
+          "plant disease resistance",
+          "clinical trials",
+          "crop yield enhancement",
+          "biological crop protectants",
+          "data analytics",
+          "genetic resistance",
+          "seed technology",
+          "biologicals",
+          "plant resistance",
+          "cell and gene therapy",
+          "crop yield optimization",
+          "b2b",
+          "b2c",
+          "b2b2c",
+          "e-commerce",
+          "d2c",
+          "government",
+          "consulting",
+          "services",
+          "retail",
+          "pharmaceutical and medicine manufacturing",
+          "dermatology",
+          "digital marketing",
+          "cardiology",
+          "oncology",
+          "self-care",
+          "nutrition",
+          "digital transformation",
+          "medical",
+          "environmental services",
+          "renewables & environment",
+          "health, wellness & fitness",
+          "chemicals",
+          "hospital & health care",
+          "research & development",
+          "information technology & services",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "marketing & advertising"
+        ],
+        "organization_revenue_printed": "50.2B",
+        "organization_revenue": 50205218000.0,
+        "industries": [
+          "chemicals",
+          "research",
+          "pharmaceuticals"
+        ],
+        "secondary_industries": [
+          "research",
+          "pharmaceuticals"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e21e73696426a1030000",
+        "industry_tag_hash": {
+          "chemicals": "5567e21e73696426a1030000",
+          "research": "5567e09f736964160ebb0100",
+          "pharmaceuticals": "5567e0eb73696410e4bd1200"
+        },
+        "retail_location_count": 0,
+        "raw_address": "1 kaiser-wilhelm-allee, leverkusen, nordrhein-westfalen, germany, 51373",
+        "street_address": "1 Kaiser-Wilhelm-Allee",
+        "city": "Leverkusen",
+        "state": "Nordrhein-Westfalen",
+        "postal_code": "51373",
+        "country": "Germany",
+        "owned_by_organization_id": null,
+        "short_description": "Bayer is a global chemical and pharmaceutical company based in Leverkusen, Germany. Founded in 1863, it initially specialized in synthetic dyes before expanding into pharmaceuticals and chemicals. Bayer is well-known for developing Aspirin, one of the most widely used pain relievers, and has introduced several significant pharmaceutical products, including Xarelto for cardiovascular health and Eylea for eye diseases.\n\nThe company operates in three main segments: Pharmaceuticals, Consumer Health, and Crop Science. In Pharmaceuticals, Bayer focuses on prescription medicines for various health conditions. The Consumer Health segment offers over-the-counter products for self-care, while Crop Science provides agricultural solutions, including seeds and crop protection chemicals, bolstered by its acquisition of Monsanto.\n\nBayer serves a diverse customer base, including healthcare providers, patients, farmers, and research institutions. The company is committed to innovation and sustainability, aiming to improve global health and agricultural practices.",
+        "suborganizations": [
+          {
+            "id": "61d2ad67333fd300a46ae605",
+            "name": "proPlant Agrar- und Umweltinformatik GmbH",
+            "website_url": "http://www.proplant.de"
+          },
+          {
+            "id": "672657d37efe3d0001cd4cdb",
+            "name": "Taekwondo - SV Bayer Wuppertal",
+            "website_url": "http://www.sv-bayer.de"
+          },
+          {
+            "id": "54a11d8869702d97c17b2301",
+            "name": "Algeta ASA",
+            "website_url": "http://www.algeta.com"
+          },
+          {
+            "id": "54a12ab869702d8b1915bf02",
+            "name": "Medrad",
+            "website_url": "http://www.medrad.com"
+          },
+          {
+            "id": "5dd4b2ee22afe400d6bd2e7c",
+            "name": "KaNDy Therapeutics Limited",
+            "website_url": "http://www.kandytherapeutics.com"
+          },
+          {
+            "id": "67348689c33a4b0001df6dc2",
+            "name": "Bayer Cropsience Limited",
+            "website_url": "http://www.bayer.in"
+          },
+          {
+            "id": "67359126789cbb00018f3b6e",
+            "name": "Bollgard\u00ae 3",
+            "website_url": "http://www.bayer.com.au"
+          },
+          {
+            "id": "682dae7f1154e000015c5fbc",
+            "name": "Bayer",
+            "website_url": "http://www.bayer.de"
+          },
+          {
+            "id": "54a1294d69702db878d95a01",
+            "name": "AskBio Inc.",
+            "website_url": "http://www.askbio.com"
+          },
+          {
+            "id": "5d367e84f65125dc56b088dd",
+            "name": "CoverCress Inc.",
+            "website_url": "http://www.covercress.com"
+          },
+          {
+            "id": "5da4767f03c66e0001c13508",
+            "name": "Alellyx Applied Genomics Ltda",
+            "website_url": null
+          },
+          {
+            "id": "54a1341669702d3170ee2900",
+            "name": "Artificial Muscle, Inc.",
+            "website_url": "http://www.artificialmuscle.com"
+          },
+          {
+            "id": "66e5c6b5e492b70001611805",
+            "name": "\u30d0\u30a4\u30a8\u30eb\u85ac\u54c1\uff08\u682a\uff09",
+            "website_url": "http://www.bayer.jp"
+          },
+          {
+            "id": "5a9ced47a6da98d96d7f8680",
+            "name": "BlueRock Therapeutics",
+            "website_url": "http://www.bluerocktx.com"
+          },
+          {
+            "id": "5da441ca1dd46b0001178fd1",
+            "name": "The Good Rice Alliance",
+            "website_url": "http://www.tgra.in"
+          },
+          {
+            "id": "54a2447474686935be9f671b",
+            "name": "Direvo Industrial Biotechnology GmbH",
+            "website_url": "http://www.direvo.com"
+          },
+          {
+            "id": "672d9ae3e12fdb000117387a",
+            "name": "Bayer Crop Science New",
+            "website_url": "http://www.bayer.co.nz"
+          },
+          {
+            "id": "5a9d7fcaa6da98d94d8cc639",
+            "name": "Care/of",
+            "website_url": "http://www.takecareof.com"
+          },
+          {
+            "id": "5d32c310f6512519b6f572a0",
+            "name": "Blackford",
+            "website_url": "http://www.blackfordanalysis.com"
+          },
+          {
+            "id": "64dc4aabd8637900d0baa28c",
+            "name": "Bayer UK",
+            "website_url": "http://www.bayer.co.uk"
+          },
+          {
+            "id": "655b7f168b76f900babedb54",
+            "name": "Targenomix GmbH",
+            "website_url": "http://www.targenomix.com"
+          },
+          {
+            "id": "5a9e4cb6a6da98d946737504",
+            "name": "Vividion Therapeutics, Inc.",
+            "website_url": "http://www.vividion.com"
+          },
+          {
+            "id": "5da3bea08f77a3000192866c",
+            "name": "Bayer Gastronomie GmbH",
+            "website_url": "http://www.bayer-gastronomie.de"
+          },
+          {
+            "id": "66f23bc9b783820001551408",
+            "name": "Radio H\u00e9ros",
+            "website_url": "http://www.bayer.fr"
+          },
+          {
+            "id": "674d766220f9160001211db2",
+            "name": "Monsanto Nordeste SA",
+            "website_url": "http://www.monsanto.com"
+          },
+          {
+            "id": "678c69ec5451c800014b8334",
+            "name": "Bayer Quimica Farmaceutica",
+            "website_url": "http://www.bayertecuida.es"
+          }
+        ],
+        "num_suborganizations": 26,
+        "annual_revenue_printed": "50.2B",
+        "annual_revenue": 50205218000.0,
+        "technology_names": [
+          "AddThis",
+          "Adobe Marketing Cloud",
+          "Adobe Media Optimizer",
+          "Akamai",
+          "Amazon AWS",
+          "Amazon SES",
+          "Atlassian Cloud",
+          "Basis",
+          "Bing Ads",
+          "Bootstrap Framework",
+          "CSC Corporate Domains",
+          "Campaign Monitor",
+          "Cedexis Radar",
+          "Centro",
+          "Datadog",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "DoubleClick Floodlight",
+          "Dropbox",
+          "Drupal",
+          "ExactTarget",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Gigya",
+          "Google AdWords Conversion",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Places",
+          "Google Tag Manager",
+          "Hotjar",
+          "Linkedin Login",
+          "Linkedin Marketing Solutions",
+          "Linkedin Widget",
+          "Marketo",
+          "Microsoft Application Insights",
+          "Microsoft Office 365",
+          "Microsoft Sharepoint",
+          "Mobile Friendly",
+          "MongoDB",
+          "Multilingual",
+          "New Relic",
+          "Nginx",
+          "OneTrust",
+          "Outlook",
+          "Qualtrics",
+          "React Redux",
+          "Remote",
+          "Ruby On Rails",
+          "SOASTA",
+          "Salesforce",
+          "Salesforce Live Agent",
+          "Scene7",
+          "Shutterstock",
+          "Stripe",
+          "SuccessFactors (SAP)",
+          "The Trade Desk",
+          "Twitter Advertising",
+          "Vimeo",
+          "VueJS",
+          "Wistia",
+          "WordPress.org",
+          "YouTube",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "addthis",
+            "name": "AddThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "amazon_ses",
+            "name": "Amazon SES",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "atlassian_cloud",
+            "name": "Atlassian Cloud",
+            "category": "CMS"
+          },
+          {
+            "uid": "basis",
+            "name": "Basis",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "bing_ads",
+            "name": "Bing Ads",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "bootstrap_framework",
+            "name": "Bootstrap Framework",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "csc_corporate_domains",
+            "name": "CSC Corporate Domains",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "campaign_monitor",
+            "name": "Campaign Monitor",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "centro",
+            "name": "Centro",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "datadog",
+            "name": "Datadog",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "doubleclick_floodlight",
+            "name": "DoubleClick Floodlight",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "dropbox",
+            "name": "Dropbox",
+            "category": "Cloud Services"
+          },
+          {
+            "uid": "drupal",
+            "name": "Drupal",
+            "category": "CMS"
+          },
+          {
+            "uid": "exacttarget",
+            "name": "ExactTarget",
+            "category": "Email Marketing"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "gigya",
+            "name": "Gigya",
+            "category": "Social Login"
+          },
+          {
+            "uid": "google_adwords_conversion",
+            "name": "Google AdWords Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_places",
+            "name": "Google Places",
+            "category": "Other"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "hotjar",
+            "name": "Hotjar",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "linkedin_login",
+            "name": "Linkedin Login",
+            "category": "Social Login"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "linkedin_widget",
+            "name": "Linkedin Widget",
+            "category": "Other"
+          },
+          {
+            "uid": "marketo",
+            "name": "Marketo",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "microsoft_application_insights",
+            "name": "Microsoft Application Insights",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "microsoft_sharepoint",
+            "name": "Microsoft Sharepoint",
+            "category": "CMS"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "mongodb",
+            "name": "MongoDB",
+            "category": "Database"
+          },
+          {
+            "uid": "multilingual",
+            "name": "Multilingual",
+            "category": "Widgets"
+          },
+          {
+            "uid": "new_relic",
+            "name": "New Relic",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "onetrust",
+            "name": "OneTrust",
+            "category": "Widgets"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "qualtrics_intercept",
+            "name": "Qualtrics",
+            "category": "Support and Feedback"
+          },
+          {
+            "uid": "react_redux",
+            "name": "React Redux",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "ruby_on_rails",
+            "name": "Ruby On Rails",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "soasta",
+            "name": "SOASTA",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "salesforce_live_agent",
+            "name": "Salesforce Live Agent",
+            "category": "Chats"
+          },
+          {
+            "uid": "scene7",
+            "name": "Scene7",
+            "category": "E-commerce Tools"
+          },
+          {
+            "uid": "shutterstock",
+            "name": "Shutterstock",
+            "category": "Other"
+          },
+          {
+            "uid": "stripe",
+            "name": "Stripe",
+            "category": "Payments"
+          },
+          {
+            "uid": "successfactors_sap",
+            "name": "SuccessFactors (SAP)",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "the_trade_desk",
+            "name": "The Trade Desk",
+            "category": "Demand Side Platforms"
+          },
+          {
+            "uid": "twitter_advertising",
+            "name": "Twitter Advertising",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "vue_js_library",
+            "name": "VueJS",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "wistia",
+            "name": "Wistia",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "youtube",
+            "name": "YouTube",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "67caf7ac77630700011bf264"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5fdb3222015176000171ba93",
+      "name": "Vivek Mehendiratta",
+      "first_name": "Vivek",
+      "last_name": "Mehendiratta",
+      "title": "Data Scientist",
+      "company": "Walmart Global Tech",
+      "domain": null,
+      "location": "Dallas, Texas",
+      "linkedin_url": "http://www.linkedin.com/in/vivek-mehendiratta-900080141",
+      "seniority": "entry",
+      "departments": [
+        "master_engineering_technical"
+      ],
+      "functions": [
+        "data_science"
+      ],
+      "emails": [
+        "vivek.mehendiratta@walmart.com"
+      ],
+      "phones": [
+        "+14796369400"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "Austin, TX",
+      "email": "vivek.mehendiratta@walmart.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+14796369400",
+      "organization": {
+        "id": "5f4a1a3443772f0001700abb",
+        "name": "Walmart Global Tech",
+        "website_url": null,
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/walmartglobaltech",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 479-636-9400",
+          "source": "Scraped",
+          "sanitized_number": "+14796369400"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 479-636-9400",
+        "linkedin_uid": "11174522",
+        "founded_year": null,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b6cb03fd91d50001ecb849/picture",
+        "crunchbase_url": null,
+        "primary_domain": null,
+        "sic_codes": [
+          "5331"
+        ],
+        "sanitized_phone": "+14796369400",
+        "industry": "information technology & services",
+        "estimated_num_employees": 15000,
+        "keywords": [
+          "data science",
+          "data analytics",
+          "software engineering",
+          "technology",
+          "ux design",
+          "cybersecurity",
+          "emerging tech",
+          "retail tech",
+          "supply chain tech",
+          "cloud",
+          "software development",
+          "information technology & services"
+        ],
+        "organization_revenue_printed": "572.8B",
+        "organization_revenue": 572750000000.0,
+        "industries": [
+          "information technology & services"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cd4773696439b10b0000",
+        "industry_tag_hash": {
+          "information technology & services": "5567cd4773696439b10b0000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "702 southwest 8th street, bentonville, ar, united states",
+        "street_address": "702 Southwest 8th Street",
+        "city": "Bentonville",
+        "state": "Arkansas",
+        "postal_code": "72716",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Walmart Global Tech is the technology and business services division of Walmart Inc. It focuses on innovating and enhancing the retail giant's digital transformation and operations worldwide. The division develops foundational technologies such as cloud computing, data analytics, enterprise architecture, and cybersecurity, which support Walmart's various business units, including Walmart U.S., Sam's Club, and Walmart International.\n\nThe company utilizes advanced technologies like artificial intelligence, machine learning, and cloud platforms to create scalable retail solutions. These innovations aim to improve supply chain resilience, enable personalized shopping experiences, and enhance associate productivity. Walmart Global Tech operates globally with technology hubs in locations such as Bentonville, Silicon Valley, and Bangalore, reflecting its diverse talent base and international reach. The organization is recognized for its innovative culture and has received multiple awards for workplace excellence and inclusivity.",
+        "suborganizations": [
+          {
+            "id": "54a12a6f69702d9ebc7bf801",
+            "name": "Small Society",
+            "website_url": "http://www.smallsociety.com"
+          },
+          {
+            "id": "54a1187069702d530b250700",
+            "name": "Grabble",
+            "website_url": "http://www.grabbleapp.com"
+          }
+        ],
+        "num_suborganizations": 2,
+        "annual_revenue_printed": "572.8B",
+        "annual_revenue": 572750000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Adobe CQ",
+          "Adobe Marketing Cloud",
+          "Akamai",
+          "Akamai DNS",
+          "Apache",
+          "Apache Coyote",
+          "Apache Coyote v1.1",
+          "AppNexus",
+          "Backbone JS Library",
+          "Chartbeat",
+          "Criteo",
+          "DoubleClick",
+          "ExactTarget",
+          "Facebook Custom Audiences",
+          "Facebook Like Button",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Google AdSense",
+          "Google Analytics",
+          "Google Font API",
+          "Google Maps",
+          "Google Maps (Non Paid Users)",
+          "Google Tag Manager",
+          "HookLogic",
+          "Hotjar",
+          "Hubspot",
+          "Kenexa",
+          "Magento",
+          "Magento 2 Enterprise",
+          "Magento Enterprise",
+          "Marketo",
+          "Microsoft Application Insights",
+          "Mixpanel",
+          "Mobile Friendly",
+          "New Relic",
+          "Rubicon Project",
+          "Salesforce",
+          "Salesforce Live Agent",
+          "Stripe",
+          "Taboola Newsroom",
+          "Typekit",
+          "UltraDns",
+          "Varnish",
+          "WP Engine",
+          "Workday Recruit"
+        ],
+        "current_technologies": [
+          {
+            "uid": "adobe_cq",
+            "name": "Adobe CQ",
+            "category": "CMS"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai",
+            "name": "Akamai",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "akamai_dns",
+            "name": "Akamai DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "apache",
+            "name": "Apache",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "apache_coyote",
+            "name": "Apache Coyote",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "apache_coyote_v1_1",
+            "name": "Apache Coyote v1.1",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "appnexus",
+            "name": "AppNexus",
+            "category": "Demand Side Platforms"
+          },
+          {
+            "uid": "backbone_js_library",
+            "name": "Backbone JS Library",
+            "category": "CSS and JavaScript Libraries"
+          },
+          {
+            "uid": "chartbeat",
+            "name": "Chartbeat",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "criteo",
+            "name": "Criteo",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "exacttarget",
+            "name": "ExactTarget",
+            "category": "Email Marketing"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_like_button",
+            "name": "Facebook Like Button",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_adsense",
+            "name": "Google AdSense",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_maps",
+            "name": "Google Maps",
+            "category": "Other"
+          },
+          {
+            "uid": "google_maps_non_paid_users",
+            "name": "Google Maps (Non Paid Users)",
+            "category": "Other"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "hooklogic",
+            "name": "HookLogic",
+            "category": "E-commerce Tools"
+          },
+          {
+            "uid": "hotjar",
+            "name": "Hotjar",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "hubspot",
+            "name": "Hubspot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "kenexa",
+            "name": "Kenexa",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "magento",
+            "name": "Magento",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "magento_2_enterprise",
+            "name": "Magento 2 Enterprise",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "magento_enterprise",
+            "name": "Magento Enterprise",
+            "category": "E-commerce Platforms"
+          },
+          {
+            "uid": "marketo",
+            "name": "Marketo",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "microsoft_application_insights",
+            "name": "Microsoft Application Insights",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "mixpanel",
+            "name": "Mixpanel",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "new_relic",
+            "name": "New Relic",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "rubicon_project",
+            "name": "Rubicon Project",
+            "category": "Supply Side Platforms"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "salesforce_live_agent",
+            "name": "Salesforce Live Agent",
+            "category": "Chats"
+          },
+          {
+            "uid": "stripe",
+            "name": "Stripe",
+            "category": "Payments"
+          },
+          {
+            "uid": "taboola_newsroom",
+            "name": "Taboola Newsroom",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "typekit",
+            "name": "Typekit",
+            "category": "Fonts"
+          },
+          {
+            "uid": "ultradns",
+            "name": "UltraDns",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "wp_engine",
+            "name": "WP Engine",
+            "category": "CMS"
+          },
+          {
+            "uid": "workday_recruit",
+            "name": "Workday Recruit",
+            "category": "Recruitment"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": "OrgChart::SectorHierarchy::Rules::IT",
+        "org_chart_removed": false,
+        "org_chart_show_department_filter": true,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 6,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Tech Opportunity in Austin, TX - Data Scientist Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in data scientist.\n\nWe're currently working with several top-tier technology companys in Austin, TX that are looking for talented Data Scientist professionals like yourself. These positions offer:\n\n\u2022 Competitive salary with equity opportunities\n\u2022 Latest technology stack and development tools\n\u2022 Remote work flexibility and modern office spaces\n\u2022 Professional development budget for conferences and training\n\u2022 Collaborative team culture with growth opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Data Scientist positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Data Scientist opportunities in Austin, TX.\n\nI understand how busy things can get in technology, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Data Scientist professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific technology company types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and technology company cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Data Scientist.\n\nWe just had a Data Scientist join one of our client technology companys in Austin, TX, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Data Scientist career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Data Scientist professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:29:33.216675",
+  "created_at": "2025-09-08T21:29:33.216712",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Technology",
+    "Software",
+    "Tech Company",
+    "Startup",
+    "SaaS"
+  ],
+  "auto_campaign": true
+}

@@ -128,56 +128,134 @@ async def run_candidate_search_stages(agent_id: str, request: JobSearchRequest):
         if not agent:
             raise Exception("Agent not found")
         
-        # Stage 1: Professional Candidate Search (Apollo.io + Hunter.io)
+        # Stage 1: AUTO-CAMPAIGN Professional Candidate Search (Apollo.io + Hunter.io + Campaign Creation)
         try:
-            logger.info(f"🔍 Stage 1: Professional candidate search (Apollo.io + Hunter.io) for agent {agent_id}")
+            logger.info(f"� Stage 1: AUTO-CAMPAIGN candidate search (Apollo.io + Hunter.io + Campaigns) for agent {agent_id}")
             progressive_agent_manager.update_stage_status(agent_id, "candidate_search", "running", 0)
             
-            # Use our professional candidate searcher
-            search_result = await professional_searcher.search_candidates_direct(
-                query=request.query,
-                location_filter=agent.location_filter,
-                company_size=agent.company_size,
-                limit=50
-            )
+            # Determine if this is a DVM search for auto-campaign
+            query_lower = request.query.lower()
+            is_dvm_search = any(term in query_lower for term in ["dvm", "veterinarian", "vet doctor", "vet "])
+            
+            if is_dvm_search:
+                logger.info(f"🐾 Detected DVM search - using AUTO-CAMPAIGN integration")
+                
+                # Parse locations from location_filter  
+                locations = []
+                if agent.location_filter:
+                    # Split by common delimiters
+                    locations = [loc.strip() for loc in agent.location_filter.replace(';', ',').split(',') if loc.strip()]
+                if not locations:
+                    locations = ["United States"]  # Default fallback
+                
+                # Use DVM auto-campaign search with immediate campaign creation
+                search_result = await professional_searcher.search_dvm_with_auto_campaign(
+                    locations=locations,
+                    per_city_limit=15,
+                    require_email=True,
+                    require_phone=False,
+                    hunter_verify=True,
+                    unlock_emails=True,
+                    auto_create_campaign=True,  # AUTO-CREATE CAMPAIGNS!
+                    campaign_name=f"DVM Search - {agent_id} - {', '.join(locations[:2])}{' +' + str(len(locations)-2) + ' more' if len(locations) > 2 else ''}",
+                    send_immediately=False,  # Schedule for later
+                    delay_hours=24,  # Send in 24 hours
+                )
+                
+                # Update progress - 50% after search
+                progressive_agent_manager.update_stage_status(agent_id, "candidate_search", "running", 50)
+                
+            else:
+                logger.info(f"👤 Non-DVM search - using professional search with potential auto-campaign")
+                
+                # Parse locations for generic search
+                locations = []
+                if agent.location_filter:
+                    locations = [loc.strip() for loc in agent.location_filter.replace(';', ',').split(',') if loc.strip()]
+                if not locations:
+                    locations = ["United States"]
+                
+                # Use generic professional search with auto-campaign attempt
+                search_result = await professional_searcher.search_professional_with_auto_campaign(
+                    job_title=request.query,
+                    locations=locations,
+                    per_city_limit=15,
+                    require_email=True,
+                    require_phone=False,
+                    hunter_verify=True,
+                    unlock_emails=True,
+                    auto_create_campaign=True,
+                    campaign_name=f"{request.query} Search - {agent_id} - {', '.join(locations[:2])}{' +' + str(len(locations)-2) + ' more' if len(locations) > 2 else ''}",
+                    send_immediately=False,
+                    delay_hours=24,
+                )
+                
+                # Update progress - 50% after search
+                progressive_agent_manager.update_stage_status(agent_id, "candidate_search", "running", 50)
             
             if search_result.get("success"):
-                candidates = search_result.get("data", {}).get("candidates", [])
+                candidates = search_result.get("candidates", [])
+                campaign_created = search_result.get("campaign_created", False)
+                campaign_id = search_result.get("campaign_id")
+                campaign_name = search_result.get("campaign_name")
+                
+                logger.info(f"📊 SEARCH RESULTS: {len(candidates)} candidates found, Campaign created: {campaign_created}")
+                if campaign_created:
+                    logger.info(f"📧 CAMPAIGN DETAILS: ID={campaign_id}, Name={campaign_name}")
                 
                 # Convert candidates to our contact format and save to Supabase
                 contacts = []
                 for candidate in candidates:
                     # Get organization name correctly
-                    org = candidate.get("organization", {})
+                    org = candidate.get("organization") or candidate.get("company", "")
                     company_name = ""
                     if isinstance(org, dict):
                         company_name = org.get("name", "")
                     elif isinstance(org, str):
                         company_name = org
                     
+                    # Handle emails - could be list or string
+                    emails = candidate.get("emails", [])
+                    if isinstance(emails, str):
+                        emails = [emails]
+                    primary_email = emails[0] if emails else ""
+                    
+                    # Handle phones - could be list or string  
+                    phones = candidate.get("phones", [])
+                    if isinstance(phones, str):
+                        phones = [phones]
+                    primary_phone = phones[0] if phones else ""
+                    
                     contact = {
                         "agent_id": agent_id,
                         "id": candidate.get("id", f"apollo_{int(time.time())}_{len(contacts)}"),
-                        "name": f"{candidate.get('first_name', '')} {candidate.get('last_name', '')}".strip(),
+                        "name": f"{candidate.get('first_name', '')} {candidate.get('last_name', '')}".strip() or candidate.get("name", ""),
                         "first_name": candidate.get("first_name", ""),
                         "last_name": candidate.get("last_name", ""),
-                        "email": candidate.get("email", ""),
+                        "email": primary_email,
                         "title": candidate.get("title", ""),
                         "company": company_name,
                         "role": candidate.get("title", ""),
                         "linkedin_url": candidate.get("linkedin_url", ""),
-                        "source": candidate.get("source", "Apollo.io"),
-                        "phone": candidate.get("phone", ""),
-                        "verified": bool(candidate.get("email") and not "email_not_unlocked" in str(candidate.get("email", ""))),
-                        "confidence_score": 0.8 if candidate.get("email") and not "email_not_unlocked" in str(candidate.get("email", "")) else 0.5,
+                        "source": candidate.get("source", "Apollo.io + Hunter.io"),
+                        "phone": primary_phone,
+                        "verified": candidate.get("verified", bool(primary_email and "not_unlocked" not in primary_email)),
+                        "confidence_score": candidate.get("confidence_score", 0.8 if primary_email and "not_unlocked" not in primary_email else 0.5),
                         "location": candidate.get("location", ""),
                         "industry": candidate.get("industry", ""),
                         "company_size": candidate.get("company_size", ""),
                         "seniority": candidate.get("seniority", ""),
                         "departments": candidate.get("departments", ""),
-                        "contact_accuracy": candidate.get("contact_accuracy", "unknown")
+                        "contact_accuracy": candidate.get("contact_accuracy", "high" if candidate.get("verified") else "medium"),
+                        # Add campaign info
+                        "campaign_created": campaign_created,
+                        "campaign_id": campaign_id if campaign_created else None,
+                        "campaign_name": campaign_name if campaign_created else None,
                     }
                     contacts.append(contact)
+                
+                # Update progress - 75% after processing
+                progressive_agent_manager.update_stage_status(agent_id, "candidate_search", "running", 75)
                 
                 # Save contacts to progressive_agent_contacts table
                 if contacts:
@@ -185,14 +263,36 @@ async def run_candidate_search_stages(agent_id: str, request: JobSearchRequest):
                         agent_id, "candidate_search", contacts, "contacts"
                     )
                     logger.info(f"💾 Saved {len(contacts)} professional candidates to database")
-            
+                
+                # Save campaign info if created
+                if campaign_created:
+                    campaign_info = {
+                        "campaign_id": campaign_id,
+                        "campaign_name": campaign_name,
+                        "target_count": len(contacts),
+                        "verified_count": search_result.get("verified_candidates", 0),
+                        "send_scheduled": search_result.get("send_scheduled", True),
+                        "send_delay_hours": search_result.get("send_delay_hours", 24),
+                        "created_at": datetime.now().isoformat(),
+                        "search_type": "dvm" if is_dvm_search else "professional",
+                        "auto_campaign": True,
+                    }
+                    
+                    progressive_agent_manager.add_stage_results(
+                        agent_id, "campaign_creation", [campaign_info], "campaigns"
+                    )
+                    logger.info(f"📧 Saved auto-campaign info to database: {campaign_id}")
+                
                 progressive_agent_manager.update_stage_status(
                     agent_id, "candidate_search", "completed", 100, len(contacts)
                 )
-                logger.info(f"✅ Stage 1 completed: {len(contacts)} professional candidates found")
+                
+                campaign_msg = f", AUTO-CAMPAIGN CREATED: {campaign_id}" if campaign_created else ", no campaign created"
+                logger.info(f"✅ Stage 1 completed: {len(contacts)} professional candidates found{campaign_msg}")
+                
             else:
                 error_msg = search_result.get("error", "Unknown error")
-                logger.error(f"❌ Professional candidate search failed: {error_msg}")
+                logger.error(f"❌ AUTO-CAMPAIGN candidate search failed: {error_msg}")
                 progressive_agent_manager.update_stage_status(
                     agent_id, "candidate_search", "failed", 0, 0, error_msg
                 )
@@ -594,20 +694,58 @@ async def run_contact_enrichment_stage(agent_id: str):
         )
 
 async def run_campaign_creation_stage(agent_id: str, request: JobSearchRequest):
-    """Create campaigns from verified contacts using bulletproof campaign creator"""
+    """
+    Smart campaign creation stage:
+    - Check if auto-campaigns were already created during candidate search
+    - If yes, just update status and skip duplicate creation
+    - If no, create campaigns using bulletproof campaign creator
+    """
     try:
-        logger.info(f"📧 Starting campaign creation for agent {agent_id}")
+        logger.info(f"📧 Starting SMART campaign creation for agent {agent_id}")
         
         progressive_agent_manager.update_stage_status(
             agent_id, "campaign_creation", "running", 0
         )
         
         agent = progressive_agent_manager.get_agent(agent_id)
-        if not agent or not agent.staged_results.verified_contacts:
+        if not agent:
+            logger.warning(f"⚠️ Agent {agent_id} not found for campaign creation")
+            progressive_agent_manager.update_stage_status(
+                agent_id, "campaign_creation", "failed", 0, 0, "Agent not found"
+            )
+            return
+        
+        # Check if auto-campaigns were already created during candidate search
+        existing_campaigns = getattr(agent.staged_results, 'campaigns', [])
+        auto_campaigns_exist = any(
+            campaign.get("auto_campaign") == True 
+            for campaign in existing_campaigns
+        )
+        
+        if auto_campaigns_exist:
+            logger.info(f"✅ AUTO-CAMPAIGNS already created during candidate search - {len(existing_campaigns)} campaigns found")
+            
+            # Just update the status to completed since campaigns already exist
+            progressive_agent_manager.update_stage_status(
+                agent_id, "campaign_creation", "completed", 100, len(existing_campaigns)
+            )
+            
+            # Log campaign details
+            for campaign in existing_campaigns:
+                if campaign.get("auto_campaign"):
+                    logger.info(f"📧 Existing auto-campaign: {campaign.get('campaign_name')} (ID: {campaign.get('campaign_id')})")
+            
+            return
+        
+        # No auto-campaigns exist, check if we have contacts to create campaigns for
+        if not agent.staged_results.verified_contacts:
+            logger.info(f"ℹ️ No verified contacts found for agent {agent_id} - skipping campaign creation")
             progressive_agent_manager.update_stage_status(
                 agent_id, "campaign_creation", "completed", 100, 0
             )
             return
+        
+        logger.info(f"📧 Creating manual campaigns for {len(agent.staged_results.verified_contacts)} contacts")
         
         # Initialize bulletproof campaign creator
         campaign_creator = BulletproofCampaignCreator()
@@ -642,9 +780,10 @@ async def run_campaign_creation_stage(agent_id: str, request: JobSearchRequest):
             }
         )
         
-        # Ensure all campaigns have the agent_id set correctly
+        # Ensure all campaigns have the agent_id set correctly and mark as manual
         for campaign in campaigns:
             campaign["agent_id"] = agent_id
+            campaign["auto_campaign"] = False  # Mark as manually created
             # Ensure platform field consistency
             if "service" in campaign:
                 if campaign["service"] == "instantly":
@@ -667,7 +806,7 @@ async def run_campaign_creation_stage(agent_id: str, request: JobSearchRequest):
             agent_id, "campaign_creation", "completed", 100, len(campaigns)
         )
         
-        logger.info(f"✅ Campaign creation completed for agent {agent_id} - {len(campaigns)} campaigns")
+        logger.info(f"✅ Manual campaign creation completed for agent {agent_id} - {len(campaigns)} campaigns")
         
     except Exception as e:
         logger.error(f"❌ Campaign creation failed for agent {agent_id}: {e}")

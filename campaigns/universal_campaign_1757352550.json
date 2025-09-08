@@ -1,0 +1,1803 @@
+{
+  "id": "universal_campaign_1757352550",
+  "name": "Production Demo: Sales Manager - West Orange, NJ",
+  "type": "business_outreach",
+  "status": "scheduled",
+  "target_audience": "Sales Representative professionals",
+  "job_title": "Sales Representative",
+  "role_category": "business",
+  "locations": [
+    "West Orange, NJ"
+  ],
+  "candidates": [
+    {
+      "apollo_id": "6425b95c812c6d0001c782ad",
+      "name": "Dylan Barbush",
+      "first_name": "Dylan",
+      "last_name": "Barbush",
+      "title": "Account Executive, Business Development",
+      "company": "New Jersey Devils",
+      "domain": "newjerseydevils.com",
+      "location": "Jersey City, New Jersey",
+      "linkedin_url": "http://www.linkedin.com/in/dylan-barbush-8575a722a",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "dylanbarbush@newjerseydevils.com"
+      ],
+      "phones": [
+        "+19737576100"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "West Orange, NJ",
+      "email": "dylanbarbush@newjerseydevils.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+19737576100",
+      "organization": {
+        "id": "54fca56e7369647ff9a42e00",
+        "name": "New Jersey Devils",
+        "website_url": "http://www.newjerseydevils.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/new-jersey-devils",
+        "twitter_url": "https://twitter.com/nhldevils",
+        "facebook_url": "https://facebook.com/newjerseydevils",
+        "primary_phone": {
+          "number": "+1 973-757-6100",
+          "source": "Account",
+          "sanitized_number": "+19737576100"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 973-757-6100",
+        "linkedin_uid": "165176",
+        "founded_year": 1982,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68baa7e2ada6f70001d782e1/picture",
+        "crunchbase_url": null,
+        "primary_domain": "newjerseydevils.com",
+        "sic_codes": [
+          "7941"
+        ],
+        "naics_codes": [
+          "71121"
+        ],
+        "sanitized_phone": "+19737576100",
+        "industry": "sports",
+        "estimated_num_employees": 420,
+        "keywords": [
+          "sports & entertainment",
+          "spectator sports",
+          "stanley cup champions",
+          "sports sponsorship strategies",
+          "team management",
+          "sports sponsorships",
+          "team schedule and tickets",
+          "ticket sales",
+          "sports fan base growth",
+          "fan experience enhancement",
+          "sports merchandise branding",
+          "hockey league participation",
+          "hockey analytics",
+          "local sports culture",
+          "event management",
+          "team ownership and leadership",
+          "professional sports",
+          "sports community programs",
+          "hockey development",
+          "hockey statistics and analytics",
+          "sports event ticketing",
+          "merchandise sales",
+          "team management software",
+          "team community programs",
+          "sports event management",
+          "team ownership",
+          "sports events",
+          "sports sponsorship activation",
+          "team branding assets",
+          "sports merchandise",
+          "team history and legacy",
+          "sports analytics",
+          "hockey fan base",
+          "hockey development initiatives",
+          "sports sponsorship partnerships",
+          "hockey development programs",
+          "sports venue",
+          "ice hockey",
+          "sports league",
+          "sports marketing campaigns",
+          "professional sports teams and clubs",
+          "team branding innovation",
+          "sports entertainment",
+          "sports marketing and branding",
+          "fan engagement technology",
+          "fan engagement platforms",
+          "sports merchandise retail",
+          "nhl franchise",
+          "team roster management",
+          "arena fan experience",
+          "sports sponsorship",
+          "team branding strategies",
+          "hockey merchandise",
+          "fan engagement platform",
+          "sports community outreach",
+          "team schedule",
+          "hockey analytics and stats",
+          "prudential center",
+          "sports partnerships",
+          "digital content creation",
+          "hockey folklore",
+          "team merchandise",
+          "sports franchise",
+          "nhl team",
+          "sports marketing",
+          "hockey team branding",
+          "hockey statistics",
+          "fan engagement",
+          "sports broadcasting",
+          "sports community outreach programs",
+          "arena operations",
+          "team branding and identity",
+          "team roster",
+          "hockey league",
+          "team branding",
+          "sports venue management",
+          "community outreach",
+          "professional ice hockey",
+          "fan experience",
+          "sports team management",
+          "digital fan engagement",
+          "sports broadcasting rights",
+          "digital fan experience",
+          "digital content",
+          "hockey analytics tools",
+          "team history",
+          "sports operations",
+          "sports and recreation",
+          "local folklore",
+          "sports league branding",
+          "sports merchandise sales",
+          "b2c",
+          "e-commerce",
+          "d2c",
+          "services",
+          "retail",
+          "apparel",
+          "ticketing",
+          "events",
+          "online presence",
+          "brand awareness",
+          "customer experience",
+          "mobile app",
+          "events services",
+          "marketing & advertising",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services",
+          "sports"
+        ],
+        "organization_revenue_printed": "265M",
+        "organization_revenue": 265000000.0,
+        "industries": [
+          "sports"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce227369644eed290000",
+        "industry_tag_hash": {
+          "sports": "5567ce227369644eed290000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "25 Lafayette Street,, Newark, NJ 07102, US",
+        "street_address": "25 Lafayette St",
+        "city": "Newark",
+        "state": "New Jersey",
+        "postal_code": "07102-3603",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "The New Jersey Devils are a professional ice hockey team in the National Hockey League (NHL), competing in the Metropolitan Division of the Eastern Conference. Founded in 1982, the team has a successful history, highlighted by three Stanley Cup Championships in the 1994-95, 1999-00, and 2002-03 seasons. Based in Newark, New Jersey, the Devils play their home games at the Prudential Center, where they have been since 2008.\n\nThe Devils provide entertainment through live NHL games and engage fans with merchandise sales, including jerseys and memorabilia. They also focus on community outreach and youth hockey development. The team has a strong following among hockey fans in New Jersey and the greater New York metropolitan area, appealing to families, sports enthusiasts, and collectors. Recent seasons have showcased impressive performances, including a franchise-record 52 wins in the 2022-23 season and a playoff run that advanced to the second round for the first time since 2012.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "265M",
+        "annual_revenue": 265000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "CloudFlare Hosting",
+          "Cloudflare DNS",
+          "Mailchimp Mandrill",
+          "Microsoft Office 365",
+          "Mimecast",
+          "Mobile Friendly",
+          "Outlook",
+          "Rackspace MailGun",
+          "Salesforce"
+        ],
+        "current_technologies": [
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "cloudflare_dns",
+            "name": "Cloudflare DNS",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "mailchimp_mandrill",
+            "name": "Mailchimp Mandrill",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mimecast",
+            "name": "Mimecast",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "rackspace_mailgun",
+            "name": "Rackspace MailGun",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "6542a920aa3efc0001782cd4",
+      "name": "Mark Bookbinder",
+      "first_name": "Mark",
+      "last_name": "Bookbinder",
+      "title": "Business Development /Account Executive",
+      "company": "Kaztronix LLC",
+      "domain": "kaztronix.com",
+      "location": "North Arlington, New Jersey",
+      "linkedin_url": "http://www.linkedin.com/in/mark-b-5652781a9",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "mbookbinder@kaztronix.com"
+      ],
+      "phones": [
+        "+17033565440"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "West Orange, NJ",
+      "email": "mbookbinder@kaztronix.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+17033565440",
+      "organization": {
+        "id": "54a1cf6b7468695c82ad8112",
+        "name": "Kaztronix LLC",
+        "website_url": "http://www.kaztronix.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/kaztronix",
+        "twitter_url": "https://twitter.com/kaztronix_jobs",
+        "facebook_url": "https://facebook.com/Kaztronix",
+        "primary_phone": {
+          "number": "+1 703-356-5440",
+          "source": "Owler",
+          "sanitized_number": "+17033565440"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 703-356-5440",
+        "linkedin_uid": "75641",
+        "founded_year": 2002,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b73b2090acdd00011fdb70/picture",
+        "crunchbase_url": null,
+        "primary_domain": "kaztronix.com",
+        "sic_codes": [
+          "7361"
+        ],
+        "naics_codes": [
+          "56132"
+        ],
+        "sanitized_phone": "+17033565440",
+        "industry": "staffing & recruiting",
+        "estimated_num_employees": 83,
+        "keywords": [
+          "staffing services",
+          "department outsourcing",
+          "project consulting",
+          "recruitment process outsourcing",
+          "workforce management",
+          "defense & space",
+          "media",
+          "tellecommunications",
+          "defense consulting",
+          "human capital solutions",
+          "technology staffing",
+          "recruiting",
+          "talent qualification",
+          "regulatory affairs consulting",
+          "cloud engineering solutions",
+          "network security protocols",
+          "staffing process",
+          "clinical data management",
+          "quality assurance",
+          "cloud computing",
+          "candidate vetting",
+          "telecommunications",
+          "software deployment",
+          "industry sectors",
+          "biotech",
+          "project delivery",
+          "skill alignment",
+          "industry expertise",
+          "network security tools",
+          "research & development",
+          "data analytics",
+          "cost efficiency",
+          "network security solutions",
+          "cost control",
+          "scientific project delivery",
+          "staffing",
+          "quality control",
+          "multisite projects",
+          "contract staffing",
+          "talent management",
+          "automation tools",
+          "information technology",
+          "project management tools",
+          "client satisfaction",
+          "staff augmentation",
+          "hardware/software integration",
+          "clinical research",
+          "scientific services",
+          "it infrastructure",
+          "government",
+          "government projects",
+          "clinical data analysis",
+          "full stack development",
+          "consulting",
+          "talent sourcing",
+          "regulatory compliance",
+          "scientific talent acquisition",
+          "biotechnology",
+          "client engagement",
+          "cloud devops services",
+          "skill assessment",
+          "manufacturing engineering",
+          "devops",
+          "product ownership",
+          "technical expertise",
+          "clinical data",
+          "quality engineering",
+          "staffing and recruiting",
+          "technical consulting",
+          "cloud migration strategies",
+          "workforce augmentation",
+          "network design and security",
+          "project solutions",
+          "technology project management",
+          "machine learning",
+          "manufacturing quality control",
+          "client partnership",
+          "incident management",
+          "drug safety",
+          "biotech research support",
+          "skill fit",
+          "network design",
+          "consumer care",
+          "devops automation",
+          "cloud administration",
+          "biopharmaceutical",
+          "flexible staffing",
+          "network engineering",
+          "security protocols",
+          "pharmaceutical manufacturing",
+          "staffing solutions",
+          "project-based consulting",
+          "candidate qualification",
+          "pharmaceuticals",
+          "cloud infrastructure management",
+          "clinical research staffing",
+          "recruitment process",
+          "pharmaceutical consulting",
+          "custom solutions",
+          "cloud engineering",
+          "client solutions",
+          "biopharmaceutical talent",
+          "biotech staffing",
+          "digital advertising",
+          "research & development staffing",
+          "regulatory affairs",
+          "cloud migration",
+          "scientific research",
+          "cloud methodologies",
+          "specialized scientific staffing",
+          "ci/cd pipelines",
+          "consulting services",
+          "cloud services",
+          "candidate sourcing",
+          "organizational fit",
+          "network security",
+          "hardware deployment",
+          "client needs",
+          "technology expertise",
+          "clinical operations",
+          "scientific staffing",
+          "project management",
+          "devops best practices",
+          "network operations",
+          "regulatory compliance consulting",
+          "data science",
+          "scientific consulting",
+          "drug safety monitoring",
+          "direct hire",
+          "devops pipelines",
+          "hardware/software deployment",
+          "scientific research projects",
+          "technical staffing",
+          "skill matching",
+          "scientific disciplines",
+          "scientific project management",
+          "b2b",
+          "services",
+          "talent acquisition",
+          "life sciences",
+          "operational efficiency",
+          "employee benefits",
+          "enterprise software",
+          "enterprises",
+          "computer software",
+          "information technology & services",
+          "governments",
+          "staffing & recruiting",
+          "artificial intelligence",
+          "medical",
+          "marketing & advertising",
+          "management consulting",
+          "productivity"
+        ],
+        "organization_revenue_printed": "15.3M",
+        "organization_revenue": 15270000.0,
+        "industries": [
+          "staffing & recruiting"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e09973696410db020800",
+        "industry_tag_hash": {
+          "staffing & recruiting": "5567e09973696410db020800"
+        },
+        "retail_location_count": 0,
+        "raw_address": "3033 Wilson Blvd, Arlington, Virginia, US",
+        "street_address": "3033 Wilson Blvd",
+        "city": "Arlington",
+        "state": "Virginia",
+        "postal_code": "22201",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Kaztronix LLC is a national provider of technical and scientific recruiting and consulting solutions, established in 2002. The company focuses on making top talent and consulting services accessible across various industries, including pharmaceutical, biotechnology, consumer health, medical devices, and healthcare. Kaztronix specializes in staff augmentation, project-based consulting, and workforce management, offering flexible staffing solutions tailored to client needs.\n\nTheir services encompass contract, contract-to-hire, direct hire, and consulting engagements for both small projects and large, multisite national initiatives. Kaztronix emphasizes efficiency and accuracy in aligning skill sets with organizational needs, which helps shorten the time to hire. The company is recognized on the Inc. 5000 list of fastest-growing companies in America. Kaztronix primarily serves dynamic businesses in the U.S. scientific and technical fields, providing expert consultants and managing project teams across multiple locations.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "15.3M",
+        "annual_revenue": 15270000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "Android",
+          "Circle",
+          "CloudFlare Hosting",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Google Analytics",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Tag Manager",
+          "Gravity Forms",
+          "JobDiva",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Python",
+          "Remote",
+          "Route 53",
+          "SAP",
+          "Sendgrid",
+          "WordPress.org",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "android",
+            "name": "Android",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "circle",
+            "name": "Circle",
+            "category": "Financial Software"
+          },
+          {
+            "uid": "cloudflare_hosting",
+            "name": "CloudFlare Hosting",
+            "category": "Hosting"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_analytics",
+            "name": "Google Analytics",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "gravity_forms",
+            "name": "Gravity Forms",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "jobdiva",
+            "name": "JobDiva",
+            "category": "Recruitment"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "python",
+            "name": "Python",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "remote",
+            "name": "Remote",
+            "category": "Other"
+          },
+          {
+            "uid": "route_53",
+            "name": "Route 53",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "sap",
+            "name": "SAP",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "sendgrid",
+            "name": "Sendgrid",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "65e3d446343cf10007c6b7f1",
+      "name": "Margo Noble",
+      "first_name": "Margo",
+      "last_name": "Noble",
+      "title": "Account Executive, Business Development",
+      "company": "Washington Commanders",
+      "domain": "commanders.com",
+      "location": "Millburn, New Jersey",
+      "linkedin_url": "http://www.linkedin.com/in/margo-noble-9a85b7216",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "margo.noble@commanders.com"
+      ],
+      "phones": [
+        "+17037267000"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "West Orange, NJ",
+      "email": "margo.noble@commanders.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+17037267000",
+      "organization": {
+        "id": "54a13c3269702d2bfda0b801",
+        "name": "Washington Commanders",
+        "website_url": "http://www.commanders.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/washington-commanders",
+        "twitter_url": "https://twitter.com/redskins",
+        "facebook_url": "https://facebook.com/redskins",
+        "primary_phone": {
+          "number": "+1 703-726-7000",
+          "source": "Owler",
+          "sanitized_number": "+17037267000"
+        },
+        "languages": [
+          "English"
+        ],
+        "alexa_ranking": 603232,
+        "phone": "+1 703-726-7000",
+        "linkedin_uid": "15269",
+        "founded_year": 1932,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b845a30b33ca0001f31eb3/picture",
+        "crunchbase_url": null,
+        "primary_domain": "commanders.com",
+        "sic_codes": [
+          "7941"
+        ],
+        "naics_codes": [
+          "71121"
+        ],
+        "sanitized_phone": "+17037267000",
+        "industry": "sports",
+        "estimated_num_employees": 980,
+        "keywords": [
+          "spectator sports",
+          "original series",
+          "nfl season tickets",
+          "nfl game coverage",
+          "community outreach",
+          "fan loyalty programs",
+          "sports sponsorships",
+          "washington commanders",
+          "game highlights",
+          "game tickets",
+          "sports media production",
+          "team marketing",
+          "team rebranding",
+          "live games",
+          "team legacy",
+          "team logos",
+          "collectibles",
+          "sports franchise",
+          "sports entertainment",
+          "sports merchandise",
+          "media content",
+          "team heritage",
+          "team merchandise online",
+          "e-commerce",
+          "sports fan engagement tools",
+          "media broadcasting",
+          "nfl franchise value",
+          "professional sports",
+          "sports marketing",
+          "digital media",
+          "sports community outreach",
+          "digital content",
+          "fan engagement",
+          "sports entertainment technology",
+          "stadium experience",
+          "team culture",
+          "merchandising",
+          "sports broadcasting",
+          "team history",
+          "nfl football",
+          "sports digital platforms",
+          "sports event management",
+          "fan clubs",
+          "nfl fan base",
+          "nfl championships",
+          "nfl team",
+          "media partnerships",
+          "team ownership",
+          "media and broadcasting",
+          "sports memorabilia",
+          "team branding",
+          "fan base",
+          "sponsorship",
+          "apparel sales",
+          "team branding strategy",
+          "nfl sponsorship deals",
+          "branded merchandise",
+          "nfl history",
+          "game broadcasts",
+          "stadium facilities",
+          "nfl playoff content",
+          "community programs",
+          "b2c",
+          "d2c",
+          "services",
+          "retail",
+          "apparel",
+          "marketing",
+          "consumer internet",
+          "consumers",
+          "internet",
+          "information technology & services",
+          "marketing & advertising",
+          "sports",
+          "arts & entertainment",
+          "professional sports teams",
+          "shopping",
+          "sporting goods",
+          "sports wear",
+          "stadiums & arenas"
+        ],
+        "organization_revenue_printed": "602M",
+        "organization_revenue": 602000000.0,
+        "industries": [
+          "sports",
+          "sporting goods"
+        ],
+        "secondary_industries": [
+          "sporting goods"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567ce227369644eed290000",
+        "industry_tag_hash": {
+          "sports": "5567ce227369644eed290000",
+          "sporting goods": "5567e113736964198d5e0800"
+        },
+        "retail_location_count": 6,
+        "raw_address": "21300 Coach Gibbs Drive, Ashburn, Virginia, USA, 20147",
+        "street_address": "21300 Coach Gibbs Dr",
+        "city": "Ashburn",
+        "state": "Virginia",
+        "postal_code": "20147-6100",
+        "country": "United States",
+        "owned_by_organization_id": "57c4ac8ea6da98688799d39f",
+        "owned_by_organization": {
+          "id": "57c4ac8ea6da98688799d39f",
+          "name": "Destination DC",
+          "website_url": "http://www.washington.org"
+        },
+        "short_description": "The Washington Commanders are a professional American football team based in the Washington metropolitan area. They compete in the National Football League (NFL) as part of the National Football Conference (NFC) East division. Founded in 1932, the franchise has a rich history, including three Super Bowl victories and numerous playoff appearances. The team plays its home games at FedEx Field in Landover, Maryland, and has its headquarters and training facilities in Ashburn, Virginia.\n\nThe Commanders provide entertainment through live NFL games and engage fans with merchandise sales, including apparel in their team colors of burgundy and gold. They also offer digital content such as game broadcasts and highlights. Community outreach and fan events are integral to their operations, fostering loyalty among their diverse fan base, which includes local communities and national football enthusiasts. The team is known for its marching band and the fight song \"Hail to the Commanders,\" enhancing the home game experience.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "annual_revenue_printed": "602M",
+        "annual_revenue": 602000000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Ad Unit 160 x 600",
+          "Ad Unit 300 x 250",
+          "Ad Unit 300 x 600",
+          "Ad Unit 320 x 50",
+          "Ad Unit 728 x 90",
+          "Adobe Marketing Cloud",
+          "Adobe Media Optimizer",
+          "Akamai RUM",
+          "Bing Ads",
+          "Cedexis Radar",
+          "Criteo",
+          "DoubleClick",
+          "DoubleClick Conversion",
+          "Dynamics 365 CRM",
+          "Eloqua",
+          "Facebook Custom Audiences",
+          "Facebook Login (Connect)",
+          "Facebook Widget",
+          "Fastly CDN",
+          "FedEx",
+          "Formstack",
+          "Gigya",
+          "Google AdSense",
+          "Google Custom Search",
+          "Google Dynamic Remarketing",
+          "Google Font API",
+          "Google Play",
+          "Google Tag Manager",
+          "Linkedin Marketing Solutions",
+          "LiveChat",
+          "Mailchimp Mandrill",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Omniture (Adobe)",
+          "Outlook",
+          "Parse.ly",
+          "Paypal",
+          "Taboola",
+          "The Trade Desk",
+          "ThreatMetrix",
+          "Twitter Advertising",
+          "UltraDns",
+          "Varnish",
+          "Vimeo",
+          "Visa Checkout",
+          "WordPress.org",
+          "comScore",
+          "iTunes",
+          "reCAPTCHA"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ad_unit_160_x_600",
+            "name": "Ad Unit 160 x 600",
+            "category": "Other"
+          },
+          {
+            "uid": "ad_unit_300_x_250",
+            "name": "Ad Unit 300 x 250",
+            "category": "Other"
+          },
+          {
+            "uid": "ad_unit_300_x_600",
+            "name": "Ad Unit 300 x 600",
+            "category": "Other"
+          },
+          {
+            "uid": "ad_unit_320_x_50",
+            "name": "Ad Unit 320 x 50",
+            "category": "Other"
+          },
+          {
+            "uid": "ad_unit_728_x_90",
+            "name": "Ad Unit 728 x 90",
+            "category": "Other"
+          },
+          {
+            "uid": "adobe_marketing_cloud",
+            "name": "Adobe Marketing Cloud",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "adobe_media_optimizer",
+            "name": "Adobe Media Optimizer",
+            "category": "Search Marketing"
+          },
+          {
+            "uid": "akamai_rum",
+            "name": "Akamai RUM",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "bing_ads",
+            "name": "Bing Ads",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "cedexis_radar",
+            "name": "Cedexis Radar",
+            "category": "Web Performance Monitoring"
+          },
+          {
+            "uid": "criteo",
+            "name": "Criteo",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "doubleclick_conversion",
+            "name": "DoubleClick Conversion",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "dynamics 365 crm",
+            "name": "Dynamics 365 CRM",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "eloqua",
+            "name": "Eloqua",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "facebook_web_custom_audiences",
+            "name": "Facebook Custom Audiences",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "facebook_widget",
+            "name": "Facebook Widget",
+            "category": "Widgets"
+          },
+          {
+            "uid": "fastly_cdn",
+            "name": "Fastly CDN",
+            "category": "Content Delivery Networks"
+          },
+          {
+            "uid": "fedex",
+            "name": "FedEx",
+            "category": "Shipping"
+          },
+          {
+            "uid": "formstack",
+            "name": "Formstack",
+            "category": "Hosted Forms"
+          },
+          {
+            "uid": "gigya",
+            "name": "Gigya",
+            "category": "Social Login"
+          },
+          {
+            "uid": "google_adsense",
+            "name": "Google AdSense",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_async",
+            "name": "Google Custom Search",
+            "category": "Search Appliances"
+          },
+          {
+            "uid": "google_dynamic_remarketing",
+            "name": "Google Dynamic Remarketing",
+            "category": "Retargeting"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "google_play",
+            "name": "Google Play",
+            "category": "Widgets"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "linkedin_display_ads__formerly_bizo",
+            "name": "Linkedin Marketing Solutions",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "livechat",
+            "name": "LiveChat",
+            "category": "Chats"
+          },
+          {
+            "uid": "mailchimp_mandrill",
+            "name": "Mailchimp Mandrill",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "omniture_adobe",
+            "name": "Omniture (Adobe)",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "parse_ly",
+            "name": "Parse.ly",
+            "category": "Publisher Advertising Tools"
+          },
+          {
+            "uid": "paypal",
+            "name": "Paypal",
+            "category": "Payments"
+          },
+          {
+            "uid": "taboola",
+            "name": "Taboola",
+            "category": "Content Syndication Networks"
+          },
+          {
+            "uid": "the_trade_desk",
+            "name": "The Trade Desk",
+            "category": "Demand Side Platforms"
+          },
+          {
+            "uid": "threatmetrix",
+            "name": "ThreatMetrix",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "twitter_advertising",
+            "name": "Twitter Advertising",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "ultradns",
+            "name": "UltraDns",
+            "category": "Domain Name Services"
+          },
+          {
+            "uid": "varnish",
+            "name": "Varnish",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "visa_checkout",
+            "name": "Visa Checkout",
+            "category": "Payments"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          },
+          {
+            "uid": "comscore",
+            "name": "comScore",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "itunes",
+            "name": "iTunes",
+            "category": "Widgets"
+          },
+          {
+            "uid": "recaptcha",
+            "name": "reCAPTCHA",
+            "category": "Captcha"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "5f5e36cdaf009d00011c7d02",
+      "name": "Cristian Puhlovsky",
+      "first_name": "Cristian",
+      "last_name": "Puhlovsky",
+      "title": "Business Development Account Executive",
+      "company": "Alliance Advisors",
+      "domain": "allianceadvisors.com",
+      "location": "New Jersey",
+      "linkedin_url": "http://www.linkedin.com/in/cristianpuhlovsky",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "cpuhlovsky@allianceadvisors.com"
+      ],
+      "phones": [
+        "+19738737700"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "West Orange, NJ",
+      "email": "cpuhlovsky@allianceadvisors.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+19738737700",
+      "organization": {
+        "id": "54a27d0374686935be6aad26",
+        "name": "Alliance Advisors",
+        "website_url": "http://www.allianceadvisors.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/alliance-advisors",
+        "twitter_url": "https://twitter.com/allianceproxy",
+        "facebook_url": "https://facebook.com/people/Alliance-Advisors/100070742533149/",
+        "primary_phone": {
+          "number": "+1 973-873-7700",
+          "source": "Owler",
+          "sanitized_number": "+19738737700"
+        },
+        "languages": [
+          "English",
+          "Japanese"
+        ],
+        "alexa_ranking": null,
+        "phone": "+1 973-873-7700",
+        "linkedin_uid": "1162572",
+        "founded_year": 2005,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/68b9915a87de9e000131182c/picture",
+        "crunchbase_url": null,
+        "primary_domain": "allianceadvisors.com",
+        "sic_codes": [
+          "8742"
+        ],
+        "naics_codes": [
+          "54161"
+        ],
+        "sanitized_phone": "+19738737700",
+        "industry": "management consulting",
+        "estimated_num_employees": 210,
+        "keywords": [
+          "proxy solicitation",
+          "corporate governance consulting",
+          "shareholder communications",
+          "stock market surveillance",
+          "board consulting",
+          "shareholder outreach",
+          "activism advice",
+          "proxy logistics",
+          "corporate advisory",
+          "institutional investor relations",
+          "esg advisory",
+          "business consulting & services",
+          "solicitation strategies",
+          "shareholder campaigns",
+          "activism support",
+          "investor outreach",
+          "micro website campaigns",
+          "proxy statement review",
+          "activism defense",
+          "esg strategy",
+          "shareholder feedback",
+          "m&a support",
+          "shareholder voting trends",
+          "sustainability consulting",
+          "retail shareholder engagement",
+          "shareholder data analytics",
+          "investor relations",
+          "governance & sustainability",
+          "corporate action support",
+          "shareholder services",
+          "ownership intelligence",
+          "corporate governance",
+          "shareholder engagement technology",
+          "retail outreach",
+          "esg disclosure support",
+          "institutional shareholder profiling",
+          "shareholder communication",
+          "proxy voting analysis",
+          "shareholder engagement",
+          "m&a advisory",
+          "financial advisory services",
+          "activist defense strategies",
+          "proxy tabulation services",
+          "retail shareholder voting analytics",
+          "shareholder meeting strategies",
+          "proxy advisory firm analysis",
+          "social media shareholder outreach",
+          "proxy advisory support",
+          "global shareholder campaigns",
+          "b2b",
+          "consulting",
+          "services",
+          "retail",
+          "management consulting services",
+          "management consulting"
+        ],
+        "organization_revenue_printed": "27.6M",
+        "organization_revenue": 27600000.0,
+        "industries": [
+          "management consulting"
+        ],
+        "secondary_industries": [],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567cdd47369643dbf260000",
+        "industry_tag_hash": {
+          "management consulting": "5567cdd47369643dbf260000"
+        },
+        "retail_location_count": 0,
+        "raw_address": "200 Broadacres Drive, Third Floor, Bloomfield, NJ 07003, US",
+        "street_address": "200 Broadacres Dr",
+        "city": "Bloomfield",
+        "state": "New Jersey",
+        "postal_code": "07003",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Alliance Advisors is an independent, employee-owned advisory firm based in the United States. Founded in 2005, the firm specializes in shareholder engagement, corporate governance, compensation advisory, sustainability advisory, M&A activism, investor ownership intelligence, proxy logistics, and retail outreach strategies. With a client base of over 1,200 active public companies globally, Alliance Advisors serves a diverse range of industries and market capitalizations.\n\nThe firm offers a variety of core services, including managing shareholder communications and voting processes, providing guidance on executive compensation, and advising on corporate governance and ESG strategies. They also support clients in merger and acquisition activities and deliver insights on investor ownership to inform strategic decisions. Additionally, their investor relations division, Alliance Advisors IR, focuses on enhancing company value through innovative communications and engagement strategies.\n\nAlliance Advisors emphasizes a client-first approach, leveraging deep industry expertise and real-time data to develop tailored strategies that drive growth and success for their clients. The firm operates globally, fostering a collaborative environment to effectively serve public and private companies.",
+        "suborganizations": [
+          {
+            "id": "55920fe1736964185f624700",
+            "name": "Kei Advisors LLC",
+            "website_url": "http://www.keiadvisors.com"
+          },
+          {
+            "id": "5e57a7629c01df0001ecd14a",
+            "name": "Proxy Advisory Group LLC",
+            "website_url": "http://www.proxyadvisory.net"
+          },
+          {
+            "id": "6137ca89d6031100da8d5d4f",
+            "name": "irlabs",
+            "website_url": "http://www.irlabs.ca"
+          },
+          {
+            "id": "6719236b11b39503eb110182",
+            "name": "Alliance Advisors IR",
+            "website_url": "http://www.allianceadvisorsir.com"
+          },
+          {
+            "id": "54a12a6f69702db648130b02",
+            "name": "LHA - Investor Relations",
+            "website_url": "http://www.lhai.com"
+          }
+        ],
+        "num_suborganizations": 5,
+        "annual_revenue_printed": "27.6M",
+        "annual_revenue": 27600000.0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "AI",
+          "AddThis",
+          "Amazon AWS",
+          "Android",
+          "Bing Ads",
+          "BuySellAds",
+          "Disqus",
+          "DoubleClick",
+          "Facebook Login (Connect)",
+          "Google AdSense",
+          "Google Tag Manager",
+          "IoT",
+          "Linkedin Widget",
+          "MailJet",
+          "Microsoft Office 365",
+          "Mobile Friendly",
+          "Outlook",
+          "Pardot",
+          "Quantcast",
+          "SMTP.com",
+          "Salesforce",
+          "SendInBlue",
+          "ShareThis",
+          "Vimeo",
+          "WordPress.org"
+        ],
+        "current_technologies": [
+          {
+            "uid": "ai",
+            "name": "AI",
+            "category": "Other"
+          },
+          {
+            "uid": "addthis",
+            "name": "AddThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "amazon_aws",
+            "name": "Amazon AWS",
+            "category": "Hosting"
+          },
+          {
+            "uid": "android",
+            "name": "Android",
+            "category": "Frameworks and Programming Languages"
+          },
+          {
+            "uid": "bing_ads",
+            "name": "Bing Ads",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "buysellads",
+            "name": "BuySellAds",
+            "category": "Publisher Advertising Tools"
+          },
+          {
+            "uid": "disqus",
+            "name": "Disqus",
+            "category": "Comments"
+          },
+          {
+            "uid": "doubleclick",
+            "name": "DoubleClick",
+            "category": "Ad Servers"
+          },
+          {
+            "uid": "facebook_login",
+            "name": "Facebook Login (Connect)",
+            "category": "Social Login"
+          },
+          {
+            "uid": "google_adsense",
+            "name": "Google AdSense",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_tag_manager",
+            "name": "Google Tag Manager",
+            "category": "Tag Management"
+          },
+          {
+            "uid": "iot",
+            "name": "IoT",
+            "category": "Other"
+          },
+          {
+            "uid": "linkedin_widget",
+            "name": "Linkedin Widget",
+            "category": "Other"
+          },
+          {
+            "uid": "mailjet",
+            "name": "MailJet",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "office_365",
+            "name": "Microsoft Office 365",
+            "category": "Other"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "outlook",
+            "name": "Outlook",
+            "category": "Email Providers"
+          },
+          {
+            "uid": "pardot",
+            "name": "Pardot",
+            "category": "Marketing Automation"
+          },
+          {
+            "uid": "quantcast",
+            "name": "Quantcast",
+            "category": "Analytics and Tracking"
+          },
+          {
+            "uid": "smtp_com",
+            "name": "SMTP.com",
+            "category": "Email Delivery"
+          },
+          {
+            "uid": "salesforce",
+            "name": "Salesforce",
+            "category": "Customer Relationship Management"
+          },
+          {
+            "uid": "sendinblue",
+            "name": "SendInBlue",
+            "category": "Email Marketing"
+          },
+          {
+            "uid": "sharethis",
+            "name": "ShareThis",
+            "category": "Social Sharing"
+          },
+          {
+            "uid": "vimeo",
+            "name": "Vimeo",
+            "category": "Online Video Platforms"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          }
+        ],
+        "org_chart_root_people_ids": [
+          "67db9b1539c74b00012dd0e4"
+        ],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    },
+    {
+      "apollo_id": "54a239fc74686935bef29817",
+      "name": "Cliff Barnett",
+      "first_name": "Cliff",
+      "last_name": "Barnett",
+      "title": "Business Development Account Executive",
+      "company": "Crosspoint Partners LLC",
+      "domain": "crosspointpartners.com",
+      "location": "Cherry Hill, New Jersey",
+      "linkedin_url": "http://www.linkedin.com/in/cliff-barnett-51041412",
+      "seniority": "entry",
+      "departments": [
+        "master_sales"
+      ],
+      "functions": [
+        "sales",
+        "business_development"
+      ],
+      "emails": [
+        "cb_edgewood@msn.com",
+        "cbarnett@crosspointpartners.com"
+      ],
+      "phones": [
+        "+12038566555"
+      ],
+      "email_status": "unlocked",
+      "phone_status": "organization",
+      "source": "apollo.io",
+      "search_strategy": "direct_title",
+      "search_location": "West Orange, NJ",
+      "email": "cbarnett@crosspointpartners.com",
+      "verified": true,
+      "confidence_score": 0.9,
+      "phone": "+12038566555",
+      "organization": {
+        "id": "55f0c966f3e5bb16360014aa",
+        "name": "Crosspoint Partners LLC",
+        "website_url": "http://www.crosspointpartners.com",
+        "blog_url": null,
+        "angellist_url": null,
+        "linkedin_url": "http://www.linkedin.com/company/crosspoint-partners-llc",
+        "twitter_url": null,
+        "facebook_url": null,
+        "primary_phone": {
+          "number": "+1 203-856-6555",
+          "source": "Scraped",
+          "sanitized_number": "+12038566555"
+        },
+        "languages": [],
+        "alexa_ranking": null,
+        "phone": "+1 203-856-6555",
+        "linkedin_uid": "8235424",
+        "founded_year": 2004,
+        "publicly_traded_symbol": null,
+        "publicly_traded_exchange": null,
+        "logo_url": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/66fa36ecf4c54c0001b8f593/picture",
+        "crunchbase_url": null,
+        "primary_domain": "crosspointpartners.com",
+        "sic_codes": [
+          "7361"
+        ],
+        "naics_codes": [
+          "54161"
+        ],
+        "sanitized_phone": "+12038566555",
+        "industry": "staffing & recruiting",
+        "estimated_num_employees": 2,
+        "keywords": [
+          "bottom-line results",
+          "workforce development",
+          "candidate sourcing",
+          "executive search",
+          "disruptive approach",
+          "candidate assessment",
+          "merger and acquisition support",
+          "talent pipeline",
+          "leadership development",
+          "candidate experience",
+          "rapid hiring processes",
+          "growth and transformation",
+          "business services",
+          "human capital",
+          "outcome-oriented",
+          "strategic talent acquisition",
+          "merger support",
+          "disruptive recruiting",
+          "management consulting",
+          "executive placement",
+          "business growth strategies",
+          "diversity and inclusion",
+          "market expansion",
+          "employee engagement consulting",
+          "internal hr process development",
+          "recruitment strategies",
+          "business growth support",
+          "diverse industry experience",
+          "talent acquisition",
+          "merger and acquisition hr support",
+          "business model guidance",
+          "top line and bottom line focus",
+          "start-up advisory",
+          "diversity hiring",
+          "outcome measurement",
+          "human resources & staffing",
+          "workforce expansion",
+          "diverse industries",
+          "business transformation",
+          "internal recruiting strategies",
+          "strategic partnerships",
+          "diversity recruitment",
+          "strategic planning",
+          "growth strategies",
+          "outcome-oriented solutions",
+          "top-line growth",
+          "retention strategies",
+          "leadership coaching",
+          "industry diversification",
+          "internal hr processes",
+          "top talent sourcing",
+          "industry expertise",
+          "employee retention",
+          "investor relations",
+          "sales and business development",
+          "employee retention programs",
+          "employee engagement",
+          "strategic workforce planning",
+          "business consulting",
+          "workforce planning",
+          "recruitment",
+          "hr process manuals",
+          "client partnership",
+          "diversity recruitment strategies",
+          "b2b",
+          "consulting",
+          "services",
+          "management consulting services",
+          "human resources",
+          "executive coaching",
+          "staffing & recruiting",
+          "professional training & coaching"
+        ],
+        "organization_revenue_printed": null,
+        "organization_revenue": 0.0,
+        "industries": [
+          "staffing & recruiting",
+          "human resources"
+        ],
+        "secondary_industries": [
+          "human resources"
+        ],
+        "snippets_loaded": true,
+        "industry_tag_id": "5567e09973696410db020800",
+        "industry_tag_hash": {
+          "staffing & recruiting": "5567e09973696410db020800",
+          "human resources": "5567e0e37369640e5ac10c00"
+        },
+        "retail_location_count": 0,
+        "raw_address": "PO Box 106, Westport, Connecticut 06881, US",
+        "street_address": "106 Westport Ave",
+        "city": "Norwalk",
+        "state": "Connecticut",
+        "postal_code": "06851",
+        "country": "United States",
+        "owned_by_organization_id": null,
+        "short_description": "Specializing in Strategic Recruiting and Business Consulting - contact Holly Hinds at 203 856 6555 to find out about how CrossPoint can partner with you to achieve your company vision.",
+        "suborganizations": [],
+        "num_suborganizations": 0,
+        "total_funding": null,
+        "total_funding_printed": null,
+        "latest_funding_round_date": null,
+        "latest_funding_stage": null,
+        "funding_events": [],
+        "technology_names": [
+          "Basis",
+          "Google Font API",
+          "Leads by Web.com",
+          "Mobile Friendly",
+          "Nginx",
+          "WordPress.org"
+        ],
+        "current_technologies": [
+          {
+            "uid": "basis",
+            "name": "Basis",
+            "category": "Advertising Networks"
+          },
+          {
+            "uid": "google_font_api",
+            "name": "Google Font API",
+            "category": "Fonts"
+          },
+          {
+            "uid": "leads_by_web_com",
+            "name": "Leads by Web.com",
+            "category": "Lead Generation Software"
+          },
+          {
+            "uid": "mobile_friendly",
+            "name": "Mobile Friendly",
+            "category": "Other"
+          },
+          {
+            "uid": "nginx",
+            "name": "Nginx",
+            "category": "Load Balancers"
+          },
+          {
+            "uid": "wordpress_org",
+            "name": "WordPress.org",
+            "category": "CMS"
+          }
+        ],
+        "org_chart_root_people_ids": [],
+        "org_chart_sector": null,
+        "org_chart_removed": null,
+        "org_chart_show_department_filter": null,
+        "organization_headcount_six_month_growth": null,
+        "organization_headcount_twelve_month_growth": null,
+        "organization_headcount_twenty_four_month_growth": null
+      }
+    }
+  ],
+  "verified_count": 5,
+  "email_templates": [
+    {
+      "step": 1,
+      "delay_days": 0,
+      "subject": "Professional Opportunity in West Orange, NJ - Sales Representative Position",
+      "body": "Hi {{first_name}},\n\nI hope this message finds you well! I came across your profile and was impressed by your expertise in sales representative.\n\nWe're currently working with several top-tier organizations in West Orange, NJ that are looking for talented Sales Representative professionals like yourself. These positions offer:\n\n\u2022 Competitive compensation package\n\u2022 Professional development opportunities\n\u2022 Excellent work-life balance\n\u2022 Collaborative team environment\n\u2022 Growth and advancement opportunities\n\nWould you be open to a brief conversation about these opportunities? I'd love to learn more about your career goals and see if there's a good match.\n\nBest regards,\n{{from_name}}\n{{from_email}}\n\nP.S. Even if you're not actively looking, I'd be happy to keep you in mind for future opportunities that might be a perfect fit.",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location",
+        "title"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 2,
+      "delay_days": 3,
+      "subject": "Quick follow-up - Sales Representative positions still available",
+      "body": "Hi {{first_name}},\n\nI wanted to follow up on my previous message about Sales Representative opportunities in West Orange, NJ.\n\nI understand how busy things can get in business, so I'll keep this brief.\n\nOur clients are specifically looking for experienced Sales Representative professionals, and based on your background at {{company}}, I think you'd be a great fit for several positions we're currently filling.\n\nWould you have 10 minutes this week for a quick call? I can share more details about:\n\u2022 Specific organization types and specializations available\n\u2022 Compensation ranges and benefits packages\n\u2022 Locations and organization cultures\n\nNo pressure at all - just wanted to make sure you had the opportunity to learn more.\n\nBest,\n{{from_name}}",
+      "personalization_fields": [
+        "first_name",
+        "company",
+        "location"
+      ],
+      "tracking_enabled": true
+    },
+    {
+      "step": 3,
+      "delay_days": 7,
+      "subject": "Last note - thought you might find this interesting",
+      "body": "Hi {{first_name}},\n\nI hope you don't mind one last follow-up. I wanted to share something that might interest you as a Sales Representative.\n\nWe just had a Sales Representative join one of our client organizations in West Orange, NJ, and they mentioned how refreshing it was to find a workplace that truly values:\n\u2022 Professional growth and development\n\u2022 Work-life balance and flexibility\n\u2022 Modern tools and technology\n\u2022 Supportive team environment\n\nIf any of this resonates with you, I'd still love to chat. Sometimes the best opportunities come when we're not actively looking.\n\nFeel free to reach out anytime - my contact info is below.\n\nWishing you all the best in your Sales Representative career,\n{{from_name}}\n{{from_email}}\n\nP.S. If you know any other great Sales Representative professionals who might be interested, referrals are always appreciated!",
+      "personalization_fields": [
+        "first_name",
+        "location"
+      ],
+      "tracking_enabled": true
+    }
+  ],
+  "send_immediately": false,
+  "delay_hours": 1,
+  "scheduled_send_time": "2025-09-08T22:29:10.452174",
+  "created_at": "2025-09-08T21:29:10.452280",
+  "platform": "ses",
+  "from_email": "outreach@coogi.ai",
+  "from_name": "Coogi Talent Team",
+  "unsubscribe_url": "https://coogi.ai/unsubscribe",
+  "tracking_enabled": true,
+  "personalization_enabled": true,
+  "industry_keywords": [
+    "Sales",
+    "Marketing",
+    "Business Development",
+    "Account Management"
+  ],
+  "auto_campaign": true
+}

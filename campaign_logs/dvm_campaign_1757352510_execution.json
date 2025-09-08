@@ -1,0 +1,29 @@
+{
+  "campaign_id": "dvm_campaign_1757352510",
+  "execution_time": "2025-09-08T21:29:35.262782",
+  "platform": "aws_ses",
+  "success": true,
+  "sent_count": 3,
+  "failed_count": 0,
+  "total_recipients": 3,
+  "results": [
+    {
+      "recipient": "sarah.johnson@demo-vet.com",
+      "status": "sent",
+      "message_id": "010001992a603af0-0d88938a-fba0-4892-bdb8-442963f65583-000000",
+      "candidate_name": "Dr. Sarah Johnson"
+    },
+    {
+      "recipient": "m.chen@demo-tech.com",
+      "status": "sent",
+      "message_id": "010001992a603caa-ecae15b5-7f65-43aa-b930-777483065318-000000",
+      "candidate_name": "Michael Chen"
+    },
+    {
+      "recipient": "lisa.r@demo-marketing.com",
+      "status": "sent",
+      "message_id": "010001992a603e6b-99d41afa-f184-4a48-b397-5ff7e53bf885-000000",
+      "candidate_name": "Lisa Rodriguez"
+    }
+  ]
+}
