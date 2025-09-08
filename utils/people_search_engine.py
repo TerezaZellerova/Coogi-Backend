@@ -104,12 +104,20 @@ class PeopleSearchEngine:
         try:
             logger.info(f"🚀 APOLLO.IO SEARCH: '{job_title}' in '{location}' | Target: {max_results} professionals")
             
-            # Use Apollo.io for real candidate search
-            apollo_result = self.apollo_manager.search_candidates(
-                job_title=job_title,
-                location=location,
-                limit=max_results
-            )
+            # Check if this is a DVM/Veterinarian search
+            if any(term.lower() in job_title.lower() for term in ["dvm", "vet", "veterinarian", "veterinary"]):
+                logger.info(f"🩺 VETERINARY SPECIALIST SEARCH detected for: {job_title}")
+                apollo_result = self.apollo_manager.search_dvm_candidates(
+                    location=location,
+                    limit=max_results
+                )
+            else:
+                # Use Apollo.io for real candidate search WITH EMAIL REVEAL
+                apollo_result = self.apollo_manager.search_candidates_with_emails(
+                    job_title=job_title,
+                    location=location,
+                    limit=max_results
+                )
             
             if apollo_result.get("success") and apollo_result.get("candidates"):
                 apollo_candidates = apollo_result["candidates"]

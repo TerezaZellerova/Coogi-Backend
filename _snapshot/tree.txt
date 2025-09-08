@@ -1,0 +1,151 @@
+.
+├── _snapshot
+│   └── tree.txt
+├── .env
+├── .env.production.example
+├── .gitignore
+├── api
+│   ├── __init__.py
+│   ├── dependencies.py
+│   ├── models.py
+│   └── routers
+│       ├── __init__.py
+│       ├── agents.py
+│       ├── auth.py
+│       ├── campaigns.py
+│       ├── candidates.py
+│       ├── coogi_email_intelligence.py
+│       ├── email_intelligence.py
+│       ├── email.py
+│       ├── leads.py
+│       ├── production_campaigns.py
+│       ├── progressive_agents.py
+│       └── quota_management.py
+├── check_ses_methods.py
+├── cleanup_lead_database.sql
+├── cleanup_test_data.sql
+├── company_blacklist.json
+├── CREATE_AGENT_LOGS_TABLE.sql
+├── demo_complete_system.py
+├── demo_coogi_domain.py
+├── demo_email_intelligence.py
+├── demo_imap_integration.py
+├── deployment_trigger.txt
+├── Dockerfile
+├── hunter_quota_tracker.json
+├── main.py
+├── memory.json
+├── README.md
+├── RENDER_ENV_VARS_READY.txt
+├── render-build.sh
+├── render-env-vars.template
+├── render.yaml
+├── requirements.txt
+├── run.py
+├── runtime.txt
+├── schema_fix.sql
+├── scripts
+│   ├── add_columns.py
+│   ├── backfill_company_to_email_list.py
+│   ├── backfill_contact_data.py
+│   ├── create_supabase_tables.py
+│   ├── create_tables_terminal.py
+│   ├── direct_db_setup.py
+│   ├── remove_contact_data.py
+│   ├── setup_supabase.py
+│   ├── setup.py
+│   ├── start_server.py
+│   └── start.sh
+├── SES_DEBUG_SUMMARY.md
+├── SES_FINAL_RESOLUTION.md
+├── SES_INTEGRATION_GUIDE.md
+├── start_server.sh
+├── start.py
+├── subapass2
+│   ├── 00_MASTER_SETUP.sql
+│   ├── adminpanelloggintemplatesystem_new.sql
+│   ├── adminpanelloggintemplatesystem.sql
+│   ├── Agent.tracking.system,with.row-level.security.sql
+│   ├── Agent.tracking.system.production.sql
+│   ├── cleanup_test_data.sql
+│   ├── emailcampaignsystemschema_new.sql
+│   ├── emailcampaignsystemschema.sql
+│   ├── emailprocessingsystemschema_new.sql
+│   ├── emailprocessingsystemschema.sql
+│   ├── FIXED_MASTER_SETUP.sql
+│   ├── production_campaigns_missing.sql
+│   ├── PRODUCTION_VERIFICATION.sql
+│   └── quick_migration.sql
+├── supabase
+│   ├── .temp
+│   │   ├── cli-latest
+│   │   ├── gotrue-version
+│   │   ├── pooler-url
+│   │   ├── postgres-version
+│   │   ├── project-ref
+│   │   ├── rest-version
+│   │   └── storage-version
+│   ├── COMPLETE_PROGRESSIVE_SETUP.sql
+│   ├── create_agent_logs_table.sql
+│   ├── essential_tables.sql
+│   ├── fix_missing_columns.sql
+│   ├── functions
+│   │   ├── get-agent-logs
+│   │   │   └── index.ts
+│   │   ├── get-agent-status
+│   │   │   └── index.ts
+│   │   ├── send-to-instantly
+│   │   │   └── index.ts
+│   │   └── start-agent
+│   │       └── index.ts
+│   ├── migrations
+│   │   ├── 20250906_1430_agent_logs_table.sql
+│   │   ├── 20250906_1431_fix_rls_policies.sql
+│   │   ├── 20250906_1432_initial_schema.sql
+│   │   └── 20250906_1433_add_missing_columns.sql
+│   ├── progressive_agent_tables.sql
+│   ├── remove_contact_data_column.sql
+│   ├── supabase_company_tracking.sql
+│   ├── supabase_schema_enhanced.sql
+│   ├── supabase_schema.sql
+│   ├── update_existing_agents.sql
+│   └── update_hunter_emails_table.sql
+├── test_apollo.py
+├── test_endpoint_fix.py
+├── test_ses_debug.py
+├── test_ses_endpoint.py
+├── test_ses_endpoints.py
+├── test_smartlead_fix.py
+└── utils
+    ├── __init__.py
+    ├── apollo_manager.py
+    ├── aws_ses_service.py
+    ├── blacklist_manager.py
+    ├── bulletproof_campaign_creator.py
+    ├── bulletproof_contact_finder.py
+    ├── bulletproof_job_scraper.py
+    ├── clearout_manager.py
+    ├── contact_finder.py
+    ├── contract_analyzer.py
+    ├── coogi_domain_email.py
+    ├── email_campaign_service.py
+    ├── email_generator.py
+    ├── email_imap_connector.py
+    ├── email_inbox_monitor.py
+    ├── email_intelligence.py
+    ├── hunter_quota_manager.py
+    ├── instantly_manager.py
+    ├── job_scraper.py
+    ├── jsearch_manager.py
+    ├── linkedin_fast_scraper.py
+    ├── memory_manager.py
+    ├── people_search_engine.py
+    ├── professional_candidate_searcher.py
+    ├── progressive_agent_coordinator.py
+    ├── progressive_agent_db.py
+    ├── progressive_agent_manager.py
+    ├── ses_manager.py
+    ├── smartlead_manager.py
+    └── supabase_tracker.py
+
+15 directories, 134 files

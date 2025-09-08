@@ -1,0 +1,318 @@
+main.py:203:        "current_supabase_key_type": "service_role" if os.getenv("SUPABASE_SERVICE_ROLE_KEY") else "anonymous"
+main.py:232:            from supabase import create_client
+main.py:233:            supabase_url = os.getenv("SUPABASE_URL")
+main.py:234:            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:236:            if supabase_url and supabase_key:
+main.py:237:                supabase = create_client(supabase_url, supabase_key)
+main.py:264:        campaigns_query = db.supabase.table('production_campaigns').select('*').limit(3).execute()
+main.py:268:        contacts_query = db.supabase.table('contacts').select('*').limit(3).execute()
+main.py:300:        supabase_url = os.getenv("SUPABASE_URL")
+main.py:301:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:304:            "apikey": supabase_key,
+main.py:305:            "Authorization": f"Bearer {supabase_key}",
+main.py:313:                f"{supabase_url}/rest/v1/progressive_agents?limit=3",
+main.py:319:                f"{supabase_url}/rest/v1/production_campaigns?limit=3",
+main.py:325:                f"{supabase_url}/rest/v1/contacts?limit=3", 
+main.py:356:        from supabase import create_client
+main.py:357:        supabase_url = os.getenv("SUPABASE_URL")
+main.py:358:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:360:        if not supabase_url or not supabase_key:
+main.py:363:        supabase = create_client(supabase_url, supabase_key)
+main.py:381:                count_before = supabase.table(table).select('id', count='exact').execute()
+main.py:385:                delete_result = supabase.table(table).delete().neq('id', '00000000-0000-0000-0000-000000000000').execute()
+main.py:388:                count_after = supabase.table(table).select('id', count='exact').execute()
+main.py:429:        from supabase import create_client
+main.py:430:        supabase_url = os.getenv("SUPABASE_URL")
+main.py:431:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:433:        if not supabase_url or not supabase_key:
+main.py:436:        supabase = create_client(supabase_url, supabase_key)
+main.py:453:                count_result = supabase.table(table).select('*', count='exact').execute()
+main.py:457:                delete_result = supabase.table(table).delete().neq('id', 0).execute()
+main.py:460:                count_after = supabase.table(table).select('*', count='exact').execute()
+main.py:494:        from supabase import create_client
+main.py:495:        supabase_url = os.getenv("SUPABASE_URL")
+main.py:496:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:498:        if not supabase_url or not supabase_key:
+main.py:501:        supabase = create_client(supabase_url, supabase_key)
+main.py:519:                count_result = supabase.table(table).select('id', count='exact').execute()
+main.py:524:                sample_result = supabase.table(table).select('*').limit(3).execute()
+main.py:545:            "database_url": supabase_url
+main.py:559:        from supabase import create_client
+main.py:560:        supabase_url = os.getenv("SUPABASE_URL")
+main.py:561:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+main.py:563:        if not supabase_url or not supabase_key:
+main.py:566:        supabase = create_client(supabase_url, supabase_key)
+main.py:588:                count_result = supabase.table(table).select('*', count='exact').execute()
+main.py:597:                    sample_result = supabase.table(table).select('*').limit(1).execute()
+schema_fix.sql:141:-- Enable RLS
+RENDER_ENV_VARS_READY.txt:13:SUPABASE_URL=your_supabase_url_here
+RENDER_ENV_VARS_READY.txt:14:SUPABASE_ANON_KEY=your_supabase_anon_key_here
+RENDER_ENV_VARS_READY.txt:15:SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+requirements.txt:8:supabase>=2.0.0
+api/dependencies.py:152:async def log_to_supabase(batch_id: str, message: str, level: str = "info", company: str = None, 
+api/dependencies.py:160:        from supabase import create_client
+api/dependencies.py:161:        supabase_url = os.getenv("SUPABASE_URL")
+api/dependencies.py:162:        supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")  # Use service role for backend operations
+api/dependencies.py:164:        if supabase_url and supabase_key:
+api/dependencies.py:165:            supabase = create_client(supabase_url, supabase_key)
+api/dependencies.py:178:            result = supabase.table("agent_logs").insert(log_data).execute()
+render.yaml:25:        value: your_supabase_url_here
+render.yaml:27:        value: your_supabase_anon_key_here
+render.yaml:29:        value: your_supabase_service_role_key_here
+supabase/essential_tables.sql:151:-- Enable RLS
+README.md:52:│   └── supabase_tracker.py # Supabase logging
+README.md:55:    ├── setup_supabase.py  # Supabase table creation
+README.md:78:python scripts/setup_supabase.py
+CREATE_AGENT_LOGS_TABLE.sql:21:-- Enable Row Level Security (RLS) if needed
+CREATE_AGENT_LOGS_TABLE.sql:24:-- Create a policy to allow authenticated users to insert/select
+_snapshot/tree.txt:51:│   ├── create_supabase_tables.py
+_snapshot/tree.txt:55:│   ├── setup_supabase.py
+_snapshot/tree.txt:79:├── supabase
+_snapshot/tree.txt:108:│   ├── supabase_company_tracking.sql
+_snapshot/tree.txt:109:│   ├── supabase_schema_enhanced.sql
+_snapshot/tree.txt:110:│   ├── supabase_schema.sql
+_snapshot/tree.txt:149:    └── supabase_tracker.py
+utils/supabase_tracker.py:8:from supabase import create_client, Client
+utils/supabase_tracker.py:19:    supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
+utils/supabase_tracker.py:21:    supabase = None
+utils/supabase_tracker.py:31:        if not supabase:
+utils/supabase_tracker.py:43:            supabase.table("domain_search_results").insert(data).execute()
+utils/supabase_tracker.py:49:        if not supabase:
+utils/supabase_tracker.py:61:            supabase.table("linkedin_resolution").insert(data).execute()
+utils/supabase_tracker.py:68:        if not supabase:
+utils/supabase_tracker.py:84:            supabase.table("rapidapi_analysis").insert(data).execute()
+utils/supabase_tracker.py:91:        if not supabase:
+utils/supabase_tracker.py:118:            supabase.table("hunter_emails").insert(data).execute()
+utils/supabase_tracker.py:126:        if not supabase:
+utils/supabase_tracker.py:140:            supabase.table("instantly_campaigns").insert(data).execute()
+utils/supabase_tracker.py:149:        if not supabase:
+utils/supabase_tracker.py:168:            supabase.table("company_processing_summary").insert(data).execute()
+utils/supabase_tracker.py:174:        if not supabase:
+utils/supabase_tracker.py:178:            response = supabase.table("company_processing_flow").select("*").eq("batch_id", self.batch_id).eq("company", company).execute()
+utils/supabase_tracker.py:186:        if not supabase:
+utils/supabase_tracker.py:190:            response = supabase.table("company_processing_flow").select("*").eq("batch_id", self.batch_id).execute()
+utils/progressive_agent_db.py:8:from supabase import create_client, Client
+utils/progressive_agent_db.py:26:        supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+utils/progressive_agent_db.py:32:            test_result = supabase.table("progressive_agents").select("id").limit(1).execute()
+utils/progressive_agent_db.py:39:                supabase = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
+utils/progressive_agent_db.py:40:                test_result = supabase.table("progressive_agents").select("id").limit(1).execute()
+utils/progressive_agent_db.py:47:        supabase = None
+utils/progressive_agent_db.py:49:    supabase = None
+utils/progressive_agent_db.py:56:        self.supabase = supabase
+utils/progressive_agent_db.py:64:        self.use_memory_fallback = not bool(supabase)
+utils/progressive_agent_db.py:86:        if not self.supabase:
+utils/progressive_agent_db.py:102:                result = self.supabase.table("progressive_agents").select("id").eq("agent_id", agent_id).execute()
+utils/progressive_agent_db.py:106:                    self.supabase.table("progressive_agents").update(agent_data).eq("agent_id", agent_id).execute()
+utils/progressive_agent_db.py:111:                    self.supabase.table("progressive_agents").insert(agent_data).execute()
+utils/progressive_agent_db.py:167:        if not self.supabase:
+utils/progressive_agent_db.py:198:            result = self.supabase.table("progressive_agent_jobs").insert(job_records).execute()
+utils/progressive_agent_db.py:264:        if not self.supabase:
+utils/progressive_agent_db.py:292:            result = self.supabase.table("progressive_agent_contacts").insert(contact_records).execute()
+utils/progressive_agent_db.py:327:        if not self.supabase or not campaigns:
+utils/progressive_agent_db.py:354:                self.supabase.table("progressive_agent_campaigns").insert(campaign_records).execute()
+utils/progressive_agent_db.py:378:        if not self.supabase:
+utils/progressive_agent_db.py:383:            query = self.supabase.table("progressive_agent_jobs").select("*").order("created_at", desc=True).limit(limit)
+utils/progressive_agent_db.py:408:        if not self.supabase:
+utils/progressive_agent_db.py:413:            query = self.supabase.table("progressive_agent_contacts").select("*").order("created_at", desc=True).limit(limit)
+utils/progressive_agent_db.py:428:        if not self.supabase:
+utils/progressive_agent_db.py:433:            query = self.supabase.table("progressive_agent_campaigns").select("*").order("created_at", desc=True).limit(limit)
+utils/progressive_agent_db.py:448:        if not self.supabase:
+utils/progressive_agent_db.py:454:                result = self.supabase.table("progressive_agents").select("*").order("created_at", desc=True).limit(limit).execute()
+utils/progressive_agent_db.py:468:        if not self.supabase:
+utils/progressive_agent_db.py:475:                jobs_result = self.supabase.table("progressive_agent_jobs").select("id", count="exact").execute()
+utils/progressive_agent_db.py:476:                contacts_result = self.supabase.table("progressive_agent_contacts").select("id", count="exact").execute()
+utils/progressive_agent_db.py:477:                campaigns_result = self.supabase.table("progressive_agent_campaigns").select("id", count="exact").execute()
+utils/progressive_agent_db.py:478:                agents_result = self.supabase.table("progressive_agents").select("id", count="exact").neq("status", "completed").execute()
+utils/progressive_agent_db.py:502:        if not self.supabase:
+utils/progressive_agent_db.py:510:                self.supabase.table("production_campaigns").insert(campaign_data).execute()
+utils/progressive_agent_db.py:524:        if not self.supabase:
+utils/progressive_agent_db.py:529:            result = self.supabase.table("production_campaigns").select("*").eq("campaign_id", campaign_id).execute()
+utils/progressive_agent_db.py:537:        if not self.supabase:
+utils/progressive_agent_db.py:542:            query = self.supabase.table("production_campaigns").select("*").order("created_at", desc=True)
+utils/progressive_agent_db.py:554:        if not self.supabase:
+utils/progressive_agent_db.py:566:            self.supabase.table("production_campaigns").update(update_data).eq("campaign_id", campaign_id).execute()
+utils/progressive_agent_db.py:574:        if not self.supabase:
+utils/progressive_agent_db.py:580:            self.supabase.table("production_campaigns").update(updates).eq("campaign_id", campaign_id).execute()
+utils/progressive_agent_db.py:588:        if not self.supabase:
+utils/progressive_agent_db.py:592:            result = self.supabase.table("progressive_agent_contacts").select("id").eq("agent_id", agent_id).execute()
+utils/progressive_agent_db.py:600:        if not self.supabase:
+utils/progressive_agent_db.py:604:            result = self.supabase.table("progressive_agent_campaigns").select("id").eq("agent_id", agent_id).execute()
+utils/progressive_agent_db.py:612:        if not self.supabase:
+utils/progressive_agent_db.py:616:            result = self.supabase.table("progressive_agent_jobs").select("id").eq("agent_id", agent_id).execute()
+_snapshot/npm-ls.txt:65:├─┬ @supabase/supabase-js@2.49.4
+_snapshot/npm-ls.txt:66:│ ├── @supabase/auth-js@2.69.1
+_snapshot/npm-ls.txt:67:│ ├── @supabase/functions-js@2.4.4
+_snapshot/npm-ls.txt:68:│ ├── @supabase/node-fetch@2.6.15
+_snapshot/npm-ls.txt:69:│ ├── @supabase/postgrest-js@1.19.4
+_snapshot/npm-ls.txt:70:│ ├── @supabase/realtime-js@2.11.2
+_snapshot/npm-ls.txt:71:│ └── @supabase/storage-js@2.7.1
+_snapshot/requirements.txt:8:supabase>=2.0.0
+_snapshot/pip-freeze.txt:68:supabase==2.18.1
+_snapshot/pip-freeze.txt:69:supabase_auth==2.12.3
+_snapshot/pip-freeze.txt:70:supabase_functions==0.10.1
+supabase/supabase_schema_enhanced.sql:123:-- Enable Row Level Security (RLS)
+supabase/migrations/20250906_1432_initial_schema.sql:151:-- Enable RLS
+supabase/functions/send-to-instantly/index.ts:2:import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+supabase/functions/send-to-instantly/index.ts:74:    const supabaseUrl = Deno.env.get('SUPABASE_URL')!
+supabase/functions/send-to-instantly/index.ts:75:    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+supabase/functions/send-to-instantly/index.ts:76:    const supabase = createClient(supabaseUrl, supabaseServiceKey)
+supabase/functions/send-to-instantly/index.ts:114:      const { data: dbHunterEmailsData, error: supabaseError } = await supabase
+supabase/functions/send-to-instantly/index.ts:119:      if (supabaseError) {
+supabase/functions/send-to-instantly/index.ts:121:          JSON.stringify({ error: `Supabase error: ${supabaseError.message}` }),
+supabase/functions/send-to-instantly/index.ts:563:    const supabase = createClient(
+supabase/functions/send-to-instantly/index.ts:569:    const agentResponse = await supabase
+supabase/functions/send-to-instantly/index.ts:609:    const hunterResponse = await supabase
+render-build.sh:8:# python scripts/setup_supabase.py
+supabase/migrations/20250906_1431_fix_rls_policies.sql:151:-- Enable RLS
+supabase/migrations/20250906_1430_agent_logs_table.sql:18:-- Enable RLS
+supabase/migrations/20250906_1430_agent_logs_table.sql:21:-- Create policy (allow all for development)
+subapass2/Agent.tracking.system,with.row-level.security.sql:107:-- 7. Drop existing policies if they exist (to avoid "policy already exists" error)
+subapass2/quick_migration.sql:84:-- Enable RLS and create policy for production_campaigns
+subapass2/00_MASTER_SETUP.sql:343:-- Enable RLS on all tables
+subapass2/00_MASTER_SETUP.sql:359:-- Drop existing policies first (to avoid "policy already exists" error)
+subapass2/emailprocessingsystemschema_new.sql:133:-- Enable RLS
+subapass2/PRODUCTION_VERIFICATION.sql:94:    policyname,
+subapass2/PRODUCTION_VERIFICATION.sql:95:    CASE WHEN policyname IS NOT NULL THEN '✅ SECURED' ELSE '❌ NO POLICIES' END as security_status
+subapass2/Agent.tracking.system.production.sql:120:-- 7. Drop existing policies if they exist (to avoid "policy already exists" error)
+subapass2/Agent.tracking.system.production.sql:180:-- Enable RLS and create policy for production_campaigns
+subapass2/Agent.tracking.system.production.sql:253:SELECT 'All tables created with proper RLS policies and indexes!' as message;
+api/routers/candidates.py:116:                existing_query = db.supabase.table('candidates').select('*').eq('email', candidate['email']).execute()
+api/routers/candidates.py:123:                    update_result = db.supabase.table('candidates').update(candidate_data).eq('email', candidate['email']).execute()
+api/routers/candidates.py:133:                    insert_result = db.supabase.table('candidates').insert(candidate_data).execute()
+api/routers/candidates.py:187:        candidate_query = db.supabase.table('candidates').select('*').eq('id', request.candidate_id).execute()
+api/routers/candidates.py:192:        job_query = db.supabase.table('jobs').select('*').eq('id', request.job_id).execute()
+api/routers/candidates.py:206:        existing_rel = db.supabase.table('job_candidates').select('*').eq('job_id', request.job_id).eq('candidate_id', request.candidate_id).execute()
+api/routers/candidates.py:210:            result = db.supabase.table('job_candidates').update(relationship_data).eq('job_id', request.job_id).eq('candidate_id', request.candidate_id).execute()
+api/routers/candidates.py:213:            result = db.supabase.table('job_candidates').insert(relationship_data).execute()
+api/routers/candidates.py:235:        relationships_query = db.supabase.table('job_candidates').select('*, candidates(*)').eq('job_id', job_id).execute()
+api/routers/candidates.py:263:        result = db.supabase.table('candidates').delete().eq('id', candidate_id).execute()
+subapass2/adminpanelloggintemplatesystem_new.sql:122:-- Enable RLS
+api/routers/campaigns.py:146:            from supabase import create_client
+api/routers/campaigns.py:147:            supabase_url = os.getenv("SUPABASE_URL")
+api/routers/campaigns.py:148:            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+api/routers/campaigns.py:150:            if supabase_url and supabase_key:
+api/routers/campaigns.py:151:                supabase = create_client(supabase_url, supabase_key)
+api/routers/campaigns.py:153:                response = supabase.table("lead_lists").select("*").order("created_at", desc=True).execute()
+api/routers/campaigns.py:206:            from supabase import create_client
+api/routers/campaigns.py:207:            supabase_url = os.getenv("SUPABASE_URL")
+api/routers/campaigns.py:208:            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+api/routers/campaigns.py:210:            if supabase_url and supabase_key:
+api/routers/campaigns.py:211:                supabase = create_client(supabase_url, supabase_key)
+api/routers/campaigns.py:226:                result = supabase.table("lead_lists").insert(lead_list_record).execute()
+subapass2/emailcampaignsystemschema_new.sql:125:-- Enable RLS
+api/routers/leads.py:11:from supabase import create_client
+api/routers/leads.py:24:    log_to_supabase
+api/routers/leads.py:40:supabase = None
+api/routers/leads.py:42:    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+api/routers/leads.py:63:            await log_to_supabase(batch_id, f"🔍 Overriding hours_old to {request.hours_old} hours", "info")
+api/routers/leads.py:66:        await log_to_supabase(batch_id, f"🚀 Starting job search: {request.query}", "info")
+api/routers/leads.py:82:            await log_to_supabase(batch_id, f"🏙️ Processing city: {city}", "info")
+api/routers/leads.py:104:                    await log_to_supabase(batch_id, f"⚠️ No jobs found in {city}", "warning")
+api/routers/leads.py:107:                await log_to_supabase(batch_id, f"✅ Found {len(city_jobs)} jobs in {city}", "success")
+api/routers/leads.py:136:                    await log_to_supabase(batch_id, f"🔍 Processing company: {company} - {job_title}", "info", company, job_title, job_url, "company_start")
+api/routers/leads.py:182:                            await log_to_supabase(batch_id, f"✅ Domain found for {company}: {domain}", "success", company, job_title, job_url, "domain_found")
+api/routers/leads.py:184:                            await log_to_supabase(batch_id, f"⚠️ No domain found for {company}", "warning", company, job_title, job_url, "domain_not_found")
+api/routers/leads.py:201:                        await log_to_supabase(batch_id, f"📊 Found {len(contacts)} contacts, TA team: {has_ta_team}", "info", company, job_title, job_url, "contact_analysis")
+api/routers/leads.py:206:                            await log_to_supabase(batch_id, f"📡 Attempting Hunter.io lookup for: {company}", "info", company, job_title, job_url, "hunter_lookup")
+api/routers/leads.py:219:                                    await log_to_supabase(batch_id, f"✅ Found {len(hunter_emails)} Hunter.io emails for {company}", "success", company, job_title, job_url, "hunter_success")
+api/routers/leads.py:221:                                    await log_to_supabase(batch_id, f"⚠️ No Hunter.io emails found for {company}", "warning", company, job_title, job_url, "hunter_no_emails")
+api/routers/leads.py:224:                                await log_to_supabase(batch_id, f"❌ Hunter.io error for {company}: {str(e)}", "error", company, job_title, job_url, "hunter_error")
+api/routers/leads.py:226:                            await log_to_supabase(batch_id, f"⏭️ Skipping Hunter.io for {company} (company not found)", "info", company, job_title, job_url, "hunter_skipped")
+api/routers/leads.py:231:                            await log_to_supabase(batch_id, f"🚀 Creating Instantly campaign for {company}", "info", company, job_title, job_url, "instantly_start")
+api/routers/leads.py:244:                                    await log_to_supabase(batch_id, f"✅ Created campaign {campaign_id} with {len(hunter_emails)} leads", "success", company, job_title, job_url, "instantly_success")
+api/routers/leads.py:246:                                    await log_to_supabase(batch_id, f"❌ Failed to create campaign: {campaign_result.get('error')}", "error", company, job_title, job_url, "instantly_error")
+api/routers/leads.py:249:                                await log_to_supabase(batch_id, f"❌ Error creating Instantly campaign for {company}: {str(e)}", "error", company, job_title, job_url, "instantly_error")
+api/routers/leads.py:271:                        await log_to_supabase(batch_id, f"✅ Completed analysis for {company}: {recommendation}", "success", company, job_title, job_url, "company_analysis_complete")
+api/routers/leads.py:281:                        await log_to_supabase(batch_id, f"❌ Error analyzing {company}: {str(e)}", "error", company, job_title, job_url, "company_error")
+api/routers/leads.py:286:                await log_to_supabase(batch_id, f"✅ Completed {city}: {city_companies_processed} companies processed", "success")
+api/routers/leads.py:290:                await log_to_supabase(batch_id, f"❌ Error processing city {city}: {str(e)}", "error")
+api/routers/leads.py:295:                await log_to_supabase(batch_id, "⏳ Rate limiting: Waiting 10 seconds before next city...", "info")
+api/routers/leads.py:300:        await log_to_supabase(batch_id, f"📊 Hunter.io Summary: {hunter_attempts} attempts, {hunter_hits} emails found", "info")
+api/routers/leads.py:301:        await log_to_supabase(batch_id, f"🎉 Search completed: {len(companies_analyzed)} companies analyzed", "success")
+api/routers/leads.py:613:            from supabase import create_client
+api/routers/leads.py:614:            supabase_url = os.getenv("SUPABASE_URL")
+api/routers/leads.py:615:            supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+api/routers/leads.py:617:            if supabase_url and supabase_key:
+api/routers/leads.py:618:                supabase = create_client(supabase_url, supabase_key)
+api/routers/leads.py:620:                response = supabase.table("hunter_emails").select("*").limit(100).execute()
+api/routers/leads.py:1028:        await log_to_supabase(batch_id, f"🚀 Starting FAST preview: {request.query}", "info")
+api/routers/leads.py:1034:            await log_to_supabase(batch_id, "❌ No jobs found in preview", "warning")
+api/routers/leads.py:1098:        await log_to_supabase(batch_id, f"✅ FAST preview completed: {len(companies_analyzed)} companies", "info")
+api/routers/leads.py:1191:        if supabase:
+api/routers/leads.py:1194:                result = supabase.table("progressive_agent_jobs").select("*").eq("site", "linkedin").order("created_at", desc=True).limit(limit).execute()
+api/routers/leads.py:1270:        if supabase:
+api/routers/leads.py:1273:                result = supabase.table("progressive_agent_jobs").select("*").neq("site", "linkedin").order("created_at", desc=True).limit(limit).execute()
+supabase/supabase_schema.sql:46:-- Enable Row Level Security (RLS)
+scripts/direct_db_setup.py:7:from supabase import create_client, Client
+scripts/direct_db_setup.py:16:def run_sql_file(supabase: Client, file_path: str):
+scripts/direct_db_setup.py:31:                    result = supabase.rpc('exec_sql', {'sql': statement}).execute()
+scripts/direct_db_setup.py:43:def verify_tables(supabase: Client):
+scripts/direct_db_setup.py:60:                result = supabase.table(table).select("*").limit(1).execute()
+scripts/direct_db_setup.py:79:    supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+scripts/direct_db_setup.py:83:    sql_file = "supabase/essential_tables.sql"
+scripts/direct_db_setup.py:85:        success = run_sql_file(supabase, sql_file)
+scripts/direct_db_setup.py:87:            verify_tables(supabase)
+scripts/setup.py:15:        "supabase==2.0.0",
+scripts/backfill_contact_data.py:11:from supabase import create_client, Client
+scripts/backfill_contact_data.py:17:def get_supabase_client() -> Client:
+scripts/backfill_contact_data.py:58:def get_logs_for_batch(supabase: Client, batch_id: str) -> List[Dict[str, Any]]:
+scripts/backfill_contact_data.py:61:        response = supabase.table("search_logs_enhanced").select("*").eq("batch_id", batch_id).execute()
+scripts/backfill_contact_data.py:67:def update_hunter_emails_with_contacts(supabase: Client, batch_id: str, company: str, contact_data: List[Dict[str, Any]]):
+scripts/backfill_contact_data.py:71:        response = supabase.table("hunter_emails").select("*").eq("batch_id", batch_id).eq("company", company).execute()
+scripts/backfill_contact_data.py:82:            supabase.table("hunter_emails").update(update_data).eq("id", record_id).execute()
+scripts/backfill_contact_data.py:93:def backfill_contacts_for_batch(supabase: Client, batch_id: str):
+scripts/backfill_contact_data.py:98:    logs = get_logs_for_batch(supabase, batch_id)
+scripts/backfill_contact_data.py:120:        update_hunter_emails_with_contacts(supabase, batch_id, company, contacts)
+scripts/backfill_contact_data.py:124:def get_all_batches(supabase: Client) -> List[str]:
+scripts/backfill_contact_data.py:127:        response = supabase.table("hunter_emails").select("batch_id").execute()
+scripts/backfill_contact_data.py:139:    supabase = get_supabase_client()
+scripts/backfill_contact_data.py:140:    if not supabase:
+scripts/backfill_contact_data.py:144:    batch_ids = get_all_batches(supabase)
+scripts/backfill_contact_data.py:149:        backfill_contacts_for_batch(supabase, batch_id)
+scripts/remove_contact_data.py:8:from supabase import create_client, Client
+scripts/remove_contact_data.py:17:    supabase_url = os.getenv("SUPABASE_URL")
+scripts/remove_contact_data.py:18:    supabase_key = os.getenv("SUPABASE_ANON_KEY")
+scripts/remove_contact_data.py:20:    if not supabase_url or not supabase_key:
+scripts/remove_contact_data.py:24:    supabase: Client = create_client(supabase_url, supabase_key)
+scripts/remove_contact_data.py:30:        response = supabase.table("hunter_emails").select("*").limit(1).execute()
+scripts/remove_contact_data.py:48:        all_records = supabase.table("hunter_emails").select("*").execute()
+scripts/remove_contact_data.py:58:                supabase.table("hunter_emails").update(update_data).eq("id", record_id).execute()
+scripts/create_supabase_tables.py:8:from supabase import create_client, Client
+scripts/create_supabase_tables.py:23:supabase: Client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
+scripts/create_supabase_tables.py:32:        supabase.table("search_logs_enhanced").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:36:        # This will be created via SQL since we can't create tables via Python client
+scripts/create_supabase_tables.py:40:        supabase.table("batches").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:47:        supabase.table("agent_templates").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:54:        supabase.table("agent_performance").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:61:        supabase.table("agent_results_summary").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:70:        response = supabase.table("search_logs_enhanced").select("count", count="exact").limit(1).execute()
+scripts/create_supabase_tables.py:84:        print("1. Go to your Supabase dashboard: https://supabase.com/dashboard")
+scripts/create_supabase_tables.py:87:        print("4. Copy and paste the SQL from 'supabase_schema_enhanced.sql'")
+scripts/add_columns.py:17:    supabase_url = os.getenv("SUPABASE_URL")
+scripts/add_columns.py:18:    if not supabase_url:
+scripts/add_columns.py:23:    # Format: https://project.supabase.co
+scripts/add_columns.py:24:    host = supabase_url.replace("https://", "").replace("http://", "")
+scripts/setup_supabase.py:9:from supabase import create_client, Client
+scripts/setup_supabase.py:19:def setup_supabase():
+scripts/setup_supabase.py:23:    supabase_url = os.getenv("SUPABASE_URL")
+scripts/setup_supabase.py:24:    supabase_key = os.getenv("SUPABASE_ANON_KEY")
+scripts/setup_supabase.py:26:    if not supabase_url or not supabase_key:
+scripts/setup_supabase.py:32:        supabase: Client = create_client(supabase_url, supabase_key)
+scripts/setup_supabase.py:132:                result = supabase.rpc('exec_sql', {'sql': sql}).execute()
+scripts/setup_supabase.py:171:                supabase.table('agent_templates').insert(template).execute()
+scripts/setup_supabase.py:188:    if setup_supabase():
+scripts/backfill_company_to_email_list.py:9:from supabase import create_client, Client
+scripts/backfill_company_to_email_list.py:18:    supabase_url = os.getenv("SUPABASE_URL")
+scripts/backfill_company_to_email_list.py:19:    supabase_key = os.getenv("SUPABASE_ANON_KEY")
+scripts/backfill_company_to_email_list.py:21:    if not supabase_url or not supabase_key:
+scripts/backfill_company_to_email_list.py:25:    supabase: Client = create_client(supabase_url, supabase_key)
+scripts/backfill_company_to_email_list.py:31:        response = supabase.table("hunter_emails").select("*").execute()
+scripts/backfill_company_to_email_list.py:64:                    supabase.table("hunter_emails").update({
+scripts/create_tables_terminal.py:9:from supabase import create_client, Client
+scripts/create_tables_terminal.py:15:def get_supabase_client() -> Client:
+scripts/create_tables_terminal.py:31:    supabase = get_supabase_client()
+scripts/create_tables_terminal.py:37:        result = supabase.table('information_schema.tables').select('table_name').limit(1).execute()
+scripts/create_tables_terminal.py:117:            result = supabase.rpc('exec_sql', {'sql': sql}).execute()
+scripts/create_tables_terminal.py:127:            print(f"❌ Failed to create table {table_name}: {e}")
+scripts/create_tables_terminal.py:148:    supabase = get_supabase_client()
+scripts/create_tables_terminal.py:162:            result = supabase.table(table).select("*").limit(1).execute()

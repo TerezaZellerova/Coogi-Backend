@@ -1,0 +1,8 @@
+=== Python ===
+Python 3.13.5
+pip 25.2 from /Users/waqaskhan/Documents/coogi full project/.venv/lib/python3.13/site-packages/pip (python 3.13)
+
+=== Node ===
+v20.19.3
+11.4.2
+1.22.22

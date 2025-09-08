@@ -1,0 +1,41 @@
+api/routers/email_intelligence.py:5:from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
+api/routers/email_intelligence.py:21:router = APIRouter(prefix="/api", tags=["email-intelligence"])
+api/routers/candidates.py:5:from fastapi import APIRouter, HTTPException
+api/routers/candidates.py:16:router = APIRouter(
+main.py:80:@app.get("/login", response_class=HTMLResponse)
+main.py:88:@app.get("/signup", response_class=HTMLResponse)
+main.py:96:@app.get("/ui", response_class=HTMLResponse)
+main.py:104:@app.get("/dashboard", response_class=HTMLResponse)
+main.py:112:@app.get("/agent-detail", response_class=HTMLResponse)
+main.py:120:@app.get("/test-login", response_class=HTMLResponse)
+main.py:140:@app.get("/", response_model=HealthResponse, tags=["root"])
+main.py:162:@app.get("/health", response_model=HealthResponse, tags=["root"])
+main.py:187:@app.get("/debug/env", tags=["debug"])
+main.py:207:@app.get("/memory-stats", tags=["utils"])
+main.py:215:@app.delete("/memory", tags=["utils"])
+main.py:224:@app.post("/webhook/results", tags=["webhooks"])
+main.py:254:@app.get("/test/database", tags=["debug"])
+main.py:293:@app.get("/test/http-database", tags=["debug"])
+main.py:352:@app.delete("/admin/cleanup/leads", tags=["admin"])
+main.py:422:@app.delete("/admin/cleanup-database", tags=["admin"])
+main.py:490:@app.get("/admin/database/stats", tags=["admin"])
+main.py:553:@app.get("/admin/inspect-database", tags=["admin"])
+main.py:623:@app.get("/test/dvm-search", tags=["test"])
+api/routers/production_campaigns.py:8:from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
+api/routers/production_campaigns.py:16:router = APIRouter(prefix="/api/production-campaigns", tags=["production-campaigns"])
+api/routers/email.py:1:from fastapi import APIRouter, HTTPException, BackgroundTasks
+api/routers/email.py:14:router = APIRouter(prefix="/email", tags=["email"])
+api/routers/coogi_email_intelligence.py:6:from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks, Query
+api/routers/coogi_email_intelligence.py:23:router = APIRouter(prefix="/api/coogi-email", tags=["coogi-email-intelligence"])
+api/routers/auth.py:1:from fastapi import APIRouter, HTTPException
+api/routers/auth.py:11:router = APIRouter(prefix="/api/auth", tags=["authentication"])
+api/routers/quota_management.py:1:from fastapi import APIRouter, Depends
+api/routers/quota_management.py:13:router = APIRouter(prefix="/api", tags=["quota-management"])
+api/routers/campaigns.py:1:from fastapi import APIRouter, HTTPException, Depends, Request
+api/routers/campaigns.py:21:router = APIRouter(prefix="/api", tags=["campaigns"])
+api/routers/leads.py:1:from fastapi import APIRouter, HTTPException, Depends
+api/routers/leads.py:32:router = APIRouter(prefix="/api", tags=["leads"])
+api/routers/agents.py:1:from fastapi import APIRouter, HTTPException, Depends
+api/routers/agents.py:10:router = APIRouter(prefix="/api", tags=["agents"])
+api/routers/progressive_agents.py:5:from fastapi import APIRouter, HTTPException, BackgroundTasks
+api/routers/progressive_agents.py:24:router = APIRouter(prefix="/api", tags=["progressive-agents"])

@@ -619,6 +619,73 @@ async def inspect_database():
         logger.error(f"Database inspection failed: {e}")
         raise HTTPException(status_code=500, detail=f"Inspection failed: {str(e)}")
 
+# DVM Test Endpoint for Client's Real Use Case
+@app.get("/test/dvm-search", tags=["test"])
+async def test_dvm_search():
+    """
+    Test DVM search for client's real use case:
+    - Sebastian, FL
+    - Cumberland, RI  
+    - Summit, NJ
+    - West Orange, NJ
+    """
+    try:
+        from utils.apollo_manager import ApolloManager
+        apollo = ApolloManager()
+        
+        # Client's real locations
+        test_locations = [
+            "Sebastian, FL",
+            "Cumberland, RI", 
+            "Summit, NJ",
+            "West Orange, NJ"
+        ]
+        
+        results = {}
+        
+        for location in test_locations:
+            logger.info(f"🩺 Testing DVM search for: {location}")
+            
+            # Search for DVMs in this location
+            search_result = apollo.search_dvm_candidates(
+                location=location,
+                limit=5  # Small test sample
+            )
+            
+            if search_result.get("success"):
+                candidates = search_result.get("candidates", [])
+                results[location] = {
+                    "count": len(candidates),
+                    "candidates": candidates[:3],  # Show top 3 for preview
+                    "has_real_emails": sum(1 for c in candidates if c.get("email") and "@" in c.get("email", "") and "not_unlocked" not in c.get("email", "")),
+                    "has_phone_numbers": sum(1 for c in candidates if c.get("phone"))
+                }
+            else:
+                results[location] = {
+                    "error": search_result.get("error", "Unknown error"),
+                    "count": 0
+                }
+        
+        return {
+            "status": "success",
+            "message": "DVM search test for client's real use case",
+            "timestamp": datetime.now().isoformat(),
+            "test_results": results,
+            "summary": {
+                "total_locations_tested": len(test_locations),
+                "total_candidates_found": sum(r.get("count", 0) for r in results.values()),
+                "locations_with_results": sum(1 for r in results.values() if r.get("count", 0) > 0)
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"DVM test search failed: {e}")
+        return {
+            "status": "error", 
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
 if __name__ == "__main__":
     import uvicorn
     # Use PORT environment variable for Render compatibility

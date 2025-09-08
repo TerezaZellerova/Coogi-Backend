@@ -1,0 +1,80 @@
+ 11M	./.venv/lib/python3.13/site-packages/pip
+ 11M	./.venv/lib/python3.13/site-packages/pydeck/nbextension/static/index.js.map
+ 11M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so
+ 11M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.dylib
+ 11M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so
+ 11M	./.venv/share/jupyter/nbextensions/pydeck/index.js.map
+ 11M	./venv/lib/python3.13/site-packages/openai
+ 11M	./venv/lib/python3.13/site-packages/pandas/core
+ 11M	./venv/lib/python3.13/site-packages/PIL/.dylibs
+ 11M	./venv/lib/python3.13/site-packages/pydeck/nbextension/static/index.js.map
+ 11M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so
+ 11M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.dylib
+ 11M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so
+ 11M	./venv/share/jupyter/nbextensions/pydeck/index.js.map
+ 12M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so
+ 12M	./venv/lib/python3.13/site-packages/pip
+ 12M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so
+ 13M	./.venv/lib/python3.13/site-packages/numpy/core
+ 13M	./venv/lib/python3.13/site-packages/numpy/core
+ 14M	./.venv/lib/python3.13/site-packages/PIL
+ 14M	./.venv/lib/python3.13/site-packages/pydeck
+ 14M	./.venv/lib/python3.13/site-packages/pydeck/nbextension
+ 14M	./.venv/lib/python3.13/site-packages/pydeck/nbextension/static
+ 14M	./.venv/share
+ 14M	./.venv/share/jupyter
+ 14M	./.venv/share/jupyter/nbextensions
+ 14M	./.venv/share/jupyter/nbextensions/pydeck
+ 14M	./venv/lib/python3.13/site-packages/PIL
+ 14M	./venv/lib/python3.13/site-packages/pydeck
+ 14M	./venv/lib/python3.13/site-packages/pydeck/nbextension
+ 14M	./venv/lib/python3.13/site-packages/pydeck/nbextension/static
+ 14M	./venv/share
+ 14M	./venv/share/jupyter
+ 14M	./venv/share/jupyter/nbextensions
+ 14M	./venv/share/jupyter/nbextensions/pydeck
+ 15M	./.venv/lib/python3.13/site-packages/pyarrow/libarrow_compute.2100.dylib
+ 15M	./.venv/lib/python3.13/site-packages/pyarrow/libarrow_flight.2100.dylib
+ 15M	./venv/lib/python3.13/site-packages/pyarrow/libarrow_compute.2100.dylib
+ 15M	./venv/lib/python3.13/site-packages/pyarrow/libarrow_flight.2100.dylib
+ 16M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-32.dll
+ 16M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-32.dll
+ 18M	./.venv/lib/python3.13/site-packages/pandas/_libs
+ 18M	./.venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-64.dll
+ 18M	./venv/lib/python3.13/site-packages/pandas/_libs
+ 18M	./venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-64.dll
+ 19M	./.venv/lib/python3.13/site-packages/streamlit/static/static/js
+ 19M	./venv/lib/python3.13/site-packages/streamlit/static/static/js
+ 21M	./.venv/lib/python3.13/site-packages/botocore/data
+ 21M	./venv/lib/python3.13/site-packages/botocore/data
+ 22M	./.venv/lib/python3.13/site-packages/streamlit/static
+ 22M	./.venv/lib/python3.13/site-packages/streamlit/static/static
+ 22M	./venv/lib/python3.13/site-packages/streamlit/static
+ 22M	./venv/lib/python3.13/site-packages/streamlit/static/static
+ 24M	./.venv/lib/python3.13/site-packages/botocore
+ 24M	./venv/lib/python3.13/site-packages/botocore
+ 30M	./.venv/lib/python3.13/site-packages/numpy
+ 30M	./.venv/lib/python3.13/site-packages/streamlit
+ 30M	./venv/lib/python3.13/site-packages/numpy
+ 30M	./venv/lib/python3.13/site-packages/streamlit
+ 35M	./.venv/lib/python3.13/site-packages/pandas/tests
+ 35M	./venv/lib/python3.13/site-packages/pandas/tests
+ 38M	./.venv/lib/python3.13/site-packages/pyarrow/libarrow.2100.dylib
+ 38M	./venv/lib/python3.13/site-packages/pyarrow/libarrow.2100.dylib
+ 70M	./.venv/lib/python3.13/site-packages/pandas
+ 70M	./venv/lib/python3.13/site-packages/pandas
+ 89M	./.venv/lib/python3.13/site-packages/tls_client
+ 89M	./.venv/lib/python3.13/site-packages/tls_client/dependencies
+ 89M	./venv/lib/python3.13/site-packages/tls_client
+ 89M	./venv/lib/python3.13/site-packages/tls_client/dependencies
+111M	./.venv/lib/python3.13/site-packages/pyarrow
+111M	./venv/lib/python3.13/site-packages/pyarrow
+481M	./.venv/lib
+481M	./.venv/lib/python3.13
+481M	./.venv/lib/python3.13/site-packages
+481M	./venv/lib
+481M	./venv/lib/python3.13
+481M	./venv/lib/python3.13/site-packages
+494M	./.venv
+495M	./venv
+993M	.

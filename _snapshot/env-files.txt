@@ -1,0 +1,2 @@
+-rw-r--r--@ 1 waqaskhan  staff  1824 Sep  7 18:05 .env
+-rw-r--r--@ 1 waqaskhan  staff  1348 Sep  7 18:23 .env.production.example

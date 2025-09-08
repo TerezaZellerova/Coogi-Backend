@@ -1,0 +1,18 @@
+/Users/waqaskhan/Documents/coogi full project/Coogi-Backend-main
+## feature/email-intelligence-integration...origin/feature/email-intelligence-integration
+ M main.py
+ M utils/apollo_manager.py
+ M utils/people_search_engine.py
+?? _snapshot/
+092a480 Fix database cleanup to target correct tables
+ad2f829 Add database inspection endpoint and improve cleanup script
+1300424 Add database cleanup endpoint and fix SQL script
+0b1598a Add lead database cleanup endpoints for fresh demo data
+264af96 Final deployment - all environment variables confirmed in Render
+4bb9e0c Force final deployment - tracking endpoint + AWS variables
+a5d6c15 Fix environment variable names for AWS SES integration
+c42cfcd Force Render deployment with tracking endpoint
+d55539e Add email tracking endpoint and update environment URLs
+be88f24 🚀 Initial commit - COOGI Backend with Email Intelligence
+origin	https://github.com/TerezaZellerova/Coogi-Backend.git (fetch)
+origin	https://github.com/TerezaZellerova/Coogi-Backend.git (push)
