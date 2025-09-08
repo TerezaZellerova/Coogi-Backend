@@ -191,6 +191,7 @@ class ApolloManager:
         hunter_verify: bool = True,
         use_vet_industry_tags: bool = False,
         page_start: int = 1,
+        unlock_emails: bool = True,
     ) -> Dict[str, Any]:
         """One-city search with reveal + fallback /people/match; returns LinkedIn, phones, emails."""
         titles = self._optimized_titles(job_title)
@@ -235,6 +236,18 @@ class ApolloManager:
                 continue
             normalized.append(person)
 
+        # Unlock emails for candidates that need it
+        if unlock_emails and normalized:
+            import asyncio
+            try:
+                loop = asyncio.get_event_loop()
+                normalized = loop.run_until_complete(self.unlock_emails_for_candidates(normalized))
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                normalized = loop.run_until_complete(self.unlock_emails_for_candidates(normalized))
+                loop.close()
+
         return {
             "success": True,
             "total_found": len(normalized),
@@ -251,6 +264,7 @@ class ApolloManager:
                 "reveal_phones": reveal_phones,
                 "hunter_verify": hunter_verify,
                 "page_start": page_start,
+                "unlock_emails": unlock_emails,
             },
         }
 
@@ -266,6 +280,7 @@ class ApolloManager:
         require_phone: bool = False,
         hunter_verify: bool = True,
         use_vet_industry_tags: bool = False,
+        company_size: Optional[str] = None,
     ) -> List[Dict[str, Any]]:
         collected: List[Dict[str, Any]] = []
         seen = set()
@@ -280,6 +295,7 @@ class ApolloManager:
                 require_phone=False,  # filter after normalization to allow fallback reveal
                 hunter_verify=hunter_verify,
                 use_vet_industry_tags=use_vet_industry_tags,
+                company_size=company_size,
                 page_start=page,
             )
             if not res.get("success"):
@@ -314,6 +330,7 @@ class ApolloManager:
         require_email: bool = True,
         require_phone: bool = False,
         hunter_verify: bool = True,
+        unlock_emails: bool = True,
     ) -> Dict[str, Any]:
         """Client real use case: DVM across multiple cities (emails+phones+LinkedIn)."""
         all_rows: List[Dict[str, Any]] = []
@@ -329,6 +346,18 @@ class ApolloManager:
             )
             all_rows.extend(rows)
 
+        # Unlock emails for candidates that need it
+        if unlock_emails and all_rows:
+            import asyncio
+            try:
+                loop = asyncio.get_event_loop()
+                all_rows = loop.run_until_complete(self.unlock_emails_for_candidates(all_rows))
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                all_rows = loop.run_until_complete(self.unlock_emails_for_candidates(all_rows))
+                loop.close()
+
         return {
             "success": True,
             "total_found": len(all_rows),
@@ -341,6 +370,7 @@ class ApolloManager:
                 "require_email": require_email,
                 "require_phone": require_phone,
                 "hunter_verify": hunter_verify,
+                "unlock_emails": unlock_emails,
             },
         }
 
@@ -367,6 +397,7 @@ class ApolloManager:
                 require_phone=require_phone,
                 hunter_verify=hunter_verify,
                 use_vet_industry_tags=False,
+                company_size=company_size,
             )
             for r in rows:
                 k = self._dedupe_key(r)
@@ -410,12 +441,27 @@ class ApolloManager:
             if addr and not self._is_placeholder_email(addr):
                 emails.append(addr)
 
-        # collect phones
+        # include any personal emails exposed on search
+        for pe in (p.get("personal_emails") or []):
+            if pe and not self._is_placeholder_email(pe):
+                emails.append(pe)
+
+        # collect phones (direct)
         phones: List[str] = []
         for ph in (p.get("phone_numbers") or []):
             number = ph.get("sanitized_number") or ph.get("raw_number") or ph.get("number")
             if number and len(number) >= 8:
                 phones.append(number)
+
+        # include org main line if present (dict or string)
+        org_primary = org.get("primary_phone")
+        org_num = None
+        if isinstance(org_primary, dict):
+            org_num = org_primary.get("sanitized_number") or org_primary.get("number")
+        elif isinstance(org_primary, str):
+            org_num = org_primary
+        if org_num and len(org_num) >= 8:
+            phones.append(org_num)
 
         # fallback reveal via /people/match if we still don't have a real email
         if reveal_fallback and require_email and not emails:
@@ -423,6 +469,7 @@ class ApolloManager:
                 "first_name": p.get("first_name", ""),
                 "last_name": p.get("last_name", ""),
                 "reveal_email": True,
+                "reveal_phone": True,
             }
             if org.get("name"):
                 match_payload["organization_name"] = org["name"]
@@ -435,14 +482,28 @@ class ApolloManager:
                 em = person.get("email")
                 if em and not self._is_placeholder_email(em):
                     emails.append(em)
+                # phones from match
+                for ph in (person.get("phone_numbers") or []):
+                    num = ph.get("sanitized_number") or ph.get("raw_number") or ph.get("number")
+                    if num and len(num) >= 8:
+                        phones.append(num)
+                # org phone from match (dict or string)
+                m_org_primary = (person.get("organization") or {}).get("primary_phone")
+                m_org_num = None
+                if isinstance(m_org_primary, dict):
+                    m_org_num = m_org_primary.get("sanitized_number") or m_org_primary.get("number")
+                elif isinstance(m_org_primary, str):
+                    m_org_num = m_org_primary
+                if m_org_num and len(m_org_num) >= 8:
+                    phones.append(m_org_num)
 
         # If we require an email and none is available, drop the record
+        emails = list(dict.fromkeys(emails))
         if require_email and not emails:
             return None
 
-        # Dedupe emails and phones
-        emails = list(dict.fromkeys(emails))
-        phones = list(dict.fromkeys(phones))
+        # Dedupe phones
+        phones = list(dict.fromkeys([x for x in phones if x]))
 
         return {
             "apollo_id": p.get("id", ""),
@@ -587,11 +648,159 @@ class ApolloManager:
             "errors": errors
         }
 
+    def unlock_person_email(self, candidate: Dict[str, Any]) -> Dict[str, Any]:
+        """Unlock email for a specific person using Apollo /people/match endpoint"""
+        try:
+            # Prepare payload for /people/match
+            match_payload = {
+                "first_name": candidate.get("first_name", ""),
+                "last_name": candidate.get("last_name", ""),
+                "reveal_email": True,
+                "reveal_phone": True,
+            }
+            
+            # Add company/organization info if available
+            company = candidate.get("company") or candidate.get("organization", {}).get("name", "")
+            if company:
+                match_payload["organization_name"] = company
+            
+            domain = candidate.get("domain") or candidate.get("organization", {}).get("primary_domain", "")
+            if domain:
+                match_payload["domain"] = domain
+            
+            # Make API call
+            response = self._request("POST", "/people/match", json=match_payload)
+            
+            if "error" in response:
+                return {"success": False, "error": response["error"]}
+            
+            person = response.get("person", {})
+            if not person:
+                return {"success": False, "error": "No person found in match result"}
+            
+            # Extract email
+            email = person.get("email", "")
+            if not email or self._is_placeholder_email(email):
+                return {"success": False, "error": "No valid email found"}
+            
+            return {
+                "success": True,
+                "email": email,
+                "person": person
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Error unlocking email for {candidate.get('name', 'Unknown')}: {e}")
+            return {"success": False, "error": str(e)}
+
+    async def unlock_emails_for_candidates(self, candidates: List[Dict]) -> List[Dict]:
+        """Unlock emails for a list of candidates using Apollo professional account"""
+        import asyncio
+        
+        enhanced_candidates = []
+        
+        for candidate in candidates:
+            try:
+                current_email = candidate.get("email", "")
+                current_phone = candidate.get("phone", "")
+                
+                # Check if we need to unlock - look for placeholder, missing, or locked emails
+                emails_list = candidate.get("emails", [])
+                needs_unlock = (
+                    "email_not_unlocked" in str(current_email) or 
+                    not current_email or 
+                    "@" not in str(current_email) or
+                    current_email in ["", "N/A", "None"] or
+                    "placeholder" in str(current_email).lower() or
+                    not emails_list or
+                    all(self._is_placeholder_email(e) for e in emails_list)
+                )
+                
+                if needs_unlock:
+                    unlock_result = self.unlock_person_email(candidate)
+                    
+                    if unlock_result.get("success"):
+                        new_email = unlock_result["email"]
+                        candidate["email"] = new_email
+                        candidate["email_status"] = "unlocked"
+                        candidate["verified"] = True
+                        candidate["confidence_score"] = 0.9
+                        
+                        # Update emails list
+                        if "emails" not in candidate:
+                            candidate["emails"] = []
+                        if new_email not in candidate["emails"]:
+                            candidate["emails"].append(new_email)
+                        
+                        # Update person data from match result if available
+                        if unlock_result.get("person"):
+                            person = unlock_result["person"]
+                            
+                            # Update phone if available
+                            if person.get("phone_numbers"):
+                                phone_nums = person.get("phone_numbers", [])
+                                for phone_data in phone_nums:
+                                    if phone_data.get("sanitized_number"):
+                                        candidate["phone"] = phone_data["sanitized_number"]
+                                        candidate["phone_status"] = "unlocked"
+                                        if "phones" not in candidate:
+                                            candidate["phones"] = []
+                                        if phone_data["sanitized_number"] not in candidate["phones"]:
+                                            candidate["phones"].append(phone_data["sanitized_number"])
+                                        break
+                            
+                            # Update organization phone if personal phone not available
+                            if not candidate.get("phone") and person.get("organization", {}).get("primary_phone"):
+                                org_phone = person["organization"]["primary_phone"]
+                                if isinstance(org_phone, dict) and org_phone.get("sanitized_number"):
+                                    candidate["phone"] = org_phone["sanitized_number"]
+                                    candidate["phone_status"] = "organization"
+                                    if "phones" not in candidate:
+                                        candidate["phones"] = []
+                                    if org_phone["sanitized_number"] not in candidate["phones"]:
+                                        candidate["phones"].append(org_phone["sanitized_number"])
+                                elif isinstance(org_phone, str):
+                                    candidate["phone"] = org_phone
+                                    candidate["phone_status"] = "organization"
+                                    if "phones" not in candidate:
+                                        candidate["phones"] = []
+                                    if org_phone not in candidate["phones"]:
+                                        candidate["phones"].append(org_phone)
+                            
+                            # Update organization data
+                            if person.get("organization"):
+                                candidate["organization"] = person["organization"]
+                                if isinstance(person["organization"], dict):
+                                    candidate["company"] = person["organization"].get("name", candidate.get("company", ""))
+                        
+                        logger.info(f"✅ Unlocked contact for {candidate.get('name', 'Unknown')}: {new_email}")
+                    else:
+                        logger.warning(f"⚠️ Failed to unlock contact for {candidate.get('name', 'Unknown')}: {unlock_result.get('error', 'Unknown error')}")
+                else:
+                    # Email already exists and is valid
+                    candidate["email_status"] = "existing"
+                    candidate["verified"] = True
+                
+                enhanced_candidates.append(candidate)
+                
+                # Rate limiting - Apollo allows 200 requests per minute for email unlocking
+                await asyncio.sleep(0.3)  # ~200 per minute
+                
+            except Exception as e:
+                logger.error(f"❌ Error processing candidate {candidate.get('name', 'Unknown')}: {e}")
+                enhanced_candidates.append(candidate)
+        
+        unlocked_count = sum(1 for c in enhanced_candidates if c.get("email_status") == "unlocked")
+        existing_count = sum(1 for c in enhanced_candidates if c.get("email_status") == "existing")
+        logger.info(f"📧 Contact processing complete: {unlocked_count} unlocked, {existing_count} existing emails")
+        
+        return enhanced_candidates
+
 # ----------------------- example usage (optional) -----------------------
 if __name__ == "__main__":
     mgr = ApolloManager()
 
-    # Real client use case:
+    # Real client use case with email unlocking:
     openings = ["Sebastian, FL", "Cumberland, RI", "Summit, NJ", "West Orange, NJ"]
     result = mgr.search_dvm_in_locations(
         openings,
@@ -599,6 +808,7 @@ if __name__ == "__main__":
         require_email=True,
         require_phone=False,      # set True if you want to force phones present
         hunter_verify=True,
+        unlock_emails=True,       # NEW: automatically unlock emails using /people/match
     )
 
     print("Total candidates:", result.get("total_found"))
